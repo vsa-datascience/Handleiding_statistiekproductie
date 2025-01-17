@@ -1,0 +1,54 @@
+\tiny 
+\begin{subtable}{0.45\textwidth}
+\caption{Geslacht en parameter worden gecombineerd als één dimensie.}
+\label{tab:dimensiesamen}
+\begin{tblr}{
+	width=\linewidth,
+	colspec={cX[c]c},
+	column{1-2} = {fg=textcol,bg=maincol3},
+	row{1} = {fg=white,bg=maincol1},
+	row{2} = {fg=white,bg=maincol2},
+	hline{Z} = {maincol1},
+	vline{1,Z} = {maincol1}
+	}
+\SetCell[c=3]{l} Bevolkingsaantal 2019 \\
+Gemeente & Parameter & Observatie \\
+A & totaal aantal & 300 \\
+A & aantal vrouwen & 180 \\
+A & percentage vrouwen & 60 \\
+A & aantal mannen & 120 \\
+A & percentage mannen & 40 \\
+B & totaal aantal & 500 \\
+B & aantal vrouwen & 100 \\
+B & percentage vrouwen & 20 \\
+B & aantal mannen & 400 \\
+B & percentage mannen & 80 \\
+\end{tblr}
+\end{subtable}
+\hfill
+\begin{subtable}{0.45\textwidth}
+\caption{Geslacht en parameter zijn aparte dimensies.}
+\label{tab:dimensieapart}
+\begin{tblr}{
+	width=\linewidth,
+	colspec={cX[c]X[c]c},	
+	column{1-3} = {fg=textcol,bg=maincol3},
+	row{1} = {fg=white,bg=maincol1},
+	row{2} = {fg=white,bg=maincol2},
+	hline{Z} = {maincol1},
+	vline{1,Z} = {maincol1}
+	}
+\SetCell[c=3]{l} Bevolkingsaantal 2019 \\
+Gemeente & Geslacht & Parameter & Observatie \\
+A & totaal  & aantal     & 300 \\
+A & vrouwen & aantal     & 180 \\
+A & vrouwen & percentage & 60  \\
+A & mannen  & aantal     & 120 \\
+A & mannen  & percentage & 40  \\
+B & totaal  & aantal     & 500 \\
+B & vrouwen & aantal     & 100 \\
+B & vrouwen & percentage & 20  \\
+B & mannen  & aantal     & 400 \\
+B & mannen  & percentage & 80  \\
+\end{tblr}
+\end{subtable}

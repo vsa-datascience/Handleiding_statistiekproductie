@@ -1,0 +1,46 @@
+\footnotesize
+\begin{subtable}{0.4\linewidth}
+\caption{Elk cijfer in aparte statistiekreeks.}
+\label{tab:reeksapart}
+\begin{tblr}{
+	width=\linewidth,
+	colspec={X[l]},
+	row{1,4,7,10,13} = {fg=white,bg=maincol1},	
+	row{2,5,8,11,14} = {fg=textcol,bg=white},
+	row{3,6,9,12,15} = {rowsep=-2pt},
+	vline{1,Z} = {1-2,4-5,7-8,10-11,14-15}{maincol1},
+	hline{3,6,9,12,15} = {maincol1}	
+	}
+Aantal inwoners in Vlaanderen \\
+6\,821\,770 \\\\
+Percentage Vlamingen met gevorderde digitale vaardigheden \\
+26,1 \\\\
+Aantal zeugen in Vlaanderen \\
+339\,103 \\\\
+Ondergrens 95\%-CI gemiddelde vertrouwen in provinciale overheid \\
+2,34 \\\\
+\ldots \\
+\ldots \\
+\end{tblr}
+\end{subtable}
+\hfill
+\begin{subtable}{0.5\linewidth}
+\caption{Één statistiekreeks voor alle cijfers.}
+\label{tab:reekssamen}
+\begin{tblr}{
+	width=\linewidth,
+	colspec={X[l]Q[c]},
+	rows = {valign=m},
+	column{1} = {fg=white,bg=maincol2},
+	row{1} = {fg=white,bg=maincol1},
+	hlines = {maincol1},
+	vline{1,Z} = {maincol1}
+	}
+Parameter & Cijfer \\
+Aantal inwoners in Vlaanderen & 6\,821\,770 \\
+Percentage Vlamingen met gevorderde digitale vaardigheden & 26,1 \\
+Aantal zeugen in Vlaanderen & 339\,103 \\
+Ondergrens 95\%-CI gemiddelde vertrouwen in provinciale overheid & 2,34 \\
+\ldots & \ldots \\
+\end{tblr}
+\end{subtable}

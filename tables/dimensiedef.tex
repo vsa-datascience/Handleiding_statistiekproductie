@@ -1,0 +1,54 @@
+\tiny 
+\begin{subtable}{0.45\textwidth}
+\caption{Aparte dimensies voor geslacht en leeftijd.}
+\label{tab:dimensiegesplitst}
+\begin{tblr}{
+	width=\linewidth,
+	colspec={cX[c]X[c]c},
+	column{1-3} = {fg=textcol,bg=maincol3},
+	row{1} = {fg=white,bg=maincol1},
+	row{2} = {fg=white,bg=maincol2},
+	hline{Z} = {maincol1},
+	vline{1,Z} = {maincol1}
+	}
+\SetCell[c=3]{l} Bevolkingsaantal 2019 \\
+Gemeente & Geslacht & Leeftijd & Observatie \\
+A & mannen  & totaal     & 90 \\
+A & vrouwen & totaal     & 130 \\
+A & totaal  & 18-30 jaar & 60 \\
+A & totaal  & 31-65 jaar & 120 \\
+A & totaal  & 66+ jaar   & 40 \\
+B & mannen  & totaal     & 350 \\
+B & vrouwen & totaal     & 150 \\
+B & totaal  & 18-30 jaar & 20 \\
+B & totaal  & 31-65 jaar & 400 \\
+B & totaal  & 66+ jaar   & 80 \\
+\end{tblr}
+\end{subtable}
+\hfill
+\begin{subtable}{0.45\textwidth}
+\caption{Geslacht en leeftijd worden gecombineerd in de dimensie `bevolkingsgroep'.}
+\label{tab:dimensiegecombineerd}
+\begin{tblr}{
+	width=\linewidth,
+	colspec={cX[c]c},
+	column{1-2} = {fg=textcol,bg=maincol3},
+	row{1} = {fg=white,bg=maincol1},
+	row{2} = {fg=white,bg=maincol2},
+	hline{Z} = {maincol1},
+	vline{1,Z} = {maincol1}
+	}
+\SetCell[c=3]{l} Bevolkingsaantal 2019 \\
+Gemeente & Bevolkingsgroep & Observatie \\
+A & mannen  & 90 \\
+A & vrouwen & 130 \\
+A & 18-30 jarigen & 60 \\
+A & 31-65 jarigen & 120 \\
+A & 66+ jarigen   & 40 \\
+B & mannen   & 350 \\
+B & vrouwen & 150 \\
+B & 18-30 jarigen & 20 \\
+B & 31-65 jarigen & 400 \\
+B & 66+ jarigen   & 80 \\
+\end{tblr}
+\end{subtable}
