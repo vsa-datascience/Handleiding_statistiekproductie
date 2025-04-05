@@ -1,0 +1,113 @@
+% !TEX program = xelatex
+
+\documentclass{SVnote}
+
+%%% disable hyphenation for transformation pdf to docx. delete package for final document.
+\usepackage[none]{hyphenat}
+
+
+
+
+
+
+
+
+
+
+\begin{document}
+
+\title{Folderstructuur VSA}
+\titlepage
+
+\tableofcontents
+
+
+
+
+
+
+
+
+\section{Drie niveaus}
+
+In de folderstructuur hebben we minstens de volgende drie folderniveaus nodig.
+
+
+\subsection{Folderindeling op basis van thema}
+
+
+
+\begin{enumerate}
+\item R-package
+\item Data model
+\item Bevolking
+\item SV-bevraging
+\item Economie
+\item Toerisme
+\item \ldots
+\end{enumerate}
+
+
+
+
+
+
+
+
+\subsection{Folderindeling op basis van beveiliging}
+
+\begin{itemize}
+\item Restricted: Hierin komen bestanden die in principe niet aangepast mogen worden. Dit gaat dus voornamelijk over data die we binnenhalen. Zo'n data worden opgeslagen en nadien nooit meer aangepast. In deze folders gelden schrijfrechten voor de data-engineers die als enigen de bestanden kunnen opslaan. Er gelden leesrechten voor de themabeheerders zodat ze de data kunnen aanroepen voor verdere verwerking.
+\item Privileged: Hierin komen bestanden die enkel toegankelijk mogen zijn voor themabeheerders. Bijvoorbeeld, de gekuiste versies van vertrouwelijke brondata worden in deze folders opgeslagen. In deze folders gelden dan ook enkel lees- en schrijfrechten door de themabeheerders, en is er geen toegang voor andere collega's.  
+\item Internal: In deze folders staan bestanden die door iedereen binnen de VSA raadpleegbaar zijn, maar wel worden beheerd door de themabeheerders. Hier gelden dus lees- en schrijfrechten voor de themabeheerders, en leesrechten voor alle andere VSA-medewerkers. 
+\item Public: In deze folder staan bestanden die in principe vrij beschikbaar mogen zijn voor het brede publiek. Net zoals bij internal gelden hier lees- en schrijfrechten voor de themabeheerders, en leesrechten voor alle andere VSA-medewerkers. 
+\end{itemize}
+
+
+
+\subsection{Folderniveau van bestandstypes}
+
+
+
+
+
+
+
+\section{Folderstructuur}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
