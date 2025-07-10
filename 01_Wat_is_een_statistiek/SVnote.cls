@@ -83,18 +83,59 @@
 \RequirePackage{fontspec}
 \RequirePackage{anyfontsize}
 
-\setmainfont{Calibri}
+\setmainfont[
+	Path = ./SVnote/, % pas dit aan aan jouw mapstructuur
+	Extension = .otf,
+	UprightFont = *-Regular,
+	BoldFont = *-Bold,
+    ItalicFont = *-Italic, 
+    AutoFakeSlant=0.4,
+    FontFace = {l}{n}{*-Light},
+    FontFace = {m}{n}{*-Medium},
+    FontFace = {k}{n}{*-Thin},
+    FontFace = {b}{n}{*-Black},
+    FontFace = {c}{n}{*-CondensedRegular},
+    FontFace = {cl}{n}{*-CondensedLight},
+    FontFace = {cb}{n}{*-CondensedBold}
+    ]{FlandersArtSerif}
+\setsansfont[
+    Path = ./SVnote/,
+    Extension = .otf,
+    UprightFont = *-Regular,
+    BoldFont = *-Bold,
+    ItalicFont = *-Italic, 
+    AutoFakeSlant=0.4,
+    FontFace = {l}{n}{*-Light},
+    FontFace = {m}{n}{*-Medium},
+    FontFace = {k}{n}{*-Thin},
+    FontFace = {b}{n}{*-Black},
+    FontFace = {c}{n}{*-CondensedRegular},
+    FontFace = {cl}{n}{*-CondensedLight},
+    FontFace = {cb}{n}{*-CondensedBold}
+    ]{FlandersArtSans}
 
-%\setmainfont{FlandersArtSerif-Regular.otf}[Path=SVnote/
-%    ,BoldFont = FlandersArtSerif-Bold.otf
-%    ,AutoFakeSlant=0.4
-%    ]
-%\setsansfont{FlandersArtSans-Regular.otf}[Path=SVnote/
-%    ,BoldFont = FlandersArtSans-Bold.otf
-%    ,ItalicFont = FlandersArtSans-Italic.otf
-%    ,BoldItalicFont = FlandersArtSans-BoldItalic.otf 
-%    ]
-%\newfontfamily\medsans{FlandersArtSans-Medium.otf}[Path=SVnote/]
+\newcommand\lightseries{\fontseries{l}\selectfont}
+\newcommand\thinseries{\fontseries{k}\selectfont}
+\newcommand\blackseries{\fontseries{b}\selectfont}
+\newcommand\mediumseries{\fontseries{m}\selectfont}
+\newcommand\condseries{\fontseries{c}\selectfont}
+\newcommand\condlightseries{\fontseries{cl}\selectfont}
+\newcommand\condboldseries{\fontseries{cb}\selectfont}
+
+\newcommand\textlight[1]{{\fontseries{l}\selectfont #1}}
+\newcommand\textthin[1]{{\fontseries{k}\selectfont #1}}
+\newcommand\textblack[1]{{\fontseries{b}\selectfont #1}}
+\newcommand\textmedium[1]{{\fontseries{m}\selectfont #1}}
+\newcommand\textcond[1]{{\fontseries{c}\selectfont #1}}
+\newcommand\textcondlight[1]{{\fontseries{cl}\selectfont #1}}
+\newcommand\textcondbold[1]{{\fontseries{cb}\selectfont #1}}
+
+
+
+
+ 
+    
+    
     
     
     
@@ -160,7 +201,7 @@
 	\begin{flushleft}
 	\includegraphics[width=50mm]{SVnote/Entiteitslogo_Statistiek_Vlaanderen}
 	\vfill
-	\bfseries
+	\bfseries\sffamily
 	\fontsize{50}{50}\selectfont\MakeUppercase{\printtitle}\par	
 	\vspace{5mm}
 	\LARGE
@@ -193,9 +234,9 @@
     \@starttoc{toc}
     \vspace{4\baselineskip}
     }
-\titlecontents{section}[7mm]{\vspace{\baselineskip}}{\contentslabel{7mm}}{}{ \titlerule*[2pt]{.}\contentspage} 
-\titlecontents{subsection}[16mm]{\small\color{textcol!80}}{\contentslabel{7mm}}{\hspace{7mm}}{ \hfill\contentspage} 
-\titlecontents{subsubsection}[25mm]{\small\color{textcol!60}}{\contentslabel{9mm}}{\hspace{9mm}}{ \hfill\contentspage} 
+\titlecontents{section}[7mm]{\sffamily\vspace{\baselineskip}}{\contentslabel{7mm}}{}{ \titlerule*[2pt]{.}\contentspage} 
+\titlecontents{subsection}[16mm]{\sffamily\small\color{textcol!80}}{\contentslabel{7mm}}{\hspace{7mm}}{ \hfill\contentspage} 
+\titlecontents{subsubsection}[25mm]{\sffamily\small\color{textcol!60}}{\contentslabel{9mm}}{\hspace{9mm}}{ \hfill\contentspage} 
 
       
     
@@ -205,14 +246,46 @@
 
 \RequirePackage[explicit]{titlesec}
 
-\titleformat{name=\section}{\color{maincol2}}{}{0ex}{\bfseries\LARGE\MakeUppercase{\thesection\hspace{2ex}#1}}
-\titleformat{name=\section,numberless}{\color{maincol2}}{}{0ex}{\addcontentsline{toc}{section}{#1}\bfseries\LARGE\MakeUppercase{#1}}
+\titleformat{name=\section}{\sffamily\color{maincol2}}{}{0ex}{\bfseries\LARGE\MakeUppercase{\thesection\hspace{2ex}#1}}
+\titleformat{name=\section,numberless}{\sffamily\color{maincol2}}{}{0ex}{\addcontentsline{toc}{section}{#1}\bfseries\LARGE\MakeUppercase{#1}}
 \newcommand{\sectionbreak}{\vspace{2\baselineskip}}
 
-\titleformat{name=\subsection}{\color{maincol2}}{}{0ex}{\large\bfseries\MakeUppercase{\thesubsection\hspace{2ex}#1}}
+\titleformat{name=\subsection}{\sffamily\color{maincol2}}{}{0ex}{\large\bfseries\MakeUppercase{\thesubsection\hspace{2ex}#1}}
 \newcommand{\subsectionbreak}{\vspace{\baselineskip}}
 
-\titleformat{name=\subsubsection}{\color{gray4}}{}{0ex}{\large\thesubsubsection\hspace{2ex}#1}
+\titleformat{name=\subsubsection}{\sffamily\color{gray4}}{}{0ex}{\thesubsubsection\hspace{2ex}#1}
+
+
+%%% Avoid orphaned section titles:
+
+\RequirePackage{needspace}
+
+\let\oldsection\section
+\renewcommand{\section}{%
+	\@ifstar{\NeedspaceSectionStar}{\NeedspaceSection}%
+	}
+\newcommand{\NeedspaceSection}[1]{%
+	\needspace{5\baselineskip}%
+	\oldsection{#1}%
+	}
+\newcommand{\NeedspaceSectionStar}[1]{%
+	\needspace{5\baselineskip}%
+	\oldsection*{#1}%
+	}
+
+\let\oldsubsection\subsection
+\renewcommand{\subsection}{%
+	\@ifstar{\NeedspaceSubsectionStar}{\NeedspaceSubsection}%
+	}
+\newcommand{\NeedspaceSubsection}[1]{%
+	\needspace{4\baselineskip}%
+	\oldsubsection{#1}%
+	}
+\newcommand{\NeedspaceSubsectionStar}[1]{%
+	\needspace{4\baselineskip}%
+	\oldsubsection*{#1}%
+	}
+
 
 
 

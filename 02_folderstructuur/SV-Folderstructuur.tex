@@ -1,17 +1,7 @@
 % !TEX program = xelatex
 
-\documentclass{SVnote}
 
-%%% disable hyphenation for transformation pdf to docx. delete package for final document.
-\usepackage[none]{hyphenat}
-
-
-
-
-
-
-
-
+\documentclass{SV-Folderstructuur}
 
 
 \begin{document}
@@ -26,46 +16,84 @@
 
 
 
+\begin{remark}
+    Deze nota vertrekt vanuit de nota van Noëmi: \href{https://vlaamseoverheid.sharepoint.com/:w:/r/sites/DKBUZA-075/03_Databeheer_en_verwerking/05_Dataopslag/Organisatie_DKBUZA-fileserver/Folderstructuur/VSA_Fileserver_Structuur_Werkdocument.docx?d=wb05d9bbbef3343738f42c02e3aa04c6e&csf=1&web=1&e=Jl26Tc}{VSA\_Fileserver\_Structuur\_Werkdocument.docx}.
+\end{remark}
 
+\begin{remark}
+    \textbf{Nog openstaande vragen:}
+    \begin{itemize}[nosep,label=-]
+        \item Waar worden dataprocessen R\&D-gewijs ontwikkeld? -> In de themafolders?
+        \item Waar gebeuren eenmalige analyses, zoals de aanmaak van rapporten? -> Nieuw thema aanmaken voor rapporten, analoog aan TTP?
+        \item Wat met safe-roomactiviteiten? We kunnen externe gebruikers niet zomaar toegang geven tot alle data die onder collega's wel gedeeld wordt. -> Nieuw thema, analoog aan TTP?
+        \item Waar plaatsen we analyses van helpdeskvragen? -> Nieuw thema, analoog aan TTP?
+    \end{itemize}
+\end{remark}
 
-\section{Drie niveaus}
+We gebruiken de fileserver om bestanden centraal op te slaan en eenvoudig te delen met collega's. De aard van deze bestanden is erg uiteenlopend. In de eerste plaats bewaren we er datasets. Deze variëren sterk in formaat, structuur en beveiligingsvereisten. Sommige bestanden zijn bronbestanden die rechtstreeks afkomstig zijn van dataleveranciers; andere datasets worden door onszelf aangemaakt of bewerkt.
 
-In de folderstructuur hebben we minstens de volgende drie folderniveaus nodig.
+Daarnaast gebruiken we de fileserver om dataverwerkingsscripts op te slaan. Deze scripts sturen verschillende programma’s aan, zoals R, Python, Pentaho, SPSS, Markdown of LaTeX.
 
-
-\subsection{Folderindeling op basis van thema}
-
-
-
-\begin{enumerate}
-\item R-package
-\item Data model
-\item Bevolking
-\item SV-bevraging
-\item Economie
-\item Toerisme
-\item \ldots
-\end{enumerate}
-
-
+Tot slot kan de fileserver ook documentatie bevatten. Het gaat dan vooral om documentatie die automatisch wordt gegenereerd via scripts, zoals de responsanalyses van de SV-bevragingen. Voor andere soorten documentatie is het belangrijk af te wegen of deze niet beter thuishoren op SharePoint.
 
 
 
+% •	File server wordt ook gebruikt om contracten, administratie, installatiebestanden software SP6 … (to-do): Jorre voegt dit toe aan nota.
+% •	We moeten nog discussie voeren wat op de file server komt en wat op SP. Ook aanzet geven in nota.
 
 
 
-\subsection{Folderindeling op basis van beveiliging}
+\begin{remark}
+    \textbf{Discussiepunt}: Het lijkt logischer om interne procesdocumentatie op de fileserver te bewaren in plaats van op SharePoint, zodat deze dicht bij de bijhorende scripts staat. Akkoord?
+\end{remark}
 
-\begin{itemize}
-\item Restricted: Hierin komen bestanden die in principe niet aangepast mogen worden. Dit gaat dus voornamelijk over data die we binnenhalen. Zo'n data worden opgeslagen en nadien nooit meer aangepast. In deze folders gelden schrijfrechten voor de data-engineers die als enigen de bestanden kunnen opslaan. Er gelden leesrechten voor de themabeheerders zodat ze de data kunnen aanroepen voor verdere verwerking.
-\item Privileged: Hierin komen bestanden die enkel toegankelijk mogen zijn voor themabeheerders. Bijvoorbeeld, de gekuiste versies van vertrouwelijke brondata worden in deze folders opgeslagen. In deze folders gelden dan ook enkel lees- en schrijfrechten door de themabeheerders, en is er geen toegang voor andere collega's.  
-\item Internal: In deze folders staan bestanden die door iedereen binnen de VSA raadpleegbaar zijn, maar wel worden beheerd door de themabeheerders. Hier gelden dus lees- en schrijfrechten voor de themabeheerders, en leesrechten voor alle andere VSA-medewerkers. 
-\item Public: In deze folder staan bestanden die in principe vrij beschikbaar mogen zijn voor het brede publiek. Net zoals bij internal gelden hier lees- en schrijfrechten voor de themabeheerders, en leesrechten voor alle andere VSA-medewerkers. 
+\begin{remark}
+    \textbf{Discussiepunt}: Data kan ook in een database worden opgeslagen. We zullen duidelijke afspraken moeten maken over welke data waar thuishoort. Bronbestanden die fysiek worden aangeleverd, moeten sowieso op de fileserver staan. Bewerkte datasets kunnen in principe ook in een database worden geplaatst. Wat in de praktijk het meest efficiënt is, is momenteel nog niet helemaal duidelijk. Databases zijn vaak efficiënter voor dataverwerking, onder andere omdat data niet volledig in het geheugen hoeven te worden geladen. Anderzijds zijn de bewerkingsmogelijkheden in een database soms beperkt, en kunnen parquet-bestanden op de fileserver tegenwoordig ook al zeer efficiënt worden opgeslagen en verwerkt.
+\end{remark}
+
+Deze nota vat samen hoe we de fileserver organiseren en licht de gemaakte keuzes toe. Op die manier willen we meer overzicht creëren over alle bestanden en datasets die we op de fileserver bewaren.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Algemene afspraken}
+
+Voor we in de opdeling van de fileserver duiken, maken we eerst een algemene afspraak over hoe we onze folders namen geven.
+
+\begin{itemize}[nosep]
+\item Vermijd spaties. Spaties geven vaak problemen in scripts of command-line tools. Gebruik liever \texttt{-} of \texttt{\_}. Bijvoorbeeld: \texttt{project\_2024/} of \texttt{data-cleaned/}.
+\item Begin met een datum voor chronologische sortering, gebruik daarbij het ISO-formaat \texttt{YYYYMMDD}. Bijvoorbeeld: \texttt{20250424\_meeting-notes/}.
+\item Nummer versies of iteraties expliciet. Bijvoorbeeld: \texttt{v1/}, \texttt{v2/}, \texttt{final\_v3/}, \texttt{01\_raw/}, \texttt{02\_cleaned/}.
+\item Wees beschrijvend maar beknopt. Vermijd vage namen zoals \texttt{data1/}. Bijvoorbeeld: \texttt{raw\_data/}, \texttt{thesis\_figures/}.
+\item Gebruik een consistente structuur. Kies één stijl en hou je eraan: \texttt{kebab-case} (\texttt{my-folder}), \texttt{snake\_case} (\texttt{my\_folder}), of \texttt{camelCase} (\texttt{myFolder}).
+    \begin{remark}
+    Hier moeten we één standaard kiezen voor VSA. Welke nemen we? In R is \texttt{snake\_case} het meest gebruikelijk, maar we hoeven dit niet noodzakelijk over te nemen voor onze folderstructuur.
+    \end{remark}
+\item Vermijd speciale tekens en accenten zoals: \texttt{\&}, \texttt{@}, \texttt{!}, \texttt{é}, \texttt{ç}, enzovoort. Deze kunnen problemen veroorzaken bij synchronisatie of in andere systemen.
+\item Begin niet zomaar met cijfers, tenzij dit dient voor de ordening van mappen. Bijvoorbeeld: \texttt{01\_code/}, \texttt{02\_data/}.
+\item Gebruik bij voorkeur Engelse termen in plaats van Nederlandse. Dit verkleint het risico op taalproblemen, bijvoorbeeld bij communicatie met Eurostat of samenwerking met niet-Nederlandstalige consultants.
+    \begin{remark}
+    Iedereen akkoord?
+    \end{remark}
+% verwijderen, alles in Nederlands
 \end{itemize}
 
 
 
-\subsection{Folderniveau van bestandstypes}
 
 
 
@@ -73,11 +101,352 @@ In de folderstructuur hebben we minstens de volgende drie folderniveaus nodig.
 
 
 
-\section{Folderstructuur}
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Opdeling van de file server}
+
+Om onze fileserver overzichtelijk te organiseren, structureren we de bestanden in mappen volgens een duidelijke hiërarchie. Hieronder lichten we de opbouw toe.
+
+
+
+
+
+\subsection{Laag 1: Inhoudelijk thema}
+
+Binnen de VSA werken we rond verschillende inhoudelijke thema’s, zoals \emph{bevolking}, \emph{bevragingen}, \emph{ondernemingen} of \emph{toerisme}. Elk thema wordt doorgaans opgevolgd door een stabiele groep collega's. Het is dan ook logisch om de bestanden op de fileserver te organiseren volgens deze thematische indeling. Dit vormt het eerste mappenniveau.
+
+De belangrijkste vraag is hoe we de thema’s precies afbakenen. Zo’n afbakening is vaak arbitrair, maar essentieel om efficiënt samen te werken, werk te verdelen en databeveiliging te waarborgen. We hanteren hiervoor de volgende principes:
+
+\begin{itemize}
+
+\item Elk thema wordt beheerd door een stabiele, duidelijk omschreven groep collega's: de \emph{themabeheerders}. Dit vereenvoudigt en verduidelijkt het rechtenbeheer. 
+    \begin{itemize} 
+    \item Binnen elk thema dragen alle themabeheerders samen de verantwoordelijkheid voor de dataprocessen. Zij hebben kennis van elkaars werk, volgen dit op en evalueren het. Daarom mag een thema niet te smal (één persoon) of te breed (te veel personen) zijn gedefinieerd. 
+    \item Collega’s kunnen aan meerdere thema’s meewerken, maar we beperken dit zoveel mogelijk en streven naar een logische indeling. 
+    \item Elk thema wordt opgevolgd door minstens twee inhoudelijke themabeheerders, om wederzijdse kwaliteitscontrole te garanderen en risico’s bij uitval te beperken. 
+    \end{itemize}
+
+\item Thema’s volgen zoveel mogelijk de logica van het dataverwerkingsproces: van brondatabestand tot afgewerkt product gebeurt de verwerking idealiter binnen één themagroep. 
+    \begin{itemize} 
+    \item Onder afgewerkte producten verstaan we niet alleen Vlaamse Openbare Statistieken, maar ook GSM-indicatoren, PUF’s, SUF’s, SV-rapporten, enzovoort. 
+    \item Dit sluit niet uit dat gegevens uit één thema ook in andere thema’s worden gebruikt. Bijvoorbeeld: bevolkingsdata behoren tot het thema \emph{demografie}, waarbij alleen de themabeheerders toegang hebben tot de atomaire data. De geaggregeerde cijfers worden vervolgens beschikbaar gesteld voor het hele VSA-team, zodat ze ook in andere thema’s kunnen worden gebruikt --- bijvoorbeeld als noemers voor GSM-indicatoren of voor de berekening van gewichten in de SV-bevraging. \item Thema’s kunnen zowel recurrente dataleveringen (jaarlijks, maandelijks, ...) als eenmalige ad-hocleveringen (zoals TTP-activiteiten) bevatten. 
+    \item De thematische indeling moet altijd voldoen aan de beveiligingsafspraken met dataleveranciers. Collega’s die volgens deze afspraken geen toegang mogen hebben tot bepaalde data, kunnen ook geen themabeheerder zijn voor dat thema. Bijvoorbeeld: als met Statbel is overeengekomen dat enkel Karolien toegang heeft tot toeristische overnachtingsdata, wordt dit een apart thema --- ook al werken andere collega's aan gerelateerde onderwerpen binnen een ander thema \emph{toerisme}. (We moeten dan natuurlijk ook evalueren of het verstandig is om deze verantwoordelijkheid bij slechts één persoon te leggen, zie het eerste punt.) 
+    \end{itemize}
+
+\item Thema’s kunnen worden gegroepeerd in bredere \emph{themagroepen}. 
+    \begin{itemize} 
+    \item Elk TTP-project vormt een apart thema met eigen data en een beperkte groep collega’s die toegang hebben. Al deze projecten worden ondergebracht in de folder `TTP'. 
+    \item Andere thema’s kunnen worden samengevoegd tot een themagroep wanneer de inhoudelijke samenhang groot is. Zo kunnen de VOS-thema’s \emph{Buitenlandse handel}, \emph{Economie} en \emph{Financiële omgevingsfactoren} worden samengebracht onder de themagroep \emph{Economie}. 
+    \end{itemize}
+
+\item Naast de inhoudelijke thema’s zijn er nog twee folders die op dit niveau thuishoren. Ze volgen dezelfde logica, maar zijn strikt genomen geen thema’s of themagroepen: 
+    \begin{itemize} 
+    \item \textbf{R-package}: Deze map bevat een R-pakket met functies die het programmeerwerk binnen andere thema’s vereenvoudigen. De ontwikkeling gebeurt door een kleine groep collega’s met doorgedreven R-kennis. 
+        \begin{remark} 
+        \textbf{Vraag:} Moet dit niet een algemene folder zijn voor allerlei hulpprogramma's, waarbij het R-pakket slechts één subfolder is? 
+        \end{remark} 
+    \item \textbf{Datamodel}: Deze map bevat het algemene datamodel dat door alle thema’s heen kan worden gebruikt. Ook dit model wordt beheerd door een specifiek aangeduid team van collega’s. 
+    \end{itemize} 
+    
+\end{itemize}
+
+Hieronder volgt een overzicht van alle thema’s en themagroepen. Bij elk thema wordt opgelijst welke collega’s verantwoordelijk zijn, welke data met beperkte toegang worden binnengehaald, welke open data worden verwerkt, en welke producten worden opgeleverd.
+
+\begin{remark} 
+\textbf{Discussiepunt:} Welke thema's bakenen we concreet af? Wie doet een voorstel?
+\begin{itemize}[nosep,label=$\rightarrow$] 
+\item Binnen het DWH-project werden zes thema’s/themagroepen onderscheiden: Bevolking, Samenleving, Economie, Ruimte, Overheid en SV-survey. Ik heb echter nog geen motivatie voor deze indeling gezien en vraag me af of ze wel het meest efficiënt is. De thema’s zijn zeer breed en de teams vaak erg heterogeen samengesteld. In het bestand \href{https://vlaamseoverheid.sharepoint.com/:x:/r/sites/DKBUZA-075/03_Databeheer_en_verwerking/06_Dataplatform/Architectuur_202209-202503/3.%20Informatie%20Architectuur/Applicatie%20Architectuur/Security/Medewerkers_Activiteiten_Data.xlsx?d=w7e137d5bcc2d492d86d6184f5a071dc9&csf=1&web=1&e=7uczFL}{Medewerkers\_Activiteiten\_Data.xlsx} staat een verouderd overzicht van de collega's, thema’s en beveiligde data. 
+\item Een andere mogelijke indeling is die van de VOS’en in thema’s en subthema’s (zie \href{https://vlaamseoverheid.sharepoint.com/:x:/r/sites/DKBUZA-075/04_Ontsluiting/02_VOS/VSP-lijst_finaal_bestaande_VOS_aanpassingen.xlsx?d=w9726f2d3262c48b88ecf8aa1eceebd6f&csf=1&web=1&e=uQ2qRQ}{VSP-lijst\_finaal\_bestaande\_VOS\_aanpassingen.xlsx}), al is deze waarschijnlijk te fijnmazig. 
+\item Een thema zoals demografie wordt momenteel door een kleine, goed afgebakende ploeg beheerd. Binnen dit thema worden echter veel verschillende datasets verwerkt, zoals stand en loop van de bevolking, censusdata, enzovoort. We kunnen deze processen ook als aparte thema’s beschouwen om het overzicht te verbeteren, ook al zijn de verantwoordelijken dezelfde. 
+\item Heel wat output, zoals de GSM-indicatoren, is momenteel nog niet duidelijk gekoppeld aan een thema (of ik heb daarover nog geen informatie gevonden). Klopt dat? 
+\end{itemize} 
+\textbf{Opdracht:} Ik heb hieronder alvast een voorbeeld uitgewerkt voor het thema demografie (als we beslissen om dit als één thema te blijven zien). De lijst moet worden aangevuld voor alle andere thema’s. Jo en Lisa nemen dit op. 
+\end{remark}
+
+\begin{tiny}
+\DefTblrTemplate{caption}{default}{}
+\begin{longtblr}{
+    width = \linewidth,
+    colspec = {Q[l]Q[l]X[l,2]X[l,2]X[l,3]},
+    rowhead = 1,
+    row{odd} = {bg=maincol3!10!white}, 
+    row{even} = {bg=maincol3!20!white},
+    row{1} = {bg=maincol1,fg=white},
+    columns = {colsep=.5ex},
+    }
+Thema & Beheerders & Data-Inname Beperkte Toegang & Data-Inname Open Toegang  & Producten  \\
+%--------------------------------------------
+Demography &
+\begin{tabular}[t]{@{}l@{}}Ingrid Schockaert\\Jan Pickery\\Lisa Van Landschoot\end{tabular} & 
+Demobel (Statbel);\newline
+Oekraïense vluchtelingenbevolking (Statbel);\newline
+Aanwezigen register tijdelijke bescherming (DVZ);\newline
+Census (Statbel);\newline
+Toerisme (Statbel) & 
+geen? & 
+VOS Bevolking (101, 102, 103, 104, 105);\newline
+VOS Migratie (106, 107, 108);\newline
+VOS Geboorte en sterfte (109, 110, 331, 332);\newline
+VOS Relaties en huishoudens (111, 112, 113, 114);\newline
+VOS Vooruitzichten (115, 554);\newline
+GSM-indicatoren DE\_00, DE\_01, DE\_02, DE\_03, DE\_04, DE\_05, DE\_06, DE\_07, DE\_08, DE\_09, DE\_10, DE\_12, DE\_15, DE\_16, DE\_17, DE\_18, DE\_19, DE\_20, DE\_21, DE\_22, IN\_02, IN\_03, DE\_25, DE\_26, DE\_27, IN\_04, IN\_05, DE\_31, DE\_32, DE\_33, DE\_34, DE\_35, DE\_36, IN\_06, IN\_07, IN\_08, DE\_40, IN\_09, DE\_42, IN\_10, IN\_11, IN\_12, IN\_13, IN\_14, IN\_15, DE\_64, DE\_66, DE\_69, DE\_74, DE\_75, DE\_76, DE\_77, DE\_78, DE\_79, IN\_30, IN\_31, IN\_32;\newline
+aantal inwoners voor intern gebruik binnen VSA volgens geslacht, leeftijd,\ldots;\newline
+\ldots?\\
+%--------------------------------------------
+\ldots & \ldots & \ldots & \ldots & \ldots \\
+%--------------------------------------------
+TTP/Project001 & 
+\begin{tabular}[t]{@{}l@{}}data steward\\data engineers\\projectmedewerkers\end{tabular} & 
+elke binnenkomende dataset & 
+per definitie geen & 
+gevraagd product van TTP-project \\
+%--------------------------------------------
+TTP/Project\ldots & 
+\begin{tabular}[t]{@{}l@{}}data steward\\data engineers\\projectmedewerkers\end{tabular} & 
+elke binnenkomende dataset & 
+per definitie geen & 
+gevraagd product van TTP-project \\
+%--------------------------------------------
+\end{longtblr}
+\end{tiny}
+
+
+De eerste laag van de folderstructuur zal er dus ongeveer als volgt uitzien:
+
+\begin{center}
+\begin{folderstructure}
+\folder{0}{//WV162699/fs\_kb\_dkb/svr/Beveiligde\_data\_VSA}
+\folder{1}{01\_Rpackage}
+\folder{1}{02\_DataModel}
+\folder{1}{03\_Demography}
+\folder{2}{\ldots?}
+\folder{1}{04\_Surveys}
+\folder{2}{01\_SCV\_survey}
+\folder{2}{02\_SV\_survey}
+\folder{2}{03\_Covid\_survey}
+\folder{2}{04\_Social\_study}
+\folder{1}{05\_Economy}
+\folder{2}{01\_Foreign\_Trade}
+\folder{2}{02\_Economy}
+\folder{2}{03\_Financial\_Environmental\_Factors}
+\folder{1}{\ldots}
+\folder{2}{\ldots}
+\folder{1}{TTP}
+\folder{2}{001\_project\_1}
+\folder{2}{002\_project\_2}
+\folder{2}{\ldots}
+\end{folderstructure}  
+\end{center}
+
+\begin{remark}
+\textbf{Discussiepunt:} Momenteel worden alle kleinere geaggregeerde datasets samen verzameld in de folder \href{//WV162699/fs_kb_dkb/svr/4_Beveiligde_data/0101_Geaggregeerde_data_Collect}{0101\_Geaggregeerde\_data\_Collect}. Deze datasets hoeven niet verder beveiligd te worden en zijn voor alle collega's toegankelijk. Beveiligde datasets worden echter nog steeds in aparte folders bewaard in \href{//WV162699/fs_kb_dkb/svr/4_Beveiligde_data}{4\_Beveiligde\_data} met beperkte toegang voor sommige collega's. We werken dus met twee systemen. Houden we dit zo? Dit lijkt niet echt efficiënt. Voer voor discussie? Op basis van mijn voorstel voor de volgende mappenlaag, gaan we steeds gemakkelijk een overzicht kunnen krijgen van alle brondatabestanden.
+\end{remark}
+
+
+
+
+% •	Wat met data die van verschillende bronnen komen? Brondata wordt steeds gekuist door themabeheerders, gekuiste data wordt al dan niet beschikbaar gesteld voor andere collega’s als zij deze nodig hebben in andere thema’s. Dataverwerking waarvoor data uit een ander thema nodig is, kan dus steeds gebruik maken van de deze data. Themabeheerders blijven echter verantwoordelijk voor hun deel van het verwerkingsproces. 
+% Voorbeeld: aanmaak van GSM-indicator, bevolkingsaantallen nodig als noemer. Demografen maken bevolkingsaantallen beschikbaar in folder demografie. Beheerders van andere thema's kunnen deze data aanroepen en gebruiken in eigen dataprocessen.
+
+
+
+
+% •	Helpdesk: niet voor elke vraag, maar voor vragen waarvoor we analyse doen
+% •	TTP: data moeten verwijderd worden - maar documentatie niet - deze staat ook (soms) op SP: dus daarin nog een keuze te maken
+% •	Er worden geen rechten toegekend op deze eerste laag, maar deze laag bepaalt wel de rechtengroepen voor de volgende laag
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Laag 2: Functie en beveiliging}
+
+Naast de inhoudelijke thema's delen we bestanden ook op volgens de functie van het bestand en het beveiligingsniveau. Wat betreft de functie van bestanden maken we ten eerste het volgend onderscheid: 
+\begin{itemize}[nosep]
+\item datasets (zowel inkomende als verwerkte),
+\item scripts om datasets te verzamelen en te verwerken, en
+\item documentatie over de scripts en de data.
+\end{itemize}
+(Merk op dat scripts ook kleine databestanden kunnen bevatten die op natuurlijke wijze bij een script horen, bijvoorbeeld een mapping om één variabele om te zetten naar een andere. Dit is geen ``inhoudelijke'' data.)
+    
+Wat betreft beveiliging maken we ten tweede een onderscheid tussen verschillende beveiligingsniveaus: 
+\begin{itemize}
+\item Bestanden met beperkte toegang. Dit zijn bestanden die in principe niet aangepast mogen worden. Hierbij gaat het voornamelijk over data die we binnenhalen. Zo'n data worden opgeslagen en nadien nooit meer aangepast. 
+\item Bestanden met geprivilegieerde toegang. Dit zijn bestanden die enkel toegankelijk zijn voor themabeheerders zoals bijvoorbeeld de gekuiste versies van vertrouwelijke brondata. 
+\item Interne bestanden: Deze bestanden zijn raadpleegbaar door iedereen binnen de VSA, maar zijn niet bedoeld om breder publiek te verspreiden. Deze bestanden kunnen worden gebruikt als bron in andere dataprocessen. Bijvoorbeeld, een dataset met het aantal inwoners in elke gemeente wordt als intern bestand beschikbaar gesteld door de demografen zodat andere collega's deze kunnen gebruiken als noemers bij de berekening van GSM-indicatoren.
+\item Publieke bestanden: Dit zijn bestanden die in principe vrij beschikbaar mogen zijn voor het brede publiek. Hier vallen bijvoorbeeld alle datasets onder die worden gebruikt voor de cijferapplicaties en cijferpagina's. Net zoals bij interne bestanden gelden hier lees- en schrijfrechten voor de themabeheerders, en leesrechten voor alle andere VSA-medewerkers. 
+\end{itemize}
+
+De opdeling in beveiligingsniveaus geldt enkel voor datasets. We volgen het algemene principe dat scripts en documentatie van onze dataprocessen steeds toegankelijk zijn voor alle collega's. Dit verhoogt transparantie binnen het team en bevordert ook dat we van elkaar leren.  
+
+Omdat documentatie en scripts steeds interne bestanden zijn en enkel datasets verder worden opgedeeld volgens beveiliging, is het overzichtelijker om beide opdelingen samen te nemen in één folderlaag. We gebruiken binnen deze laag de volgende opdeling:
+\begin{itemize}
+\item Folder `\texttt{01\_documentation}' wordt gebruikt om alle documentatie over een dataproces te bewaren. Deze documentatie wordt geschreven en beheerd door de themabeheerders. Binnen deze folder gelden daarom enkel lees- en schrijfrechten voor de data-engineers en de themabeheerders. Alle andere VSA-collega's hebben enkel leesrechten. 
+\item Folder `\texttt{02\_code}' bevat alle scripts om data te verwerken. Net zoals de documentatie wordt dit beheerd door de themabeheerders. Binnen deze folder gelden daarom enkel lees- en schrijfrechten voor de data-engineers en de themabeheerders. Alle andere VSA-collega's hebben enkel leesrechten.  
+
+We gebruiken een aparte folder zodat we dit kunnen gebruiken voor git.
+
+\item Folder `\texttt{03\_source\_data}' bevat datasets zoals ze worden aangeleverd door dataleveranciers. Deze datasets worden enkel bewaard in deze folder maar nooit aangepast. Het is de taak van de themabeheerders om deze brondata op te kuisen en af te toetsen aan het datamodel. Nadien bewaren zij de gekuiste data in één van de volgende drie folders, afhankelijk van het beveiligingsniveau en de functie van de gekuiste data. In deze folder gelden enkel schrijfrechten voor de data-engineers die als enigen de bestanden kunnen opslaan. Er gelden leesrechten voor de themabeheerders zodat ze de data kunnen aanroepen voor verdere verwerking. Geen enkele andere collega heeft toegangsrechten tot deze folder.
+\item Folder `\texttt{04\_privileged\_data}' bevat verwerkte data die niet toegankelijk mogen zijn voor andere collega's. Het gaat hierbij om data waarin persoonlijke informatie zit of gegevens die nog versluierd moeten worden, bijvoorbeeld de gekuiste en gevalideerde versies van persoonsdata. Op deze bestanden gelden dan ook enkel lees- en schrijfrechten voor de themabeheerders en de data-engineers. Geen enkele andere collega heeft toegangsrechten tot deze folder.  
+\item Folder `\texttt{05\_internal\_data}' bevat data die wel toegankelijk zijn voor collega's maar niet de bedoeling hebben verder te worden verspreid onder het brede publiek. Onder deze folder kunnen bestanden vallen met onversluierde data waarvoor we wel de toestemming krijgen deze binnen de VSA te verspreiden. Scientific use files (SUF's) vallen onder deze categorie. Deze bestanden worden beheerd door de themabeheerders die er lees- en schrijfrechten op hebben. Andere collega's hebben leesrechten zodat ze de bestanden kunnen aanroepen, maar ze hebben geen schrijfrechten. 
+\item Folder `\texttt{06\_public\_data}' bevat bestanden die publiek verspreid mogen worden. Het gaat hierbij bijvoorbeeld om bestanden voor de cijferapplicaties en cijferpagina's of public use files (PUF's). Versluierde gevoelige data kunnen hier ook hun onderdak vinden. Deze bestanden worden eveneens beheerd door de themabeheerders die er lees- en schrijfrechten op hebben. Andere collega's hebben enkel leesrechten zodat ze de bestanden kunnen aanroepen, maar ze hebben geen schrijfrechten. 
+\end{itemize}
+
+Kortom, onder elke themafolder kunnen enkel de volgende folders worden gebruikt:
+\begin{center}
+\begin{folderstructure}
+\folder{0}{[themafolder]}
+\folder{1}{01\_Documentatie}
+\folder{1}{02\_Code}
+\folder{1}{03\_Brondata}
+\folder{1}{04\_Beperkte\_data} 
+\folder{1}{05\_Interne\_data} 
+\folder{1}{06\_Ontsluitingsdata}
+\end{folderstructure} 
+\end{center}
+
+% •	Interne bestanden (gekuiste niet-gevoelige data - term verwarrend) Dit kunnen gevoelige en niet-gevoelige data zijn, maar zijn sowieso bestanden enkel voor intern gebruik die niet doorgegeven worden aan externen. Datasets met gevoeilige informatie worden zo veel mogelijk beperkt en enkel in deze folder geplaatst als ze moeten worden doorgegeven tussen thema's. Elke collega weet bij deze bestanden dat ze moeten afchecken bij de themabeheerders wat mag of niet mag met deze bestanden.
+
+
+Een overzicht van de toegangsrechten staat beschreven in de volgende tabel:
+
+\begin{footnotesize}
+\begin{tblr}{
+    width = \linewidth,
+    colspec={Q[l]X[l]X[l]X[l]},
+    row{odd} = {bg=maincol3!10!white}, 
+    row{even} = {bg=maincol3!20!white},
+    row{1} = {bg=maincol1,fg=white},    
+    }
+                     & Schrijfrechten & Leesrechten & Geen toegang \\
+01\_Documentatie     & Themabeheerders\newline Data-engineers & Alle collega's & --- \\
+02\_Code             & Themabeheerders\newline Data-engineers & Alle collega's & --- \\
+03\_Brondata         & Data-engineers & Themabeheerders\newline Data-engineers & Alle andere collega's \\
+04\_Beperkte\_data    & Themabeheerders\newline Data-engineers & Themabeheerders\newline Data-engineers & Alle andere collega's \\
+05\_Interne\_data     & Themabeheerders\newline Data-engineers & Alle collega's & --- \\
+06\_Ontsluitingsdata & Themabeheerders\newline Data-engineers & Alle collega's & --- \\
+\end{tblr}
+\end{footnotesize}
+
+
+\begin{remark}
+    \textbf{Vraag aan Lieven en Georneth:} Is deze organisatie haalbaar voor jullie op het vlak van rechtenbeheer? Zijn dit niet te veel mappen waarvoor verschillende rechtenregimes moeten worden ingesteld? Kan rechtenbeheer geautomatiseerd worden op basis van een overzichtsbestand?
+\end{remark}
+
+\begin{remark}
+    \textbf{Opmerking/vraag:} Met dit voorstel voor folderstructuur kunnen we gemakkelijk migreren naar een structuur met meerdere servers. Stel dat we in de toekomst een aparte server opzetten met de publieke data, hoeven we enkel over alle folders \texttt{public\_data} te itereren en de inhoud te migreren. \\
+    Een alternatief is dat we zo'n serverstructuur al op het eerste niveau implementeren van de folderindeling implementeren, maar dat leidt tot een complexere structuur. Bijvoorbeeld:
+    \begin{center}
+    \begin{folderstructure}
+    \folder{0}{[file server]}
+    \folder{1}{Secured}
+    \folder{2}{[thema\_1]}
+    \folder{3}{Source\_data}
+    \folder{3}{Privileged\_data}
+    \folder{2}{[thema\_\ldots]}
+    \folder{1}{Internal}
+    \folder{2}{[thema\_1]}
+    \folder{3}{Documentation}
+    \folder{3}{Code}
+    \folder{3}{Data}
+    \folder{2}{[thema\_\ldots]}   
+    \folder{1}{Public}
+    \folder{2}{[thema\_1]}
+    \folder{2}{[thema\_\ldots]}
+    \end{folderstructure} 
+    \end{center} 
+    Probleem is dat we op dit moment nog geen beslissing hebben over welke servers we in de toekomst apart gaan installeren voor data met verschillende beveiligingsniveaus.
+\end{remark}
+
+
+
+
+
+
+\subsection{Laag 3: Processpecifiek}
+
+Vrij in te richten door themabeheerders, kleine processen hebben minder structuur nodig dan grote processen.
+
+GSBPM is leidraad, maar moet niet strikt worden opgevolgd (zoals ook staat beschreven in documentatie van GSBPM zelf). Daarvoor zijn processen te divers. Voor sommige processen is GSBPM overkill, voor anderen is de volgorde van stappen niet meest efficiënt.
+
+Good practice om folders te ordenen volgens verwerkingsproces, voorbeeld toevoegen
+
+Hier algemene afspraken toevoegen ipv aan het begin van het document?
+
+
+Richtlijnen toevoegen voor opslag brondata, eerst volgens referentieperiode, dan volgens versie.
+
+
+
+Een voorbeeld voor demografie --- stand van de bevolking ---.
+
+\begin{center}
+\begin{folderstructure}
+\folder{0}{03\_demography}
+    \folder{1}{01\_population\_status}
+        \folder{2}{01\_documentation}
+            \text{3}{data\_process\_population\_status}
+        \folder{2}{02\_code}
+            \folder{3}{01\_clean\_source\_data}
+                \code{4}{\ldots}
+                \code{4}{2015}
+                \code{4}{2016}
+                \code{4}{2017}
+                \code{4}{\ldots}
+            \code{3}{02\_create\_VOS}
+            \code{3}{03\_create\_GSM\_indicators}
+            \code{3}{\ldots}
+        \folder{2}{03\_source\_data}
+            \folder{3}{\ldots}
+                \data{4}{\ldots}
+            \folder{3}{2015}
+                \data{4}{\ldots}
+            \folder{3}{2016}
+                \data{4}{\ldots}
+            \folder{3}{2017}
+                \data{4}{\ldots}
+        \folder{3}{\ldots}
+                \data{4}{\ldots}
+        \folder{2}{04\_privileged\_data}
+        \folder{2}{05\_internal\_data}
+        \folder{2}{06\_public\_data}
+\end{folderstructure} 
+\end{center}
 
 
 
@@ -91,6 +460,7 @@ In de folderstructuur hebben we minstens de volgende drie folderniveaus nodig.
 
 
 \end{document}
+
 
 
 

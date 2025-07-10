@@ -82,19 +82,24 @@
 
 \RequirePackage{fontspec}
 \RequirePackage{anyfontsize}
+\setmainfont{Calibri.ttf}[Path=SVnote/
+   ,BoldFont = Calibrib.ttf
+   ,ItalicFont = Calibrii.ttf
+   ,BoldItalicFont = Calibriz.ttf 
+   ,AutoFakeSlant=0.4
+   ]
 
-\setmainfont{Calibri}
 
-%\setmainfont{FlandersArtSerif-Regular.otf}[Path=SVnote/
+% \setmainfont{FlandersArtSerif-Regular.otf}[Path=SVnote/
 %    ,BoldFont = FlandersArtSerif-Bold.otf
 %    ,AutoFakeSlant=0.4
 %    ]
-%\setsansfont{FlandersArtSans-Regular.otf}[Path=SVnote/
+% \setsansfont{FlandersArtSans-Regular.otf}[Path=SVnote/
 %    ,BoldFont = FlandersArtSans-Bold.otf
 %    ,ItalicFont = FlandersArtSans-Italic.otf
 %    ,BoldItalicFont = FlandersArtSans-BoldItalic.otf 
 %    ]
-%\newfontfamily\medsans{FlandersArtSans-Medium.otf}[Path=SVnote/]
+% \newfontfamily\medsans{FlandersArtSans-Medium.otf}[Path=SVnote/]
     
     
     
@@ -212,7 +217,7 @@
 \titleformat{name=\subsection}{\color{maincol2}}{}{0ex}{\large\bfseries\MakeUppercase{\thesubsection\hspace{2ex}#1}}
 \newcommand{\subsectionbreak}{\vspace{\baselineskip}}
 
-\titleformat{name=\subsubsection}{\color{gray4}}{}{0ex}{\large\thesubsubsection\hspace{2ex}#1}
+\titleformat{name=\subsubsection}{\color{palgray4}}{}{0ex}{\large\thesubsubsection\hspace{2ex}#1}
 
 
 
@@ -331,7 +336,7 @@
 %%%%% HYPERREFS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\RequirePackage[hidelinks]{hyperref}
-
+% \RequirePackage[hidelinks]{hyperref}
+\RequirePackage{hyperref}
 
 

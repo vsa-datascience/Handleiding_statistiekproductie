@@ -1,58 +1,7 @@
 % !TEX program = xelatex
 
-\documentclass{SVnote}
+\documentclass{SV-Wat_is_een_statistiek}
 
-%%% disable hyphenation for transformation pdf to docx. delete package for final document.
-\usepackage[none]{hyphenat}
-
-
-\usepackage[most]{tcolorbox}
-\usepackage{tabularray}
-\usepackage{subcaption}
-\usepackage{framed}
-
-\newtcolorbox{infobox}{
-	sidebyside,
-	sidebyside align=top,
-	sidebyside gap=3mm, 
-    colback=palgray2,
-    colframe=palgray4, 
-    coltext=textcol,
-    boxrule=0.9pt,
-    boxsep=5pt,
-    arc=1pt,
-    leftrule=0.8mm, 
-    lefthand width=5mm, 
-    lower separated=false, 
-    left=3pt,
-    fontlower=\itshape\footnotesize
-    }                
-\newenvironment{info}{\begin{infobox}\centering\LARGE\includegraphics[width=5mm]{figures/denken}\tcblower}{\end{infobox}}
-
-\DeclareTextFontCommand{\emph}{\color{maincol2}\em}
-
-\newlist{richtlijnen}{enumerate}{1}
-\setlist[richtlijnen]{
-	label=\emph{Richtlijn \arabic*.},
-	labelindent=0pt,
-	labelwidth=10ex,
-	labelsep=1ex,
-	itemindent=!,
-	leftmargin=3ex
-	}
-\newlist{gebruikersvoorwaarden}{itemize}{1}
-\setlist[gebruikersvoorwaarden]{
-	nosep,
-	label={$\rightarrow$},
-	labelindent=0pt,
-	labelwidth=3ex,
-	labelsep=1ex,
-	itemindent=0pt,
-	leftmargin=!
-	}
-
-\usepackage{hyphenat}
-\hyphenation{sta-ti-stiek-reeks}
 
 
 
@@ -68,7 +17,7 @@
 \titlepage
 
 \tableofcontents
-
+\clearpage
 
 
 
@@ -89,11 +38,9 @@
 
 \section*{Inleiding}
 
-De hoofdtaak van het netwerk Statistiek Vlaanderen en de Vlaamse Statistische Autoriteit is de productie en publicatie van statistieken, ook wel Vlaamse Officiële Statistieken (VOS'en) genoemd. Maar wat verstaan we eigenlijk onder een statistiek? En welke informatie is essentieel om tot een kwaliteitsvolle statistiek te komen? Om het netwerk goed te laten functioneren, is het cruciaal om met een gedeelde woordenschat te werken. Momenteel bestaan er echter grote verschillen in hoe termen en concepten binnen het netwerk worden gebruikt. Deze nota heeft daarom als doel enkele basisconcepten in de Vlaamse statistiekproductie te verduidelijken. 
+Één van de hoofdtaken van het netwerk Statistiek Vlaanderen en de Vlaamse Statistische Autoriteit is de productie en publicatie van openbare statistieken, ook wel Vlaamse Openbare Statistieken (VOS'en) genoemd. Maar wat verstaan we eigenlijk onder een statistiek en hoe produceren we die dan concreet? Om het netwerk goed te laten functioneren, is het cruciaal om met een gedeelde woordenschat te werken. Momenteel bestaan er echter grote verschillen in hoe termen en concepten binnen het netwerk worden gebruikt. Deze nota heeft daarom als doel enkele basisconcepten in de Vlaamse statistiekproductie te verduidelijken.
 
-In deze handleiding wordt terminologie uit de GSBPM- en de SDMX-standaarden gebruikt, al verwijzen we voorlopig slechts sporadisch in enkele kanttekeningen naar deze standaarden. De integratie van beide standaarden kan in een volgende versie opgenomen worden.  
-
-
+In deze handleiding wordt terminologie uit de GSIM-, GSBPM‐ en de SDMX‐standaarden gebruikt, al verwijzen we voorlopig slechts sporadisch in enkele kanttekeningen naar deze standaarden. De integratie van beide standaarden kan in een volgende versie opgenomen worden.
 
 
 
@@ -106,107 +53,292 @@ In deze handleiding wordt terminologie uit de GSBPM- en de SDMX-standaarden gebr
 
 
 
+\section{Wat is een statistiek?}
+
+% Aftoetsen welke terminologie wordt gebruikt in de GSIM
+
+Voor we kunnen bespreken hoe we statistieken produceren, moeten we eerst afspreken wat we precies verstaan onder een statistiek. Wat beschouwen we als een statistiek en wat niet? Wat hebben we allemaal nodig om te spreken van een statistiek? Welke informatie is essentieel om statistiek te produceren? Hoe bepalen we de kwaliteit van een statistiek? Het antwoord op al deze vragen komt aan bod in deze paragraaf. 
 
 
 
+\subsection{Statistiek als een cijfer}
 
+Als je mensen vraagt wat ze verstaan onder een statistiek, zullen velen een statistiek op de eerste plaats definiëren als een cijfer. Zo'n definitie is echter onvolledig en onwerkbaar. Een statistiek houdt meer in dan enkel een cijfer. Statistiek gaat namelijk niet alleen over het berekenen van cijfers, het draait ook om de interpretatie ervan. Die interpretatie wordt gegeven door de definitie van de statistiek en in deze paragraaf zullen we zien dat er twee soorten definities bestaan: de conceptuele en operationele definitie. We zullen ook zien dat deze definities de kwaliteit van de statistiek bepalen en hoe dat gebeurt. Ten slotte, laat deze discussie ook toe om te af te bakenen wat experimentele statistieken zijn. 
 
+\subsubsection{Conceptuele definitie}
 
+Een statistiek verwijst dus steeds naar een cijfer, maar een cijfer alleen bepaalt nog geen statistiek. Neem bijvoorbeeld het cijfer ``525\,935''. Dit cijfer is een voorbeeld van een bestaande statistiek. Toch zegt dit cijfer op zichzelf zeer weinig. Waarvan zijn er 525\,935? Wat stelt dit getal voor? Zonder aanvullende informatie blijft het cijfer betekenisloos. Een \emph{statistiek} bestaat daarom altijd uit twee elementen: het cijfer zelf én de betekenis ervan. Beide zijn even belangrijk en vormen één geheel. In dit geval betekent het cijfer 525\,935: ``het aantal inwoners van de gemeente Antwerpen op 1 januari 2019''. De betekenis van een statistiek noemen we de \emph{conceptuele definitie}. Dit verwijst naar hoe een doorsnee gebruiker het cijfer interpreteert.
 
-
-
-
-
-
-\section{Statistieken}
-
-
-
-\subsection{Wat is een statistiek?}
-
-Veel mensen definiëren een statistiek op de eerste plaats als een cijfer. Maar zo’n definitie is onvolledig. Statistiek gaat namelijk niet alleen over het berekenen van cijfers; het draait ook om de interpretatie ervan.
-
-Neem bijvoorbeeld het cijfer ``525\,935''. Dit is een bestaande statistiek, maar op zichzelf zegt het weinig. Waarvan zijn er 525\,935? Of wat stelt dit getal voor? Zonder aanvullende context blijft het betekenisloos. Een \emph{statistiek} bestaat daarom altijd uit twee elementen: het cijfer zelf én de betekenis ervan. Beide zijn even belangrijk en vormen één geheel. In dit geval betekent het cijfer 525\,935: `het aantal inwoners van de gemeente Antwerpen in 2019'.
-
-De betekenis van een statistiek noemen we de \emph{conceptuele definitie}. Dit verwijst naar hoe een gebruiker het cijfer interpreteert. Zo’n definitie vloeit voort uit een specifieke \emph{gebruikersbehoefte}. Zo verwijst een bepaald Vlaams decreet misschien naar het aantal inwoners in de Vlaamse gemeenten en zijn we als Statistiek Vlaanderen verplicht het aantal inwoners in Antwerpen te publiceren. Antwerpse beleidsmakers weten daarnaast waarschijnlijk ook graag hoeveel inwoners hun gemeente telt zodat ze hun diensten hierop kunnen afstemmen. Demografen gebruiken dit cijfer dan weer om bevolkingsgroei en -spreiding in Vlaanderen te onderzoeken.
+De conceptuele definitie vloeit steeds voort uit specifieke \emph{gebruikersbehoeften}. Als we het aantal inwoners in Antwerpen publiceren als statistiek, doen we dit omdat bepaalde beleidsmakers, onderzoekers of andere burgers deze goed kunnen gebruiken. Zo verwijst een bepaald Vlaams decreet misschien naar het aantal inwoners in de Vlaamse gemeenten en zijn we als Statistiek Vlaanderen verplicht het aantal inwoners in Antwerpen te publiceren zodat de Vlaamse regering hierop beleid kan uitstippelen. Antwerpse beleidsmakers weten daarnaast waarschijnlijk ook graag hoeveel inwoners hun gemeente telt zodat ze hun diensten hierop kunnen afstemmen. Demografen gebruiken dit cijfer, samen met de bevolkingsgroottes in andere jaren en gemeenten, dan weer om bevolkingsgroei en ‐spreiding in Vlaanderen te onderzoeken.
 
 \begin{info}
-Statistieken hoeven niet per definitie cijfers te zijn, het kunnen ook kwalitatieve observaties zijn of zelf complexe informatie-objecten. Zo publiceert Agentschap Binnenlands Bestuur bijvoorbeeld per gemeente een statistiek over de top 10 andere gemeenten waarnaar kinderen heen pendelen voor school. Voor de stad Antwerpen kan de observatie op deze statistiek bijvoorbeeld de volgende tekstuele vector zijn: 
+Statistieken hoeven niet per definitie cijfers te zijn, het kunnen ook kwalitatieve observaties zijn of zelfs complexe informatie-objecten. Zo publiceert Agentschap Binnenlands Bestuur bijvoorbeeld per gemeente een statistiek over de top 10 andere gemeenten waarnaar kinderen heen pendelen voor school. Voor de stad Antwerpen kan de observatie op deze statistiek bijvoorbeeld de volgende tekstuele vector zijn: 
 \begin{quote}
 `\lbrack Antwerpen, Brasschaat, Lier, Brussel, Beveren, Mechelen, \ldots\rbrack'.
 \end{quote}
+Om het overzicht te bewaren blijven we hieronder echter verwijzen naar cijfers. Cijfers zijn immers veruit de meest voorkomende vorm van statistieken. 
 \end{info}
 
+Merk op dat de conceptuele definitie verschillende componenten bevat, namelijk de grootheid die we meten, dat is bevolkingsgrootte, de gemeenten waarin we dit meten, dat is Antwerpen, en het jaar waarin we dit meten, dat is 2019. Deze componenten noemen we \emph{concepten}. Een conceptuele definitie bevat dus meestal meerdere concepten die we willen meten of gebruiken.
 
-
-\subsection{Operationele definitie}
-
-De conceptuele definitie beperkt zich doorgaans tot de betekenis die een doorsnee statistiekgebruiker aan het cijfer geeft. Ze vertelt echter vaak te weinig over hoe het cijfer precies berekend werd en geïnterpreteerd moet worden. Naast de conceptuele definitie heeft elke statistiek daarom ook een operationele definitie. Deze \emph{operationele definitie} beschrijft tot in detail hoe het cijfer exact is gemeten en geeft zo de precieze betekenis ervan weer. De operationele definitie is daarom vaak veel uitgebreider dan de conceptuele definitie.
-
-Neem opnieuw het aantal inwoners van Antwerpen in 2019. Dit cijfer, 525\,935, verwijst naar de bevolking op 1 januari 2019. Een vergelijkbaar maar ander cijfer kon worden berekend voor elke andere dag in het jaar of als een jaargemiddelde. Bovendien verwijst 525\,935 naar de wettelijke bevolking gerapporteerd door Statbel. In de wettelijke bevolking worden personen uit het wachtregister niet meegeteld, in tegenstelling tot de `gewoon verblijvende' bevolking, ook al wonen deze personen al geruime tijd in België. Verder verwijst het cijfer 525\,935 naar de gemeente Antwerpen zoals gedefinieerd door NIS-code 11002 in 2019. Door fusies, splitsingen of grensaanpassingen verandert het grondgebied van sommige gemeenten over de tijd; bijvoorbeeld, in 2025 fuseerde Antwerpen met Borsbeek, waardoor het grondgebied veranderde. De operationele definitie schept volledige duidelijk over al dit soort gemaakte keuzes om een statistiek te berekenen. De volledige operationele definitie van 525\,935 luidt
-\begin{quote} 
-\makebox[0pt][r]{``}De grootte van de wettelijke bevolking op 1 januari 2019 van de gemeente Antwerpen (NIS 11002 in 2019). De bevolkingsgrootte wordt aangeleverd door Statebl op basis van het Rijksregister van de natuurlijke personen. De wettelijke bevolking telt alle inschrijvingen in het bevolkingsregister (Belgen en buitenlanders die gemachtigd zijn tot vestiging op het Belgisch grondgebied) en het vreemdelingenregister (buitenlanders die toegelaten of gemachtigd zijn tot een verblijf van meer dan 3 maanden op het Belgisch grondgebied, hetzij voor bepaalde of onbepaalde duur). Bepaalde categorieën buitenlanders (vb. diplomatiek en consulair personeel) zijn vrijgesteld van inschrijving in de bevolkingsregisters. In sommige gevallen kunnen zij op eigen vraag wel ingeschreven worden. Enkel in dat geval worden zij meegerekend in de bevolkingscijfers.
-
-Het Rijksregister omvat verder ook het wachtregister voor asielzoekers (verzoekers om internationale bescherming) waarin asielzoekers ingeschreven worden door de Dienst Vreemdelingenzaken (DVZ) evenals een wachtregister voor EU-burgers in afwachting van woonstcontrole (waarna deze worden ingeschreven in het vreemdelingenregister en worden meegeteld in de bevolkingscijfers). Sinds 1995 worden personen ingeschreven in het wachtregister voor asielzoekers (verzoekers om internationale bescherming) niet meer meegeteld in de bevolkingscijfers van Statbel. Pas nadat asielzoekers worden overgeschreven van het wachtregister voor asielzoekers naar een regulier bevolkingsregister, na erkenning als vluchteling, na toekenning van een statuut subsidiaire bescherming of na verwerving van een verblijfsvergunning om een andere reden, worden zij opgenomen in de bevolkingsstatistieken van Statbel.''
-\end{quote}
-
-Dit voorbeeld illustreert dat zelfs relatief eenvoudige statistieken al lastige operationele keuzes vereisen. Die keuzes kunnen leiden tot verschillende cijfers. Eurostat, bijvoorbeeld, rapporteert niet de wettelijke bevolking maar de gewoon verblijvende bevolking en publiceert daarom andere cijfers, ook al interpreteren de meeste gebruikers deze cijfers steeds gewoon als de `bevolkingsgrootte'. Het doel van de operationele definitie is dus duidelijkheid te scheppen over de gemaakte keuzes zodat iedereen hetzelfde cijfer kan reproduceren. Als twee onderzoekers met dezelfde operationele definitie verschillende cijfers bekomen, is de definitie onvolledig of onnauwkeurig.
-
-De lengte van een operationele definitie kan sterk variëren. Voor een eenvoudig cijfer afgeleid uit officiële registers, zoals het aantal inwoners in Vlaamse gemeenten, kunnen enkele korte paragrafen volstaan. Bij complexere statistieken, zoals bijvoorbeeld de gemiddelde opinie van inwoners gemeten via een bevraging, is daarentegen vaak een uitgebreid rapport nodig met alle details over, onder andere, de enquête-opzet, de steekproeftrekking, het ontwerp van de vragenlijst, de opvolging van respondenten, statistische correcties voor meet- en selectiefouten of de statistische analyses.
-
-\begin{info} 
-In theorie leidt een operationele definitie steeds tot één exact resultaat. In de praktijk is dit echter niet steeds het geval. Als het productieproces bijvoorbeeld een willekeurige steekproef of simulatie bevat, kan het cijfer variëren. Toch blijft de operationele definitie als concept ook in zo'n situaties overeind. Twee onderzoekers zouden in zo'n situatie op basis van dezelfde operationele definitie gemiddeld steeds tot hetzelfde cijfer moeten komen wanneer zij hun productieproces blijven herhalen. Het gebied van de inferentiële statistiek biedt hiervoor het theoretisch kader, maar dat gaat voorbij het doel van deze nota.
-\end{info}
-
-Waarom gebruiken we conceptuele definities als ze, in tegenstelling tot de operationele definitie, niet accuraat zijn? De nuances in de operationele definitie hebben meestal weinig invloed op beleidskeuzes of onderzoeksconclusies die gebruikers maken op basis van de cijfers. Bovendien is de conceptuele definitie een pak handiger in gebruik voor narratieven en theorievorming. Statistiekgebruikers beperken zich daarom tot de conceptuele definitie om cijfers te interpreteren, ook al zijn er binnen dezelfde conceptuele definitie meerdere operationele definities mogelijk. Of je nu de feitelijke of de verblijvende bevolking gebruikt om de bevolkingsomvang in Antwerpen te meten, de meeste gebruikers gaan het cijfer enkel interpreteren als ``het aantal inwoners in Antwerpen in 2019' en zullen in beide gevallen dezelfde resultaten boeken.
-
-
-
-\subsection{Kwaliteit}
-
-In sommige situaties kan er een wanverhouding ontstaan tussen gebruikersbehoeften en de operationele definitie van een statistiek. In zo'n situatie hebben we een \emph{kwaliteitsprobleem} en moeten we onze operationele definitie aanpassen aan de behoeften. Als we bij het cijfer 525\,935 bijvoorbeeld merken dat bijna alle gebruikers deze statistiek interpreteren als de grootte van de verblijvende Antwerpse bevolking in plaats van de wettelijke bevolking, moeten we dringend onze operationele definitie herzien en dit cijfer aanpassen. Daarom is het essentieel om voor elke statistiek niet alleen de conceptuele en operationele definitie, maar ook de gebruikersbehoeften grondig in kaart te brengen. Wie gebruikt deze statistiek? Welk decreet dwingt ons ertoe deze statistiek te verzamelen? Voor welke beleidsbeslissingen of welk onderzoek is deze statistiek relevant? \ldots ? Hoewel onderzoek naar deze vragen geen exacte wetenschap is, is het noodzakelijk om de kwaliteit van een statistiek te kunnen beoordelen. 
-
-Bovendien kunnen er zich situaties voordoen waarin de operationele definitie voldoet voor de meeste gebruikers maar niet voor een selecte groep gebruikers met specifieke behoeften. Een beleidsmaker die het woonbeleid in Antwerpen moet bepalen, kan bijvoorbeeld exacte cijfers nodig hebben over de verblijvende bevolking in plaats van de wettelijke bevolking. In zo’n geval ontstaat er een gebruikersbehoefte waar we met de statistiek `Aantal inwoners in Antwerpen' niet aan voldoen. Als we besluiten in te spelen op de behoefte van deze selecte groep gebruikers, moeten we onze publicatiestrategie herzien. We produceren dan niet langer één statistiek over ``het aantal inwoners in Antwerpen'', maar twee afzonderlijke statistieken: ``de wettelijke bevolkingsgrootte van Antwerpen'' en ``de verblijvende bevolkingsgrootte van Antwerpen''. In zo'n situatie veranderen dus zowel de conceptuele definities als de bijhorende operationele definities.
-
-Merk op dat kwaliteit in de brede zin van het woord kan worden bekeken. Een operationele definitie kan inhoudelijk aansluiten bij een gebruikersbehoefte, maar als de berekening te lang duurt en de statistiek te laat beschikbaar is, verlaagt dit alsnog de kwaliteit. Het is dus belangrijk een evenwicht te vinden tussen verschillende vormen van kwaliteit zoals inhoudelijke nauwkeurigheid, gebruiksvriendelijkheid en tijdige levering. Een overzicht van alle kwaliteitseisen voor statistieken wordt gegeven in de \emph{Praktijkcode voor Europese Statistieken}\footnote{zie \href{https://ec.europa.eu/eurostat/documents/4031688/9394211/KS-02-18-142-NL-N.pdf}{ec.europa.eu/eurostat/documents/4031688/9394211/KS-02-18-142-NL-N.pdf}}.
+De afbakening van concepten in een conceptuele definitie is niet altijd duidelijk en is voor een stuk arbitrair. Zo kan je bijvoorbeeld cijfers publiceren over het aantal inwoners in Antwerpen per geslacht én het aantal inwoners per leeftijdsgroep maar zonder geslacht en leeftijd te kruisen (dat is dus, het aantal mannen, het aantal vrouwen, het aantal 0- tot 18-jarigen,\ldots). Zijn geslacht en leeftijd in deze conceptuele definities twee verschillende concepten? Of spreken we van één concept ``bevolkingsgroep'' (=``mannen'', ``vrouwen'', ``0- tot 18-jarigen'', ``hoogopgeleiden'', ``personen met buitenlandse herkomst'', \ldots). Als een ander voorbeeld, als we het aantal mannen en vrouwen publiceren in een gemeente. Hebben we hier twee concepten namelijk ``grootheid'' (=aantal) en ``geslacht'' (= ``man'' of ``vrouw'') of slechts één concept ``parameter'' (=``aantal mannen'' of ``aantal vrouwen'')?
 
 \begin{info}
-Gebruikersbehoeften, conceptuele en operationele definitie komen weliswaar aan bod in informatiestandaarden zoals de SIMS en de GSBPM maar op een zeer onduidelijke en onoverzichtelijke manier. In de SIMS worden de gebruikersbehoeften pas opgelijst in categorie 12 terwijl dit de start is van een statistiekproductieproces. De operationele definitie zit in de SIMS dan weer op een zeer onsamenhangende manier verspreid over verschillende categorieën terwijl de conceptuele definitie volledig ontbreekt. 
+Er bestaan verschillende soorten concepten. Op de eerste plaats kunnen concepten concreet of abstract zijn.
+
+\begin{itemize}
+	\item Een \emph{concreet concept} verwijst naar een fenomeen dat direct observeerbaar of eenvoudig meetbaar is, vaak zonder complexe interpretatie of afleiding. Een voorbeeld van een concreet  concept is het aantal huishoudens in een gemeente
+	Dit is een concreet concept: het gaat om een teltal dat op basis van administratieve gegevens (bv. bevolkingsregister) rechtstreeks kan worden vastgesteld.
+	Er is weinig discussie mogelijk over wat een huishouden is, zeker als er een duidelijke juridische of administratieve definitie wordt gehanteerd.
+	
+	\item Een abstract concept verwijst naar een idee of fenomeen dat niet rechtstreeks waarneembaar is. Het heeft een zekere mate van theoretische of interpretatieve lading en vereist meestal operationalisatie om meetbaar te worden.
+	
+	Voorbeeld: Sociaal isolement
+	Sociaal isolement is een abstract concept dat verwijst naar een toestand waarin iemand weinig of geen sociale contacten heeft of zich sociaal buitengesloten voelt.
+	Dit kan je niet rechtstreeks meten; je moet het operationaliseren, bijvoorbeeld via een vragenlijst over het aantal sociale contacten, subjectieve gevoelens van eenzaamheid, deelname aan sociale activiteiten, enz.
+\end{itemize}
+
+
+Op de tweede plaats kunnen concepten enkelvoudig of meervoudig zijn.
+
+\begin{itemize}
+	\item Enkelvoudig concept
+	Een enkelvoudig concept verwijst naar een idee of kenmerk dat op één dimensie of aspect betrekking heeft. Het is relatief eenvoudig te definiëren en te meten, en het omvat één afgebakend betekenisveld.
+	
+	Voorbeeld: Leeftijd
+	Leeftijd is een enkelvoudig concept: het verwijst enkel naar het aantal jaren sinds iemands geboorte.
+	Het is eenduidig te meten en wordt in de praktijk meestal als een numerieke variabele weergegeven (in jaren, maanden, …).
+	
+	\item Meervoudig concept
+	Een meervoudig concept verwijst naar een idee dat uit meerdere dimensies of onderliggende componenten bestaat. Je hebt meerdere indicatoren nodig om het concept volledig te vatten.
+	
+	Voorbeeld: Welzijn
+	Welzijn is een meervoudig concept, want het kan fysieke gezondheid, mentale gezondheid, sociale relaties, economische situatie, enz. omvatten.
+	Om het te meten zijn verschillende indicatoren of meetinstrumenten nodig — bijvoorbeeld via samengestelde indexen of uitgebreide vragenlijsten.
+\end{itemize}
+
+De verschillende soorten concepten kunnen ook samen voorkomen zoals blijkt uit volgende voorbeelden:
+
+\begin{itemize}
+	\item Concreet \& Enkelvoudig
+	Voorbeeld: Leeftijd in jaren
+	
+	Uitleg: Dit is een direct observeerbaar, meetbaar kenmerk (concreet) en het gaat slechts over één dimensie (enkelvoudig). De meting is objectief en eenduidig.
+	
+	\item Concreet \& Meervoudig
+	Voorbeeld: Woningkenmerken (bv. oppervlakte, aantal kamers, type dak)
+	
+	Uitleg: Deze kenmerken zijn stuk voor stuk observeerbaar (concreet), maar samen beschrijven ze een meervoudig concept zoals de "kwaliteit van een woning". Je hebt meerdere concrete indicatoren nodig om het volledig te vatten.
+	
+	\item Abstract \& Enkelvoudig
+	Voorbeeld: Arbeidstevredenheid
+	
+	Uitleg: Dit is een subjectief, niet rechtstreeks observeerbaar gevoel (abstract), maar het wordt soms in onderzoek benaderd als één dimensie, bijvoorbeeld via een schaalvraag: “Hoe tevreden bent u over uw werk?”. Dan behandel je het als een enkelvoudig concept, al kan je het ook complexer opvatten (zie hieronder).
+	
+	\item Abstract \& Meervoudig
+	Voorbeeld: Sociaal isolement
+	
+	Uitleg: Dit is een abstract concept dat meerdere onderliggende aspecten omvat, zoals subjectieve eenzaamheid, frequentie van sociaal contact, deelname aan sociale activiteiten, enzovoort. Het vereist een set van vragen of indicatoren om het volledig te meten.
+\end{itemize}
+\end{info}
+
+
+
+
+\subsubsection{Operationele definitie}
+
+De conceptuele definitie beperkt zich doorgaans tot de betekenis die een doorsnee statistiekgebruiker aan het cijfer geeft. De conceptuele definitie is daarom meestal niet concreet over wat het cijfer precies weergeeft. In de zin ``de Antwerpse bevolkingsgrootte neemt toe'' is bijvoorbeeld ``bevolkingsgrootte'' enkel een abstract idee. Het woord vertelt immers niet wie je nu precies meetelt en wie niet om de grootte van de bevolking te bepalen. De conceptuele definitie van een cijfer vertelt dus weinig over hoe het cijfer precies werd berekend en exact geïnterpreteerd kan worden.
+
+Naast de conceptuele definitie heeft elke statistiek daarom ook een \emph{operationele definitie}. Deze operationele definitie beschrijft tot in detail hoe het cijfer exact is gemeten en geeft zo de precieze betekenis ervan weer. De operationele definitie is daarom meestal veel uitgebreider dan de conceptuele definitie.
+
+Neem opnieuw het cijfer 525\,935 om het aantal inwoners van Antwerpen in 2019 weer te geven. De volledige operationele definitie van van dit cijfer luidt:
+\begin{quote} 
+\makebox[0pt][r]{``}De grootte van de wettelijke bevolking op 1 januari 2019, 0.00 uur, van de gemeente Antwerpen (NIS 11002 in 2019). De wettelijke bevolking telt alle inschrijvingen in het bevolkingsregister en het vreemdelingenregister. Het bevolkingsregister bevat alle Belgen en buitenlanders die gemachtigd zijn tot vestiging op het Belgisch grondgebied. Het vreemdelingenregister bevat alle buitenlanders die toegelaten of gemachtigd zijn tot een verblijf van meer dan 3 maanden op het Belgisch grondgebied, hetzij voor bepaalde of onbepaalde duur. Bepaalde categorieën buitenlanders (vb. diplomatiek en consulair personeel) zijn vrijgesteld van inschrijving in de bevolkingsregisters. In sommige gevallen kunnen zij op eigen vraag wel ingeschreven worden. Enkel in dat geval worden zij meegerekend in de bevolkingscijfers.
+
+Deze bevolkingsgrootte wordt gedefinieerd en aangeleverd door Statbel op basis van het Rijksregister van de natuurlijke personen, waar het bevolkingsregister en het vreemdelingenregister deel van uitmaken.
+
+Het Rijksregister omvat verder ook een wachtregister voor asielzoekers en een wachtregister voor EU‐burgers. Het wachtregister voor asielzoekers bevat alle verzoekers om internationale bescherming die worden ingeschreven door de Dienst Vreemdelingenzaken (DVZ). In 1995 besliste Statbel de personen in dit wachtregister niet meer mee te tellen bij de wettelijke bevolking. Pas nadat asielzoekers worden overgeschreven van het wachtregister naar het bevolkingsregister of het vreemdelingenregister, worden zij opgenomen in de bevolkingsstatistieken van Statbel. Zo'n overschrijving naar het bevolkingsregister of het vreemdelingenregister gebeurt na erkenning als vluchteling, na toekenning van een statuut subsidiaire bescherming, of na verwerving van een verblijfsvergunning om een andere reden.
+
+Verder bevat het Rijksregister ook een wachtregister voor EU‐burgers in afwachting van woonstcontrole. Deze personen worden evenmin meegeteld bij de wettelijke bevolking. Pas na woonstcontrole worden deze personen overgeschreven naar het vreemdelingenregister en worden zij meegeteld in de wettelijke bevolking.%
+''
+\end{quote}
+
+TOEVOEGEN: elk concept wordt geoperationaliseerd
+
+
+Zoals je ziet, de operationele definitie is alle een hele mond vol, zelfs voor een redelijk eenvoudige statistiek als de grootte van een bevolking. De lengte van een operationele definitie kan dan ook sterk variëren. Voor een eenvoudig cijfer afgeleid uit officiële registers, zoals de bevolkingsgrootte in Vlaamse gemeenten, kunnen enkele korte paragrafen volstaan. Bij complexere statistieken, zoals bijvoorbeeld de gemiddelde opinie van inwoners gemeten via een bevraging, is daarentegen een uitgebreid rapport nodig met alle details over, onder andere, het enquêtedesign, de steekproeftrekking, het ontwerp van de vragenlijst, de opvolging van respondenten, statistische correcties voor meet‐ en selectiefouten en de statistische analysemethoden.
+
+Het cijfer 525\,935 verwijst dus naar de bevolking op 1 januari 2019. Een vergelijkbaar maar ander cijfer kon worden berekend voor elke andere dag in het jaar of als een jaargemiddelde. Bovendien verwijst 525\,935 naar de wettelijke bevolking gerapporteerd door Statbel en in die wettelijke bevolking worden personen uit de wachtregisters niet meegeteld. Een vergelijkbaar maar ander cijfer had ook kunnen worden berekend voor de verblijvende bevolking van Antwerpen waarin personen uit de wachtregisters wel worden meegeteld. Verder verwijst het cijfer 525\,935 naar de gemeente Antwerpen zoals gedefinieerd door NIS‐code 11002 in 2019. Door fusies, splitsingen of grensaanpassingen verandert het grondgebied van sommige gemeenten over de tijd; bijvoorbeeld, in 2025 fuseerde Antwerpen met Borsbeek, waardoor het grondgebied veranderde. We zouden opnieuw een vergelijkbaar maar ander cijfer kunnen berekenen voor alle personen in 2019 die op dat moment woonden in wat we nu als de gemeente Antwerpen beschouwen, inclusief Borsbeek dus.
+
+Dit voorbeeld illustreert dat zelfs relatief eenvoudige conceptuele definities vaak vertaald kunnen worden naar meerdere operationele definities, elk met eigen operationele keuzes. Die keuzes kunnen leiden tot verschillende cijfers. Eurostat, bijvoorbeeld, rapporteert niet de wettelijke bevolking maar de gewoon verblijvende bevolking en publiceert daarom andere cijfers dan Stabel en Statistiek Vlaanderen over bevolkingsgroottes, ook al interpreteren de meeste gebruikers zowel de Europese als de Belgische en Vlaamse cijfers gewoon als de ``bevolkingsgrootte''. 
+
+Het eerste doel van de operationele definitie is dus duidelijkheid te scheppen over de gemaakte keuzes om een statistiek te berekenen zodat iedereen hetzelfde cijfer kan reproduceren. Als twee onderzoekers met dezelfde operationele definitie verschillende cijfers bekomen, is de definitie onvolledig of onnauwkeurig. 
+
+Het tweede doel van de operationele definitie is duidelijkheid te scheppen over de vergelijkbaarheid van cijfers. Je kan bijvoorbeeld niet zomaar de grootte van de wettelijke Antwerpse bevolking in 2019 vergelijken met de grootte van de verblijvende Antwerpse bevolking in 2020. Dit zou immers kunnen leiden tot onjuiste conclusies over bevolkingsgroei of -krimp, ook al worden beide cijfers conceptueel geïnterpreteerd als de Antwerpse bevolkingsgrootte.
+
+\begin{info} 
+In theorie leidt een operationele definitie steeds tot één exact resultaat. In de praktijk is dit echter niet steeds het geval. Als het productieproces bijvoorbeeld een willekeurige steekproef of simulatie bevat, kan het cijfer variëren. Toch blijft de operationele definitie als idee ook in zo'n situaties overeind. Twee onderzoekers zouden in zo'n situatie op basis van dezelfde operationele definitie gemiddeld steeds tot hetzelfde cijfer moeten komen wanneer zij hun productieproces blijven herhalen. Het gebied van de inferentiële statistiek biedt hiervoor het theoretisch kader, maar dat gaat voorbij het doel van deze nota.
+\end{info}
+
+Je kan je afvragen waarom we eigenlijk nog conceptuele definities opstellen als ze, in tegenstelling tot de operationele definitie, niet accuraat zijn? Toch zijn er goede redenen om voor elke statistiek een goede conceptuele definitie te bepalen. Ten eerste is de conceptuele definitie een pak handiger in gebruik dan de operationele definitie binnen een narratief of theorievorming. Statistiekgebruikers beperken zich daarom doorgaans tot de conceptuele definitie om cijfers te benoemen en te interpreteren, ook al zijn er binnen dezelfde conceptuele definitie meerdere operationele definities mogelijk. Iemand die praat over het aantal inwoners in Antwerpen in 2019 zal dit eenvoudigweg de ``Antwerpse bevolkingsgrootte'' noemen en niet de hele operationele definitie afratelen. Ten tweede hebben de nuances in de operationele definitie vaak weinig invloed op beleidskeuzes of onderzoeksconclusies die gebruikers maken op basis van de cijfers. Of je nu de feitelijke of de verblijvende bevolking gebruikt om de bevolkingsomvang in Antwerpen te meten, en of je dit nu doet aan het begin of in het midden van het kalenderjaar, de meeste gebruikers zullen min of meer dezelfde conclusies trekken over bevolkingsgroei als ze deze cijfers over de jaren heen vergelijken.
+
+
+
+
+\subsubsection{Gebruikersbehoeften \& kwaliteit}
+
+% dit is wat eng als benadering voor kwaliteit
+% mss vertrekken van gebruikersbehoeften en vandaar naar kwaliteit
+% geldigheid en betrouwbaarheid belangrijk om mee te nemen
+% mogelijke oplossing: dit is aspect van kwaliteit, alle andere kwaliteitsvereisten zijn nodig om hieraan (an de gebruikersbehoeften) te voldoen.
+
+We zagen dus dat een statistiek wordt gedefinieerd door 3 zaken:
+\begin{itemize}[nosep]
+	\item de gebruikersbehoeften
+	\item de conceptuele definitie
+	\item de operationele definitie
+\end{itemize}
+Wanneer er een wanverhouding ontstaat tussen deze componenten ontstaat er een kwaliteitsprobleem. Dit kan tot uiting komen in verschillende vormen:
+\begin{itemize}[nosep]
+	\item De conceptuele definitie is niet in lijn met de algemene gebruikersbehoeften.
+	\item De conceptuele definitie is niet in lijn met gebruikersbehoeften van sommige gebruikers
+	\item De operationele definitie is niet in lijn met de conceptuele definitie.
+\end{itemize}
+We bespreken deze situaties één voor één hieronder.
+
+\begin{figure}
+\caption{De kwaliteit van een statistiek wordt gedefinieerd door de verhouding tussen drie componenten.}
+\begin{tikzpicture}[
+	x=\linewidth,
+	box/.style={draw,text width=10em,align=center},
+	arr/.style={latex-latex}
+	]
+\node[box,anchor=west] (N1) at (0,0) {gebruikers-\\behoeften};
+\node[box,anchor=center] (N2) at (0.5,0) {conceptuele\\definitie};
+\node[box,anchor=east] (N3) at (1,0) {operationele\\definitie};
+\draw[arr] (N1) to (N2);
+\draw[arr] (N2) to (N3);
+\end{tikzpicture}
+\end{figure}
+
+
+
+\paragraph{De conceptuele definitie is niet in lijn met de algemene gebruikersbehoeften}
+
+In sommige situaties kan er een wanverhouding ontstaan tussen gebruikersbehoeften en de operationele definitie van een statistiek. Zo kunnen gebruikers bijvoorbeeld het cijfer 525\,935 systematisch interpreteren als de grootte van de verblijvende Antwerpse bevolking in plaats van de wettelijke bevolking omdat ze beleidsmatig ook voornamelijk de grootte van de verblijvende bevolking nodig hebben. In zo’n situatie spreken we van een \emph{kwaliteitsprobleem} omdat de operationele definitie van onze cijfers niet in overeenstemming is met de gebruikersbehoeften.
+
+Voor cijfers waarbij we zo'n kwaliteitsprobleem opmerken, moeten we onderzoeken of we onze operationele definitie kunnen aanpassen aan de behoeften. In bovenstaande situatie zou het bijvoorbeeld aangeraden zijn om als Statistiek Vlaanderen voortaan Eurostat te volgen en de grootte van de verblijvende bevolking te publiceren in plaats van de wettelijke bevolking.  
+
+\paragraph{De conceptuele definitie is niet in lijn met gebruikersbehoeften van sommige gebruikers}
+
+In vele situaties is een evaluatie van gebruikersbehoeften en kwaliteit van een statistiek echter geen zwart-wit-verhaal. Er kunnen zich immers situaties voordoen waarin de voorgestelde operationele definitie voldoet voor de ene gebruiker maar niet voor een andere gebruiker. Zo kan onze statistiek over bevolkingsgrootte op basis van de wettelijke bevolking voldoende zijn voor heel wat gebruikers, behalve voor een speciefieke beleidsmaker die het woonbeleid in Antwerpen moet bepalen. Deze beleidsmaker heeft misschien nood aan exacte cijfers over de verblijvende bevolking in plaats van de wettelijke bevolking. Ook in zo’n geval is er een gebruikersbehoefte waar we met de statistiek ``Aantal inwoners in Antwerpen'' niet aan voldoen, ook al voldoet deze statistiek wel voor andere gebruikersbehoeften.
+
+In situaties met verschillende niet-overlappende gebruikersbehoeften kunnen we besluiten niet langer één statistiek te publiceren maar verschillende statistieken. Zo kunnen we besluiten niet één statistiek te publiceren over ``het aantal inwoners in Antwerpen'', maar wel twee afzonderlijke statistieken: ``de wettelijke bevolkingsgrootte van Antwerpen`` en ``de verblijvende bevolkingsgrootte van Antwerpen''. We voldoen dan aan de specifieke noden van alle gebruikers. Merk op dat we in zo'n situaties zowel de conceptuele definities als de bijhorende operationele definities verder verfijnen. Uiteraard moeten dit soort keuzes steeds gebeuren vanuit praktische en pragmatische overwegingen in functie van de middelen en het personeel die we ter beschikking hebben. We kunnen in de bovenstaande situatie bijvoorbeeld ook besluiten om niet te voldoen aan de noden van deze éne speciefieke beleidsmaker omdat dit te veel energie zou vragen voor een te kleine return.
+
+\paragraph{De operationele definitie is niet in lijn met de conceptuele definitie}
+
+AANVULLEN
+
+
+Bovenstaande situaties tonen dat het essentieel is om voor elke statistiek niet alleen de conceptuele en operationele definitie, maar ook de gebruikersbehoeften grondig in kaart te brengen. Wie gebruikt de statistieken? Welk decreet dwingt ons ertoe deze statistieken te verzamelen? Voor welke beleidsbeslissingen of welk onderzoek zijn deze statistieken relevant? \ldots? Hoewel onderzoek naar deze vragen geen exacte wetenschap is, is het noodzakelijk om de kwaliteit van statistieken te kunnen beoordelen.
+
+We moeten ook opmerken dat kwaliteit in de brede zin van het woord kan worden bekeken. Een operationele definitie kan inhoudelijk aansluiten bij een gebruikersbehoefte, maar als de berekening te lang duurt en de statistiek te laat beschikbaar is, verlaagt dit alsnog de kwaliteit. Het is dus belangrijk een evenwicht te vinden tussen verschillende elementen van kwaliteit zoals inhoudelijke nauwkeurigheid, gebruiksvriendelijkheid en tijdige levering. Een overzicht van alle kwaliteitseisen voor statistieken wordt gegeven in de \emph{Praktijkcode voor Europese Statistieken}\footnote{zie \href{https://ec.europa.eu/eurostat/documents/4031688/9394211/KS-02-18-142-NL-N.pdf}{ec.europa.eu/eurostat/documents/4031688/9394211/KS-02-18-142-NL-N.pdf}}.
+
+%[TOEVOEGEN: Bespreking punten praktijkcode voor Europese Statistieken: aantonen hoe elk punt neerkomt op risico voor gebruikersbehoeften en wanverhouding met operationele definitie.]
+%%% Toevoegen: koppeling tussen europese praktijkcode en bovenstaande concepten. Bijvoorbeeld relevantie betekent dat er een duidelijke gebruikersbehoefte is. Deugdelijke methoden (en heel wat andere eisen uit praktijkcode) gaan eigenlijk enkel over de match tussen gebruikersbehoeften en de operationele definitie. Dit is waarom de praktijkcode niet compleet is, veel punten gaan eigenlijk over hetzelfde.
+
+\begin{info}
+	
+	
+%De Europese praktijkcode bevat heel wat artikelen die echter niet relevant zijn voor het transitietraject omdat ze al worden beantwoord door de huidige afspraken binnen het SV-netwerk of door de huidige werking. Zo zijn beginsel 1 over de professionele onafhankelijkheid van de officiële statistiekproductie en beginsel 2 over het mandaat om gegevens te verzamelen reeds decretaal verankerd. Voor beginsel 11 over relevantie worden binnen de VSA reeds initiatieven genomen rond gebruikersonderzoek via verschillende thematische werkgroepen samengesteld door het Coördinatiecomité Vlaamse Openbare Statistieken (CVOS) en de Raad voor Vlaamse openbare statistieken (RVOS), die los staan van de wijze waarop we gegevens verzamelen en verwerken. Deze beginselen vormen dan ook geen rechtstreeks onderwerp van het transitietraject. 
+%De volgende beginselen vormen echter nog wel werkpunten die moeten worden aangepakt in het transitietraject:
+%•	Beginsel 4 over een sterk kwaliteitsbewustzijn
+%•	Beginsel 5 over statistische geheimhouding en gegevensbescherming
+%•	Beginsel 6 over onpartijdigheid en objectiviteit
+%•	Beginsel 7 over deugdelijke methoden
+%•	Beginsel 8 over geschikte statistische procedures
+%•	Beginsel 10 over kosteneffectiviteit
+%•	Beginsel 12 over nauwkeurigheid en betrouwbaarheid
+%•	Beginsel 14 over samenhang, vergelijkbaarheid en consistentie
+%•	Beginsel 15 over toegankelijkheid en duidelijkheid
+%De Europese praktijkcode vertalen we binnen de VSA in volgende 10 algemene doelstellingen:
+%1.	We documenteren onze data- en analyseprocessen op een transparante en afdoende manier, ter ondersteuning, optimalisering, reproduceerbaarheid en controle van onze interne processen en ter duiding van de kwaliteit van onze producten tegenover externen. 
+%2.	We verzamelen en beheren onze data met een duidelijk doel: de data die we binnen de VSA verzamelen en beheren zijn relevant voor de ontwikkeling, productie en ontsluiting van betrouwbare en kwaliteitsvolle Vlaamse openbare statistieken, door VSA of door de SV-entiteiten met ondersteuning van VSA. 
+%3.	We structureren en inventariseren onze data: we maken zichtbaar welke data beschikbaar zijn binnen de VSA en waarvoor we die data nodig hebben.
+%4.	We benutten de analysemogelijkheden van onze data optimaal en (her)gebruiken onze data intern zo veel mogelijk, met inachtneming van de regels rond het statistisch geheim.  
+%5.	We zetten in op permanente kwaliteitsverbetering van onze activiteiten via uniformisering, standaardisering, (semi-)automatisering, waarbij we gebruik maken van bestaande internationale standaarden die we op een haalbare manier vertalen naar onze organisatie.
+%6.	We maken binnen de VSA duidelijke afspraken over rollen en verantwoordelijkheden en over een efficiënte organisatie van het datamanagement, -gebruik en -analyse. We voorzien de nodige begeleiding en vorming voor de medewerkers zodat zij die afspraken kunnen implementeren. 
+%7.	We beveiligen onze data op een correcte manier, slaan ze op en bewerken ze op een binnen de VSA gedeelde omgeving (en enkel daar) en beveiligen ze zowel tegenover externen, als tegenover oneigenlijk gebruik door interne medewerkers, in lijn met de geldende AVG- en NIS2-regelgeving. 
+%8.	We beperken het aantal data- en analysetools in functie van economische en technische efficiëntie en interne expertise-ontwikkeling en bewaken de interoperabiliteit tussen de verschillende tools.
+%9.	We ontsluiten onze data tijdig, kwalitatief en afgestemd op onze verschillende gebruikersgroepen, met inachtneming van de regelgeving rond het statistisch geheim. We gaan uit van het principe ‘zo open als mogelijk, zo afgeschermd als noodzakelijk’. 
+%10.	We optimaliseren onze organisatie en werking stap voor stap en op een voor ons team haalbare manier en laten ons daarbij inspireren door de activiteiten, goede praktijken en ervaringen van andere statistiekinstellingen in binnen- en buitenland. 
+\end{info}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{info}
+Gebruikersbehoeften, conceptuele en operationele definitie komen weliswaar aan bod in informatiestandaarden zoals de SIMS en de GSBPM maar op een zeer onduidelijke en onoverzichtelijke manier. In de SIMS worden de gebruikersbehoeften pas opgelijst in categorie 12 terwijl dit de start vormt van een statistiekproductieproces. De operationele definitie zit in de SIMS dan weer op een zeer onsamenhangende manier verspreid over verschillende categorieën terwijl de conceptuele definitie volledig ontbreekt. 
 
 De GSBPM doet het op dit vlak beter. Het beschrijft een proces dat vertrekt vanuit gebruikersbehoeften en eindigt met een evaluatie. Het expliciteert echter onvoldoende dat de evaluatie gestoeld moet zijn op de gebruikersbehoeften en alle operationele keuzes die onderweg werden gemaakt.  
 \end{info}
 
-%%% Toevoegen: koppeling tussen europese praktijkcode en bovenstaande concepten. Bijvoorbeeld relevantie betekent dat er een duidelijke gebruikersbehoefte is. Deugdelijke methoden (en heel wat andere eisen uit praktijkcode) gaan eigenlijk enkel over de match tussen gebruikersbehoeften en de operationele definitie. Dit is waarom de praktijkcode niet compleet is, veel punten gaan eigenlijk over hetzelfde.
+% Opmerking Jo: Maar we gaan nu toch verder met de SIMS als standaard voor de metadata. Of stel je dat hier in vraag?
+% De SIMS kan blijven gebruikt worden. Maar ik blijf bij mijn opmerking dat we die vooral als afchecklijst moeten gebruiken en niet blindelings de structuur moeten overnemen. De structuur is chaotisch en onoverzichtelijk. Bij GSBPM zie je dat er al meer werd nagedacht over de structuur van de informatie en wordt er expliciet toegegeven dat dat maar een ideaaltype is waarvan kan worden afgeweken. De SIMS lijkt voor mij de uitkomst van een wilde brainstorm waarbij de belangrijke stap vergeten werd om alles nadien duidelijker te structureren.
 
 
 
 
-\subsection{Experimentele statistieken}
-
-Sommige statistieken ontstaan niet vanuit geobserveerde gebruikersbehoeften, maar vanuit veronderstellingen hierover. Dit kan voortkomen uit de inhoudelijke interesse van een collega of door nieuwe dataverzamelings- of analysemethoden. Deze statistieken noemen we \emph{experimentele statistieken}. Bij gebrek aan concrete gebruikersbehoeften kan de kwaliteit van dergelijke statistieken niet direct worden geëvalueerd.
-
-Daarom verbinden we ons ertoe binnen vijf jaar na de eerste publicatie een evaluatieonderzoek uit te voeren naar de gebruikersbehoeften. Dit onderzoek beantwoordt vragen zoals:
-\begin{itemize}[nosep]
-    \item Wordt de statistiek gebruikt, en zo ja, waarvoor?
-    \item Sluit het gebruik en de interpretatie aan bij de operationele definitie?
-    \item Zijn er suggesties van gebruikers om de statistiek beter af te stemmen op hun behoeften?
-\end{itemize}
-
-Eens de gebruikersbehoeften in kaart zijn gebracht, kan de kwaliteit van de statistiek verder worden geëvalueerd. Afhankelijk van de resultaten kan de statistiek nadien:
-\begin{itemize}[nosep]
-    \item worden geüpgraded tot een volwaardige statistiek;
-    \item worden aangepast op basis van de bevindingen; of
-    \item worden stopgezet indien de kwaliteit onvoldoende is.
-\end{itemize}
-
-
-\begin{info}
-Het merendeel van de statistieken van de VSA zijn vermoedelijk experimenteel, aangezien gebruikersbehoeften niet systematisch zijn vastgesteld. Hierdoor is een kwaliteitsbeoordeling van deze statistieken momenteel niet mogelijk. Onderzoek naar gebruikersbehoeften dringt zich op bij deze statistieken.
-\end{info}
 
 
 
-\subsection{Samengevat}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsubsection{Attributen van cijfers}
+
+
+Naast de operationale definitie van een cijfer, kan een cijfer gekenmerkt worden door andere informatie, die geen betekenis geeft aan het cijfer. Dit worden \emph{attributen} genoemd.
+
+Een belangrijke informatiepunt is de vertrouwelijkheid van het cijfer. Kan het cijfer worden gedeeld met het breed publiek, met collega's of is het vertrouwelijk en moet het veilig bewaard worden.
+
+Een ander attribuut is de eigenaar van het cijfer. De eigenaar van een cijfer verwijst naar wie verantwoordelijk is voor dat cijfer. Deze kan 
+
+
+
+
+
+
+
+
+\subsubsection{Samengevat}
 
 Samengevat, voor elke statistiek die we produceren en publiceren hebben we nood aan:
 \begin{enumerate}[nosep]
@@ -216,7 +348,7 @@ Samengevat, voor elke statistiek die we produceren en publiceren hebben we nood 
 \item het cijfer, en
 \item een kwaliteitsevaluatie van de operationele definitie in functie van de gebruikersbehoeften.
 \end{enumerate}
-Tabel \ref{tab:voorbeeldstatistiek} vat deze basisinformatie samen aan de hand van het Antwerps voorbeeld. Als de gebruikersbehoeften van een statistiek nog niet in kaart zijn gebracht, is de statistiek een experimentele statistiek.
+Tabel \ref{tab:voorbeeldstatistiek} vat deze basisinformatie samen aan de hand van het Antwerps voorbeeld. Als de gebruikersbehoeften van een statistiek nog niet in kaart zijn gebracht en er daardoor ook geen kwaliteitsevaluatie kan worden uitgevoerd, is de statistiek een experimentele statistiek. 
 
 \begin{table}
 \caption{Een statistiek bestaat uit een cijfer, een conceptuele definitie die voortvloeit uit gebruikersbehoeften, en een operationele definitie die vertelt hoe het cijfer exact wordt gemeten. Een wanverhouding tussen gebruikersbehoeften en de operationele definitie bepaalt de kwaliteit van de statistiek.}
@@ -262,13 +394,14 @@ Tabel \ref{tab:voorbeeldstatistiek} vat deze basisinformatie samen aan de hand v
 
 
 
-\section{Statistiekreeksen}
+\subsection{Statistiek als een cijferreeks}
 
 
 
-\subsection{Wat is een statistiekreeks?}
+\subsubsection{Wat is een statistiekreeks?}
 
 In de vorige paragraaf werd uitgelegd hoe een statistiek verwijst naar één enkel cijfer met een bijbehorende conceptuele en operationele definitie ontstaan vanuit specifieke gebruikersbehoeften. In de praktijk produceren we echter veel statistieken met sterk overlappende gebruikersbehoeften en definities. Zo publiceren we niet alleen het aantal inwoners voor de gemeente Antwerpen, maar ook voor alle andere Vlaamse gemeenten, de drie gewesten en heel België. Aparte definities opstellen en beheren voor al deze cijfers is niet efficiënt.
+% Danny: Deze definitie-cascade is onder andere een reden waarvoor GSIM deze nuances in verschillende noties probeert te vatten (en het dus helaas ook zo abstract wordt). 
 
 Om efficiëntie te verhogen werken we daarom met \emph{statistiekreeksen} of cijferreeksen: verzamelingen van statistieken die grotendeels dezelfde conceptuele en operationele definities delen. Tabel \ref{tab:voorbeeldcijferreeks} toont bijvoorbeeld een statistiekreeks met de inwonersaantallen van alle Vlaamse gemeenten. 
 
@@ -280,42 +413,47 @@ Om efficiëntie te verhogen werken we daarom met \emph{statistiekreeksen} of cij
 
 
 
-\subsection{Concepten, dimensies en attributen}
+\subsubsection{Concepten, dimensies en attributen}
 
-Aangezien de conceptuele en operationele definities van individuele cijfers in statistiekreeksen overlappen, kunnen we deze definities opsplitsen in verschillende onderdelen. Deze verschillende onderdelen van de definities worden de \emph{concepten} genoemd. Concepten zijn eigenlijk gewoon variabelen, kenmerken waar de statistieken naar refereren en die kunnen variëren tussen statistieken. Bij de statistiekreeks in tabel \ref{tab:voorbeeldcijferreeks} kunnen we bijvoorbeeld drie concepten onderscheiden: (1) de parameter `aantal inwoners', (2) het jaartal `2019', en (3) de gemeente. Niet alle statistieken die we publiceren geven immers het aantal inwoners als parameter weer, en evenmin geven ze allemaal informatie voor het jaar 2019. De statistiekreeks in tabel \ref{tab:voorbeeldcijferreeks} toont bovendien al aan hoe gemeente varieert over verschillende statistieken. 
+Aangezien de conceptuele en operationele definities van individuele cijfers in statistiekreeksen overlappen, kunnen we deze definities opsplitsen in verschillende onderdelen. Deze verschillende onderdelen van de definities worden de \emph{concepten} genoemd. Concepten zijn eigenlijk gewoon variabelen, kenmerken waar de statistieken naar refereren en die kunnen variëren tussen statistieken. Bij de statistiekreeks in tabel \ref{tab:voorbeeldcijferreeks} kunnen we bijvoorbeeld drie concepten onderscheiden: (1) de parameter ``aantal inwoners'', (2) het jaartal ``2019'', en (3) de gemeente. Niet alle statistieken die we publiceren geven immers het aantal inwoners als parameter weer, en evenmin geven ze allemaal informatie voor het jaar 2019. De statistiekreeks in tabel \ref{tab:voorbeeldcijferreeks} toont bovendien al aan hoe gemeente varieert over verschillende statistieken.
 
-Binnen één statistiekreeks wordt een onderscheid gemaakt tussen twee soorten concepten. Sommige concepten helpen elk cijfer uniek te identificeren, terwijl anderen enkel bijkomende informatie geven over de cijfers. De concepten die de cijfers helpen identificeren binnen een statistiekreeks bepalen de \emph{dimensies} van de statistiekreeks. Ze worden ook wel \emph{identificeerders} (identifiers) genoemd. In tabel \ref{tab:voorbeeldcijferreeks} is er slechts één dimensie, namelijk de gemeente, aangezien elk cijfer het aantal inwoners van een andere gemeente weergeeft en de cijfers enkel van elkaar verschillen omdat ze naar een andere gemeente verwijzen.
+Binnen één statistiekreeks wordt een onderscheid gemaakt tussen twee soorten concepten. Sommige concepten helpen elk cijfer uniek te identificeren, terwijl anderen enkel bijkomende informatie geven over de cijfers. De concepten die de cijfers helpen identificeren binnen een statistiekreeks bepalen de \emph{dimensies} van de statistiekreeks. Ze worden ook wel \emph{identificeerders} (identifiers) genoemd. In tabel \ref{tab:voorbeeldcijferreeks} is er slechts één dimensie, namelijk de gemeente, aangezien elk cijfer het aantal inwoners van een andere gemeente weergeeft en de cijfers enkel van elkaar verschillen door de de gemeente waarnaar ze verwijzen.
 
-De concepten die enkel bijkomende informatie geven zonder de cijfers verder te identificeren worden daarentegen \emph{attributen} genoemd. Attributen worden daarom ook soms \emph{beschrijvers} (describers) genoemd. In tabel \ref{tab:voorbeeldcijferreeks} zijn de parameter en het jaartal de attributen, omdat elk cijfer verwijst naar een inwonersaantal in 2019 en niets anders. Attributen kunnen informatie bevatten voor de hele statistiekreeks, maar kunnen evengoed enkel informatie bevatten voor één enkel cijfer of een beperkte groep van cijfers binnen de statistiekreeks. 
+De concepten die enkel bijkomende informatie geven zonder de cijfers verder te identificeren worden daarentegen \emph{attributen} genoemd. Attributen worden daarom ook soms \emph{beschrijvers} (describers) genoemd. In tabel \ref{tab:voorbeeldcijferreeks} zijn de parameter en het jaartal de attributen, omdat elk cijfer verwijst naar een inwonersaantal in 2019 en niets anders. Attributen kunnen informatie bevatten voor de hele statistiekreeks, maar kunnen evengoed enkel informatie bevatten voor één enkel cijfer of een beperkte groep van cijfers binnen de statistiekreeks. Een voorbeeld van zo’n laatste situatie is informatie over de vertrouwelijkheid van cijfers. Één groep cijfers in een tabel kan beschouwd worden als vrij te publiceren terwijl een andere groep niet openbaar mag gemaakt worden omdat ze vertrouwelijke informatie kunnen ontsluiten. De aanduiding van deze vertrouwelijkheid identificeert de cijfers op zich niet maar varieert wel van cijfer tot cijfer. 
 
-Onthoud echter dat attributen dimensies kunnen worden wanneer verschillende statistiekreeksen worden samengevoegd. Om bijvoorbeeld bevolkingsdichtheden te berekenen, moeten de cijfers uit tabel \ref{tab:voorbeeldcijferreeks} worden gecombineerd met cijfers over de oppervlakte van alle gemeenten. In die samengestelde tabel wordt de parameter een dimensie in plaats van een attribuut, omdat sommige cijfers verwijzen naar de parameter `aantal inwoners', terwijl anderen verwijzen naar de parameter `oppervlakte' van de gemeenten. Hetzelfde gebeurt met het concept jaartal wanneer we aantallen inwoners combineren over verschillende jaren heen voor een tijdreeks. Omgekeerd kan een dimensie ook een attribuut worden wanneer we een tabel opsplitsen volgens die dimensie. Bijvoorbeeld, als we longitudinale data op jaarbasis opsplitsen in aparte tabellen per jaartal, wordt jaartal in die nieuwe tabellen slechts een attribuut in plaats van een dimensie. Het verschil tussen attributen en dimensies is dus relatief want het hangt af van welke tabel je precies bekijkt. Over al mogelijke statistieken bekeken zijn alle concepten dimensies want geen enkele operationele definitie is dezelfde.
+Onthoud echter dat attributen dimensies kunnen worden wanneer verschillende statistiekreeksen worden samengevoegd. Om bijvoorbeeld bevolkingsdichtheden te berekenen, moeten de cijfers uit tabel \ref{tab:voorbeeldcijferreeks} worden gecombineerd met cijfers over de oppervlakte van alle gemeenten. In die samengestelde tabel wordt de parameter een dimensie in plaats van een attribuut, omdat sommige cijfers verwijzen naar de parameter ‘aantal inwoners’, terwijl anderen verwijzen naar de parameter ``oppervlakte'' van de gemeenten. Hetzelfde gebeurt met het concept jaartal wanneer we aantallen inwoners combineren over verschillende jaren heen voor een tijdreeks. Omgekeerd kan een dimensie ook een attribuut worden wanneer we een tabel opsplitsen volgens die dimensie. Bijvoorbeeld, als we longitudinale data op jaarbasis opsplitsen in aparte tabellen per jaartal, wordt jaartal in die nieuwe tabellen slechts een attribuut in plaats van een dimensie. Het verschil tussen attributen en dimensies is dus relatief want het hangt af van welke tabel je precies bekijkt. Over al mogelijke statistieken bekeken zijn alle concepten dimensies want geen enkele operationele definitie is dezelfde.
 
 \begin{info}
 We hebben hier een hiaat in het SDMX model blootgelegd. De documentatie van SDMX bespreekt nergens hoe attributen dimensies kunnen worden of vice versa wanneer datasets met statistiekreeksen worden samengevoegd of uitgesplitst. Om deze reden is de uitwerking van attributen in het model ook veel beperkter dan de uitwerking van dimensies. Hierdoor kan SDMX moeilijker gelinkt worden aan de ideeën rond conceptuele definities, operationele definities en kwaliteit van statistiekreeksen.
+
+Sterker nog, binnen SDMX wordt parameter nooit duidelijk beschouwd als een dimensie waardoor je verschillende parameters zoals bevolkingsgrootte en oppervlakte moeilijk in één tabel kan combineren zonder in problemen te komen over de definitie van dimensies en attributen.
 \end{info}
 
 
 
-\subsection{Conceptuele en operationele definitie}
-
-Net zoals elke afzonderlijke statistiek worden statistiekreeksen ook beschreven via een conceptuele en een operationele definitie. Dit vergemakkelijkt informatiebeheer over de statistiekreeksen. 
-
-De \emph{conceptuele definitie} verwijst naar de interpretatie die een doorsnee gebruiker aan de statistiekreeks toekent. De statistiekreeks in tabel \ref{tab:voorbeeldcijferreeks} kan conceptueel worden gedefinieerd als het ``aantal inwoners in Vlaamse gemeenten in 2019''. Deze definitie sluit aan bij specifieke gebruikersbehoeften, zoals bijvoorbeeld beschreven in tabel \ref{tab:voorbeeldstatistiek}.
-
-De \emph{operationele definitie} van een statistiekreeks beschrijft hoe de cijferreeks precies is verzameld en reproduceerbaar is. Bovendien specificeert de operationele definitie welke waarden de attributen en dimensies binnen de reeks precies aannemen. Voor tabel \ref{tab:voorbeeldcijferreeks} luidt de operationele definitie bijvoorbeeld: ``De grootte van de wettelijke bevolking op 1 januari 2019 per gemeente volgens de NIS-code-indeling in 2019. De wettelijke bevolking omvat \ldots '' Deze definitie benoemt heel duidelijk `gemeente' als dimensie en geeft aan hoeveel gemeenten de reeks omvat, namelijk de 300 Vlaamse gemeenten volgens de NIS-code-indeling van 2019, en bijvoorbeeld niet de 285 Vlaamse gemeenten vanaf 2025. Daarnaast beschrijft de definitie ook heel duidelijk de waarde van de attributen. De reeks bevat namelijk cijfers over de grootte van de wettelijke bevolking en bijvoorbeeld niet de verblijvende bevolking, en voor het jaar 2019 en geen ander kalenderjaar.
-
-Door de exacte beschrijving van dimensies bepaalt de operationele definitie bovendien strikt uit hoeveel cijfers een statistiekreeks bestaat, zelfs als sommige cijfers een missende of versluierde waarde hebben. De reeks in tabel \ref{tab:voorbeeldcijferreeks} bestaat uit 300 cijfers, voor elke Vlaamse gemeente één. Als er in de reeks ook cijfers zouden worden gepubliceerd voor Vlaanderen, Wallonië, Brussel en België, verandert de dimensie `gemeente' naar het ruimer concept `geografisch gebied' met 304 mogelijke waarden en dikt de reeks met evenveel cijfers aan. Splitsen we de cijfers verder uit naar mannen en vrouwen, dan wordt de dimensie `geslacht' toegevoegd met twee mogelijke waarden (man of vrouw) en bevat de reeks 608 cijfers. Inclusief de totalen over beide geslachten komt het totaal op 912 cijfers. Voeg daar nog het percentage mannen en vrouwen per gemeente aan toe, dan bevat de reeks 1520 cijfers.
-
-Een kleine tip om de operationele definitie duidelijk uit te schrijven: Maak slim gebruik van voorzetsels zoals `voor', `in' of `per' om de attributen en dimensies aan te duiden. Zo kan je bijvoorbeeld een statistiekreeks definiëren als het ``aantal inwoners IN het jaar 2019 PER geografisch gebied (Vlaamse gemeenten, Belgische gewesten en heel België volgens de NIS-code-indeling van 2019), VOOR elk geslacht (mannen, vrouwen, totaal), en PER leeftijdsgroep (0-18, 19-30, 31-65, 66+ jaar, totaal).'' 
-
-Hoewel het bij de conceptuele definitie minder strikt is om alle attributen en dimensies expliciet te vermelden, is dit ook een goede praktijk. Voor de statistiekreeks in tabel \ref{tab:voorbeeldcijferreeks} kunnen we bijvoorbeeld kiezen tussen de conceptuele definities `bevolkingsomvang' of `aantal inwoners in de Vlaamse gemeenten in 2019'. De tweede definitie is uiteraard een pak duidelijker als omschrijving. De eerste definitie is anderzijds een pak beknopter en gemakkelijker te citeren.
-
-%%% AANPASSEN: Conceptuele definitie moet wel verwijzing hebben naar dimensies. In de gebruikersbehoeften moet immers ook naar voor komen waarom cijfers over de dimensies nodig zijn, anders zijn de statistieken niet relevant => lage kwaliteit. De dimensies moeten ook geoperationaliseerd worden van conceptuele naar conceptuele definitie. Bijvoorbeeld, in de conceptuele definitie staat `cijfers per gemeente', in de operationele definitie moet dan staan welke opdeling van gemeenten precies bedoeld worden.
 
 
-Net zoals bij individuele statistieken bepaalt een wanverhouding tussen gebruikersbehoeften en de operationele definitie de kwaliteit van een statistiekreeks. Als de operationele definitie niet in lijn ligt met de behoeften van gebruikers moet de reeks worden aangepast of worden geschrapt.
+\subsubsection{Conceptuele en operationele definitie}
 
-De presentatie van een statistiekreeks gebeurt doorgaans niet zoals in tabel \ref{tab:voorbeeldcijferreeks}. Attributen worden vaak uit de rijen verwijderd en opgenomen in de titel of conceptuele definitie van de statistiekreeks. Tabel \ref{tab:voorbeeldcijferreeks2} toont een meer gangbare weergave van een uitgebreidere cijferreeks. In deze tabel zie je dat de concepten `aantal inwoners' en jaartal `2019' enkel worden vermeld in de titel van de tabel. De tabel telt verder drie dimensies. Dimensies gemeente en geslacht staan in de rijen. De derde dimensie is de statistische parameter die een verschil maakt tussen aantallen en percentages. Deze dimensie staat in de kolommen.
+Net zoals elke afzonderlijke statistiek worden statistiekreeksen ook beschreven via een conceptuele en een operationele definitie. Dit vergemakkelijkt informatiebeheer over de statistiekreeksen.
+
+De \emph{conceptuele definitie} verwijst naar de interpretatie die een doorsnee gebruiker aan de statistiekreeks toekent. De statistiekreeks in tabel \ref{tab:voorbeeldcijferreeks} kan bijvoorbeeld conceptueel worden gedefinieerd als het ``aantal inwoners in gemeenten in het Vlaamse Gewest in 2019''. Deze definitie sluit aan bij specifieke gebruikersbehoeften, zoals bijvoorbeeld beschreven in tabel \ref{tab:voorbeeldstatistiek}.
+
+De \emph{operationele definitie} van een statistiekreeks beschrijft hoe de cijferreeks pre‐ cies werd verzameld en gereproduceerd kan worden. Bovendien specificeert de operationele definitie steeds welke waarden de attributen en dimensies binnen de reeks precies aannemen. Voor tabel \ref{tab:voorbeeldcijferreeks} luidt de operationele definitie bijvoorbeeld: ``De grootte van de wettelijke bevolking op 1 januari 2019 per gemeente volgens de NIS‐code‐indeling in 2019. De wettelijke bevolking omvat\ldots '' Deze definitie benoemt heel duidelijk ‘gemeente’ als dimensie en geeft aan hoeveel gemeenten de reeks omvat, namelijk de 300 Vlaamse gemeenten volgens de NIS‐code‐indeling van 2019, en bijvoorbeeld niet de 285 Vlaamse gemeenten vanaf 2025. Daarnaast beschrijft de definitie ook heel duidelijk de waarde van de attributen. De reeks bevat namelijk cijfers over de grootte van de wettelijke bevolking en bijvoorbeeld niet de verblijvende bevolking, en voor het jaar 2019 en geen ander kalenderjaar.
+
+Door de exacte beschrijving van dimensies bepaalt de operationele definitie bovendien strikt uit hoeveel cijfers een statistiekreeks bestaat, zelfs als sommige cijfers een missende of versluierde waarde hebben. De reeks in tabel \ref{tab:voorbeeldcijferreeks} bestaat bijvoorbeeld uit 300 cijfers, voor elke Vlaamse gemeente één. Als er in de reeks ook totaalcijfers zouden worden gepubliceerd voor Vlaanderen, Wallonië, Brussel en België, verandert de dimensie ‘gemeente’ naar het ruimer concept ‘geografisch gebied’ met 304 mogelijke waarden en dikt de reeks tot evenveel cijfers aan. Splitsen we de cijfers verder uit naar mannen en vrouwen, dan wordt de dimensie ‘geslacht’ toegevoegd met twee mogelijke waarden (man en vrouw) en bevat de reeks plots 608 cijfers. Inclusief de totalen over beide geslachten komt het totaal op 912 cijfers. Voeg daar nog het percentage mannen en vrouwen per gemeente aan toe, dan bevat de reeks 1520 cijfers.
+
+Een kleine tip om de operationele definitie duidelijk uit te schrijven: Maak slim gebruik van voorzetsels zoals ``voor'', ``in'' of ``per'' om de attributen en dimensies aan te duiden. Zo kan je bijvoorbeeld een statistiekreeks definiëren als het ``aantal inwoners IN het jaar 2019 PER geografisch gebied (Vlaamse gemeenten, Belgische gewesten en heel België volgens de NIS‐code‐indeling van 2019), VOOR elk geslacht (mannen, vrouwen, totaal), en PER leeftijdsgroep (0‐18, 19‐30, 31‐65, 66+ jaar, totaal).'' 
+% Hier dieper op ingaan in een aparte paragraaf?
+
+Hoewel het bij de conceptuele definitie minder strikt is om alle attributen en dimensies expliciet te vermelden, is dit ook een goede praktijk. Voor de statistiekreeks in tabel \ref{tab:voorbeeldcijferreeks} kunnen we bijvoorbeeld kiezen tussen de conceptuele definities ``bevolkingsomvang'' of ``aantal inwoners in de Vlaamse gemeenten in 2019''. De tweede definitie is uiteraard een pak duidelijker als omschrijving. De eerste definitie is anderzijds een pak beknopter en gemakkelijker te citeren maar wordt uiteraard dubbelzinnig als we ook tabellen publiceren voor andere kalenderjaren (tenzij we al deze tabellen samenvoegen natuurlijk, maar dan zitten we weer in een ander verhaal).
+
+%%% AANPASSEN: Conceptuele definitie moet wel verwijzing hebben naar dimensies. In de gebruikersbehoeften moet immers ook naar voor komen waarom cijfers over de dimensies nodig zijn, anders zijn de statistieken niet relevant => lage kwaliteit. De dimensies moeten ook geoperationaliseerd worden van conceptuele naar operationele definitie. Bijvoorbeeld, in de conceptuele definitie staat `cijfers per gemeente', in de operationele definitie moet dan staan welke opdeling van gemeenten precies bedoeld worden.
+
+
+Net zoals bij individuele statistieken bepaalt een wanverhouding tussen gebruikersbehoeften en de operationele definitie mee de kwaliteit van een statistiekreeks. Als de operationele definitie niet in lijn ligt met de behoeften van gebruikers moet de reeks worden aangepast of worden geschrapt.
+
+De presentatie van een statistiekreeks gebeurt doorgaans niet zoals in tabel \ref{tab:voorbeeldcijferreeks}. Attributen worden vaak uit de rijen verwijderd en opgenomen in de titel of conceptuele definitie van de statistiekreeks. Tabel \ref{tab:voorbeeldcijferreeks2} toont een meer gangbare weergave van een uitgebreidere cijferreeks. In deze tabel zie je dat de concepten ``aantal inwoners'' en jaartal ``2019'' enkel worden vermeld in de titel van de tabel. De tabel telt verder drie dimensies. Dimensies gemeente en geslacht staan in de rijen. De derde dimensie is de statistische parameter die een verschil maakt tussen aantallen en percentages. Deze dimensie staat in de kolommen.
 
 \begin{table}
 \caption{De conceptuele definitie van een statistiekreeks verwijst naar de interpretatie van een doorsnee gebruiker terwijl de operationele definitie alle concepten (attributen en dimensies) van de reeks duidelijk beschrijft.}
@@ -330,108 +468,29 @@ Binnen de huidige SDMX-standaard stellen we statistiekreeksen voor met slechts �
 
 
 
-\subsection{Conceptenlijst}
-
-Om consistentie te waarborgen tussen statistieken en statistiekreeksen, hanteren we een algemene conceptenlijst conform de SDMX-standaard. Deze conceptenlijst biedt een volledig overzicht van alle concepten die voorkomen in de door ons geproduceerde statistieken. Elk concept wordt voorzien van een korte identificatiecode, die kan worden gebruikt als snelle referentie in communicatie of als variabelenaam in datasets en datatabellen.
-
-Grosso modo onderscheiden we twee soorten concepten:
-\begin{itemize}[nosep]
-\item Algemene concepten: Dit zijn terugkerende concepten die vaak voorkomen in verschillende statistieken, zoals jaartal of geografisch gebied. De beschrijving van deze concepten is doorgaans beperkt.
-\item Het restconcept `statistiekreeks': Dit concept omvat de rest van de operationele definities en dekt daarmee alle details die niet onder de algemene concepten vallen.
-\end{itemize}
-
-Aan elk concept wordt bovendien een codelijst gekoppeld, eveneens conform de SDMX-standaard. Een codelijst bepaalt welke waarden een concept kan aannemen in een statistiekreeks. Voor het concept `geslacht' bevat de codelijst bijvoorbeeld de waarden `man', `vrouw', en `andere', maar ook bijvoorbeeld de waarde `totaal', om totaalcijfers over beide geslachten aan te duiden.
-
-Voor het restconcept statistiekreeks kunnen de waarden zeer uitgebreid zijn. Bij statistiekreeksen die gebaseerd zijn op bevragingen omvat dit restconcept in principe de volledige operationele beschrijving van de bevraging. Wanneer het ontwerp van de bevraging wordt aangepast, leidt dit tot een nieuwe statistiekreeks en een nieuwe waarde voor het restconcept. Net als bij de concepten voorzien we ook korte identificatiecodes voor elke waarde.
-
-Merk op dat de codelijst voor het concept statistiekreeks automatisch een overzicht biedt van alle statistiekreeksen die we produceren.
 
 
 
-\subsection{Hoe bepalen we concepten en dimensies?}
-
-De bepaling van statistiekreeksen op basis van concepten is geen exacte wetenschap, maar eerder een arbitrair proces waarin verschillende keuzes gemaakt moeten worden. Een eerste keuze is welke concepten je gebruikt als attribuut om statistiekreeksen te onderscheiden en welke als dimensies binnen deze statistiekreeksen. In het ene uiterste gebruik je alle concepten als attributen waardoor een aparte reeks voor elke individuele statistiek ontstaat, zoals in tabel \ref{tab:reeksapart}. In het andere uiterste gebruik je alle concepten als dimensies waardoor één enkele reeks onstaat met alle cijfers erin, zoals in tabel \ref{tab:reekssamen}. Beide benaderingen zijn uiteraard onpraktisch. In de praktijk zoeken we een evenwicht dat zowel overzichtelijk als werkbaar is.
-
-\begin{table}
-\caption{Concepten kunnen worden gebruikt om aparte cijferreeksen te definiëren of als dimensie in één grote cijferreeks.}
-\label{tab:reekscombineren}
-\input{tables/reekscombineren}
-\end{table}
-
-De tweede keuze is welke concepten binnen een statistiekreeks worden samengevoegd of uitgesplitst. Bijvoorbeeld: cijfers over mannen en vrouwen in gemeenten kun je uitsplitsen op basis van `parameter' en `geslacht', zoals in tabel \ref{tab:dimensieapart}. Je kunt er ook voor kiezen om beide concepten te combineren in één dimensie, zoals in tabel \ref{tab:dimensiesamen}. Ook hier gaat het om een afweging tussen eenvoud en gebruiksgemak. 
-
-\begin{table}
-\caption{De indeling van dimensies is arbitrair. Kenmerken kunnen gecombineerd worden in één dimensie of als aparte dimensies worden gespecifieerd.}
-\label{tab:dimensieskiezen}
-\input{tables/dimensieskiezen}
-\end{table}
-
-Een derde keuze is de definitie van de concepten zelf. Stel dat je cijfers publiceert over inwoners van Vlaamse gemeenten, uitgesplitst naar geslacht en leeftijd, zonder deze kenmerken te kruisen. Je kunt hiervoor aparte dimensies definiëren voor `geslacht' en `leeftijd', zoals in tabel \ref{tab:dimensiegesplitst}. Alternatief kun je deze herdefiniëren tot één dimensie `bevolkingsgroep', die alle waarden van geslacht en leeftijd bevat, zoals in tabel \ref{tab:dimensiegecombineerd}.  
-
-\begin{table}
-\centering\tiny
-\caption{Concepten in een statistiekreeks kunnen arbitrair worden hergedefinieerd.}
-\label{tab:dimensiedef}
-\input{tables/dimensiedef}
-\end{table}
-
-Deze voorbeelden tonen aan dat de bepaling van statistiekreeksen arbitrair is. Richtlijnen zijn daarom essentieel om consistentie en werkbaarheid te waarborgen.
-
-\begin{richtlijnen}
-
-\item Cijfers die enkel verschillen in geografische indeling worden gecombineerd in één statistiekreeks. Gebruik de geografische indeling als dimensie. Bij voorkeur wordt de NIS-code-indeling van Statbel gevolgd. Hierbij moet steeds de versie van de NIS-code-indeling vermeld worden. Naast NIS-codes kunnen echter ook andere geografische gebieden, zoals postcodes, toeristische regio's of ziekenhuisnetwerken, worden opgenomen. Voor hiërarchische indelingen kunnen voor de volledigheid extra dimensies worden toegevoegd zoals in tabel \ref{tab:hierdim}.  
-
-\begin{table}
-\caption{Voor hiërarchische dimensies kunnen bijkomende dimensies worden toegevoegd, hoewel niet strikt noodzakelijk.}
-\label{tab:hierdim}
-\input{tables/hierdim}
-\end{table}
-
-\item Cijfers die alleen verschillen in tijdsperiode worden samengevoegd in één statistiekreeks, met de tijdsperiode als dimensie.  
-
-\begin{info}
-De keuze om tijdsperiodes als dimensie te behandelen, betekent niet dat alle cijfers steeds in één dataset opgeslagen moeten worden. Zo is het op een file server handiger datasets per jaar te bewaren, terwijl deze datasets toch statistieken bevatten uit dezelfde statistiekreeks.
-\end{info}
-
-\item Combineer cijfers die op dezelfde manier zijn berekend en uit dezelfde bron komen in één reeks. Dit vereenvoudigt de verwerking en documentatie. 
-
-\item Statistische parameters zoals frequenties en gemiddelden  worden zo veel mogelijk opgesplitst in aparte reeksen. Dit vergemakkerlijkt de beschrijving van de statistiekreeks. Parameters die op een natuurlijke manier bij elkaar horen, vormen een uitzondering en worden wel gecombineerd in dezelfde statistiekreeks: 
-\begin{itemize}
-\item Proporties/percentages berekend op frequenties uit één enkele statistiekreeks, worden ook aan deze statistiekreeks toegevoegd. 
-\item Inferentiële statistieken zoals de onder- en bovengrens van betrouwbaarheidsintervallen, standaardfouten of $p$-waarden worden toegevoegd aan de statistiekreeks met de bijhorende puntschattingen.
-\end{itemize} 
-
-\begin{info}
-Percentages kunnen op verschillende manieren worden gedefinieerd. Dit moet altijd duidelijk worden omschreven in de operationele definitie en de parameterdimensie (bijv. het percentage mannen in gemeente X is niet hetzelfde als het percentage Vlaamse mannen die in gemeente X wonen).
-\end{info}
-
-\item Ontwerp statistiekreeksen waarin dimensies zo goed als volledig worden gekruist. Als dit niet mogelijk is, kunnen dimensies worden samengevoegd, bijvoorbeeld een dimensie `bevolkingsgroep' in plaats van aparte dimensies `geslacht', `leeftijd' en `nationaliteit'. Anders is het eleganter om de statistiekreeks te splitsen in twee aparte reeksen. 
-
-\item Cijfers die gebaseerd zijn op meerdere basisreeksen afgeleid uit verschillende databronnen, zoals bevolkingsdichtheid (gebaseerd op inwonersaantallen en geografische oppervlakten), worden altijd in aparte reeksen ondergebracht. Dit bevordert overzichtelijkheid en documentatie.
-
-\item Alle concepten worden verzameld in een centrale conceptenlijst die wordt beheerd door enkele collega's verantwoordelijk voor het datamodel. Bij elk concept wordt ook een codelijst voorzien die alle mogelijke waarden op het concept bevat.
-
-\end{richtlijnen}
 
 
 
-\subsection{Versies van statistiekreeksen}
-
-Statistiekreeksen kunnen doorheen de tijd veranderen om verschillende redenen:
-\begin{itemize}
-\item De operationele definitie van een statistiekreeks wordt aangepast omdat dimensies veranderen, bijvoorbeeld de gemeenteindeling verandert door gemeentefusies.
-\item De operationele definitie wordt aangepast in lijn met nieuwe gebruikersbehoeften.   
-\item Er werd een fout ontdekt in de berekening van cijfers en deze fout wordt gecorrigeerd.
-\end{itemize}
-Omdat we verwacht worden elk gepubliceerd cijfer beschikbaar te houden, creëren we in elk van bovenstaande situaties een nieuwe versie van de statistiekreeks. Deze versie duiden we aan door een versienummer terwijl de cijfers en documentatie van de oude versie bewaard blijven. In het geval van een berekeningsfout voegen we een disclaimer toe aan de documentatie van de oude versie met uitleg over deze fout. Bij wijzigende definities, documenteren we eveneens waarom deze wijziging nodig was. Bij een nieuwe versie van een statistiekreeks publiceren we cijferreeksen ook retrospectief indien dat mogelijk is en gewenst wordt geacht.
 
 
 
-\subsection{Samengevat}
 
-Samengevat, een statistiekreeks is een reeks van statistieken waarbij gebruikersbehoeften, conceptuele en operationele definities overlappen. Elke statistiekreeks is nauwkeurig gedefinieerd via haar operationele definitie. Deze operationele definitie vertelt exact hoeveel cijfers de statistiekreeks bevat, wat deze cijfers betekenen en hoe de cijfers werden bekomen. Een wanverhouding tussen de operationele definitie en de gebruikersbehoeften bepaalt de kwaliteit van de statistiekreeks.
 
-Met Statistiek Vlaanderen leggen we op voorhand vast welke statistiekreeksen we publiceren. Deze statistiekreeksen zijn terug te vinden in het Vlaams Statistisch Programma (VSP-lijst). Voor elke statistiek bevat de VSP-lijst ten minste volgende informatie:
+
+
+
+
+
+
+\subsubsection{Samengevat}
+
+Samengevat, een statistiekreeks is een reeks van statistieken waarbij gebruikersbehoeften, conceptuele en operationele definities overlappen. Elke statistiekreeks is nauwkeurig gedefinieerd via haar operationele definitie. Deze operationele definitie vertelt exact hoeveel cijfers de statistiekreeks bevat, wat deze cijfers betekenen en hoe de cijfers werden bekomen. Een wanverhouding tussen de operationele definitie en de gebruikersbehoeften is een van de kwaliteitsindicatoren van de statistiekreeks volgens de praktijkcode.
+
+Met Statistiek Vlaanderen leggen we op voorhand vast welke statistiekreeksen we publiceren. Deze statistiekreeksen zijn terug te vinden in het Vlaams Statistisch Programma (VSP‐lijst). Voor elke statistiek in de VSP‐lijst voorzien we ten minste volgende informatie:   
+% JO: Wat er in de VSP-lijst moet staan ligt vast door afspraken met IIS. Info die je voorstelt zou ik opnemen in SIMS-medata.
 \begin{enumerate}[nosep]
 \item de conceptuele definitie (die gebruikt wordt als handig label voor de statistiekreeks),
 \item het versienummer
@@ -470,10 +529,390 @@ Tabel \ref{tab:voorbeeldVSPlijst} toont hoe de VSP-lijst er minimaal zou moeten 
 
 
 
+\subsection{Statistiek als een tabelreeks}
+
+
+Voorbeeld: bevolking naar leeftijd en geslacht --- bevolkingspyramide
+Hieruit kunnen heel wat andere cijferreeksen worden berekend
+- aantal inwoners naar geslacht
+- percentage volgens geslacht
+- aantal inwoners naar leeftijd
+- percentage per leeftijd
+- percentage 65+'ers
+- vergrijzing
+- \ldots
+
+Opnieuw conceptuele en operationele definitie nodig
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Experimentele statistieken}
+
+% experimentele statistiek: start van eurostat, daaruit verschillende opties: zowel geen behoefte, maar ook anders wel een behoefte, maar testen van bron, methode om iets te meten en dan te kijken of het voldoet aan de gebruikersbehoeften
+
+
+Sommige statistieken ontstaan niet vanuit geobserveerde gebruikersbehoeften, maar vanuit veronderstellingen hierover. Dit kan voortkomen uit de inhoudelijke interesse van een collega of door nieuwe dataverzamelings‐ of analysemethoden. Deze statistieken noemen we \emph{experimentele statistieken}. 
+
+% JO: Experimentele statistieken zijn voor mij statistieken ontwikkeld op basis van innovatieve methoden of bronnen. Dat is voor mij niet verbonden met al dan niet bestaan van gebruikersvraag. Een gebruikersvraag kan zo complex zijn om te operationaliseren dat daarvoor nieuwe technieken nodig of bruikbaar kunnen zijn.
+% Zie ook definitie van Eurostat: Experimental statistics use new data sources and methods to better respond to our users' needs in a timely manner. Zie: https://ec.europa.eu/eurostat/web/experimental-statistics
+% JORRE: We kunnen de statistieken in de tekst ook een andere naam geven, maar we gaan ze op de één of andere manier toch moeten benoemen.
+% De Eurostat definitie is trouwens rekbaar, als wij een nieuwe statistiek invoeren, bijvoorbeeld, op basis van een nieuwe eenvoudige vraag in de SV-bevraging, is dat ook een “nieuwe data-bron”, hoewel jij dat waarschijnlijk niet als innovatief zal bestempelen. Zo zijn alle statistieken, waarvoor we geen opgelijste gebruikersbehoeften hebben, ooit ontstaan uit een nieuwe databron. ‘Nieuwe databron’ in de zin dat we de bron daarvoor niet gebruikten om statistieken aan te maken.
+% Sowieso heb je voor beide groepen statistieken, experimentele statistieken en statistieken waarvoor we geen duidelijke gebruikersbehoeften hebben, dezelfde aanpak nodig. We maken ze aan omdat we denken dat ze nuttig zijn maar zonder duidelijke gebruikersbehoeften in kaart te hebben. Nadien moeten we voor beide categorieën evalueren of ze nuttig zijn voor gebruikers. Mijn suggestie is om het ons dan niet moeilijk te maken en deze gewoon allemaal onder dezelfde term te categoriseren: “experimentele statistieken”
+
+
+% DANNY: Vraag is dus of deze statistieken experimenteel zijn in de zin dat ze ‘nog niet officieel’ aanvaard zijn (in één of ander Statistisch Programma) of dat we ‘nieuwe ‘methodes gebruiken om tot de statistiek te komen. Ik vind het vanuit systeemontwerp alvast wel relevant om hier een éénduidig en gedragen begrip rond te creëren. Wanneer het namelijk zou betekenen dat deze statistiek productie nog ‘in een experimentele fase of status zit’ gelden hier vanuit een governance en publicatie oogpunt mogelijk ook minder stricte regels en moeten we voor de uitvoering hiervan omgevingen met meer vrijheid bieden.
+
+Experimentele statistieken verwijzen dus niet enkel naar statistieken ontwikkeld met de allernieuwste analysetechnieken die recent op de markt werden gebracht. Eurostat definieert experimentele statistieken als ``Experimental statistics use new data sources and methods to better respond to our users' needs in a timely manner.'' Wat ``new data sources and methods'' betekent in deze definitie is echter rekbaar. Zo kan een nieuwe vraag in een bevraging al beschouwd worden als een nieuwe databron en kunnen we deze vraag gebruiken om een nieuwe experimentele statistiek te ontwikkelen waarover we enkel aannames kunnen maken over de gebruikersbehoeften.
+
+Bij gebrek  aan concrete gebruikersbehoeften kan de kwaliteit van experimentele statistieken uiteraard niet meteen worden geëvalueerd. Kwaliteit  verwijst immers, zoals eerder al aangehaald, naar de overeenkomst tussen de gebruikersbehoeften en de operationele definitie van een statistiek. 
+
+% LISA: Ik interpreteer kwaliteit toch ook nog op andere manieren; correct gemeten, meet het wat het moet meten,.. n
+
+Daarom is het noodzakelijk om voor elke experimentele statistiek een deadline voor evaluatieonderzoek rond gebruikersbehoeften af te spreken (bijvoorbeeld vijf jaar na de eerste publicatie). Dit evaluatieonderzoek beantwoordt vragen zoals:
+\begin{itemize}[nosep]
+	\item Wordt de statistiek gebruikt, en zo ja, waarvoor?
+	\item Sluit het gebruik en de interpretatie aan bij de operationele definitie?
+	\item Zijn er suggesties van gebruikers om de statistiek beter af te stemmen op hun behoeften? 
+\end{itemize}
+
+Eens gebruikersbehoeften in kaart zijn gebracht, kan de kwaliteit van de statistiek verder worden geëvalueerd. Afhankelijk van de resultaten kan de statistiek nadien:
+\begin{itemize}[nosep]
+	\item worden geüpgraded tot een volwaardige officiële statistiek;
+	\item worden aangepast op basis van de bevindingen; of
+	\item worden stopgezet indien de kwaliteit onvoldoende is.
+\end{itemize}
+
+\begin{info}
+	Het groot deel van de statistieken van de VSA zijn vermoedelijk experimenteel, aangezien gebruikersbehoeften niet systematisch zijn vastgelegd. Hierdoor is een kwaliteitsbeoordeling van deze statistieken momenteel moeilijk. Onderzoek naar gebruikersbehoeften dringt zich op bij deze statistieken.
+\end{info}
+
+% Opmerking Jo: De VOS’en zijn vastgelegd in de beginjaren van de VSA in overleg met de gebruikers in themagroepen. Zij voldoen dus wel aan gebruikersbehoeften. Ook nu wordt met de bepaling van de nieuwe VSP-lijst volop rekening gehouden met gebruikersbehoeften.
+% JORRE: Als dat zo is, des te beter. Maar ik heb tot nu toe voor geen enkele statistiek al een overzicht van die gebruikersbehoeften gezien. Ik heb de demografen vorige week gevraagd naar de argumenten waarom we cijfers publiceren over de stand van de bevolking. Zij konden die niet geven... Tom en ik zullen die nochtans nodig hebben om de kwaliteit van de statistieken te beoordelen.
+
+
+
+
+%Alle onderzoeks- en innovatieprojecten van de VSA worden geïntegreerd in een gecentraliseerde werking. Het gaat hierbij om zowel inhoudelijk verdiepend onderzoek, beleidsdomeinoverschrijdend onderzoek, onderzoek rond statistiekontwikkeling, onderzoek in het kader van academische samenwerking of data science-projecten. De activiteiten van deze groep zijn wel steeds gericht op de (verkenning van de) ontwikkeling van nieuwe openbare statistieken of de verbetering van bestaande statistieken. Daarnaast is er binnen deze werking ook plaats voor onderzoek naar efficiëntere manieren om de opdrachten en interne processen van de VSA uit te voeren (bv. experimenten met nieuwe analyse- of visualisatiesoftware). 
+%De werking rond onderzoek en innovatie neemt volgende taken voor haar rekening:
+%•	Organisatie van de redactieraad. Bij voorkeur mondt elk onderzoeks- of innovatieproject minstens uit in een rapport.
+%•	Organisatie van (interne) seminaries waarbij onderzoek wordt voorgesteld aan de collega’s en andere geïnteresseerden.
+%•	Organisatie van de data science-projecten
+%•	Organisatie van de academische samenwerking zoals de ondersteuning van thesisstudenten.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Documentatie --- Metadata}
+
+
+%binnen transatietraject nadenken over manier van documenteren en metadata.  Gestructureerde manier van verzamelen, opvolgen.  
+%metadatafiche vormt de basis voor informatie en documentatie.  Dit is het centrale document, zodat we geen verschillende plaatsen hebben
+%we kunnen pas beginnen als er implementatie is van metadataproject
+
+% in metadatatemplate moet ook eens nagekeken worden vanuit deze nota, zodat de afspraken in deze nota gelijklopen met terminologie in de metadata
+
+
+% Duidelijk maken wat verschil is tussen metadatapagina op de website en de in te vullen template voor de metadata die volledig zal zijn.
+% kunnen metadatapagina's weg? Tom maakt een voorbeeld, indien het kort is kan dat zeker op de cijferpagina
+
+
+
+
+
+%Naast de data zelf vormen metadata ook een essentieel onderdeel om de kwaliteit van onze producten te beschrijven en te beoordelen. Het is echter belangrijk te weten dat er verschillende soorten metadata bestaan die verschillende doeleneinden hebben. Doorgaans wordt er een grof onderscheid gemaakt tussen twee soorten metadata:
+%•	Verklarende metadata (reference metadata) omhelzen alle informatie die de processen beschrijven om statistieken te produceren (gebruikte concepten, methodologie, …). Deze metadata zijn doorgaans opgesteld in tekstvorm, zijn beschrijvend van aard, geven informatie over de inhoud en kwaliteit van de data en helpen om de data juist te interpreteren en gebruiken. Verklarende metadata kunnen zowel intern gebruikt worden om processen te documenteren als extern gepubliceerd worden om de kwaliteit van de gehanteerde statistische methoden aan te geven aan gebruikers. Veelgebruikte kaders voor verklarende metadata zijn de GSBPM en de SIMS.
+%•	Structurele metadata beschrijven daarentegen de structuur van datasets. Ze bevatten meestal een data structuur definitie die alle variabelen in een dataset oplijst, en codelijsten die alle mogelijke waarden op de variabelen in een dataset omschrijven. Aan de hand van deze data structuur definities en codelijsten kan de inhoud van datasets gecontroleerd worden maar wordt ook consistentie afgedwongen tussen datasets. Zo kan één enkele codelijst gebruikt worden voor verschillende datasets waardoor een bepaalde variabele steeds op dezelfde manier wordt opgeslagen. Veelgebruikte kaders voor structurele metadata zijn SDMX en DDI.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Het statistiekproductieproces}
+
+
+\subsection{Alles is data}
+
+%Er is binnen de VSA vaak begripsverwarring rond de termen data, statistieken, cijferreeksen, tabellen, microdata, geaggregeerde data, etc. Het onderscheid tussen al deze termen is echter niet echt relevant of zinvol voor onze werking. Al die zaken zijn namelijk gewoon data. De antwoorden van respondenten op de SV-bevraging die we binnenkrijgen via een veldwerkbureau zijn data. Een rekenblad met het aantal laadpalen in elke gemeente zijn data. Het aantal inwoners in Vlaanderen per jaar zijn data. De tabellen en figuren die we op onze website publiceren, tonen data. Als VSA trekken we data binnen, we verwerken deze data tot andere data, en we sturen de verwerkte data weer uit via verschillende kanalen.
+%De enige relevante onderscheidingen die we binnen de VSA op inhoudelijk vlak maken tussen verschillende soorten data of datasets is enerzijds de vertrouwelijkheid van de data en anderzijds de productiestatus.
+%•	Vertrouwelijkheid verwijst naar de mate waarin data gepubliceerd of gedeeld mogen worden. Sommige datapunten of datasets zijn strikt vertrouwelijk en mogen we nooit delen met mensen buiten de VSA of zelfs niet met niet-gemachtigde collega’s binnen de VSA, andere datapunten of datasets zijn misschien vertrouwelijk maar mogen we volgens bepaalde protocollen wel delen (via bv. een safe room of een scientific use file), nog andere datapunten of datasets vormen dan weer helemaal geen probleem en kunnen we zo delen als public use file of zelfs als open data. 
+%•	Wat productiestatus betreft maken we een onderscheid tussen 4 soorten datasets:
+%a.	Ruwe data: De brondata zoals we ze binnenhalen en waarop we zelf nog geen enkele bewerking hebben uitgevoerd. 
+%b.	Verwerkte data:
+%1.	Gekuiste data: Ruwe data die wordt opgeslagen op een afgesproken gestandaardiseerde manier. De gekuiste data bevatten ook al standaard bewerkingen zoals aggregaties en Statistical Disclosure Controle.
+%2.	Afgeleide data: Data die cijfers bevatten berekend op meerdere ruwe databronnen of het resultaat zijn van complexere berekeningen op gekuiste data.
+%3.	Ontsluitingdata: De selectie van cijfers uit gekuiste en afgeleide data die worden gebruikt voor de publicaties en die we openlijk kunnen publiceren.
+%Uiteraard gaan vertrouwelijkheid en productiestatus over het algemeen hand in hand. Ontsluitingsdata zijn bijvoorbeeld vrijwel per definitie steeds open data. Merk op dat we naast deze inhoudelijke opdeling data ook kunnen opdelen volgens technische kenmerken zoals bestandsgroottes. Deze technische kenmerken zijn echter enkel belangrijk voor de dataverwerkingsinfrastructuur, maar niet voor de manier waarop we onze dataprocessen organiseren.  
+%Een belangrijk gevolg van deze opdelingen is dat het onderscheid tussen microdata en geaggregeerde data eigenlijk niet relevant is. Los van het feit dat het onderscheid tussen beide termen moeilijk te definiëren is, kunnen zowel microdata als geaggregeerde data vertrouwelijk of helemaal niet vertrouwelijk zijn. Zo kan een geaggregeerd cijfer informatie onthullen over het leefloon van een bepaalde burger en mogen we dat niet zomaar publiceren. Een dataset op microniveau kan dan weer enkel informatie over leeftijd en geslacht bevatten die we perfect publiek kunnen publiceren zonder enig probleem.
+%In deze nota maken we gebruik van de termen data, cijfers of statistieken, maar in de grond verwijzen deze termen dus steeds naar hetzelfde idee of hetzelfde concept, namelijk data. In het verlengde daarvan beschouwen we de activiteiten die we nu binnen de VSA vaak als analyse omschrijven ook gewoon als een (doorgedreven) vorm van databewerking. De term analyse wordt in deze nota dan ook niet als een aparte stap of fase vermeld.
+%Een belangrijke kanttekening hierbij is ten slotte wel dat wij als VSA volgens de statistische wetgeving enkel data mogen verzamelen en verwerken met statistische of wetenschappelijke doeleinden, niet om beleid te voeren of te ondersteunen gericht op de opvolging, begeleiding of controle van specifieke individuen, bedrijven of organisaties. 
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Officiële Statistieken}
+
+
+% Misschien ook ergens iets invoegen over VOS, VOS op VSP-lijst en link met statistiekreeksen.
+% vertrekkende vanuit het decreet
+% doel van de tekst is ook voor een deel om duidelijk te maken wat een VOS precies is, dat moet dus ook duidelijk in de tekst staan.
+% mss op het einde zelfs duidelijk zeggen een VOS is dus...
+
+
+
+%De definitie van VOS’en volgens het Bestuursdecreet is erg ruim. Om de focus realistisch en haalbaar te houden, wordt de VOS-productie binnen Vlaanderen beperkt tot een afgebakende lijst bepaald in het VSP (de VSP-lijst). Deze lijst bevat de VOS’en die de SV-entiteiten of de Vlaamse regering relevant of noodzakelijk beschouwt voor het Vlaams beleid, of die moeten worden opgemaakt omwille van interfederale en internationale verplichtingen. Momenteel bevat de VSP-lijst ongeveer 350 statistieken maar er werd in de strategische blauwdruk afgesproken om de bestaande lijst in de komende jaren verder uit te breiden, rekening houdend met de beschikbare capaciteit binnen de entiteiten.
+
+
+
+
+
+
+
+
+
+\subsubsection{Conceptenlijst}
+
+Om consistentie te waarborgen tussen statistieken en statistiekreeksen, hanteren we best een algemene conceptenlijst conform de SDMX‐standaard. Deze conceptenlijst biedt een volledig overzicht van alle concepten die voorkomen in de door ons geproduceerde statistieken. Elk concept wordt voorzien van een korte identificatiecode, die kan worden gebruikt als snelle referentie in communicatie en als variabelenaam in datasets en datatabellen.
+
+Grosso modo onderscheiden we twee soorten concepten:
+\begin{itemize}[nosep]
+	\item Algemene concepten: Dit zijn terugkerende concepten die vaak voorkomen in verschillende statistieken, zoals jaartal of geografisch gebied, maar ook zoals geslacht of NACE-code. De beschrijving van deze concepten is doorgaans beperkt.
+	\item Het restconcept ‘statistiekreeks’: Dit concept omvat de rest van de operationele definities en dekt daarmee alle verdere details van een operationele definitie die niet onder de algemene concepten vallen.
+\end{itemize}
+
+Aan elk concept wordt bovendien een codelijst gekoppeld, eveneens conform de  SDMX‐standaard. Een codelijst bepaalt welke waarden een concept kan aannemen in een statistiekreeks. Voor het concept ‘geslacht’ bevat de codelijst bijvoorbeeld de waarden ``man'', ``vrouw'', en ``andere'', maar ook bijvoorbeeld de waarde ``totaal'', om totaalcijfers over beide geslachten aan te duiden.
+% leeftijd proberen harmoniseren, hier ook zeker de gebruikersbehoeften in kaart brengen
+
+% DANNY: Ter info: Voor een concept kunnen er verschillende codelijsten circuleren. Sommige codelijsten bevattenbv geen code voor de totalen of voor ‘ongekend’. Of, de representatie gebeurt niet door een 1-karakter-code, maar door een geheel getal of een voltekst. Verder kan het ook gebeuren dat een specifieke codelijst gebruikt wordt voor de representatie van meerdere concepten.
+% JORRE: Klopt, maar ik heb in SDMX nog niet gevonden hoe dat dan best georganiseerd wordt. Ik zou vertrekken vanuit een “Master”-codelijst voor elk concept, waaruit je voor elke specifieke tabel enkel de relevante codes selecteert in een nieuwe tabel-sepcifieke-codelijst voor dit concept. Maar dus nog niets over dit gelezen in SDMX...
+
+Om consistentie te bewaren kunnen eveneens mastercodelijsten worden aangemaakt waaruit de codelijsten van gerelateerde concepten kunnen worden afgeleid. Zo kunnen we bijvoorbeeld de verschillende concepten ``geslacht volgens rijksregister'', ``gerapporteerd geslacht'' (in bevraging) en ``geaggregeerd geslacht'' (voor geaggregeerde tabellen) definiëren waarvan de codelijsten sterk overlappen maar niet helemaal dezelfde zijn.
+
+Voor het restconcept ``statistiekreeks'' kunnen de waarden zeer uitgebreid zijn. Bij statistiekreeksen die gebaseerd zijn op bevragingen omvat dit restconcept bijvoorbeeld in principe de volledige operationele beschrijving van de bevraging. Wanneer het ontwerp van de bevraging wordt aangepast, leidt dit tot een nieuwe statistiekreeks en een nieuwe waarde voor het restconcept. Net als bij de concepten voorzien we ook korte identificatiecodes voor elke waarde. Merk ook op dat de codelijst voor het concept ``statistiekreeks'' automatisch een overzicht biedt van alle statistiekreeksen die we produceren.
+
+% het restconcept is eigenlijk het concept ``tabel''. 
+
+
+
+
+
+
+
+
+\subsubsection{Hoe bepalen we concepten en dimensies?}
+
+De bepaling van statistiekreeksen op basis van concepten is geen exacte wetenschap, maar eerder een arbitrair proces waarin verschillende keuzes gemaakt moeten worden. Een eerste keuze is welke concepten je gebruikt als attributen om statistiekreeksen te onderscheiden en welke als dimensies binnen deze statistiekreeksen. In het ene uiterste gebruik je alle concepten als attributen waardoor een aparte reeks voor elke individuele statistiek ontstaat, zoals in tabel \ref{tab:reeksapart}. In het andere uiterste gebruik je alle concepten als dimensies waardoor één enkele reeks ontstaat met alle cijfers erin, zoals in tabel \ref{tab:reekssamen}. Beide benaderingen zijn uiteraard onpraktisch. We moeten op zoek naar een evenwicht dat zowel overzichtelijk als werkbaar is.
+
+\begin{table}
+	\caption{Concepten kunnen worden gebruikt om aparte cijferreeksen te definiëren of als dimensie in één grote cijferreeks. Geen van beide situaties is echter werkbaar. We moeten een middenweg vinden.}
+	\label{tab:reekscombineren}
+	\input{tables/reekscombineren}
+\end{table}
+
+De tweede keuze is welke concepten binnen een statistiekreeks worden samengevoegd en welke worden uitgesplitst. Bijvoorbeeld: cijfers over mannen en vrouwen in gemeenten kun je uitsplitsen op basis van ‘parameter’ en ‘geslacht’, zoals in tabel \ref{tab:dimensieapart}. Je kunt er echter ook voor kiezen om beide concepten te combineren in één dimensie, zoals in tabel \ref{tab:dimensiesamen}. Ook hier gaat het om een afweging tussen eenvoud en gebruiksgemak.
+
+\begin{table}
+	\caption{De indeling van dimensies is arbitrair. Kenmerken kunnen gecombineerd worden in één dimensie of als aparte dimensies worden opgenomen.}
+	\label{tab:dimensieskiezen}
+	\input{tables/dimensieskiezen}
+\end{table}
+
+Een derde keuze is de definitie van de concepten zelf. Stel dat je cijfers publiceert over inwoners van Vlaamse gemeenten, uitgesplitst naar geslacht en leeftijd, zonder deze kenmerken te kruisen. Je kunt hiervoor aparte dimensies definiëren voor ‘geslacht’ en ‘leeftijd’, zoals in tabel \ref{tab:dimensiegesplitst}. Je kan deze dimensies echter ook herdefiniëren tot één dimensie ‘bevolkingsgroep’, die alle waarden van geslacht en leeftijd bevat, zoals in tabel \ref{tab:dimensiegecombineerd}.
+
+\begin{table}
+	\centering\tiny
+	\caption{Concepten in een statistiekreeks kunnen arbitrair worden geherdefinieerd.}
+	\label{tab:dimensiedef}
+	\input{tables/dimensiedef}
+\end{table}
+
+Deze voorbeelden tonen aan dat de bepaling van statistiekreeksen arbitrair is. Richtlijnen zijn daarom essentieel om consistentie en werkbaarheid te waarborgen.
+
+\begin{richtlijnen}
+	
+	% Hier ook zeker kijken wat werkt voor Lieven en Georneth. kijken hoe ze het nu doen. Georneth en Lieven moeten betrokken worden bij datamodel, kunnen hier ook verantwoordelijkheid nemen.
+	
+	\item Cijfers die enkel verschillen in geografische indeling worden gecombineerd in één statistiekreeks waarbij deze geografische indeling als dimensie wordt opgevat. Bij voorkeur wordt voor zo’n geografische dimensie de NIS‐code‐indeling van Statbel gebruikt waarbij ook de versie van de NIS‐code‐indeling vermeld wordt. Naast NIS‐codes kunnen echter ook andere geografische gebieden, zoals postcodes, toeristische regio’s of ziekenhuisnetwerken, worden opgenomen. Voor hiërarchische indelingen kunnen voor de volledigheid extra dimensies worden toegevoegd zoals in tabel \ref{tab:hierdim}.  
+	
+	\begin{table}
+		\caption{Voor hiërarchische dimensies kunnen bijkomende dimensies worden toegevoegd, hoewel niet strikt noodzakelijk.}
+		\label{tab:hierdim}
+		\input{tables/hierdim}
+	\end{table}
+	
+	\item Cijfers die alleen verschillen in tijdsperiode worden samengevoegd in één statistiekreeks, met de tijdsperiode als dimensie.  
+	
+	\begin{info}
+		De keuze om tijdsperiodes als dimensie te behandelen, betekent niet dat alle cijfers steeds in één dataset opgeslagen moeten worden. Zo is het op een file server handiger datasets per jaar te bewaren, terwijl deze datasets toch statistieken bevatten uit dezelfde statistiekreeks.
+	\end{info}
+	
+	\item Cijfers die op dezelfde manier worden berekend en uit dezelfde bron worden afgeleid, worden zoveel mogelijk gecombineerd in één reeks. Dit vereenvoudigt de verwerking en documentatie. 
+	
+	\item % schrappen?  als er teveel uitzonderingen zijn, is het dan nodig deze te houden?  beetje onduidelijk
+	Statistische parameters zoals frequenties en gemiddelden  worden zo veel mogelijk opgesplitst in aparte reeksen. Dit vergemakkerlijkt de beschrijving van de statistiekreeks. Parameters die op een natuurlijke manier bij elkaar horen, vormen een uitzondering en worden wel zo veel mogelijk gecombineerd in dezelfde statistiekreeks: 
+	\begin{itemize}
+		\item Proporties/percentages berekend op frequenties uit één enkele statistiekreeks, worden ook aan deze statistiekreeks toegevoegd. 
+		\item Inferentiële statistieken zoals de onder- en bovengrens van betrouwbaarheidsintervallen, standaardfouten of $p$-waarden worden toegevoegd aan de statistiekreeks met de bijhorende puntschattingen.
+	\end{itemize} 
+	
+	\begin{info}
+		Percentages kunnen op verschillende manieren worden gedefinieerd. Dit moet altijd duidelijk worden omschreven in de operationele definitie en de parameterdimensie (bijv. het percentage mannen in gemeente X is niet hetzelfde als het percentage Vlaamse mannen die in gemeente X wonen).
+	\end{info}
+	
+	\item Binnen een statistiekreeks worden de verschillende dimensies zo goed mogelijk volledig met elkaar gekruist. Als dit niet mogelijk of wenselijk is, kunnen dimensies worden samengevoegd, bijvoorbeeld een dimensie ``bevolkingsgroep'' in plaats van aparte dimensies ``geslacht'', ``leeftijd'' en ``nationaliteit'' als deze dimensies niet worden gekruist.  
+	
+	\item Cijfers die gebaseerd zijn op meerdere basisreeksen afgeleid uit verschillende databronnen, zoals bevolkingsdichtheid (gebaseerd op inwonersaantallen en geografische oppervlakten), worden altijd in aparte reeksen ondergebracht. Dit bevordert overzichtelijkheid en documentatie.
+	% Een cijfers dat....  wordt opgesplitst in verschillende reeksen.  Dus dat teller en noemers bijvoorbeeld aparte reeksen zijn als het uit verschillende bronnen komt.
+	
+	\item Alle concepten worden verzameld in een centrale conceptenlijst dat dient al datamodel. Dit datamodel wordt beheerd door een toegewezen team van collega's. Bij elk concept wordt ook een codelijst voorzien die alle mogelijke waarden op het concept bevat.  
+	% conceptenlijst is dus een datamodel
+	
+	
+\end{richtlijnen}
+
+
+
+
+
+
+
+
+\subsubsection{Versies van statistiekreeksen}
+
+Statistiekreeksen kunnen doorheen de tijd veranderen om verschillende redenen:
+\begin{itemize}
+	\item De operationele definitie van een statistiekreeks wordt aangepast omdat dimensies veranderen, bijvoorbeeld de gemeenteindeling verandert door gemeentefusies.
+	\item De operationele definitie wordt aangepast in lijn met nieuwe gebruikersbehoeften.   
+	\item Er werd een fout ontdekt in de berekening van cijfers en deze fout wordt gecorrigeerd.
+\end{itemize}
+Omdat we verwacht worden elk gepubliceerd cijfer beschikbaar te houden, creëren we in elk van bovenstaande situaties een nieuwe versie van de statistiekreeks. Deze versie duiden we aan door een versienummer terwijl de cijfers en documentatie van de oude versie bewaard blijven. In het geval van een berekeningsfout voegen we een disclaimer toe aan de documentatie van de oude versie met uitleg over deze fout. Bij wijzigende definities, documenteren we eveneens waarom deze wijziging nodig was. Bij een nieuwe versie van een statistiekreeks publiceren we cijferreeksen ook retrospectief indien dat mogelijk is en gewenst wordt geacht.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 \section{Ontsluiting statistieken}
+
+% SUF en PUF zijn er ook, maar is microdata en niet echt de manier van ontsluiten van cijferreeksen
+% ook andere vormen van ontsluiting: dashboards, VIC, rapporten, .....  vermelden.
+% Wel dieper ingaan op feit dat cijferpagina's slechts deel zijn van de statistiekreeksen die we publiceren.  
+% zodat duidelijk er een link is tussen VOS en cijferpagina's
+
+
+%De ontsluiting van VOS’en gebeurt in verschillende vormen, afgestemd op verschillende groepen van gebruikers. VOS’en kunnen onder meer worden ontsloten via cijferpagina’s voor een breed publiek, via verdiepende rapporten voor thema-experten, via interactieve cijferapplicaties voor een meer statistisch getraind publiek, of via downloadbare datasets (open data) voor gebruikers met diepgaande statistische expertise die zelf doorgedreven analyses willen uitvoeren.
+
+
+
+%We zorgen als VSA voor een efficiënte en AVG-conforme ontsluiting van de data van de VOS’en van het SV-netwerk, afgestemd op onze verschillende gebruikers. Een belangrijk onderdeel van deze werf wordt de uitbouw van de nieuwe publicatiehub waarop we de kernstatistieken ontsluiten en tegelijk op een vlotte en toegankelijke manier verwijzen naar de niet-kernstatistieken. 
+%De Vlaamse openbare statistieken ontsluiten doen we op drie manieren:
+%1.	Via cijferpagina’s (kernstatistieken van VSA en entiteiten) en doorverwijslinks op de SV-website als publicatiehub van het SV-netwerk (statistieken van entiteiten).
+%2.	Via cijferapplicaties (kern- en niet-kernstatistieken van VSA)
+%3.	Via raadpleegbare datasets
+%Voor de niet-kernstatistieken van de entiteiten zorgen we enkel voor een doorverwijslink op de publicatiehub en ontsluiten we als VSA zelf geen data.
+%Elke cijferpagina en cijferapplicatie bevat ook
+%•	(een link naar) metadata waarin de gebruiker terug kan vinden hoe de data werden verzameld en verwerkt, op basis van de SIMS.
+%•	De optie om de achterliggende ontsluitingsdata te downloaden 
+
+
+
+
+%o	De cijferpagina’s (incl. metadatapagina’s) zijn bedoeld voor een breed publiek en moeten voldoen aan het toegankelijkheidsprincipe. Op de cijferpagina’s streven we geen volledigheid na maar proberen we wel een vlot en afgebakend verhaal te vertellen met enkele interessante kernboodschappen.
+%o	De metadatafiches moeten daarentegen op de eerste plaats volledig en accuraat zijn. Uiteraard worden de fiches ook geschreven op een zo toegankelijk mogelijke manier, maar dat mag nooit ten koste gaan van de inhoud.
+%o	Toegankelijkheid naar een breed publiek betekent niet dat we ons beperken tot eenvoudige maar minder accurate of robuuste analysemethoden. Het brede publiek moet conceptueel kunnen verstaan wat we tonen maar niet noodzakelijk de technische achtergrond kunnen begrijpen. Bijvoorbeeld, de lezer van een cijferpagina moet kunnen verstaan wat een betrouwbaarheidsinterval conceptueel weergeeft, maar moet niet noodzakelijk kunnen verstaan hoe dat interval werd berekend.  
+
+
 
 We ontsluiten statistieken op twee manieren:
 \begin{enumerate}[nosep]
@@ -494,7 +933,7 @@ De structuur van een dataset met een statistiekreeks wordt bepaald volgens de SD
 \item Attributen: Aanvullende informatie over de cijfers. Deze kan betrekking hebben op de gehele dataset, op een groep van cijfers of op één enkel cijfer.
 \end{itemize}
 
-De combinatie van alle dimensies en attributen bepaalt altijd de volledige operationele definitie van de cijfers. Daarnaast heeft elke dataset een heldere en beknopte conceptuele definitie, oftewel een titel.
+De combinatie van alle dimensies en attributen bepaalt niet alleen de structuur van de data maar representeren samen ook altijd de volledige operationele definitie van de cijfers. Daarnaast heeft elke dataset een heldere en beknopte conceptuele definitie, oftewel een titel.
 
 Het overzicht van de measures, dimensies en attributen wordt vastgelegd in de Data Structuur Definitie (DSD). De DSD bevat ook een verwijzing naar de codelijst van elke measure, dimensie en attribuut. Elke statistiekreeks heeft precies één DSD.
 
@@ -503,16 +942,54 @@ Bovendien moet elke statistiekreeks volledig vrij raadpleegbaar zijn. Ook oude v
 \item als een eenvoudige downloadbare dataset of een reeks van datasets (bijvoorbeeld in csv-bestandsformaat), of
 \item via een interactieve cijferapplicatie waarin gebruikers selecties kunnen maken op basis van dimensies en alleen relevante delen van een statistiekreeks kunnen visualiseren en downloaden.
 \end{itemize}
+% JORRE: Na gesprekken met demografen ben ik niet meer zeker of de PowerBI cijferapplicatie op dit moment worden ontwikkeld met als doel volledige statistiekreeksen te ontsluiten. Bijvoorbeeld, cijfers over opgeheven gemeenten worden niet meer opgenomen in de cijferapplicatie.
+
+% DANNY: Dit is hetgeen mogelijk gemaakt wordt door de gespecialiseerde software pakketten zoals .Stat Suite (Explorer), maar wel niet voor hoog-volume microdata.
+% JORRE: Inderaad. Daarom dat we dus eerst een algemeen begrip moeten hebben van wat een statistiekreeks nu precies is (lees niet hetzelfde als een cijferpagina) zodat we paketten zoals .Stat Suite kunnen bekijken.  Wat bedoel je met hoog-volume? (onderscheid tussen microdata en statistiekreeksen is voor mij niet relevant, het zijn allemaal gewoon datasets)
 
 
 
 \subsection{Cijferpagina's}
 
-Cijferpagina's zijn webpagina's waarop specifieke statistieken in de schijnwerpers worden gezet. Het doel van een cijferpagina is niet het publiceren van volledige statistiekreeksen, maar het presenteren van een toegankelijk en boeiend narratief rond enkele opvallende cijfers uit deze reeksen. Bij het opstellen van een cijferpagina wordt er dus selectief te werk gegaan, om zo een helder en overzichtelijk verhaal te creëren dat aantrekkelijk is voor een breed publiek. Vanwege deze opzet kunnen niet alle beschikbare statistieken op een cijferpagina worden besproken of gevisualiseerd. Dit zou de pagina immers onnodig complex en minder gebruiksvriendelijk maken.
+Cijferpagina’s zijn webpagina’s waarop specifieke statistieken in de schijnwerpers worden gezet. Het doel van een cijferpagina is niet om volledige statistiekreeksen te publiceren, maar om een toegankelijk en boeiend narratief rond enkele opvallende statistieken uit deze reeksen te vertellen. Voor de creatie van een cijferpagina worden er dus slechts enkele statistieken van een statistiekreeks geselecteerd om een helder en overzichtelijk verhaal te creëren dat aantrekkelijk is voor een breed publiek. Vanwege deze opzet kunnen niet alle beschikbare statistieken van een statistiekreeks op een cijferpagina worden besproken of gevisualiseerd. Dit zou de pagina immers onnodig complex en minder gebruiksvriendelijk maken.
 
-Cijferpagina's bevatten vaak verschillende tabellen die een selectie van cijfers uit de statistiekreeksen presenteren. De structuur van deze tabellen is echter zelden uniform. Zo kan de eerste tabel bijvoorbeeld een tijdreeks met totaalcijfers tonen, waarbij de dimensie het concept `tijdsperiode' is. Een tweede tabel kan daarentegen cijfers weergeven voor slechts één enkel jaar, uitgesplitst naar verschillende bevolkingsgroepen. In dat geval is er gefilterd op één tijdsperiode en vormt `bevolkingsgroep' de dimensie. Deze variatie in tabelopmaak maakt duidelijk dat cijferpagina's niet bedoeld zijn als basis voor het vaststellen van volledige statistiekreeksen.
+Cijferpagina’s bevatten vaak verschillende tabellen die een selectie van statistieken uit de statistiekreeksen presenteren. De structuur van deze tabellen is echter zelden uniform.   Zo kan de eerste tabel bijvoorbeeld een tijdreeks met totaalcijfers tonen, waarbij ‘tijdsperiode’ de enige dimensie is. Een tweede tabel kan daarentegen cijfers weergeven voor slechts één enkel jaar, uitgesplitst naar verschillende bevolkingsgroepen. In dat geval is er gefilterd op één tijdsperiode en vormt ‘bevolkingsgroep’ de dimensie. Deze variatie in tabelopmaak maakt duidelijk dat cijferpagina’s niet bedoeld zijn om volledige statistiekreeksen te ontsluiten.
+% JO: Maar de opbouw van die pagina's is wel zo veel mogelijk uniform: eerst evolutie, dan specifiek aspect, dan lokaal, dan Europees.
+% JORRE: Dat klopt, en dat mag zeker zo blijven. Maar het is geen goede opbouw om de statistiekreeksen te definiëren omdat elke tabel andere dimensies heeft. Daarom lijkt het mij beter de afbakening van statistiekreeksen en cijferpagina’s als twee aparte activiteiten te bekijken.
 
-De inhoud van een cijferpagina wordt samengesteld door een team dat verantwoordelijk is voor het toegankelijk maken van onze statistieken. Dit proces staat los van de totstandkoming van de statistiekreeksen zelf, wat ervoor zorgt dat de focus blijft liggen op het creëren van begrijpelijke en informatieve verhalen voor een breed publiek.
+De inhoud van een cijferpagina wordt samengesteld door een team van collega’s verantwoordelijk voor de ontsluiting van onze statistieken op een toegankelijke manier. Dit proces staat los van de productie van de statistiekreeksen zelf, wat ervoor zorgt dat de focus blijft liggen op de creatie van begrijpelijke en informatieve verhalen voor een breed publiek.  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
