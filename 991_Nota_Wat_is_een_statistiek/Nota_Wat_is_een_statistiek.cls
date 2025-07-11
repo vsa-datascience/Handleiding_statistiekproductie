@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{SV-Wat_is_een_statistiek}
+\ProvidesClass{Nota_Wat_is_een_statistiek}
 
 \LoadClass{SVnote}
 
