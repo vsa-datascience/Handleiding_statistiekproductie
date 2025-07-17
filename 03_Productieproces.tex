@@ -1,0 +1,260 @@
+% !TEX program = xelatex
+
+\documentclass[00_handleiding_statistiekproductie.tex]{subfiles}
+
+
+
+\begin{document}
+	
+	
+\chapter{Het statistiekproductieproces}
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+\section{Het statistiekproductieproces}
+
+
+\subsection{Alles is data}
+
+%Er is binnen de VSA vaak begripsverwarring rond de termen data, statistieken, cijferreeksen, tabellen, microdata, geaggregeerde data, etc. Het onderscheid tussen al deze termen is echter niet echt relevant of zinvol voor onze werking. Al die zaken zijn namelijk gewoon data. De antwoorden van respondenten op de SV-bevraging die we binnenkrijgen via een veldwerkbureau zijn data. Een rekenblad met het aantal laadpalen in elke gemeente zijn data. Het aantal inwoners in Vlaanderen per jaar zijn data. De tabellen en figuren die we op onze website publiceren, tonen data. Als VSA trekken we data binnen, we verwerken deze data tot andere data, en we sturen de verwerkte data weer uit via verschillende kanalen.
+%De enige relevante onderscheidingen die we binnen de VSA op inhoudelijk vlak maken tussen verschillende soorten data of datasets is enerzijds de vertrouwelijkheid van de data en anderzijds de productiestatus.
+%•	Vertrouwelijkheid verwijst naar de mate waarin data gepubliceerd of gedeeld mogen worden. Sommige datapunten of datasets zijn strikt vertrouwelijk en mogen we nooit delen met mensen buiten de VSA of zelfs niet met niet-gemachtigde collega’s binnen de VSA, andere datapunten of datasets zijn misschien vertrouwelijk maar mogen we volgens bepaalde protocollen wel delen (via bv. een safe room of een scientific use file), nog andere datapunten of datasets vormen dan weer helemaal geen probleem en kunnen we zo delen als public use file of zelfs als open data. 
+%•	Wat productiestatus betreft maken we een onderscheid tussen 4 soorten datasets:
+%a.	Ruwe data: De brondata zoals we ze binnenhalen en waarop we zelf nog geen enkele bewerking hebben uitgevoerd. 
+%b.	Verwerkte data:
+%1.	Gekuiste data: Ruwe data die wordt opgeslagen op een afgesproken gestandaardiseerde manier. De gekuiste data bevatten ook al standaard bewerkingen zoals aggregaties en Statistical Disclosure Controle.
+%2.	Afgeleide data: Data die cijfers bevatten berekend op meerdere ruwe databronnen of het resultaat zijn van complexere berekeningen op gekuiste data.
+%3.	Ontsluitingdata: De selectie van cijfers uit gekuiste en afgeleide data die worden gebruikt voor de publicaties en die we openlijk kunnen publiceren.
+%Uiteraard gaan vertrouwelijkheid en productiestatus over het algemeen hand in hand. Ontsluitingsdata zijn bijvoorbeeld vrijwel per definitie steeds open data. Merk op dat we naast deze inhoudelijke opdeling data ook kunnen opdelen volgens technische kenmerken zoals bestandsgroottes. Deze technische kenmerken zijn echter enkel belangrijk voor de dataverwerkingsinfrastructuur, maar niet voor de manier waarop we onze dataprocessen organiseren.  
+%Een belangrijk gevolg van deze opdelingen is dat het onderscheid tussen microdata en geaggregeerde data eigenlijk niet relevant is. Los van het feit dat het onderscheid tussen beide termen moeilijk te definiëren is, kunnen zowel microdata als geaggregeerde data vertrouwelijk of helemaal niet vertrouwelijk zijn. Zo kan een geaggregeerd cijfer informatie onthullen over het leefloon van een bepaalde burger en mogen we dat niet zomaar publiceren. Een dataset op microniveau kan dan weer enkel informatie over leeftijd en geslacht bevatten die we perfect publiek kunnen publiceren zonder enig probleem.
+%In deze nota maken we gebruik van de termen data, cijfers of statistieken, maar in de grond verwijzen deze termen dus steeds naar hetzelfde idee of hetzelfde concept, namelijk data. In het verlengde daarvan beschouwen we de activiteiten die we nu binnen de VSA vaak als analyse omschrijven ook gewoon als een (doorgedreven) vorm van databewerking. De term analyse wordt in deze nota dan ook niet als een aparte stap of fase vermeld.
+%Een belangrijke kanttekening hierbij is ten slotte wel dat wij als VSA volgens de statistische wetgeving enkel data mogen verzamelen en verwerken met statistische of wetenschappelijke doeleinden, niet om beleid te voeren of te ondersteunen gericht op de opvolging, begeleiding of controle van specifieke individuen, bedrijven of organisaties. 
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Officiële Statistieken}
+
+
+% Misschien ook ergens iets invoegen over VOS, VOS op VSP-lijst en link met statistiekreeksen.
+% vertrekkende vanuit het decreet
+% doel van de tekst is ook voor een deel om duidelijk te maken wat een VOS precies is, dat moet dus ook duidelijk in de tekst staan.
+% mss op het einde zelfs duidelijk zeggen een VOS is dus...
+
+
+
+%De definitie van VOS’en volgens het Bestuursdecreet is erg ruim. Om de focus realistisch en haalbaar te houden, wordt de VOS-productie binnen Vlaanderen beperkt tot een afgebakende lijst bepaald in het VSP (de VSP-lijst). Deze lijst bevat de VOS’en die de SV-entiteiten of de Vlaamse regering relevant of noodzakelijk beschouwt voor het Vlaams beleid, of die moeten worden opgemaakt omwille van interfederale en internationale verplichtingen. Momenteel bevat de VSP-lijst ongeveer 350 statistieken maar er werd in de strategische blauwdruk afgesproken om de bestaande lijst in de komende jaren verder uit te breiden, rekening houdend met de beschikbare capaciteit binnen de entiteiten.
+
+
+
+%https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Beginners:Statistical_concept_-_What_are_official_statistics?
+%"Official statistics are statistics produced within a national statistical system. National statistical systems include statistical organisations and units within a country that jointly collect, process and disseminate official statistics on behalf of the national government. Official statistics are usually collected within a legal framework, and in accordance with basic principles which ensure minimum professional standards, such as independency and objectivity. For example for the European Union, the legal framework is based on the European regulation (EC) No 223/2009 and the set of principles are called the European Statistics Code of Practice.
+%Official statistics serve as a basis for decisions, for example, for politicians and policy makers: democratic societies cannot function properly without a solid basis of reliable and objective statistics.
+%Non-official statistics include statistics collected and published by other bodies."
+
+
+
+
+\subsubsection{Conceptenlijst}
+
+Om consistentie te waarborgen tussen statistieken en statistiekreeksen, hanteren we best een algemene conceptenlijst conform de SDMX‐standaard. Deze conceptenlijst biedt een volledig overzicht van alle concepten die voorkomen in de door ons geproduceerde statistieken. Elk concept wordt voorzien van een korte identificatiecode, die kan worden gebruikt als snelle referentie in communicatie en als variabelenaam in datasets en datatabellen.
+
+Grosso modo onderscheiden we twee soorten concepten:
+\begin{itemize}[nosep]
+	\item Algemene concepten: Dit zijn terugkerende concepten die vaak voorkomen in verschillende statistieken, zoals jaartal of geografisch gebied, maar ook zoals geslacht of NACE-code. De beschrijving van deze concepten is doorgaans beperkt.
+	\item Het restconcept ‘statistiekreeks’: Dit concept omvat de rest van de operationele definities en dekt daarmee alle verdere details van een operationele definitie die niet onder de algemene concepten vallen.
+\end{itemize}
+
+Aan elk concept wordt bovendien een codelijst gekoppeld, eveneens conform de  SDMX‐standaard. Een codelijst bepaalt welke waarden een concept kan aannemen in een statistiekreeks. Voor het concept ‘geslacht’ bevat de codelijst bijvoorbeeld de waarden ``man'', ``vrouw'', en ``andere'', maar ook bijvoorbeeld de waarde ``totaal'', om totaalcijfers over beide geslachten aan te duiden.
+% leeftijd proberen harmoniseren, hier ook zeker de gebruikersbehoeften in kaart brengen
+
+% DANNY: Ter info: Voor een concept kunnen er verschillende codelijsten circuleren. Sommige codelijsten bevattenbv geen code voor de totalen of voor ‘ongekend’. Of, de representatie gebeurt niet door een 1-karakter-code, maar door een geheel getal of een voltekst. Verder kan het ook gebeuren dat een specifieke codelijst gebruikt wordt voor de representatie van meerdere concepten.
+% JORRE: Klopt, maar ik heb in SDMX nog niet gevonden hoe dat dan best georganiseerd wordt. Ik zou vertrekken vanuit een “Master”-codelijst voor elk concept, waaruit je voor elke specifieke tabel enkel de relevante codes selecteert in een nieuwe tabel-sepcifieke-codelijst voor dit concept. Maar dus nog niets over dit gelezen in SDMX...
+
+Om consistentie te bewaren kunnen eveneens mastercodelijsten worden aangemaakt waaruit de codelijsten van gerelateerde concepten kunnen worden afgeleid. Zo kunnen we bijvoorbeeld de verschillende concepten ``geslacht volgens rijksregister'', ``gerapporteerd geslacht'' (in bevraging) en ``geaggregeerd geslacht'' (voor geaggregeerde tabellen) definiëren waarvan de codelijsten sterk overlappen maar niet helemaal dezelfde zijn.
+
+Voor het restconcept ``statistiekreeks'' kunnen de waarden zeer uitgebreid zijn. Bij statistiekreeksen die gebaseerd zijn op bevragingen omvat dit restconcept bijvoorbeeld in principe de volledige operationele beschrijving van de bevraging. Wanneer het ontwerp van de bevraging wordt aangepast, leidt dit tot een nieuwe statistiekreeks en een nieuwe waarde voor het restconcept. Net als bij de concepten voorzien we ook korte identificatiecodes voor elke waarde. Merk ook op dat de codelijst voor het concept ``statistiekreeks'' automatisch een overzicht biedt van alle statistiekreeksen die we produceren.
+
+% het restconcept is eigenlijk het concept ``tabel''. 
+
+
+
+
+
+
+
+
+\subsubsection{Hoe bepalen we concepten en dimensies?}
+
+De bepaling van statistiekreeksen op basis van concepten is geen exacte wetenschap, maar eerder een arbitrair proces waarin verschillende keuzes gemaakt moeten worden. Een eerste keuze is welke concepten je gebruikt als attributen om statistiekreeksen te onderscheiden en welke als dimensies binnen deze statistiekreeksen. In het ene uiterste gebruik je alle concepten als attributen waardoor een aparte reeks voor elke individuele statistiek ontstaat, zoals in tabel \ref{tab:reeksapart}. In het andere uiterste gebruik je alle concepten als dimensies waardoor één enkele reeks ontstaat met alle cijfers erin, zoals in tabel \ref{tab:reekssamen}. Beide benaderingen zijn uiteraard onpraktisch. We moeten op zoek naar een evenwicht dat zowel overzichtelijk als werkbaar is.
+
+\begin{table}
+	\caption{Concepten kunnen worden gebruikt om aparte cijferreeksen te definiëren of als dimensie in één grote cijferreeks. Geen van beide situaties is echter werkbaar. We moeten een middenweg vinden.}
+	\label{tab:reekscombineren}
+	\input{tables/reekscombineren}
+\end{table}
+
+De tweede keuze is welke concepten binnen een statistiekreeks worden samengevoegd en welke worden uitgesplitst. Bijvoorbeeld: cijfers over mannen en vrouwen in gemeenten kun je uitsplitsen op basis van ‘parameter’ en ‘geslacht’, zoals in tabel \ref{tab:dimensieapart}. Je kunt er echter ook voor kiezen om beide concepten te combineren in één dimensie, zoals in tabel \ref{tab:dimensiesamen}. Ook hier gaat het om een afweging tussen eenvoud en gebruiksgemak.
+
+\begin{table}
+	\caption{De indeling van dimensies is arbitrair. Kenmerken kunnen gecombineerd worden in één dimensie of als aparte dimensies worden opgenomen.}
+	\label{tab:dimensieskiezen}
+	\input{tables/dimensieskiezen}
+\end{table}
+
+Een derde keuze is de definitie van de concepten zelf. Stel dat je cijfers publiceert over inwoners van Vlaamse gemeenten, uitgesplitst naar geslacht en leeftijd, zonder deze kenmerken te kruisen. Je kunt hiervoor aparte dimensies definiëren voor ‘geslacht’ en ‘leeftijd’, zoals in tabel \ref{tab:dimensiegesplitst}. Je kan deze dimensies echter ook herdefiniëren tot één dimensie ‘bevolkingsgroep’, die alle waarden van geslacht en leeftijd bevat, zoals in tabel \ref{tab:dimensiegecombineerd}.
+
+\begin{table}
+	\centering\tiny
+	\caption{Concepten in een statistiekreeks kunnen arbitrair worden geherdefinieerd.}
+	\label{tab:dimensiedef}
+	\input{tables/dimensiedef}
+\end{table}
+
+Deze voorbeelden tonen aan dat de bepaling van statistiekreeksen arbitrair is. Richtlijnen zijn daarom essentieel om consistentie en werkbaarheid te waarborgen.
+
+\begin{richtlijnen}
+	
+	% Hier ook zeker kijken wat werkt voor Lieven en Georneth. kijken hoe ze het nu doen. Georneth en Lieven moeten betrokken worden bij datamodel, kunnen hier ook verantwoordelijkheid nemen.
+	
+	\item Cijfers die enkel verschillen in geografische indeling worden gecombineerd in één statistiekreeks waarbij deze geografische indeling als dimensie wordt opgevat. Bij voorkeur wordt voor zo’n geografische dimensie de NIS‐code‐indeling van Statbel gebruikt waarbij ook de versie van de NIS‐code‐indeling vermeld wordt. Naast NIS‐codes kunnen echter ook andere geografische gebieden, zoals postcodes, toeristische regio’s of ziekenhuisnetwerken, worden opgenomen. Voor hiërarchische indelingen kunnen voor de volledigheid extra dimensies worden toegevoegd zoals in tabel \ref{tab:hierdim}.  
+	
+	\begin{table}
+		\caption{Voor hiërarchische dimensies kunnen bijkomende dimensies worden toegevoegd, hoewel niet strikt noodzakelijk.}
+		\label{tab:hierdim}
+		\input{tables/hierdim}
+	\end{table}
+	
+	\item Cijfers die alleen verschillen in tijdsperiode worden samengevoegd in één statistiekreeks, met de tijdsperiode als dimensie.  
+	
+	\begin{info}
+		De keuze om tijdsperiodes als dimensie te behandelen, betekent niet dat alle cijfers steeds in één dataset opgeslagen moeten worden. Zo is het op een file server handiger datasets per jaar te bewaren, terwijl deze datasets toch statistieken bevatten uit dezelfde statistiekreeks.
+	\end{info}
+	
+	\item Cijfers die op dezelfde manier worden berekend en uit dezelfde bron worden afgeleid, worden zoveel mogelijk gecombineerd in één reeks. Dit vereenvoudigt de verwerking en documentatie. 
+	
+	\item % schrappen?  als er teveel uitzonderingen zijn, is het dan nodig deze te houden?  beetje onduidelijk
+	Statistische parameters zoals frequenties en gemiddelden  worden zo veel mogelijk opgesplitst in aparte reeksen. Dit vergemakkerlijkt de beschrijving van de statistiekreeks. Parameters die op een natuurlijke manier bij elkaar horen, vormen een uitzondering en worden wel zo veel mogelijk gecombineerd in dezelfde statistiekreeks: 
+	\begin{itemize}
+		\item Proporties/percentages berekend op frequenties uit één enkele statistiekreeks, worden ook aan deze statistiekreeks toegevoegd. 
+		\item Inferentiële statistieken zoals de onder- en bovengrens van betrouwbaarheidsintervallen, standaardfouten of $p$-waarden worden toegevoegd aan de statistiekreeks met de bijhorende puntschattingen.
+	\end{itemize} 
+	
+	\begin{info}
+		Percentages kunnen op verschillende manieren worden gedefinieerd. Dit moet altijd duidelijk worden omschreven in de operationele definitie en de parameterdimensie (bijv. het percentage mannen in gemeente X is niet hetzelfde als het percentage Vlaamse mannen die in gemeente X wonen).
+	\end{info}
+	
+	\item Binnen een statistiekreeks worden de verschillende dimensies zo goed mogelijk volledig met elkaar gekruist. Als dit niet mogelijk of wenselijk is, kunnen dimensies worden samengevoegd, bijvoorbeeld een dimensie ``bevolkingsgroep'' in plaats van aparte dimensies ``geslacht'', ``leeftijd'' en ``nationaliteit'' als deze dimensies niet worden gekruist.  
+	
+	\item Cijfers die gebaseerd zijn op meerdere basisreeksen afgeleid uit verschillende databronnen, zoals bevolkingsdichtheid (gebaseerd op inwonersaantallen en geografische oppervlakten), worden altijd in aparte reeksen ondergebracht. Dit bevordert overzichtelijkheid en documentatie.
+	% Een cijfers dat....  wordt opgesplitst in verschillende reeksen.  Dus dat teller en noemers bijvoorbeeld aparte reeksen zijn als het uit verschillende bronnen komt.
+	
+	\item Alle concepten worden verzameld in een centrale conceptenlijst dat dient al datamodel. Dit datamodel wordt beheerd door een toegewezen team van collega's. Bij elk concept wordt ook een codelijst voorzien die alle mogelijke waarden op het concept bevat.  
+	% conceptenlijst is dus een datamodel
+	
+	
+\end{richtlijnen}
+
+
+
+
+
+
+
+
+\subsubsection{Versies van statistiekreeksen}
+
+Statistiekreeksen kunnen doorheen de tijd veranderen om verschillende redenen:
+\begin{itemize}
+	\item De operationele definitie van een statistiekreeks wordt aangepast omdat dimensies veranderen, bijvoorbeeld de gemeenteindeling verandert door gemeentefusies.
+	\item De operationele definitie wordt aangepast in lijn met nieuwe gebruikersbehoeften.   
+	\item Er werd een fout ontdekt in de berekening van cijfers en deze fout wordt gecorrigeerd.
+\end{itemize}
+Omdat we verwacht worden elk gepubliceerd cijfer beschikbaar te houden, creëren we in elk van bovenstaande situaties een nieuwe versie van de statistiekreeks. Deze versie duiden we aan door een versienummer terwijl de cijfers en documentatie van de oude versie bewaard blijven. In het geval van een berekeningsfout voegen we een disclaimer toe aan de documentatie van de oude versie met uitleg over deze fout. Bij wijzigende definities, documenteren we eveneens waarom deze wijziging nodig was. Bij een nieuwe versie van een statistiekreeks publiceren we cijferreeksen ook retrospectief indien dat mogelijk is en gewenst wordt geacht.
+
+
+
+
+
+
+
+
+
+%\section{Statistical Disclosure Control - Beveiliging}
+
+% Zie Statistical-Disclosure-Control-in-business-statistics.pdf
+%Onderscheid tussen
+%- Secure Use file: blijft in eigen infrastructuur
+%- Scientific USe File: Kan worden doorgestuurd maar bevat gevoelige informatie
+%- Public Use File: publiek toegankelijk
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Documentatie --- Metadata}
+
+
+%binnen transatietraject nadenken over manier van documenteren en metadata.  Gestructureerde manier van verzamelen, opvolgen.  
+%metadatafiche vormt de basis voor informatie en documentatie.  Dit is het centrale document, zodat we geen verschillende plaatsen hebben
+%we kunnen pas beginnen als er implementatie is van metadataproject
+
+% in metadatatemplate moet ook eens nagekeken worden vanuit deze nota, zodat de afspraken in deze nota gelijklopen met terminologie in de metadata
+
+
+% Duidelijk maken wat verschil is tussen metadatapagina op de website en de in te vullen template voor de metadata die volledig zal zijn.
+% kunnen metadatapagina's weg? Tom maakt een voorbeeld, indien het kort is kan dat zeker op de cijferpagina
+
+
+
+
+
+%Naast de data zelf vormen metadata ook een essentieel onderdeel om de kwaliteit van onze producten te beschrijven en te beoordelen. Het is echter belangrijk te weten dat er verschillende soorten metadata bestaan die verschillende doeleneinden hebben. Doorgaans wordt er een grof onderscheid gemaakt tussen twee soorten metadata:
+%•	Verklarende metadata (reference metadata) omhelzen alle informatie die de processen beschrijven om statistieken te produceren (gebruikte concepten, methodologie, …). Deze metadata zijn doorgaans opgesteld in tekstvorm, zijn beschrijvend van aard, geven informatie over de inhoud en kwaliteit van de data en helpen om de data juist te interpreteren en gebruiken. Verklarende metadata kunnen zowel intern gebruikt worden om processen te documenteren als extern gepubliceerd worden om de kwaliteit van de gehanteerde statistische methoden aan te geven aan gebruikers. Veelgebruikte kaders voor verklarende metadata zijn de GSBPM en de SIMS.
+%•	Structurele metadata beschrijven daarentegen de structuur van datasets. Ze bevatten meestal een data structuur definitie die alle variabelen in een dataset oplijst, en codelijsten die alle mogelijke waarden op de variabelen in een dataset omschrijven. Aan de hand van deze data structuur definities en codelijsten kan de inhoud van datasets gecontroleerd worden maar wordt ook consistentie afgedwongen tussen datasets. Zo kan één enkele codelijst gebruikt worden voor verschillende datasets waardoor een bepaalde variabele steeds op dezelfde manier wordt opgeslagen. Veelgebruikte kaders voor structurele metadata zijn SDMX en DDI.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

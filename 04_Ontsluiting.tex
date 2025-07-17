@@ -1,0 +1,109 @@
+% !TEX program = xelatex
+
+\documentclass[00_handleiding_statistiekproductie.tex]{subfiles}
+
+
+
+\begin{document}
+	
+	
+\chapter{Statistiekontsluiting}
+	
+	
+	
+	
+
+
+\section{Ontsluiting statistieken}
+
+% SUF en PUF zijn er ook, maar is microdata en niet echt de manier van ontsluiten van cijferreeksen
+% ook andere vormen van ontsluiting: dashboards, VIC, rapporten, .....  vermelden.
+% Wel dieper ingaan op feit dat cijferpagina's slechts deel zijn van de statistiekreeksen die we publiceren.  
+% zodat duidelijk er een link is tussen VOS en cijferpagina's
+
+
+%De ontsluiting van VOS’en gebeurt in verschillende vormen, afgestemd op verschillende groepen van gebruikers. VOS’en kunnen onder meer worden ontsloten via cijferpagina’s voor een breed publiek, via verdiepende rapporten voor thema-experten, via interactieve cijferapplicaties voor een meer statistisch getraind publiek, of via downloadbare datasets (open data) voor gebruikers met diepgaande statistische expertise die zelf doorgedreven analyses willen uitvoeren.
+
+
+
+%We zorgen als VSA voor een efficiënte en AVG-conforme ontsluiting van de data van de VOS’en van het SV-netwerk, afgestemd op onze verschillende gebruikers. Een belangrijk onderdeel van deze werf wordt de uitbouw van de nieuwe publicatiehub waarop we de kernstatistieken ontsluiten en tegelijk op een vlotte en toegankelijke manier verwijzen naar de niet-kernstatistieken. 
+%De Vlaamse openbare statistieken ontsluiten doen we op drie manieren:
+%1.	Via cijferpagina’s (kernstatistieken van VSA en entiteiten) en doorverwijslinks op de SV-website als publicatiehub van het SV-netwerk (statistieken van entiteiten).
+%2.	Via cijferapplicaties (kern- en niet-kernstatistieken van VSA)
+%3.	Via raadpleegbare datasets
+%Voor de niet-kernstatistieken van de entiteiten zorgen we enkel voor een doorverwijslink op de publicatiehub en ontsluiten we als VSA zelf geen data.
+%Elke cijferpagina en cijferapplicatie bevat ook
+%•	(een link naar) metadata waarin de gebruiker terug kan vinden hoe de data werden verzameld en verwerkt, op basis van de SIMS.
+%•	De optie om de achterliggende ontsluitingsdata te downloaden 
+
+
+
+
+%o	De cijferpagina’s (incl. metadatapagina’s) zijn bedoeld voor een breed publiek en moeten voldoen aan het toegankelijkheidsprincipe. Op de cijferpagina’s streven we geen volledigheid na maar proberen we wel een vlot en afgebakend verhaal te vertellen met enkele interessante kernboodschappen.
+%o	De metadatafiches moeten daarentegen op de eerste plaats volledig en accuraat zijn. Uiteraard worden de fiches ook geschreven op een zo toegankelijk mogelijke manier, maar dat mag nooit ten koste gaan van de inhoud.
+%o	Toegankelijkheid naar een breed publiek betekent niet dat we ons beperken tot eenvoudige maar minder accurate of robuuste analysemethoden. Het brede publiek moet conceptueel kunnen verstaan wat we tonen maar niet noodzakelijk de technische achtergrond kunnen begrijpen. Bijvoorbeeld, de lezer van een cijferpagina moet kunnen verstaan wat een betrouwbaarheidsinterval conceptueel weergeeft, maar moet niet noodzakelijk kunnen verstaan hoe dat interval werd berekend.  
+
+
+
+We ontsluiten statistieken op twee manieren:
+\begin{enumerate}[nosep]
+	\item via volledige statistiekreeksen
+	\item via samenvattende cijferpagina's
+\end{enumerate} 
+Beide manieren worden hieronder besproken.
+
+
+\subsection{Statistiekreeksen}
+
+Een statistiekreeks is in essentie een dataset of datatabel die eenvoudig openbaar gepubliceerd kan worden. Het is mogelijk dat sommige cijfers in zo'n dataset een ontbrekende waarde hebben, bijvoorbeeld vanwege ontbrekende informatie of als gevolg van versluiering.
+
+De structuur van een dataset met een statistiekreeks wordt bepaald volgens de SDMX-standaard. Deze standaard stelt dat een dataset met een statistiekreeks drie soorten informatie moet bevatten:
+\begin{itemize}[nosep]
+	\item Measures: Een kolom met de cijfers of statistieken. (In een toekomstige versie van SDMX kan een dataset meerdere kolommen met measures bevatten, waarbij het onderscheid tussen deze kolommen wordt vastgelegd als één van de dimensies).
+	\item Dimensies: Kolommen met kenmerken van de cijfers die nodig zijn om elk cijfer uniek te identificeren.
+	\item Attributen: Aanvullende informatie over de cijfers. Deze kan betrekking hebben op de gehele dataset, op een groep van cijfers of op één enkel cijfer.
+\end{itemize}
+
+De combinatie van alle dimensies en attributen bepaalt niet alleen de structuur van de data maar representeren samen ook altijd de volledige operationele definitie van de cijfers. Daarnaast heeft elke dataset een heldere en beknopte conceptuele definitie, oftewel een titel.
+
+Het overzicht van de measures, dimensies en attributen wordt vastgelegd in de Data Structuur Definitie (DSD). De DSD bevat ook een verwijzing naar de codelijst van elke measure, dimensie en attribuut. Elke statistiekreeks heeft precies één DSD.
+
+Bovendien moet elke statistiekreeks volledig vrij raadpleegbaar zijn. Ook oude versies van een statistiekreeks blijven beschikbaar. Deze datasets kunnen op verschillende manieren gepubliceerd worden, bijvoorbeeld:
+\begin{itemize}[nosep]
+	\item als een eenvoudige downloadbare dataset of een reeks van datasets (bijvoorbeeld in csv-bestandsformaat), of
+	\item via een interactieve cijferapplicatie waarin gebruikers selecties kunnen maken op basis van dimensies en alleen relevante delen van een statistiekreeks kunnen visualiseren en downloaden.
+\end{itemize}
+% JORRE: Na gesprekken met demografen ben ik niet meer zeker of de PowerBI cijferapplicatie op dit moment worden ontwikkeld met als doel volledige statistiekreeksen te ontsluiten. Bijvoorbeeld, cijfers over opgeheven gemeenten worden niet meer opgenomen in de cijferapplicatie.
+
+% DANNY: Dit is hetgeen mogelijk gemaakt wordt door de gespecialiseerde software pakketten zoals .Stat Suite (Explorer), maar wel niet voor hoog-volume microdata.
+% JORRE: Inderaad. Daarom dat we dus eerst een algemeen begrip moeten hebben van wat een statistiekreeks nu precies is (lees niet hetzelfde als een cijferpagina) zodat we paketten zoals .Stat Suite kunnen bekijken.  Wat bedoel je met hoog-volume? (onderscheid tussen microdata en statistiekreeksen is voor mij niet relevant, het zijn allemaal gewoon datasets)
+
+
+
+\subsection{Cijferpagina's}
+
+Cijferpagina’s zijn webpagina’s waarop specifieke statistieken in de schijnwerpers worden gezet. Het doel van een cijferpagina is niet om volledige statistiekreeksen te publiceren, maar om een toegankelijk en boeiend narratief rond enkele opvallende statistieken uit deze reeksen te vertellen. Voor de creatie van een cijferpagina worden er dus slechts enkele statistieken van een statistiekreeks geselecteerd om een helder en overzichtelijk verhaal te creëren dat aantrekkelijk is voor een breed publiek. Vanwege deze opzet kunnen niet alle beschikbare statistieken van een statistiekreeks op een cijferpagina worden besproken of gevisualiseerd. Dit zou de pagina immers onnodig complex en minder gebruiksvriendelijk maken.
+
+Cijferpagina’s bevatten vaak verschillende tabellen die een selectie van statistieken uit de statistiekreeksen presenteren. De structuur van deze tabellen is echter zelden uniform.   Zo kan de eerste tabel bijvoorbeeld een tijdreeks met totaalcijfers tonen, waarbij ‘tijdsperiode’ de enige dimensie is. Een tweede tabel kan daarentegen cijfers weergeven voor slechts één enkel jaar, uitgesplitst naar verschillende bevolkingsgroepen. In dat geval is er gefilterd op één tijdsperiode en vormt ‘bevolkingsgroep’ de dimensie. Deze variatie in tabelopmaak maakt duidelijk dat cijferpagina’s niet bedoeld zijn om volledige statistiekreeksen te ontsluiten.
+% JO: Maar de opbouw van die pagina's is wel zo veel mogelijk uniform: eerst evolutie, dan specifiek aspect, dan lokaal, dan Europees.
+% JORRE: Dat klopt, en dat mag zeker zo blijven. Maar het is geen goede opbouw om de statistiekreeksen te definiëren omdat elke tabel andere dimensies heeft. Daarom lijkt het mij beter de afbakening van statistiekreeksen en cijferpagina’s als twee aparte activiteiten te bekijken.
+
+De inhoud van een cijferpagina wordt samengesteld door een team van collega’s verantwoordelijk voor de ontsluiting van onze statistieken op een toegankelijke manier. Dit proces staat los van de productie van de statistiekreeksen zelf, wat ervoor zorgt dat de focus blijft liggen op de creatie van begrijpelijke en informatieve verhalen voor een breed publiek.  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+\end{document}
