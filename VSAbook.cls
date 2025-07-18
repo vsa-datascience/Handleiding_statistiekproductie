@@ -272,63 +272,7 @@ Path = VSAbook/fonts/, % pas dit aan aan jouw mapstructuur
 
 
 
-
-
-
-
-
-
-
-
-%\def\maketitlepage{
-%	\clearpage
-%	\thispagestyle{empty}%
-%	\pagecolor{VUBblue}%
-%	\strut\vfill 
-%	\parbox[t][.6\paperheight]{10.5cm}{
-%		\color{white}
-%		\begin{flushleft}
-%			\titlefont\Huge\MakeUppercase{\printtitle}
-%		\end{flushleft}
-%		\ifdefempty{\printsubtitle}{}{%
-%			\vspace{20pt}
-%			\begin{flushleft}
-%				\LARGE\printsubtitle
-%			\end{flushleft}
-%		}	
-%		\ifdefempty{\printauthor}{}{
-%			\vspace{20pt}
-%			\begin{flushleft}
-%				\large\printauthor
-%			\end{flushleft}
-%		}			
-%		\ifdefempty{\printdate}{}{
-%			\vspace{20pt}
-%			\begin{flushleft}
-%				\large\printdate
-%			\end{flushleft}
-%		}	
-%	}
-%	\hspace{7pt}
-%	\makebox[0pt][l]{\raisebox{-\height}{%
-%			\includegraphics[height=.6\paperheight]{VUBbook/VUBtriangle}%
-%	}}
-%	\newline
-%	\setlength{\fboxsep}{0pt}
-%	\hspace*{-1.3in}%
-%	\makebox[0pt][l]{\raisebox{-\height}[0pt][0pt]{%
-%			\colorbox{white}{%
-%				\begin{minipage}[c][1.3in][c]{\paperwidth}
-%					\hspace{1.22in}%
-%					\includegraphics[height=0.08\paperwidth]{VUBbook/VUB}
-%				\end{minipage}%
-%		}}
-%	}
-%	\clearpage
-%	\nopagecolor
-%}
-%
-%\def\makelastpage{
+%\def\lastpage{
 %	\newpage
 %	\ifodd\value{page}\hbox{}\newpage\fi
 %	\thispagestyle{empty}%
@@ -420,7 +364,8 @@ Path = VSAbook/fonts/, % pas dit aan aan jouw mapstructuur
 	
 	
 \titleformat{name=\section}
-	{\needspace{5\baselineskip}\sffamily\Large\bfseries\color{maincol2}}
+	{%\needspace{5\baselineskip}
+		\sffamily\Large\bfseries\color{maincol2}}
 	{\thesection}
 	{2ex}
 	{\MakeUppercase{#1}}
@@ -428,13 +373,20 @@ Path = VSAbook/fonts/, % pas dit aan aan jouw mapstructuur
 
 	
 \titleformat{name=\subsection}
-	{\needspace{5\baselineskip}\sffamily\bfseries\color{maincol2}}
+	{%\needspace{5\baselineskip}
+		\sffamily\bfseries\color{maincol2}}
 	{\thesubsection}
 	{2ex}
 	{#1}
 \titlespacing*{\subsection}{0pt}{2\parskip}{\parskip}
 
-
+\titleformat{name=\subsubsection}
+	{%\needspace{2\baselineskip}
+		\sffamily\itshape\color{maincol2}}
+	{}
+	{0pt}
+	{#1}
+\titlespacing*{\subsubsection}{0pt}{2\parskip}{\parskip}
 
 
 
