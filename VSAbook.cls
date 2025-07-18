@@ -19,8 +19,8 @@
 \RequirePackage{amsmath}
 \RequirePackage{afterpage}
 \RequirePackage[framemethod=TikZ]{mdframed}
-
-
+\RequirePackage[most]{tcolorbox}
+\RequirePackage{changepage}
 
 
 
@@ -696,28 +696,38 @@ Path = VSAbook/fonts/, % pas dit aan aan jouw mapstructuur
 %%%%% SPECIAL BLOCKS OF TEXT
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\RequirePackage[most]{tcolorbox}
 
-\newtcolorbox{info}[1][]{%
-	enhanced,
-	breakable,
-	colback=palgray2,
-	colframe=palgray4,
-	coltext=textcol,
-	boxrule=0.9pt,
-	boxsep=5pt,
-	arc=1pt,
-	left=10mm,
-	leftrule=0.8mm,
-	overlay unbroken={
-		\node[anchor=north west, xshift=4pt, yshift=-4pt] at (frame.north west){\includegraphics[width=5mm]{VSAbook/icons/denken}};
-		},
-	overlay first={
-		\node[anchor=north west, xshift=4pt, yshift=-4pt] at (frame.north west){\includegraphics[width=5mm]{VSAbook/icons/denken}};
-		},
-	fontupper=\itshape\footnotesize,
-	#1
+\newenvironment{info}{%
+	\begin{adjustwidth}{2cm}{}%
+	\itshape\footnotesize%
+	\makebox[0pt][r]{\raisebox{-9mm}[1.5ex][0pt]{\includegraphics[width=1cm]{VSAbook/icons/denken}}\hspace{1cm}}\ignorespaces%
+	}{%
+	\end{adjustwidth}%
 	}
+
+
+
+
+%\newtcolorbox{info}[1][]{%
+%	enhanced,
+%	breakable,
+%%	colback=palgray2,
+%%	colframe=palgray4,
+%%	coltext=textcol,
+%%	boxrule=0.9pt,
+%%	boxsep=5pt,
+%%	arc=1pt,
+%	left=15mm,
+%%	leftrule=0.8mm,
+%	overlay unbroken={
+%		\node[anchor=north west, xshift=4pt, yshift=-4pt] at (frame.north west){\includegraphics[width=8mm]{VSAbook/icons/denken}};
+%		},
+%	overlay first={
+%		\node[anchor=north west, xshift=4pt, yshift=-4pt] at (frame.north west){\includegraphics[width=8mm]{VSAbook/icons/denken}};
+%		},
+%	fontupper=\itshape\footnotesize,
+%	#1
+%	}
 
 
 
