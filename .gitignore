@@ -302,7 +302,7 @@ TSWLatexianTemp*
 *.xwm
 
 # literature
-literature/
+literature/*
 
 
 # REVTeX puts footnotes in the bibliography by default, unless the nofootinbib
