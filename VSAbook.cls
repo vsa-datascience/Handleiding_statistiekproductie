@@ -256,8 +256,8 @@ Path = VSAbook/fonts/, % pas dit aan aan jouw mapstructuur
 			\fi
 		\put(0,0){\includegraphics[width=\paperwidth,height=\paperheight]{VSAbook/titlepage/titlepage.pdf}}%
 		}	
-	\newgeometry{right=1cm,left=2cm,top=.55\paperheight,bottom=1cm}
-	\begin{flushleft}
+	\newgeometry{right=1cm,left=1cm,top=.55\paperheight,bottom=1cm}
+	\begin{flushright}
 	\sffamily
 	\null
 	\vfill	
@@ -266,8 +266,8 @@ Path = VSAbook/fonts/, % pas dit aan aan jouw mapstructuur
 	\ifx\@author\@empty\else\vspace{10pt}{\Large\color{black}\@author\par}\fi%
 	\ifx\@date\@empty\else\vspace{3pt}{\Large\color{black}\@date\par}\fi%
 	\vfill
+	\end{flushright}
 	\includegraphics[width=4cm]{VSAbook/titlepage/Entiteitslogo_VSA_zw.png}
-	\end{flushleft}
 	\clearpage
 	\restoregeometry
 	}
@@ -449,7 +449,7 @@ Path = VSAbook/fonts/, % pas dit aan aan jouw mapstructuur
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% TABLE OF TABLES AND FIGURES
+%%%%% LIST OF TABLES AND FIGURES
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -461,7 +461,7 @@ Path = VSAbook/fonts/, % pas dit aan aan jouw mapstructuur
 \renewcommand*{\ext@figure}{lot}%
 \let\c@figure\c@table%
 \let\ftype@figure\ftype@table%
-\let\listoftableandfigures\listoftables%
+\let\listoftablesandfigures\listoftables%
 \AtBeginDocument{
 	  \renewcommand{\listtablename}{Tabellen en figuren}
 	  }
@@ -652,9 +652,9 @@ Path = VSAbook/fonts/, % pas dit aan aan jouw mapstructuur
 
 
 \newenvironment{info}{%
-	\begin{adjustwidth}{2cm}{}%
+	\begin{adjustwidth}{15mm}{}%
 	\itshape\footnotesize%
-	\makebox[0pt][r]{\raisebox{-9mm}[1.5ex][0pt]{\includegraphics[width=1cm]{VSAbook/icons/denken}}\hspace{1cm}}\ignorespaces%
+	\makebox[0pt][r]{\raisebox{-9mm}[1.5ex][0pt]{\includegraphics[width=10mm]{VSAbook/icons/denken}}\hspace{5mm}}\ignorespaces%
 	}{%
 	\end{adjustwidth}%
 	}

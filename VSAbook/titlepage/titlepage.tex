@@ -3,16 +3,21 @@
 \usepackage{xcolor}
 \definecolor{maincol1}{HTML}{4B6C7A}
 
+\pgfmathsetmacro{\dx}{\paperwidth} % Horizontal span
+\pgfmathsetmacro{\dy}{tan(12)*\dx} % Vertical offset
+
 \begin{document}
+
+\pagestyle{empty}
 
 \begin{tikzpicture}[remember picture,overlay]
 \fill[white] (current page.south west) 
-	-- ([yshift=.50\paperheight]current page.south west)
-	-- ([yshift=.35\paperheight]current page.south east)
+	-- ++(0,.40\paperheight)
+	-- +(\paperwidth,0.2125566\paperwidth)
 	-- (current page.south east)
 	-- cycle;
-\fill[maincol1] (current page.south west) rectangle ([xshift=1cm]current page.north west);
-\node[anchor=north east,inner sep=0pt,yshift=-4cm] at (current page.north east) {\includegraphics[width=7cm]{Vlaanderen_is_sterkincijfers_vol_kl.png}};
+\node[anchor=north east,inner sep=0pt,yshift=-25mm] at (current page.north east)
+	{\includegraphics[height=25mm]{Vlaanderen_is_sterkincijfers_vol_kl.png}};
 \end{tikzpicture}
 
 
