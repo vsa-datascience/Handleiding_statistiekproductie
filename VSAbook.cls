@@ -238,33 +238,35 @@ Path = VSAbook/fonts/, % pas dit aan aan jouw mapstructuur
 \def\@author{}
 \renewcommand\author[1]{\def\@author{#1}}	
 \def\@date{\today}
-\renewcommand\date[1]{\def\@date{#1}}		
+\renewcommand\date[1]{\def\@date{#1}}
+\def\@titlepagebackground{}
+\def\@titlepagebackgroundoptions{width=\paperwidth,height=\paperheight}
+\newcommand\titlepagebackground[2][width=\paperwidth,height=\paperheight]{
+	\def\@titlepagebackground{#2}
+	\def\@titlepagebackgroundoptions{#1}
+	}
 	
-
 \RequirePackage{eso-pic}
-\RequirePackage{array}
 
 \renewcommand\titlepage{%
 	\thispagestyle{empty}
 	\AddToShipoutPictureBG*{%
-		\put(0,0){\includegraphics[width=\paperwidth,height=\paperheight]{VSAbook/backgroundtitlepage.png}}%
-%		\put(0,0){\includegraphics[width=\paperwidth,height=\paperheight]{VSAbook/backgroundtitlepage.pdf}}%
+		\ifx\@titlepagebackground\@empty\else
+			\put(0,0){\expandafter\includegraphics\expandafter[\@titlepagebackgroundoptions]{\@titlepagebackground}}%
+			\fi
+		\put(0,0){\includegraphics[width=\paperwidth,height=\paperheight]{VSAbook/titlepage/titlepage.pdf}}%
 		}	
-	\newgeometry{right=1cm,left=1cm,top=1cm,bottom=1cm}
+	\newgeometry{right=1cm,left=2cm,top=.55\paperheight,bottom=1cm}
 	\begin{flushleft}
-	\begin{tcolorbox}[colback=white,boxrule=0pt,width=5cm,boxsep=.5cm,sharp corners]	
-	\includegraphics[width=3cm]{VSAbook/Entiteitslogo_VSA_kl.png}
-	\end{tcolorbox}	
+	\sffamily
+	\null
+	\vfill	
+	{\fontsize{45}{40}\selectfont\bfseries\color{maincol1}\MakeUppercase{\@title}\par}%
+	\ifx\@subtitle\@empty\else\vspace{5pt}{\fontsize{30}{10}\selectfont\color{maincol1}\@subtitle\par}\fi%
+	\ifx\@author\@empty\else\vspace{10pt}{\Large\color{black}\@author\par}\fi%
+	\ifx\@date\@empty\else\vspace{3pt}{\Large\color{black}\@date\par}\fi%
 	\vfill
-	\begin{tcolorbox}[colback=white,boxrule=0pt,width=0.6\textwidth,boxsep=1cm,sharp corners]	
-	\sffamily\color{maincol1}
-	{\Huge\bfseries\MakeUppercase{\@title}\par}
-	\ifx\@subtitle\@empty\else\vspace{1em}{\Large\@subtitle\par}\fi
-	\ifx\@author\@empty\else\vspace{2em}{\large\@author\par}\fi
-	\ifx\@date\@empty\else\vspace{1em}{\normalsize\@date\par}\fi
-	\end{tcolorbox}	
-	\vfill
-	\includegraphics[width=5cm]{VSAbook/vlaanderensterkincijfers.png}
+	\includegraphics[width=4cm]{VSAbook/titlepage/Entiteitslogo_VSA_zw.png}
 	\end{flushleft}
 	\clearpage
 	\restoregeometry

@@ -1,0 +1,20 @@
+\documentclass[a4paper]{book}
+\usepackage{tikz}
+\usepackage{xcolor}
+\definecolor{maincol1}{HTML}{4B6C7A}
+
+\begin{document}
+
+\begin{tikzpicture}[remember picture,overlay]
+\fill[white] (current page.south west) 
+	-- ([yshift=.50\paperheight]current page.south west)
+	-- ([yshift=.35\paperheight]current page.south east)
+	-- (current page.south east)
+	-- cycle;
+\fill[maincol1] (current page.south west) rectangle ([xshift=1cm]current page.north west);
+\node[anchor=north east,inner sep=0pt,yshift=-4cm] at (current page.north east) {\includegraphics[width=7cm]{Vlaanderen_is_sterkincijfers_vol_kl.png}};
+\end{tikzpicture}
+
+
+
+\end{document}
