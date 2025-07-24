@@ -1,7 +1,10 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{VSAbook}
+\ProvidesClass{VSAreport}
 
-\LoadClass[12pt]{book}
+\LoadClass[12pt]{report}
+
+\RequirePackage{pgfopts}
+\newcommand\@layoutscheme{VSA}
 
 
 
@@ -10,7 +13,6 @@
 %%%%% SUPPORTING PACKAGES
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\RequirePackage{subfiles}
 \RequirePackage{etoolbox}
 %\RequirePackage{environ}
 
@@ -60,8 +62,6 @@
 	headheight=14pt,
 	headsep=20pt,
 	footskip=34pt,
-%	includehead,
-%	includefoot,
 	twoside
 	}
 	
@@ -88,7 +88,7 @@
 \RequirePackage{anyfontsize}
 
 \setmainfont[
-Path = VSAbook/fonts/, % pas dit aan aan jouw mapstructuur
+Path = VSAreport/fonts/, % pas dit aan aan jouw mapstructuur
 	Extension = .otf,
 	UprightFont = *-Regular,
 	BoldFont = *-Bold,
@@ -103,7 +103,7 @@ Path = VSAbook/fonts/, % pas dit aan aan jouw mapstructuur
 	FontFace = {cb}{n}{*-CondensedBold}
 	]{FlandersArtSerif}
 \setsansfont[
-	Path = VSAbook/fonts/,
+	Path = VSAreport/fonts/,
 	Extension = .otf,
 	UprightFont = *-Regular,
 	BoldFont = *-Bold,
@@ -145,29 +145,7 @@ Path = VSAbook/fonts/, % pas dit aan aan jouw mapstructuur
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \RequirePackage{xcolor}
-\definecolor{maincol1}{HTML}{4B6C7A}
-\definecolor{maincol2}{HTML}{71A3B8}
-\definecolor{maincol3}{HTML}{8ED2EE}
-\definecolor{textcol}{HTML}{34444A}
-
-\definecolor{palgray1}{HTML}{EDEDED}
-\definecolor{palgray2}{HTML}{E5E5E5}
-\definecolor{palgray3}{HTML}{D5D5D5}
-\definecolor{palgray4}{HTML}{989898}
-
-\definecolor{pal1col1}{HTML}{4E7E71}
-\definecolor{pal1col2}{HTML}{75C4AF}
-\definecolor{pal1col3}{HTML}{79D9BF}
-
-\definecolor{pal2col1}{HTML}{795032}
-\definecolor{pal2col2}{HTML}{A66E45}
-\definecolor{pal2col3}{HTML}{D18955}
-
-\definecolor{pal3col1}{HTML}{767344}
-\definecolor{pal3col2}{HTML}{A5A059}
-\definecolor{pal3col3}{HTML}{C1BB67}
-
-\color{textcol}
+\input{VSAreport/colors/\@layoutscheme.tex}
 
 
 
@@ -251,10 +229,13 @@ Path = VSAbook/fonts/, % pas dit aan aan jouw mapstructuur
 \renewcommand\titlepage{%
 	\thispagestyle{empty}
 	\AddToShipoutPictureBG*{%
+		\put(0,0){\includegraphics[width=\paperwidth,height=\paperheight,page=1]
+			{VSAreport/backgrounds/\@layoutscheme/titlepage.pdf}}%
 		\ifx\@titlepagebackground\@empty\else
 			\put(0,0){\expandafter\includegraphics\expandafter[\@titlepagebackgroundoptions]{\@titlepagebackground}}%
 			\fi
-		\put(0,0){\includegraphics[width=\paperwidth,height=\paperheight]{VSAbook/titlepage/titlepage.pdf}}%
+		\put(0,0){\includegraphics[width=\paperwidth,height=\paperheight,page=2]
+			{VSAreport/backgrounds/\@layoutscheme/titlepage.pdf}}%
 		}	
 	\newgeometry{right=1cm,left=1cm,top=.55\paperheight,bottom=1cm}
 	\begin{flushright}
@@ -267,7 +248,7 @@ Path = VSAbook/fonts/, % pas dit aan aan jouw mapstructuur
 	\ifx\@date\@empty\else\vspace{3pt}{\Large\color{black}\@date\par}\fi%
 	\vfill
 	\end{flushright}
-	\includegraphics[width=4cm]{VSAbook/titlepage/Entiteitslogo_VSA_zw.png}
+	\includegraphics[width=4cm]{VSAreport/entitylogos/\@layoutscheme.png}
 	\clearpage
 	\restoregeometry
 	}
@@ -654,7 +635,7 @@ Path = VSAbook/fonts/, % pas dit aan aan jouw mapstructuur
 \newenvironment{info}{%
 	\begin{adjustwidth}{15mm}{}%
 	\itshape\footnotesize%
-	\makebox[0pt][r]{\raisebox{-9mm}[1.5ex][0pt]{\includegraphics[width=10mm]{VSAbook/icons/denken}}\hspace{5mm}}\ignorespaces%
+	\makebox[0pt][r]{\raisebox{-9mm}[1.5ex][0pt]{\includegraphics[width=10mm]{VSAreport/icons/denken}}\hspace{5mm}}\ignorespaces%
 	}{%
 	\end{adjustwidth}%
 	}
@@ -674,10 +655,10 @@ Path = VSAbook/fonts/, % pas dit aan aan jouw mapstructuur
 %	left=15mm,
 %%	leftrule=0.8mm,
 %	overlay unbroken={
-%		\node[anchor=north west, xshift=4pt, yshift=-4pt] at (frame.north west){\includegraphics[width=8mm]{VSAbook/icons/denken}};
+%		\node[anchor=north west, xshift=4pt, yshift=-4pt] at (frame.north west){\includegraphics[width=8mm]{VSAreport/icons/denken}};
 %		},
 %	overlay first={
-%		\node[anchor=north west, xshift=4pt, yshift=-4pt] at (frame.north west){\includegraphics[width=8mm]{VSAbook/icons/denken}};
+%		\node[anchor=north west, xshift=4pt, yshift=-4pt] at (frame.north west){\includegraphics[width=8mm]{VSAreport/icons/denken}};
 %		},
 %	fontupper=\itshape\footnotesize,
 %	#1

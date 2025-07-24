@@ -1,7 +1,7 @@
 \documentclass[a4paper]{book}
 \usepackage{tikz}
 \usepackage{xcolor}
-\definecolor{maincol1}{HTML}{4B6C7A}
+\input{../colors/VSA.tex}
 
 \pgfmathsetmacro{\dx}{\paperwidth} % Horizontal span
 \pgfmathsetmacro{\dy}{tan(12)*\dx} % Vertical offset
@@ -9,6 +9,12 @@
 \begin{document}
 
 \pagestyle{empty}
+
+\begin{tikzpicture}[remember picture,overlay]
+\fill[maincol3] (current page.south west)  rectangle (current page.north east);
+\end{tikzpicture}
+
+\clearpage
 
 \begin{tikzpicture}[remember picture,overlay]
 \fill[white] (current page.south west) 
