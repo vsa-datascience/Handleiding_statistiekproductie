@@ -1,0 +1,40 @@
+\RequirePackage{fontspec}
+
+\setmainfont[
+  Path = \fontsfile/,
+  UprightFont = *.ttc,
+  BoldFont = *b.ttf,
+  ItalicFont = *i.ttf,
+  BoldItalicFont = *z.ttf,
+  ]{Cambria}
+\setsansfont[
+  Path = \fontsfile/,
+  Extension = .ttf,
+  UprightFont = *,
+  BoldFont = *b,
+  ItalicFont = *i,
+  BoldItalicFont = *z,
+  ]{Calibri}
+
+\newcommand\lightseries{\addfontfeatures{FakeBold=0.5}\selectfont}
+\newcommand\thinseries{\addfontfeatures{FakeBold=0.2}\selectfont}
+\newcommand\blackseries{\addfontfeatures{FakeBold=2.0}\selectfont}
+\newcommand\mediumseries{\addfontfeatures{FakeBold=1.0}\selectfont}
+\newcommand\condseries{\addfontfeatures{Scale=0.85}\selectfont}
+\newcommand\condlightseries{\addfontfeatures{Scale=0.85,FakeBold=0.5}\selectfont}
+\newcommand\condboldseries{\addfontfeatures{Scale=0.85,FakeBold=2.0}\selectfont}
+
+\newcommand\textlight[1]{{\lightseries #1}}
+\newcommand\textthin[1]{{\thinseries #1}}
+\newcommand\textblack[1]{{\blackseries #1}}
+\newcommand\textmedium[1]{{\mediumseries #1}}
+\newcommand\textcond[1]{{\condseries #1}}
+\newcommand\textcondlight[1]{{\condlightseries #1}}
+\newcommand\textcondbold[1]{{\condboldseries #1}}
+
+
+
+
+
+
+

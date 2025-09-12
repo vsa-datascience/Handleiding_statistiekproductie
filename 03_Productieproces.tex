@@ -54,6 +54,11 @@
 \subsection{Officiële Statistieken}
 
 
+
+
+
+
+
 % Misschien ook ergens iets invoegen over VOS, VOS op VSP-lijst en link met statistiekreeksen.
 % vertrekkende vanuit het decreet
 % doel van de tekst is ook voor een deel om duidelijk te maken wat een VOS precies is, dat moet dus ook duidelijk in de tekst staan.
@@ -71,6 +76,29 @@
 %Non-official statistics include statistics collected and published by other bodies."
 
 
+
+
+	Met Statistiek Vlaanderen leggen we op voorhand vast welke statistiekreeksen we publiceren. Deze statistiekreeksen zijn terug te vinden in het Vlaams Statistisch Programma (VSP‐lijst). Voor elke statistiek in de VSP‐lijst voorzien we ten minste volgende informatie:   
+	% JO: Wat er in de VSP-lijst moet staan ligt vast door afspraken met IIS. Info die je voorstelt zou ik opnemen in SIMS-medata.
+	\begin{enumerate}[nosep]
+		\item de conceptuele definitie (die gebruikt wordt als handig label voor de statistiekreeks),
+		\item het versienummer
+		\item de operationele definitie inclusief een beschrijving van alle concepten (attributen en dimensies) inclusief de exacte waarden van die concepten,
+		\item een overzicht van de gebruikersbehoeften, en
+		\item een kwaliteitsevaluatie van de operationele definitie in functie van de gebruikersbehoeften.
+	\end{enumerate}
+	Tabel \ref{tab:voorbeeldVSPlijst} toont hoe de VSP-lijst er minimaal zou moeten uitzien. In de praktijk zullen we uiteraard informatie over statistiekreeksen niet bewaren in één gigantische tabel maar werken met informatiefiches per statistiekreeks gebaseerd op de   single integrated metadata structure (SIMS)\footnote{\href{https://ec.europa.eu/eurostat/web/metadata/reference-metadata-reporting-standards}{ec.europa.eu/eurostat/web/metadata/reference-metadata-reporting-standards}}.
+	
+%	\begin{table}
+%		\caption{Het Vlaams Statistisch Programma (VSP) definieert een lijst van statistiekreeksen die Statistiek Vlaanderen publiceert. Elke statistiekreeks in deze reeks beschikt over een duidelijke conceptuele en operationele definitie, opgelijste gebruikersbehoeften en een kwaliteitsevaluatie.}
+%		\label{tab:voorbeeldVSPlijst}
+%		\input{02_Wat_is_een_statistiek/tables/voorbeeldVSPlijst}
+%	\end{table}
+	
+
+
+
+	Tabel \ref{tab:voorbeeldVSPlijst} toont hoe de VSP-lijst er minimaal zou moeten uitzien. In de praktijk zullen we uiteraard informatie over statistiekreeksen niet bewaren in één gigantische tabel maar werken met informatiefiches per statistiekreeks gebaseerd op de   single integrated metadata structure (SIMS)\footnote{\href{https://ec.europa.eu/eurostat/web/metadata/reference-metadata-reporting-standards}{ec.europa.eu/eurostat/web/metadata/reference-metadata-reporting-standards}}.
 
 
 \subsubsection{Conceptenlijst}
@@ -103,6 +131,19 @@ Voor het restconcept ``statistiekreeks'' kunnen de waarden zeer uitgebreid zijn.
 
 
 \subsubsection{Hoe bepalen we concepten en dimensies?}
+
+\begin{info}
+	We hebben hier een hiaat in het SDMX model blootgelegd. De documentatie van SDMX bespreekt nergens hoe attributen dimensies kunnen worden of vice versa wanneer datasets met statistiekreeksen worden samengevoegd of uitgesplitst. Om deze reden is de uitwerking van attributen in het model ook veel beperkter dan de uitwerking van dimensies. Hierdoor kan SDMX moeilijker gelinkt worden aan de ideeën rond conceptuele definities, operationele definities en kwaliteit van statistiekreeksen.
+	
+	Sterker nog, binnen SDMX wordt parameter nooit duidelijk beschouwd als een dimensie waardoor je verschillende parameters zoals bevolkingsgrootte en oppervlakte moeilijk in één tabel kan combineren zonder in problemen te komen over de definitie van dimensies en attributen.
+\end{info}
+
+
+
+\begin{info}
+Binnen de huidige SDMX-standaard stellen we statistiekreeksen voor met slechts één kolom voor de cijfers. De structuur in tabel \ref{tab:voorbeeldcijferreeks} zou hiervoor gepivoteerd moeten worden. Hoogstwaarschijnlijk versoepelt de SDMX-standaard echter in de toekomst waardoor verschillende kolommen cijfers kunnen bevatten. 
+\end{info}
+
 
 De bepaling van statistiekreeksen op basis van concepten is geen exacte wetenschap, maar eerder een arbitrair proces waarin verschillende keuzes gemaakt moeten worden. Een eerste keuze is welke concepten je gebruikt als attributen om statistiekreeksen te onderscheiden en welke als dimensies binnen deze statistiekreeksen. In het ene uiterste gebruik je alle concepten als attributen waardoor een aparte reeks voor elke individuele statistiek ontstaat, zoals in tabel \ref{tab:reeksapart}. In het andere uiterste gebruik je alle concepten als dimensies waardoor één enkele reeks ontstaat met alle cijfers erin, zoals in tabel \ref{tab:reekssamen}. Beide benaderingen zijn uiteraard onpraktisch. We moeten op zoek naar een evenwicht dat zowel overzichtelijk als werkbaar is.
 
@@ -244,7 +285,24 @@ Omdat we verwacht worden elk gepubliceerd cijfer beschikbaar te houden, creëren
 
 
 
-
+	
+%	\begin{info}
+%		Gebruikersbehoeften, conceptuele en operationele definitie komen weliswaar aan bod in informatiestandaarden zoals de SIMS en de GSBPM maar op een zeer onduidelijke en onoverzichtelijke manier. In de SIMS worden de gebruikersbehoeften pas opgelijst in categorie 12 terwijl dit de start vormt van een statistiekproductieproces. De operationele definitie zit in de SIMS dan weer op een zeer onsamenhangende manier verspreid over verschillende categorieën terwijl de conceptuele definitie volledig ontbreekt. 
+%		
+%		De GSBPM doet het op dit vlak beter. Het beschrijft een proces dat vertrekt vanuit gebruikersbehoeften en eindigt met een kwaliteitsevaluatie. Het expliciteert echter onvoldoende dat de evaluatie gestoeld moet zijn op de gebruikersbehoeften en alle operationele keuzes die onderweg werden gemaakt.  
+%	\end{info}
+	
+	% Opmerking Jo: Maar we gaan nu toch verder met de SIMS als standaard voor de metadata. Of stel je dat hier in vraag?
+	% De SIMS kan blijven gebruikt worden. Maar ik blijf bij mijn opmerking dat we die vooral als afchecklijst moeten gebruiken en niet blindelings de structuur moeten overnemen. De structuur is chaotisch en onoverzichtelijk. Bij GSBPM zie je dat er al meer werd nagedacht over de structuur van de informatie en wordt er expliciet toegegeven dat dat maar een ideaaltype is waarvan kan worden afgeweken. De SIMS lijkt voor mij de uitkomst van een wilde brainstorm waarbij de belangrijke stap vergeten werd om alles nadien duidelijker te structureren.
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 
 

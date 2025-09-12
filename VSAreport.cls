@@ -3,8 +3,41 @@
 
 \LoadClass[12pt]{report}
 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% CLASS OPTIONS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 \RequirePackage{pgfopts}
-\newcommand\@layoutscheme{VSA}
+\RequirePackage{etoolbox}
+
+\newbool{Wordversion}
+\boolfalse{Wordversion}
+
+\newcommand\@theme{VSA}
+
+\pgfkeys{
+  /VSAreport/.is family, 
+  /VSAreport,
+  Wordversion/.code = \booltrue{Wordversion},
+  theme/.code = \renewcommand\@theme{#1},
+  }
+\ProcessPgfOptions{/VSAreport}
+
+\ifdefstring{\@theme}{VSA}{}{
+\ifdefstring{\@theme}{VSA-green}{}{
+	\ClassError{VSAreport}{Invalid theme: '\@theme'}{Only 'VSA' and 'VSA-green' are supported. Please fix your theme option.}
+	}}
+
+
+
+
+
+
+
+
 
 
 
@@ -50,7 +83,6 @@
 %%%% PAGE LAY-OUT
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
 \RequirePackage[]{geometry}
 \geometry{
  	a4paper,
@@ -84,57 +116,15 @@
 %%%%	 FONTS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\RequirePackage{fontspec}
+\ifbool{Wordversion}{
+	\def\fontsfile{VSAreport/fonts/CambriaCalibri}
+	\hyphenpenalty=10000
+	\exhyphenpenalty=10000
+	}{
+	\def\fontsfile{VSAreport/fonts/FlandersArt}
+	}
+\input{\fontsfile.tex}
 \RequirePackage{anyfontsize}
-
-\setmainfont[
-Path = VSAreport/fonts/, % pas dit aan aan jouw mapstructuur
-	Extension = .otf,
-	UprightFont = *-Regular,
-	BoldFont = *-Bold,
-	ItalicFont = *-Italic, 
-	AutoFakeSlant=0.4,
-	FontFace = {l}{n}{*-Light},
-	FontFace = {m}{n}{*-Medium},
-	FontFace = {k}{n}{*-Thin},
-	FontFace = {b}{n}{*-Black},
-	FontFace = {c}{n}{*-CondensedRegular},
-	FontFace = {cl}{n}{*-CondensedLight},
-	FontFace = {cb}{n}{*-CondensedBold}
-	]{FlandersArtSerif}
-\setsansfont[
-	Path = VSAreport/fonts/,
-	Extension = .otf,
-	UprightFont = *-Regular,
-	BoldFont = *-Bold,
-	ItalicFont = *-Italic, 
-	AutoFakeSlant=0.4,
-	FontFace = {l}{n}{*-Light},
-	FontFace = {m}{n}{*-Medium},
-	FontFace = {k}{n}{*-Thin},
-	FontFace = {b}{n}{*-Black},
-	FontFace = {c}{n}{*-CondensedRegular},
-	FontFace = {cl}{n}{*-CondensedLight},
-	FontFace = {cb}{n}{*-CondensedBold}
-	]{FlandersArtSans}
-
-\newcommand\lightseries{\fontseries{l}\selectfont}
-\newcommand\thinseries{\fontseries{k}\selectfont}
-\newcommand\blackseries{\fontseries{b}\selectfont}
-\newcommand\mediumseries{\fontseries{m}\selectfont}
-\newcommand\condseries{\fontseries{c}\selectfont}
-\newcommand\condlightseries{\fontseries{cl}\selectfont}
-\newcommand\condboldseries{\fontseries{cb}\selectfont}
-
-\newcommand\textlight[1]{{\fontseries{l}\selectfont #1}}
-\newcommand\textthin[1]{{\fontseries{k}\selectfont #1}}
-\newcommand\textblack[1]{{\fontseries{b}\selectfont #1}}
-\newcommand\textmedium[1]{{\fontseries{m}\selectfont #1}}
-\newcommand\textcond[1]{{\fontseries{c}\selectfont #1}}
-\newcommand\textcondlight[1]{{\fontseries{cl}\selectfont #1}}
-\newcommand\textcondbold[1]{{\fontseries{cb}\selectfont #1}}
-
-
 
 
 
@@ -144,14 +134,7 @@ Path = VSAreport/fonts/, % pas dit aan aan jouw mapstructuur
 %%%% COLORS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\RequirePackage{xcolor}
-\input{VSAreport/colors/\@layoutscheme.tex}
-
-
-
-
-
-
+\input{VSAreport/colors/\@theme.tex}
 
 
 
@@ -230,12 +213,12 @@ Path = VSAreport/fonts/, % pas dit aan aan jouw mapstructuur
 	\thispagestyle{empty}
 	\AddToShipoutPictureBG*{%
 		\put(0,0){\includegraphics[width=\paperwidth,height=\paperheight,page=1]
-			{VSAreport/backgrounds/\@layoutscheme/titlepage.pdf}}%
+			{VSAreport/backgrounds/\@theme/titlepage.pdf}}%
 		\ifx\@titlepagebackground\@empty\else
 			\put(0,0){\expandafter\includegraphics\expandafter[\@titlepagebackgroundoptions]{\@titlepagebackground}}%
 			\fi
 		\put(0,0){\includegraphics[width=\paperwidth,height=\paperheight,page=2]
-			{VSAreport/backgrounds/\@layoutscheme/titlepage.pdf}}%
+			{VSAreport/backgrounds/\@theme/titlepage.pdf}}%
 		}	
 	\newgeometry{right=1cm,left=1cm,top=.55\paperheight,bottom=1cm}
 	\begin{flushright}
@@ -248,7 +231,7 @@ Path = VSAreport/fonts/, % pas dit aan aan jouw mapstructuur
 	\ifx\@date\@empty\else\vspace{3pt}{\Large\color{black}\@date\par}\fi%
 	\vfill
 	\end{flushright}
-	\includegraphics[width=4cm]{VSAreport/entitylogos/\@layoutscheme.png}
+	\includegraphics[width=4cm]{VSAreport/entitylogos/\@theme.png}
 	\clearpage
 	\restoregeometry
 	}
@@ -633,11 +616,15 @@ Path = VSAreport/fonts/, % pas dit aan aan jouw mapstructuur
 
 
 \newenvironment{info}{%
-	\begin{adjustwidth}{15mm}{}%
+	\vspace{\baselineskip}
+	\begin{adjustwidth}{20mm}{10mm}%
+	\begin{flushleft}
 	\itshape\footnotesize%
 	\makebox[0pt][r]{\raisebox{-9mm}[1.5ex][0pt]{\includegraphics[width=10mm]{VSAreport/icons/denken}}\hspace{5mm}}\ignorespaces%
 	}{%
+	\end{flushleft}
 	\end{adjustwidth}%
+	\vspace{\baselineskip}
 	}
 
 

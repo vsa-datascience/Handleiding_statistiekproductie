@@ -1,0 +1,48 @@
+\RequirePackage{fontspec}
+
+\setmainfont[
+	Path = \fontsfile/, % pas dit aan aan jouw mapstructuur
+	Extension = .otf,
+	UprightFont = *-Regular,
+	BoldFont = *-Bold,
+	ItalicFont = *-Italic, 
+	AutoFakeSlant=0.4,
+	FontFace = {l}{n}{*-Light},
+	FontFace = {m}{n}{*-Medium},
+	FontFace = {k}{n}{*-Thin},
+	FontFace = {b}{n}{*-Black},
+	FontFace = {c}{n}{*-CondensedRegular},
+	FontFace = {cl}{n}{*-CondensedLight},
+	FontFace = {cb}{n}{*-CondensedBold}
+	]{FlandersArtSerif}
+\setsansfont[
+	Path = \fontsfile/,
+	Extension = .otf,
+	UprightFont = *-Regular,
+	BoldFont = *-Bold,
+	ItalicFont = *-Italic, 
+	AutoFakeSlant=0.4,
+	FontFace = {l}{n}{*-Light},
+	FontFace = {m}{n}{*-Medium},
+	FontFace = {k}{n}{*-Thin},
+	FontFace = {b}{n}{*-Black},
+	FontFace = {c}{n}{*-CondensedRegular},
+	FontFace = {cl}{n}{*-CondensedLight},
+	FontFace = {cb}{n}{*-CondensedBold}
+	]{FlandersArtSans}
+
+\newcommand\lightseries{\fontseries{l}\selectfont}
+\newcommand\thinseries{\fontseries{k}\selectfont}
+\newcommand\blackseries{\fontseries{b}\selectfont}
+\newcommand\mediumseries{\fontseries{m}\selectfont}
+\newcommand\condseries{\fontseries{c}\selectfont}
+\newcommand\condlightseries{\fontseries{cl}\selectfont}
+\newcommand\condboldseries{\fontseries{cb}\selectfont}
+
+\newcommand\textlight[1]{{\fontseries{l}\selectfont #1}}
+\newcommand\textthin[1]{{\fontseries{k}\selectfont #1}}
+\newcommand\textblack[1]{{\fontseries{b}\selectfont #1}}
+\newcommand\textmedium[1]{{\fontseries{m}\selectfont #1}}
+\newcommand\textcond[1]{{\fontseries{c}\selectfont #1}}
+\newcommand\textcondlight[1]{{\fontseries{cl}\selectfont #1}}
+\newcommand\textcondbold[1]{{\fontseries{cb}\selectfont #1}}

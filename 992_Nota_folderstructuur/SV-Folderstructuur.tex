@@ -304,6 +304,18 @@ Naast de inhoudelijke thema's delen we bestanden ook op volgens de functie van h
 \end{itemize}
 (Merk op dat scripts ook kleine databestanden kunnen bevatten die op natuurlijke wijze bij een script horen, bijvoorbeeld een mapping om één variabele om te zetten naar een andere. Dit is geen ``inhoudelijke'' data.)
     
+    
+    
+% breng termen in lijn met
+% https://www.vlaanderen.be/digitaal-vlaanderen/onze-diensten-en-platformen/informatieveiligheid/informatieclassificatie
+% https://assets.vlaanderen.be/image/upload/v1624887516/Vo_informatieclassificatie_-_GDPR_-_Definitie_van_de_standaard_data_types_persoonsgegevens_unjm3d.pdf
+%•	Klasse 0 (Publiek): Gegevens die vrij beschikbaar zijn, zoals openbare statistieken. Beveiliging is minimaal.
+%•	Klasse 1 (Intern): Gegevens bedoeld voor intern gebruik binnen een organisatie. Beveiliging is matig.
+%•	Klasse 2 (Vertrouwelijk): Gegevens die persoonsgegevens bevatten. Beveiliging is hoog.
+%•	Klasse 3 (Zeer vertrouwelijk): Gegevens met een zeer hoge gevoeligheid, zoals medische dossiers. Beveiliging is maximaal.
+    
+% we rekken hierbij vertrouwelijk wat uit, we slaan hieronder ook bronbestanden op die op zich geen vertrouwelijke data bevatten, maar die nog werden gecontroleerd obv ons datamodel. Dit doen we om risico's te vermijden op verkeerd datagebruik van ongecontroleerde bronbestanden.
+    
 Wat betreft beveiliging maken we ten tweede een onderscheid tussen verschillende beveiligingsniveaus: 
 \begin{itemize}
 \item Bestanden met beperkte toegang. Dit zijn bestanden die in principe niet aangepast mogen worden. Hierbij gaat het voornamelijk over data die we binnenhalen. Zo'n data worden opgeslagen en nadien nooit meer aangepast. 

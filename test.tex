@@ -1,0 +1,80 @@
+% !TEX program = xelatex
+
+\documentclass{VSAreport}
+
+\usepackage{tabularray}
+\usepackage{tikz}
+
+\begin{document}
+
+\begin{table}
+
+
+
+\begin{mdframed}[
+	roundcorner=5pt,
+	linecolor=maincol1,
+	linewidth=1pt,
+	frametitle={Aantal inwoners naar geslacht en leeftijd in Vlaamse gemeenten in 2019.},
+	frametitlefont=\sffamily\color{white},
+	frametitlebackgroundcolor=maincol1
+	]
+\tiny
+\begin{tblr}[t]{
+	width=.45\linewidth,
+	colspec={X[c]X[c]X[c]},
+	column{1-2} = {fg=textcol,bg=maincol3},
+	row{1} = {fg=white,bg=maincol1},
+	row{2} = {fg=white,bg=maincol2},
+	hline{1,Z} = {maincol1},
+	vline{1,Z} = {maincol1},
+	hspan=minimal
+	}
+\SetCell[c=3]{l} Volgens geslacht. \\
+Gemeente   & Geslacht & Aantal \\
+Aartselaar & man      &   7089 \\
+Aartselaar & vrouw    &   7204 \\
+Antwerpen  & man      & 262921 \\
+Antwerpen  & vrouw    & 263014 \\
+Boechout   & man      &   6506 \\
+Boechout   & vrouw    &   6760 \\
+Boom       & man      &   9024 \\
+Boom       & vrouw    &   9220 \\
+Borsbeek   & man      &   5270 \\
+Borsbeek   & vrouw    &   5584 \\
+\ldots     & \ldots   & \ldots \\
+\end{tblr}
+\hfill
+\raisebox{-2\baselineskip}{
+\begin{tblr}[t]{
+	width=.45\linewidth,
+	colspec={X[c]X[c]X[c]},
+	column{1-2} = {fg=textcol,bg=maincol3},
+	row{1} = {fg=white,bg=maincol1},
+	row{2} = {fg=white,bg=maincol2},
+	hline{1,Z} = {maincol1},
+	vline{1,Z} = {maincol1},
+	hspan=minimal
+	}
+\SetCell[c=3]{l} Volgens leeftijdsgroep.\\
+Gemeente   & Leeftijd   & Aantal \\
+Aartselaar & 0-18 jaar  &   7089 \\
+Aartselaar & 19-35 jaar &   7204 \\
+Aartselaar & 36-64 jaar &   7089 \\
+Aartselaar & 65+ jaar   &   7204 \\
+Antwerpen  & 0-18 jaar  & 262921 \\
+Antwerpen  & 19-35 jaar & 263014 \\
+Antwerpen  & 36-64 jaar & 262921 \\
+Antwerpen  & 65+ jaar   & 263014 \\
+Boechout   & 0-18 jaar  &   6506 \\
+Boechout   & 19-35 jaar &   6760 \\
+\ldots     & \ldots     & \ldots \\
+\end{tblr}
+}
+\end{mdframed}
+
+
+\end{table}
+
+
+\end{document}
