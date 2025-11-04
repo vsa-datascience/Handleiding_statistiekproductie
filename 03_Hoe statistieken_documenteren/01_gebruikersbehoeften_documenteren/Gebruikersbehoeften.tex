@@ -1,0 +1,208 @@
+% !TEX program = xelatex
+% !BIB program = biber
+
+
+\documentclass[Wordversion]{VSAnote}
+\addbibresource{references.bib} 
+
+\newcommand\SIMS[2]{#1 (#2)}
+
+
+
+\begin{document}
+
+\title{Gebruikersbehoeften documenteren}
+\author{Jorre Vannieuwenhuyze \& Tom De Winter}
+\titlepage
+
+
+
+
+
+De productie van een openbare statistiek start altijd vanuit concrete gebruikersbehoeften. Wanneer een statistiek die behoeften niet vervult, verliest ze haar relevantie – een kernvoorwaarde binnen de Praktijkcode voor Europese Statistieken \parencite{Eurostat2017European}. Gebruikersbehoeften beïnvloeden ook andere kwaliteitsaspecten. Zo kun je de accuraatheid van een statistiek pas beoordelen als duidelijk is waarvoor ze wordt gebruikt. Daarnaast geven gebruikersbehoeften aan wanneer de statistiek nodig is en of de publicatie dus voldoende tijdig en punctueel gebeurt. Kortom: het is essentieel om helder te documenteren voor wie en met welk doel een openbare statistiek wordt gepubliceerd. 
+
+Het documenteren van gebruikersbehoeften valt onder veld \SIMS{S.12.1}{User needs} van de Single Integrated Metadata Structure (SIMS). Volgens de SIMS worden gebruikersbehoeften beschreven onder punt \SIMS{S.12}{Relevance}, vrij achteraan in de metadatastructuur. Wij kiezen er bewust voor om dit onderdeel vooraan in de metadatafiche te plaatsen, omdat gebruikersbehoeften het logische vertrekpunt vormen van het volledige statistiekproductieproces \parencite{GSBPM2025}. Ze vormen daardoor het referentiekader voor alle andere onderdelen van de metadatafiche. 
+
+Hoewel het belang van duidelijke documentatie onmiskenbaar is, blijkt het in de praktijk vaak moeilijk om gebruikersbehoeften scherp te formuleren. Een omschrijving als “Deze statistiek wordt gepubliceerd omdat ze interessant is” volstaat uiteraard niet, net zomin als “De statistiek wordt gepubliceerd omdat ze op de VSP-lijst staat''. Zo'n zinnen vertellen immers niets over de echte redenen waarom de statistiek wordt gepubliceerd en waarvoor ze zal worden gebruikt. De documentatie van gebruikersbehoeften moet grondiger en specifieker gebeuren. Daarom geven we in deze nota enkele richtlijnen om gebruikersbehoeften in kaart te brengen. 
+
+Gebruikersbehoeften kunnen zich op verschillende manieren manifesteren \parencite{Eurostat2021ESShandbookmetadata}: 
+\begin{enumerate}
+    \item Er is een \emph{internationale verplichting} om een statistiek te produceren.
+    \item Er is een \emph{institutionele} vraag naar statistieken vervat in wetten of decreten. 
+    \item Er is een \emph{beleidsondersteunende} vraag naar statistieken vanuit de regering, kabinetten of overheidsadministraties.
+    \item Er is een \emph{maatschappelijke} vraag naar statistieken omwille van een maatschappelijk debat.
+    \item Er is een \emph{academische} vraag naar statistieken in functie van wetenschappelijk onderzoek.
+\end{enumerate}
+We bespreken deze situaties in meer detail hieronder. Onthou hierbij dat statistieken in de praktijk antwoord kunnen geven op vragen vanuit diverse invalshoeken. Afhankelijk van de statistiek zal je gebruikersbehoeften kunnen formuleren voor meerdere soorten of zelfs alle soorten vragen. Om te achterhalen voor welke soort gebruikersbehoeften je een statistiek moet produceren, kan je beginnen met volgende vragen te beantwoorden:
+\begin{itemize}[nosep]
+\item Wat is de aanleiding voor deze statistiek? Is er een concrete internationale verplichting, wet of decreet, beleidsvraag, maatschappelijke bezorgdheid of academische nood waar deze statistiek op inspeelt?
+\item Wat kan of moet er precies worden bereikt door gebruik van deze statistiek?
+\item Voor welke gebruikers wordt de statistiek geproduceerd? Voor wetgevers, beleidmakers, burgers, bedrijven, organisaties, wetenschappelijke onderzoekers of andere specifieke doelgroepen?
+\item Wat zou er gebeuren als deze statistiek niet wordt gepubliceerd?
+\end{itemize}
+Onthou hierbij ook dat je deze vragen moet stellen tot op het niveau van de individuele cijfers, niet enkel op het niveau van een cijfertabel of een tabelreeks. Voor elk gepubliceerd cijfer moet helder zijn waarom en voor wie dit cijfer wordt geproduceerd en gepubliceerd. 
+
+
+
+
+\section{Internationale verplichtingen}
+
+De eerste soort gebruikersbehoeften manifesteren zich als internationale verplichtingen om bepaalde statistieken te produceren. Zo'n verplichtingen worden opgelegd door organisaties zoals Eurostat, de OESO of de VN.  Om deze gebruikersbehoeften te documenteren, kan je volgende vragen proberen te beantwoorden:
+\begin{itemize}[nosep]
+    \item Welke internationale instantie vraagt deze statistiek? 
+    \item Moeten hierbij internationale definities of standaarden worden gevolgd om de statistiek te berekenen en te publiceren?
+    \item Wordt deze statistiek gebruikt in internationale vergelijkingen en zijn er vergelijkbare statistieken in andere landen/regio’s die als referentie dienen?  
+    \item Is er een deadline of cyclus waarin deze statistiek moet worden aangeleverd? 
+\end{itemize}
+Vaak is er in deze situatie beperkte flexibiliteit om de statistiek verder te operationaliseren. Bij internationale verplichtingen is er meestal al een vrij rigide richtlijn over de manier waarop data moet worden verzameld en cijfers moeten worden berekend. Omwille van praktische regels is het echter niet altijd mogelijk om deze richtlijnen te volgen en worden openbare statistiekdiensten toegestaan af te wijken van de richtlijnen, al gebeurt dat wel steeds in overleg met de internationale instantie zelf.
+
+Een voorbeeld van een internationale verplichting om statistieken op te leveren is \href{https://eur-lex.europa.eu/legal-content/NL/ALL/?uri=CELEX:32008L0098}{richtlijn 2008/98/EG van het Europees Parlement en de Raad van 19 november 2008 betreffende afvalstoffen}. Deze richtlijn verplicht lidstaten tot een driejaarlijkse rapportering over afvalproductie en verwerking. De rapportage moet gestandaardiseerde indicatoren bevatten, zoals bijvoorbeeld het aantal kg afval per inwoner of het percentage gerecycleerd afval. Het is de taak van Statistiek Vlaanderen om deze cijfers aan te leveren aan Eurostat, weliswaar onrechtstreeks via Statbel.
+
+
+
+
+
+\section{Institutionele gebruikersbehoeften}
+
+Institutionele gebruikersbehoeften verwijzen naar wetten, decreten, regels of andere formele instructies die rechtstreeks of onrechtstreeks de productie van bepaalde statistieken verwachten. Om te achterhalen of een statistiek wordt gevraagd vanuit een nationale wet of regionaal decreet en vervolgens de juiste gebruikersbehoeften in kaart te brengen, kan je proberen een antwoord te formuleren op volgende vragen:
+\begin{itemize}[nosep]
+    \item In het kader van welk decreet of welke wet wordt de statistiek gevraagd? 
+    \item Wordt de statistiek expliciet gevraagd door deze wet of dit decreet of is de vraag eerder impliciet?
+    \item Als de vraag impliciet is, hoe leidt je dat af uit de formulering van de wet of decreet?
+    \item Kan je het exacte artikel of passage uit het decreet of de wet aanduiden waarin deze statistiek wordt vermeld of impliciet wordt vereist?
+    \item Is er een deadline of cyclus waarin deze statistiek volgens de wet of het decreet moet worden aangeleverd?
+    \item Waarom werd deze wet of dit decreet aangenomen? Wat is de geest van deze wet of dit decreet? Wat tracht de wet of het decreet maatschappelijk te bereiken?
+    \item Hoe kan de statistiek een rol spelen om deze wet of dit decreet uit te voeren en het maatschappelijk doel van de wet of het decreet te bereiken?
+\end{itemize}
+
+Als voorbeeld van een statistiek die wordt geproduceerd vanuit een bepaalde wet of decreet kunnen we verwijzen naar de \href{https://www.vlaanderen.be/statistiek-vlaanderen/bevolking/bevolking-omvang-en-groei}{Vlaamse openbare statistiek (VOS) rond bevolkingsomvang en -groei} waarvan de bevolkingsgrootte in Antwerpen deel uitmaakt. Deze statistiek wordt, onder andere, gepubliceerd omwille van de \href{https://codex.vlaanderen.be/portals/codex/documenten/1018245.html}{Vlaamse Codex Ruimtelijke Ordening (VCRO)}. Deze codex bevat bepalingen die de basis vormen voor het Beleidsplan Ruimte Vlaanderen (BRV) en de ruimtelijke beleidsplannen op provinciaal en gemeentelijk niveau. Heel wat artikels in dit decreet impliceren de productie van statistieken. Artikel 2.1.1. bijvoorbeeld bepaalt dat de beleidsplannen worden onderbouwd door onderzoek en dat de uitvoering ervan wordt gemonitord. Hiervoor zijn onder meer demografische gegevens nodig zoals bevolkingsomvang, -groei en -prognoses om ruimtelijke ontwikkelingen te sturen. 
+
+Een ander voorbeeld van een wet of decreet dat vraagt om statistieken is het \href{https://codex.vlaanderen.be/PrintDocument.ashx?id=1021295&datum=&geannoteerd=false&print=false}{Decreet betreffende het duurzaam beheer van materiaalkringlopen en afvalstoffen van 23 december 2011}. In Artikel 9 van dit decreet staat dat de Vlaamse Regering maatregelen moet nemen om de hoeveelheid afval te beperken en recyclage te bevorderen. Om de uitvoering van dit decreet in goede banen te leiden, moeten uiteraard afvalstromen goed worden gemonitord en gerapporteerd. Deze monitoring vereist kwantitatieve gegevens over afvalproductie, recyclage, verbranding en storting. Dit zijn gegevens die Statistiek Vlaanderen publiceert in de vorm van het totaal aantal ingezameld huishoudelijk en stedelijk afval in Vlaanderen door de jaren heen, het percentage dat hiervan selectief wordt verzameld, en de soorten verwerking van dit afval.
+
+Beide voorbeelden illustreren dat wetten en decreten vaak niet specifiek beschrijven welke statistieken precies moeten worden gepubliceerd. Ze worden meestal (maar niet altijd) verder vertaald in beleid, zoals bijvoorbeeld het Beleidsplan Ruimte Vlaanderen (BRV). Zo'n beleidsplannen bevatten normaal gezien veel duidelijkere aanwijzingen over welke cijfers nu precies moeten worden gepubliceerd en waarom. Dit wordt besproken in de volgende paragraaf.
+
+
+
+
+
+\section{Beleidsondersteunende gebruikersbehoeften}
+
+Vaak moeten statistieken ook worden geproduceerd omwille van beleidsondersteunende vragen vanuit de regering, kabinetten of overheidsadministraties. Zo'n vragen kunnen voortvloeien uit formele wetten en decreten, maar ze kunnen evengoed ontstaan vanuit beleidsplannen zonder dat dit wettelijk of decretaal is verankerd.
+
+Om beleidsondersteunende gebruikersbehoeften in kaart te brengen kunnen volgende vragen worden beantwoord:
+\begin{itemize}[nosep]
+    \item Is deze statistiek opgenomen in een formeel beleidsinstrument zoals een strategisch plan, actieplan, beleidsbrief of regeerverklaring? 
+    \item  Wordt de statistiek gebruikt voor beleidsontwikkeling, -uitvoering of -evaluatie? Welke fasen of processen binnen het beleid moeten kunnen worden opgevolgd door de statistiek?
+    \item Moet de statistiek input leveren voor een beleidsnota, rapport of parlementaire vraag?
+    \item Aan wie moet gerapporteerd worden (bv. Vlaams Parlement, minister, Europa, Rekenhof)? 
+    \item Is er een expliciete verplichting tot dataverzameling, rapportering of monitoring in het kader van dit beleid? Wat is de frequentie en het formaat van deze rapportage? Is er een deadline of cyclus waarin deze statistiek moet worden aangeleverd?
+    \item Zijn er indicatoren of benchmarks vastgelegd die met deze statistiek moeten worden opgevolgd?
+    \item Welke delen van het beleidsplan moet de statistiek precies in kaart brengen en waarom? Welke specifieke beleidsdoelstellingen worden met deze statistiek opgevolgd? (Bijvoorbeeld: verhoging participatie, vermindering uitstroom, verbetering dienstverlening\ldots)
+    \item Wat zou er beleidsmatig gebeuren als deze statistiek er niet zou zijn?
+\end{itemize}
+
+Hierboven werd reeds aangehaald dat de \href{https://www.vlaanderen.be/statistiek-vlaanderen/bevolking/bevolking-omvang-en-groei}{VOS rond bevolkingsomvang en -groei} wordt gepubliceerd, onder andere, in het kader van het \href{https://omgeving.vlaanderen.be/nl/BRV}{Beleidsplan Ruimte Vlaanderen (BRV)}. In dit plan wordt, onder andere, het doel geformuleerd om tegen 2040 de dagelijkse inname van open ruimte door bebouwing terug te brengen tot nul hectare.  Het bevat een strategische visie en beleidskaders die onder meer gebaseerd zijn op bevolkingsgroei en -spreiding. Hiermee wordt, onder andere, de behoefte aan woningen ingeschat, de mobiliteitsdruk voorspeld en de voorzieningeninfrastructuur (zoals scholen, zorg, openbaar vervoer) ingepland.
+
+Binnen hetzelfde thema produceert Statistiek Vlaanderen bovendien ook heel wat andere statistieken. Om de vooruitgang van het BRV te monitoren en bij te sturen produceert ze immers ook verschillende statistieken over hoeveel hectare is ingenomen door bebouwing,  infrastructuur en industrie, de evolutie van ruimtebeslag over de jaren, regionale verschillen in ruimtebeslag, het percentage van de bodem dat verhard is (wegen, parkeerplaatsen, gebouwen), de impact van bebouwing op waterdoorlaatbaarheid en klimaatadaptatie, typologieën van bebouwde ruimte zoals lintbebouwing, kernen of verspreide bebouwing, verwachte bevolkingsgroei en huishoudens per regio, of de nood aan woonruimte versus beschikbare ruimte.
+
+
+
+\section{Maatschappelijke gebruikersbehoeften}
+
+De publicatie van statistieken kan ook worden gestuwd door een maatschappelijke vraag zonder dat er een duidelijk beleid rond wordt gevoerd. Zo'n vraag wordt dan ingegeven door maatschappelijke discussies, bijvoorbeeld in de media of via parlementaire vragen.
+Deze vragen zijn dus gericht op maatschappelijke relevantie, publieke verantwoording en democratische dialoog.
+
+Om maatschappelijke gebruikersbehoeften in kaart te brengen kan je je volgende vragen stellen:
+\begin{itemize}[nosep]
+    \item Welk maatschappelijk debat wordt ondersteund door de statistiek?
+    \item Welke partijen zijn betrokken bij dit debat?
+    \item Is er een actuele gebeurtenis, beleidswijziging of maatschappelijke trend die aanleiding geeft tot dit debat?
+    \item Welk maatschappelijk vraagstuk of publieke bezorgdheid wordt door deze statistiek zichtbaar gemaakt of geduid?
+    \item Welke misvattingen, percepties of controverses kunnen met deze statistiek worden geobjectiveerd of genuanceerd?
+    \item Hoe draagt de statistiek bij aan dialoog, sensibilisering of beleidsverantwoording?
+    \item Welk type beslissingen of acties zouden gebruikers kunnen nemen op basis van deze statistiek?
+    \item Draagt deze statistiek bij aan transparantie of publieke verantwoording?
+    \item Kan deze statistiek gebruikt worden als input voor beleidsbeïnvloeding?
+    \item Zijn er risico’s verbonden aan verkeerd gebruik of interpretatie door externe partijen?
+    \item Maakt de statistiek feedback of dialoog mogelijk met secundaire gebruikers?
+\end{itemize}
+Bij maatschappelijke gebruikersbehoeften is het natuurlijk belangrijk dat Openbare Statistiekdiensten steeds hun neutraliteit en objectiviteit behouden. Gepubliceerde statistieken moeten dan ook niet worden bekeken als een middel van de Statistiekdienst om een maatschappelijk debat zelf te sturen, wel als een instrument voor burgers en beleidsmakers om dat debat te voeren op een onderbouwde manier. De voorwaarde dat een openbare statistiekdienst neutraal en objectief moet zijn, kan dus niet gebruikt worden om maatschappelijke gebruikersbehoeften te negeren. Merk trouwens op dat dezelfde redenering ook gemaakt kan worden voor beleidsondersteunende vragen.
+
+Als voorbeeld van een maatschappelijke vraag kunnen we opnieuw kijken naar de \href{https://www.vlaanderen.be/statistiek-vlaanderen/bevolking/bevolking-omvang-en-groei}{VOS rond bevolkingsomvang en -groei}. De cijfers in deze VOS werden immers al gerapporteerd in verschillende nieuwsmedia binnen discussies over de impact op woningbouw, migratiebeleid en vergrijzing \parencite[zoals bijvoorbeeld in][]{DeStandaard2020Tegen}. Ook zijn er parlementaire vragen op basis van deze cijfers zoals bijvoorbeeld de vraag van Klaas Slootmans aan minister Ben Weyts op 16 februari 2022 over de bevolkingsaanwas in de Vlaamse Rand, en de stijging van de bevolkingsdichtheid en demografische druk in bepaalde gemeenten \parencite[zie][]{VlaamsParlement2025Verslag1608376}.
+
+
+
+
+\section{Academische vraag}
+
+Tot slot kan een vraag naar statistieken ook gestuurd worden vanuit academisch onderzoek. Om zo'n academische vragen in kaart te brengen kan je volgende vragen proberen te beantwoorden: 
+\begin{itemize}[nosep]
+    \item Welk type onderzoek wordt gefaciliteerd met deze statistiek?
+    \item Zijn er specifieke indicatoren of trends die wetenschappelijke onderzoekers willen opvolgen?
+    \item Zijn er bestaande onderzoeksprojecten of samenwerkingen waarin deze statistiek een rol speelt?
+    \item Moet de statistiek geschikt zijn voor longitudinaal onderzoek?
+    \item Zijn er methodologische vereisten (bv. representativiteit, granulariteit, vergelijkbaarheid)?
+    \item Zijn er wetenschappelijke kwaliteitscriteria waaraan de statistiek moet voldoen?
+\end{itemize}
+
+Gemeentelijke bevolkingscijfers in Vlaanderen worden regelmatig ingezet als essentiële en praktische variabele in peer-reviewed onderzoek --- bijvoorbeeld als noemer voor incidentie- of dekkingspercentages, als covariaat om gemeentelijk schaal- of service-effecten te verklaren, of om gemeenten te stratificeren naar grootte \parencite[zie bijvoorbeeld][]{vandevijvere2023unhealthy, dInverno2022local, mustafa2020self}. Ruimtelijk-demografische en vergrijzingsstudies naken dan weer gebruik van cijfers over bevolkingsgroei per gemeente \parencite[zie bijvoorbeeld][]{schockaert2018local}. 
+
+
+
+
+
+
+
+
+
+
+\section{Synthese}
+
+De formulering van de gebruikersbehoeften sluit je best altijd af met een synthese. Op de eerste plaats betekent dit dat je de gebruikersbehoeften inhoudelijk omvormt tot conceptuele definities voor de gewenste cijfers, cijfertabellen en de tabelreeks. Hierbij stel je je de volgende vragen: 
+\begin{itemize}[nosep]
+    \item Wat houdt deze tabelreeks in, in één zin?
+    \item Welke tabellen moeten er worden gemaakt om de gebruikersbehoeften te vervullen?
+    \item Welke concepten worden er gebruikt in elke tabel? 
+    \item Welke concepten zijn dimensies van de tabellen? 
+    \item Welke waarden moeten de concepten aannemen?
+\end{itemize}
+De antwoorden op deze vragen moeten steeds beargumenteerd worden vanuit de geformuleerde gebruikersbehoeften. Je kan in de synthese bijvoorbeeld geen tabel definiëren over bevolkingsgroei als er in de geformuleerde gebruikersbehoeften geen verwijzing werd gemaakt naar bevolkingsgroei. Zo'n tabel zou immers meteen irrelevant zijn. Aangezien de indeling in cijfertabellen en concepten voor een stuk een arbitrair gegeven is, is het raadzaam om bij deze formulering ook vooruit te denken. Je legt hier al de basis voor een overzichtelijk informatiebeheer in zowel de metadatafiche als in het productieproces en de database. 
+
+Als voorbeeld verwezen we al enkele keren naar de VOS over de Vlaamse bevolking. De conceptuele definitie van deze VOS is ``De bevolkingsomvang en -groei in Vlaanderen en de Vlaamse gemeenten doorheen de jaren''. Op basis van de gebruikersbehoeften onderscheiden we voor deze VOS twee cijfertabellen:
+\begin{itemize}[nosep]
+    \item Het \emph{aantal inwoners} in Vlaanderen en de Vlaamse gemeenten in elk jaar.
+    \item De \emph{bevolkingsgroei} in Vlaanderen en de Vlaamse gemeenten over elk jaar.
+\end{itemize}
+In beide tabellen onderscheiden we drie concepten:
+\begin{itemize}[nosep]
+    \item De \emph{parameter} met waarden ``aantal inwoners'' en ``bevolkingsgroei''.
+    \item Het \emph{geografisch gebied} met de Vlaamse gemeenten en Vlaanderen als waarden. In beide tabellen is dit een dimensie.
+    \item De \emph{tijdsperiode} met jaren als waarden. Dit is ook steeds een dimensie in beide tabellen. Merk op dat de invulling van elk jaar verschillend zal uitpakken voor beide tabellen tijdens de operationalisatie. Voor de eerste tabel wordt het vertaald naar een exacte datum, voor de tweede naar een tijdsperiode. Dit verschil is nog niet duidelijk op basis van de conceptuele definitie maar verklaart wel waarom we best twee verschillende tabellen onderscheiden. Hier moet je dus al vooruit denken. 
+\end{itemize}
+
+Naast de conceptuele definitie is het ook aangewezen om in de synthese stil te staan bij meer technische behoeften. We denken daarbij aan de antwoorden op de volgende vragen:
+\begin{itemize}[nosep]
+  \item Zijn er specifieke kwaliteitscriteria waaraan de statistiek moet voldoen (bv. betrouwbaarheid, vergelijkbaarheid, tijdigheid, punctualiteit)?
+  \item Is er behoefte aan specifieke communicatiekanalen of publicatievormen voor externe verspreiding?
+  \item Moet de statistiek toegankelijk zijn voor een breed publiek, of eerder enkel voor gespecialiseerde gebruikers?
+\end{itemize}
+De antwoorden op deze vragen zullen immers mee de operationalisatie van de conceptuele definitie richting geven omdat ze een impact hebben op kwaliteitscriteria zoals tijdigheid, punctualiteit, gebruiksvriendelijkheid en toegankelijkheid.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\printbibliography
+
+
+
+\end{document}

@@ -1,0 +1,265 @@
+% !TEX program = xelatex
+% !BIB program = biber
+
+%\PassOptionsToClass{Wordversion}{VSAreport} 
+\documentclass[00_handleiding_statistiekproductie.tex]{subfiles}
+
+
+
+\begin{document}
+	
+
+
+
+
+
+
+\chapter{Wat is metadata?}
+
+In het vorige hoofdstuk zagen we dat een statistiek verwijst naar een cijfer of een verzameling van cijfers in cijfertabellen of zelfs tabelreeksen. We zagen echter dat een statistiek meer is dan cijfers. Voor een statistiek hebben we ook heel wat bijkomende informatie over die cijfers nodig zoals informatie over de gebruikersbehoeften waaraan de statistiek tegemoet komt, informatie over de operationalisering van de statistiek, of informatie over de kwaliteit van de statistiek. Al dit soort informatie wordt \emph{metadata} genoemd en de beschikbaarheid van zo'n metadata is even belangrijk als de cijfers zelf. 
+
+
+ 
+Naast de gebruikersbehoeften, conceptuele definitie, operationalisering, en kwalitetisevaluatie kan er echter nog heel wat andere metadata worden gedocumenteerd. [paragraaf over eigenaarschap en vertrouwelijkheid uit vorig hoofdstuk naar hier verplaatsen?]
+
+
+
+
+
+
+
+Er bestaan verschillende soorten metadata met verschillende doeleinden. Doorgaans wordt er een grof onderscheid gemaakt tussen twee soorten metadata:
+\begin{itemize}
+\item \emph{Verklarende metadata} (reference metadata) omhelzen alle informatie die de processen beschrijven om statistieken te produceren (gebruikte concepten, methodologie, \ldots). Deze metadata zijn doorgaans opgesteld in tekstvorm, zijn beschrijvend van aard, geven informatie over de inhoud en kwaliteit van de data en helpen om de data juist te interpreteren en gebruiken. Verklarende metadata kunnen zowel intern gebruikt worden om processen te documenteren als extern gepubliceerd worden om de kwaliteit van de gehanteerde statistische methoden aan te geven aan gebruikers. Veelgebruikte kaders voor verklarende metadata zijn de GSBPM en de SIMS.
+\item \emph{Structurele metadata} beschrijven daarentegen de structuur van datasets. Ze bevatten meestal een data structuur definitie die alle variabelen in een dataset oplijst, en codelijsten die alle mogelijke waarden op de variabelen in een dataset omschrijven. Aan de hand van deze data structuur definities en codelijsten kan de inhoud van datasets gecontroleerd worden maar wordt ook consistentie afgedwongen tussen datasets. Zo kan één enkele codelijst gebruikt worden voor verschillende datasets waardoor een bepaalde variabele steeds op dezelfde manier wordt opgeslagen. Veelgebruikte kaders voor structurele metadata zijn SDMX en DDI.
+\end{itemize}
+
+
+
+
+
+	
+De SIMS vormt een exhaustief overzicht van alle soorten metadata die kan worden verzameld rond een statistiek. Het nadeel van de SIMS is dat dit overzicht erg ongestructureerd is, veel overlap kent tussen verschillende punten, en de logica in de volgorde ver zoek is. De SIMS kan gebruikt worden als checklist om de volledigeheid van jouw metadata te evalueren, maar wordt best niet in haar originele structuur overgenomen om metadata zelf te beheren. Daarvoor is ze veel te onhandig.
+
+De SIMS lijkt ook ontworpen te zijn door ingenieurs die alles in hokjes en kotjes willen steken maar daar weinig succesvol in zijn. Dat is ook logisch, zoals hierboven al vermeld is verklarende metadata beschrijvend en narratief, en daardoor ook zeer heterogeen en ongestructueerd. Ze komt het best tot haar recht in een vloeiende tekst en ze laat zich moeilijk in hokjes wringen.
+
+
+
+We stellen daarom een nieuwe grove structuur voor om de verklarende metadata te beheren. Hierbij volgen we de logica van een wetenschappelijk onderzoek. Deze logica vind je ook terug in de GSBPM, een model om het statistiekproductieproces te beschrijven. Dezelfde logica vind je ook terug in vorig hoofdstuk.
+Net zoals wetenschappelijk onderzoek vertrekt vanuit een onderzoeksvraag, start de productie van een statistiek steeds vanuit een gebruikersbehoeften. 
+	
+	
+
+
+
+
+
+
+
+
+
+
+STATISTISCHE REFERENTIEMETADATA VOOR
+VLAAMSE OPENBARE STATISTIEKEN
+Deze metadatafiche is gebaseerd op de concepten zoals gedefinieerd in de Single Integrated Metadata Standard (SIMS, v2) van Eurostat. Er werd gekozen voor richtvragen als tussentitels én voor een aangepaste volgorde van de informatie die nauwer aansluit bij de GSBPM om zo de leesbaarheid en toegankelijkheid van deze metadatafiche te verhogen. Bij iedere sectie wordt weergegeven welke elementen uit de SIMS hierin verwerkt zijn (S-code) en wordt, indien van toepassing, verwezen naar de SDMX-code (code in hoofdletters na de S-code).
+
+
+
+\section{Interne informatie} 
+
+– niet voor publicatie
+Contactpersoon VSA (naam – e-mailadres – functie)
+	Naam:	…
+	E-mailadres:	…
+	Functie:	…
+Contactpersoon entiteit (naam – e-mailadres – functie)
+	Naam:	…
+	E-mailadres:	…
+	Functie:	…
+
+
+
+
+\section{ADMINISTRATIEVE GEGEVENS}
+Contact
+Contactorganisatie
+[S.01.1 - CONCEPT_ORGANISATION]
+Voor iedere statistiek is dit: “Vlaamse Overheid - netwerk Statistiek Vlaanderen”
+Contactorganisatie entiteit
+[S.01.2 - ORGANISATION_UNIT]
+Naam van de producerende entiteit (Dit is niet noodzakelijk hetzelfde als de eigenaar van de brondata!)
+Contact e-mailadres
+[S.01.6 - CONTACT_EMAIL]
+Dit is “https://www.vlaanderen.be/statistiek-vlaanderen/contact” voor alle VOS’en gepubliceerd op de website van Statistiek Vlaanderen.
+Update
+Metadatafiche laatste update
+[S.023 - META_LAST_UPDATE]
+DD-MM-YYYY
+
+
+
+
+
+\section{CONTEXT}
+
+Wat drukt deze statistiek uit?
+VOS-ID: Naam/namen
+Hier plaats je de VOS-ID’s en namen van VOS’en die in deze metadatafiche worden besproken
+
+
+Waarom maken we deze statistiek?
+Deze sectie gaat over de relevantie van de statistiek, een belangrijk aspect van de kwaliteit van openbare statistieken. In deze sectie informeer je de gebruiker waarom deze statistiek wordt gemaakt. Hierin zitten twee mogelijke perspectieven vervat: enerzijds een wettelijke/decretale basis op basis waarvan deze statistiek moet worden gemaakt, anderzijds een specifieke gebruikersnood die onder meer via gebruikersbevraging werd vastgesteld.
+
+
+Wettelijke/decretale basis
+[S.06.01 – INST_MAN_LA_OA]
+Is er een wettelijke/decretale basis om deze statistiek te produceren? Zo ja, bespreek dit uitgebreid.
+
+
+GEBRUIKERSNODEN
+[S.12.1 – USER_NEEDS]
+Is er een gebruikersnood om deze statistiek te produceren? Toon het nut/belang van deze statistiek aan door het gebruik ervan te benoemen. Indien er voor deze statistiek specifieke gebruikersgroepen met specifieke noden gedefinieerd werden, bespreek deze hier dan.
+
+
+%	\begin{info}
+%		Gebruikersbehoeften, conceptuele en operationele definitie komen weliswaar aan bod in informatiestandaarden zoals de SIMS en de GSBPM maar op een zeer onduidelijke en onoverzichtelijke manier. In de SIMS worden de gebruikersbehoeften pas opgelijst in categorie 12 terwijl dit de start vormt van een statistiekproductieproces. De operationele definitie zit in de SIMS dan weer op een zeer onsamenhangende manier verspreid over verschillende categorieën terwijl de conceptuele definitie volledig ontbreekt. 
+%		
+%		De GSBPM doet het op dit vlak beter. Het beschrijft een proces dat vertrekt vanuit gebruikersbehoeften en eindigt met een kwaliteitsevaluatie. Het expliciteert echter onvoldoende dat de evaluatie gestoeld moet zijn op de gebruikersbehoeften en alle operationele keuzes die onderweg werden gemaakt.  
+%	\end{info}
+	
+	% Opmerking Jo: Maar we gaan nu toch verder met de SIMS als standaard voor de metadata. Of stel je dat hier in vraag?
+	% De SIMS kan blijven gebruikt worden. Maar ik blijf bij mijn opmerking dat we die vooral als afchecklijst moeten gebruiken en niet blindelings de structuur moeten overnemen. De structuur is chaotisch en onoverzichtelijk. Bij GSBPM zie je dat er al meer werd nagedacht over de structuur van de informatie en wordt er expliciet toegegeven dat dat maar een ideaaltype is waarvan kan worden afgeweken. De SIMS lijkt voor mij de uitkomst van een wilde brainstorm waarbij de belangrijke stap vergeten werd om alles nadien duidelijker te structureren.
+
+
+
+
+
+
+\section{METHODEN}
+
+METHODOLOGISCHE DOCUMENTATIE
+[S.10.6 – DOC_METHOD – Methodologische documentatie]
+Indien de data uitvoerig besproken worden in aparte documenten, dan kan je hier een link plaatsen naar deze documentatie. De bedoeling is wel om in deze sectie ‘Methoden’ steeds een korte uitleg op te nemen over de data, en niet enkel een link naar externe documentatie.
+Maak voor elke verwijzing naar een document een correcte referentie in APA-formaat.
+Welke gegevens gebruiken we voor deze statistiek?
+DATABRON
+[S.18.1 – SOURCE_TYPE – Databrontype] 
+[S.18.3 – COLL_METHOD – Dataverzameling] 
+[S.18.2 – FREQ_COLL – Frequentie van dataverzameling]
+In deze sectie bespreek je in detail welke databron(nen) je hebt gebruikt voor het maken van de statistiek. Geef aan welke databron gebruikt wordt. Indien er meerdere databronnen worden gebruikt, bespreek dan alle gebruikte databronnen. 
+•	Geef telkens aan of het gaat over data uit een bevraging, administratieve data, etc. (S.18.1) 
+•	Documenteer voor elke databron de manier waarop de data werden verzameld (S.18.3). Documenteer voor bevragingen hier ook het steekproefontwerp en steekproefkader. Uitgebreide documentatie kan worden toegevoegd via links naar methodologische documentatie (S.10.6).
+•	Geef voor elke databron ook aan hoe frequent de dataverzameling gebeurt (S.18.2) en met welke frequentie de databron wordt gebruikt voor de statistieken waarop deze fiche betrekking heeft.
+STATISTISCHE POPULATIE
+[S.03.6 – STAT_POP – Statistische populatie] 
+[S.03.7 – REF_AREA – Referentiegebied] 
+[S.05 – REF_PERIOD – Referentieperiode]
+•	Statistische populatie: Definieer voor elke databron de populatie. Indien van toepassing: Het steekproefkader wordt besproken bij de bespreking van de databron (S.18.1). 
+•	Referentiegebied: Beschrijf het gebied (de regio's, de provincies of de andere geografische niveaus) waarnaar de gegevens verwijzen (S.03.7). Identificeer eventuele specifieke uitsluitingen in de data. Wees hierbij bijvoorbeeld duidelijk of Brussel mee opgenomen is in het referentiegebied.
+•	Referentieperiode: De periode of het tijdstip waarnaar de gemeten waarnemingen refereren (S.05). [Afwijking tussen de bedoelde referentieperiode en de gerealiseerde referentieperiode moeten worden gedocumenteerd bij Accuraatheid (S.13.1)]. Bij een extractie uit een administratieve databank hanteren we steeds het exacte moment van extractie als referentieperiode. 
+BESCHIKBARE TIJDSREEKS
+[S.03.8 – COVERAGE_TIME – Beschreven tijdsperiode]
+Vermeld de periode(s) waarvoor de statistiek beschikbaar is. Met andere woorden: wanneer is de tijdsreeks gestart? Zijn er onderbrekingen in de beschikbare tijdsreeks? Indien er sprake is van een mineure breuk in de tijdsreeks (bijvoorbeeld door wijziging in conceptdefinitie, databron of methodologie) dan wordt dit besproken bij Vergelijkbaarheid (S.15.). Bij een majeure breuk in de tijdsreeks wordt geadviseerd om een nieuwe tijdsreeks te starten met een nieuwe VOS-ID.
+Hoe werd deze statistiek berekend?
+VARIABELEN
+[S.03.4 – STAT_CONC_DEF – Statistische concepten en definities] 
+[S.04.4 – UNIT_MEASURE – Meeteenheid] 
+[S.03.2 – CLASS_SYSTEM – Classificatiesysteem]
+Beschrijf de variabelen die werden gebruikt bij het maken van de statistiek, met telkens een duidelijke omschrijving van de gemeten concepten en de operationalisering van de concepten. Geef indien van toepassing ook aan in welke meeteenheid de variabelen zijn uitgedrukt, en of ze bepaalde standaardclassificatiesystemen (vb. NACEBEL, NIS-code, ISO-landencodes, …) gebruiken. Geef bij de gebruikte standaardclassificatie ook steeds de versie aan, indien van toepassing.
+Is er een discrepantie tussen de manier waarop centrale concepten zijn gemeten, en de behoefte van de gebruiker, dan dient dit besproken te worden bij Relevantie (S.12.2).
+Niet-gebruik van standaardclassificaties in situaties waar standaardclassificaties zouden kunnen worden gebruikt, moet steeds worden beargumenteerd. Ook afwijkingen van standaardclassificaties vereisen een gedegen motivatie.
+BEWERKINGEN
+[S.18.5 – DATA_COMP – Datacompilatie] 
+[S.03.9 – BASE_PER – Basisperiode voor indexgetal] 
+[S.07.2 – CONF_DATA_TR – Vertrouwelijkheid – databewerking]
+Beschrijf in deze sectie de bewerkingen die werden uitgevoerd op de variabelen/data om tot de finale statistiek te komen: 
+•	Beschrijf de toegepaste imputatie, de meest voorkomende redenen voor imputatie en imputatiepercentages binnen elk van de hoofdstrata.
+•	Beschrijf de procedures voor het afleiden van nieuwe variabelen en het berekenen van aggregaten en complexe statistieken.
+•	Beschrijf de procedures voor de correctie voor non-respons en de correcties van de ontwerpgewichten om rekening te houden met verschillen in responspercentages.
+•	Beschrijf de berekening van ontwerpgewichten, inclusief kalibratie.
+•	De tijdsperiode die wordt gebruikt als basis voor een indexgetal. Dit is enkel van toepassing  op bepaalde soorten output, zoals indexen, waarvoor een basisperiode is gedefinieerd en gebruikt.
+•	Beschrijf ook steeds de statistical disclosure control die werd toegepast, de mogelijke bewerkingen als resultaat hiervan, en de impact van deze bewerkingen op de ontsluitingsdata.
+Hoe wordt deze statistiek ontsloten?
+In de evaluatie van de kwaliteit van Vlaamse Openbare Statistieken neemt de toegankelijkheid en duidelijkheid omtrent de gepubliceerde statistiek een belangrijke rol in. De meest eenvoudige indeling van gebruikers onderscheidt enerzijds gelegenheidsgebruikers, die doorgaans de voorkeur geven aan een eenvoudige en duidelijke presentatie van data en bijhorende metadata waardoor begrip en interpretatie weinig eigen data-analytische vaardigheden veronderstellen, en anderzijds professionele gebruikers die doorgaans de voorkeur geven aan een meer databasebenadering voor verspreiding, zodat de data kunnen worden geselecteerd en gedownload die voor hen van belang zijn met het oog op verdere eigen data-analyse.
+Toegankelijkheid is een kenmerk van statistische output dat de reeks voorwaarden en modaliteiten beschrijft waarmee gebruikers gegevens en bijbehorende metadata kunnen verkrijgen. Toegankelijkheid wordt gerapporteerd door elk van de verschillende manieren van verspreiding te beschrijven en hoe effectief deze zijn met betrekking tot gemakkelijke toegang tot de gegevens. 
+PUBLICATIEKALENDER
+[S.08.3 – REL_POL_US_AC – Gebruikerstoegang] 
+[S.08.1 – REL_CAL_POLICY – Publicatiekalender] 
+[S.08.2 – REL_CAL_ACCESS – Toegang publicatiekalender]
+Voor alles VOS’en op de website van Statistiek Vlaanderen:
+“De modaliteiten voor de gebruikerstoegang tot Vlaamse Openbare Statistieken wordt beschreven in het ‘Protocol voor de verspreiding van Vlaamse openbare Statistieken’, te raadplegen via https://www.vlaanderen.be/statistiek-vlaanderen/over-ons/kwaliteit#protocollen-netwerk-statistiek-vlaanderen
+Conform de Praktijkcode voor Europese Statistieken is er voor deze Vlaamse Openbare Statistiek een publicatiekalender beschikbaar. Deze publicatiekalender voor de Vlaamse Openbare Statistieken die deel uitmaken van de VSP-lijst is publiek beschikbaar via www.vlaanderen.be/statistiek-vlaanderen/publicatieagenda.”
+PUBLICATIEFREQUENTIE
+[S.09 – FREQ_DISS – Publicatiefrequentie]
+“Deze Vlaamse Openbare Statistiek wordt jaarlijks/maandelijks/… gepubliceerd. De statistiek is echter ook beschikbaar in een hogere frequentie, zie ###”
+NIEUWSBERICHT
+[S.10.1 – NEWS_REL – Nieuwsbericht]
+Met de term ‘nieuwsbericht’ verwijzen we naar de VOS-pagina.
+“Een korte bespreking van de laatste update van deze Vlaamse Openbare Statistiek kan je vinden op [plaats hier link(s) naar cijferpagina(‘s)]. Iedere update van deze Vlaamse Openbare Statistiek wordt ook vermeld in de Statistiek Vlaanderen Nieuwsbrief (https://www.vlaanderen.be/statistiek-vlaanderen/inschrijving-nieuwsbrieven-statistiek-vlaanderen).”
+ONLINE DATABANK
+[S.10.3 – ONLINE_DB]
+“De ontsluitingsdata van deze statistiek zijn onder een open data-licentie raadpleegbaar via ###.”
+TOEGANG MICRODATA
+[S.10.4 – MICRO_DAT_ACC]
+Indien van toepassing (vb. SV-bevraging): “Toegang tot microdata is mogelijk onder specifieke voorwaarden. Alle informatie hieromtrent kan je vinden op .”
+Revisies
+DATAREVISIES
+[S.17.2 – REV_PRACTICE – Datarevisie – praktijk]
+Indien van toepassing: Voeg informatie toe over geplande revisies voor deze statistiek. Voor geplande revisies kan het waardevol zijn om een inschatting te maken hoe groot deze revisies naar verwachting zullen zijn (op basis van revisies in het verleden). Informatie over het algemene revisiebeleid (gepland of niet-gepland) van de producent komt bij Datarevisiebeleid (S.17.1).
+
+
+
+\section{KWALITEIT}
+
+Hoe kwaliteitsvol is deze statistiek?
+Het monitoren en optimaliseren van de kwaliteit van Vlaamse Openbare Statistiek is een centraal gegeven in de missie en werking van het netwerk Statistiek Vlaanderen. We maken in deze sectie onderscheid tussen enerzijds het beleidsperspectief van kwaliteit (algemeen kwaliteitsbeleid, vertrouwelijkheidsbeleid, datarevisiebeleid, …) en anderzijds de concrete evaluatie van de kwaliteit van de statistiek die in de metadatafiche wordt gedocumenteerd. In grote lijnen zien we in deze kwaliteitsevaluatie de 5 pijlers van de outputkwaliteit van een openbare statistiek, zoals gedefinieerd in de Praktijkcode voor Europese statistieken, terug: Relevantie (principe 11), Nauwkeurigheid en betrouwbaarheid (principe 12), Tijdigheid en punctualiteit (principe 13) en Samenhang, vergelijkbaarheid en coherentie (principe 14). Principe 15, ‘Toegankelijkheid en duidelijkheid’, komt reeds in de vorige sectie uitgebreid aan bod. Op het einde van deze sectie kan er nog gerefereerd worden naar extra documentatie omtrent kwaliteit.
+BELEID
+KWALITEITSBELEID
+[S.11.1 – QUALITY_ASSURE – Kwaliteitswaarborging]
+Voor alle VOS’en die in het kader van het VSP worden gepubliceerd, hanteren we dezelfde tekst over kwaliteitswaarborging: “Statistiek Vlaanderen hanteert een kwaliteitsbeleid gebaseerd op het kwaliteitskader van Eurostat met daarin centraal de principes van de Praktijkcode voor Europese statistieken. Meer informatie over deze principes en de implementatie ervan in het Vlaamse statistieklandschap is te vinden op https://www.vlaanderen.be/statistiek-vlaanderen/over-ons/kwaliteit.”
+Vertrouwelijkheidsbeleid
+[S.07.1 – CONF_POLICY – Vertrouwelijkheidsbeleid]
+Voor statistieken geproduceerd door VSA:
+“De Vlaamse Statistische Autoriteit hanteert doorheen het hele proces van de productie en verspreiding van statistieken een streng vertrouwelijkheidsbeleid conform de geldende wetgeving en goede praktijken. Het vertrouwelijkheidsbeleid van de Vlaamse Statistische Autoriteit kan je raadplegen via https://www.vlaanderen.be/statistiek-vlaanderen/gegevensbescherming”
+Voor andere statistieken moet gekeken worden naar het vertrouwelijkheidsbeleid van de producent, eventueel in combinatie met dat van de VSA (indien er binnen VSA nog verwerking is van vertrouwelijke statistische data).
+Datarevisiebeleid
+[S.17.1 – REV_POLICY – Datarevisie – beleid]
+Voor statistieken gepubliceerd op de website van Statistiek Vlaanderen voegen we hier de link naar het foutenbeleid toe: https://www.vlaanderen.be/statistiek-vlaanderen/over-ons/kwaliteit/foutenbeleid.
+EVALUATIE
+Relevantie
+[S.12.2 – USER_SAT – Gebruikerstevredenheid]
+Verwijs hier naar evaluaties van de gebruikerstevredenheid voor de statistiek. Dit doe je door te kijken of de besproken statistiek beantwoordt aan de besproken gebruikersnood (S.12.1).
+Accuraatheid
+[S.13.1 – ACCURACY_OVERALL – Algemene accuraatheid] 
+[S.13.2 – SAMPLING_ERR – Sampling error] 
+[S.13.3 – NONSAMPLING_ERR – Non-sampling error]
+Beschrijf de belangrijkste (potentiële) bronnen van onnauwkeurigheid in de berekening/schatting van de statistische output. 
+Hou bij bevragingen rekening met:
+•	Sampling error (random component): betrouwbaarheidsintervallen voor schattingen (+ toelichting manier van berekenen)
+•	Non-sampling error (systematic component): coverage error (undercoverage en overcoverage), measurement error, unit nonresponse error, item nonresponse error, processing error, model assumption error.
+Vergelijkbaarheid
+[S.15.1 – COMPAR_GEO – Geografische vergelijkbaarheid] 
+[S.15.2 – COMPAR_TIME – Vergelijkbaarheid over tijd] 
+[S.15.3 – COHER_X_DOM – Domein-overschrijdende coherentie]
+•	Geografische vergelijkbaarheid: Bespreek de mate waarin de statistieken vergelijkbaar zijn tussen relevante geografische gebieden (vb. andere Belgische regio’s, het federale niveau, buurlanden, Europese landen). (Vergelijkbaar door zowel definitie van concept, als gehanteerde methoden). Ook de vergelijkbaarheid van geografische gebieden binnen Vlaanderen kunnen hier aan bod komen (bijvoorbeeld verschillen tussen provincies).
+•	Vergelijkbaarheid over tijd: Bespreek de mate waarin statistieken in de tijd vergelijkbaar zijn. Druk hier de lengte van de beschikbare tijdsreeks (‘time coverage’) uit in het aantal referentieperiodes [COMPAR_LENGTH] (Vergelijkbaar door zowel definitie van concept, als gehanteerde methoden). Bespreek mogelijke breuken in de tijdreeks, plus hun impact.
+•	Domein-overschrijdende coherentie: Bespreek alternatieve bronnen, en waarom de keuze voor deze databron is gemaakt, en waar verschillen met andere databronnen aan te wijten zijn. Bespreek de mate waarin deze statistiek coherentie vertoont met een vergelijkbare statistiek die via andere gegevensbronnen of statistische domeinen zijn verkregen. Dit kan ook gaan over het vergelijken van maandelijkse cijfers en jaarlijkse cijfers (indien ander productieproces).
+Tijdigheid
+[S.14.1 – TIMELINESS – Tijdigheid]
+Tijdsduur tussen de gebeurtenis of het fenomeen dat in de gegevens wordt beschreven (i.e. einde van de referentieperiode) en de publicatie van de statistiek. Aanvullend kan ook een overzicht en gemiddelde worden gegeven voor de tijdigheid de laatste jaren.
+Punctualiteit
+[S.14.2 – PUNCTUALITY – Punctualiteit]
+Tijdsverloop tussen de streefdatum waarop de statistiek volgens de publicatieagenda hadden moeten worden gepubliceerd en de daadwerkelijke publicatie van de Vlaamse Openbare Statistiek. Ook het ontbreken van een publicatieagenda voor een statistiek, waarbij punctualiteit dus niet kan worden berekend, kan hier gedocumenteerd worden.
+DOCUMENTATIE KWALITEIT
+[S.10.7 – QUALITY_DOC – Documentatie kwaliteit]
+Indien er specifieke documentatie is rond de evaluatie van de kwaliteit dan kan er hier naar gelinkt worden. Refereer telkens volgens APA-formaat.
+Extra informatie
+COMMENTAAR
+[S.19 – COMMENT_DSET]
+Extra informatie die hierboven nog niet aan bod kwam kan hier worden toegevoegd.
+
+
+
+
+
+\end{document}

@@ -1,5 +1,7 @@
 % !TEX program = xelatex
+% !BIB program = biber
 
+%\PassOptionsToClass{Wordversion}{VSAreport} 
 \documentclass[00_handleiding_statistiekproductie.tex]{subfiles}
 
 
@@ -7,44 +9,11 @@
 \begin{document}
 	
 	
-\chapter{Het statistiekproductieproces}
-\label{ch:productieproces}	
 	
-
-
-
-
-
-
-
-
-
-
-
-\section{Het statistiekproductieproces}
-
-
-\subsection{Alles is data}
-
-%Er is binnen de VSA vaak begripsverwarring rond de termen data, statistieken, cijferreeksen, tabellen, microdata, geaggregeerde data, etc. Het onderscheid tussen al deze termen is echter niet echt relevant of zinvol voor onze werking. Al die zaken zijn namelijk gewoon data. De antwoorden van respondenten op de SV-bevraging die we binnenkrijgen via een veldwerkbureau zijn data. Een rekenblad met het aantal laadpalen in elke gemeente zijn data. Het aantal inwoners in Vlaanderen per jaar zijn data. De tabellen en figuren die we op onze website publiceren, tonen data. Als VSA trekken we data binnen, we verwerken deze data tot andere data, en we sturen de verwerkte data weer uit via verschillende kanalen.
-%De enige relevante onderscheidingen die we binnen de VSA op inhoudelijk vlak maken tussen verschillende soorten data of datasets is enerzijds de vertrouwelijkheid van de data en anderzijds de productiestatus.
-%•	Vertrouwelijkheid verwijst naar de mate waarin data gepubliceerd of gedeeld mogen worden. Sommige datapunten of datasets zijn strikt vertrouwelijk en mogen we nooit delen met mensen buiten de VSA of zelfs niet met niet-gemachtigde collega’s binnen de VSA, andere datapunten of datasets zijn misschien vertrouwelijk maar mogen we volgens bepaalde protocollen wel delen (via bv. een safe room of een scientific use file), nog andere datapunten of datasets vormen dan weer helemaal geen probleem en kunnen we zo delen als public use file of zelfs als open data. 
-%•	Wat productiestatus betreft maken we een onderscheid tussen 4 soorten datasets:
-%a.	Ruwe data: De brondata zoals we ze binnenhalen en waarop we zelf nog geen enkele bewerking hebben uitgevoerd. 
-%b.	Verwerkte data:
-%1.	Gekuiste data: Ruwe data die wordt opgeslagen op een afgesproken gestandaardiseerde manier. De gekuiste data bevatten ook al standaard bewerkingen zoals aggregaties en Statistical Disclosure Controle.
-%2.	Afgeleide data: Data die cijfers bevatten berekend op meerdere ruwe databronnen of het resultaat zijn van complexere berekeningen op gekuiste data.
-%3.	Ontsluitingdata: De selectie van cijfers uit gekuiste en afgeleide data die worden gebruikt voor de publicaties en die we openlijk kunnen publiceren.
-%Uiteraard gaan vertrouwelijkheid en productiestatus over het algemeen hand in hand. Ontsluitingsdata zijn bijvoorbeeld vrijwel per definitie steeds open data. Merk op dat we naast deze inhoudelijke opdeling data ook kunnen opdelen volgens technische kenmerken zoals bestandsgroottes. Deze technische kenmerken zijn echter enkel belangrijk voor de dataverwerkingsinfrastructuur, maar niet voor de manier waarop we onze dataprocessen organiseren.  
-%Een belangrijk gevolg van deze opdelingen is dat het onderscheid tussen microdata en geaggregeerde data eigenlijk niet relevant is. Los van het feit dat het onderscheid tussen beide termen moeilijk te definiëren is, kunnen zowel microdata als geaggregeerde data vertrouwelijk of helemaal niet vertrouwelijk zijn. Zo kan een geaggregeerd cijfer informatie onthullen over het leefloon van een bepaalde burger en mogen we dat niet zomaar publiceren. Een dataset op microniveau kan dan weer enkel informatie over leeftijd en geslacht bevatten die we perfect publiek kunnen publiceren zonder enig probleem.
-%In deze nota maken we gebruik van de termen data, cijfers of statistieken, maar in de grond verwijzen deze termen dus steeds naar hetzelfde idee of hetzelfde concept, namelijk data. In het verlengde daarvan beschouwen we de activiteiten die we nu binnen de VSA vaak als analyse omschrijven ook gewoon als een (doorgedreven) vorm van databewerking. De term analyse wordt in deze nota dan ook niet als een aparte stap of fase vermeld.
-%Een belangrijke kanttekening hierbij is ten slotte wel dat wij als VSA volgens de statistische wetgeving enkel data mogen verzamelen en verwerken met statistische of wetenschappelijke doeleinden, niet om beleid te voeren of te ondersteunen gericht op de opvolging, begeleiding of controle van specifieke individuen, bedrijven of organisaties. 
-
-
-
-
-
-
+	
+	
+\chapter{Hoe bepalen we statistieken?}
+\ref{ch:statistiekenbepalen}
 
 
 
@@ -54,6 +23,15 @@
 \subsection{Officiële Statistieken}
 
 
+
+% dit naar hoofdstuk 3?
+We moeten hierbij ook opmerken dat het in de praktijk natuurlijk zo goed als onmogelijk is om alle gebruikersbehoeften in kaart te brengen, laat staan om aan al deze behoeften te voldoen. Dat is de reden waarom we als Statistiek Vlaanderen een officiële lijst aanleggen van statistieken die we produceren, namelijk de lijst van het Vlaams Statistisch Programma of VSP-lijst. Uiteraard is zo'n lijst nooit af en moet deze voortdurend geëvalueerd worden. Als Statistiek Vlaanderen hebben we dan ook de opdracht om de VSP-lijst elke legislatuur te herzien en dit doen we natuurlijk best door te blijven investeren in gebruikersonderzoek. Daarom moeten we voor elke statistiek in de VSP‐lijst ten minste volgende informatie voorzien:   
+\begin{enumerate}[nosep]
+	\item een overzicht van de gebruikersbehoeften,
+	\item de conceptuele definitie inclusief een beschrijving van alle concepten
+	\item de operationele definitie inclusief een operationalisering van alle concepten, en
+	\item een kwaliteitsevaluatie van de conceptuele en operationele definitie in functie van de gebruikersbehoeften.
+\end{enumerate}
 
 
 
@@ -101,27 +79,51 @@
 	Tabel \ref{tab:voorbeeldVSPlijst} toont hoe de VSP-lijst er minimaal zou moeten uitzien. In de praktijk zullen we uiteraard informatie over statistiekreeksen niet bewaren in één gigantische tabel maar werken met informatiefiches per statistiekreeks gebaseerd op de   single integrated metadata structure (SIMS)\footnote{\href{https://ec.europa.eu/eurostat/web/metadata/reference-metadata-reporting-standards}{ec.europa.eu/eurostat/web/metadata/reference-metadata-reporting-standards}}.
 
 
-\subsubsection{Conceptenlijst}
 
-Om consistentie te waarborgen tussen statistieken en statistiekreeksen, hanteren we best een algemene conceptenlijst conform de SDMX‐standaard. Deze conceptenlijst biedt een volledig overzicht van alle concepten die voorkomen in de door ons geproduceerde statistieken. Elk concept wordt voorzien van een korte identificatiecode, die kan worden gebruikt als snelle referentie in communicatie en als variabelenaam in datasets en datatabellen.
 
-Grosso modo onderscheiden we twee soorten concepten:
+
+\section{Experimentele statistieken}
+
+Om steeds beter en tijdig in te spelen op de behoeften van gebruikers is het voor een NSI zoals Statistiek Vlaanderen belangrijk steeds onderzoek te blijven uitvoeren naar nieuwe dataverzamelings- en -analysemethoden. Uit de toepassing van zo'n nieuwe methodes kunnen nieuwe cijfers of statistieken ontstaan die nog niet geofficialiseerd werden. De kwaliteit van zo'n statistieken is echter niet altijd meteen duidelijk en moet eerst diepgaander onderzocht worden. Dit soort statistieken worden daarom \emph{experimentele statistieken} genoemd \parencite{Eurostat2025Experimental}. 
+
+Eerder in dit hoofdstuk zagen we al dat de kwaliteit van een statistiek wordt bepaald door de verhouding tussen gebruikersbehoeften en de comceptuele en operationele definities. Experimentele statistieken kunnen daarom in meerdere vormen voorkomen. Soms ontstaan ze spontaan vanuit nieuwe dataverzamelings- en analysemethoden maar is het niet duidelijk of ze relevant zijn omdat er geen duidelijke behoefte is aan de cijfers. Zo publiceren we als Statistiek Vlaanderen bijvoorbeeld cijfers over [voorbeeld toevoegen] 
+maar weten we niet wie deze cijfers worden gebruikt en voor welk doeleind. Soms ontstaan experimentele statistieken ook als alternatief voor reeds bestaande officiële statistieken (VSP-lijst) met duidelijk geformuleerde gebruikersbehoeften. In dat geval rijst steeds de vraag of de nieuwe statistieken kwalitatief beter zijn dan de bestaande statistieken op het vlak van, onder andere, accuraatheid of tijdigheid. Zo onderzochten we bijvoorbeeld of de analyse van Twitter-berichten een alternatief kan vormen voor burgerbevragingen om sociaal sentiment in Vlaanderen te meten. Beide methodes hebben uiteraard hun voor- en nadelen en onderzoek moet uitwijzen welke methode de beste resultaten oplevert.
+
+Wat precies onder ``nieuwe data‐verzamelings- en analysemethoden'' valt, is trouwens rekbaar. Vaak denken mensen bij dit begrip aan recente, innovatieve, complexe top notch data science technieken. Een experimentele statistiek kan echter ook worden ontwikkeld met behulp van oude en eenvoudige methoden. Zo kan een eenvoudige vraag in een bestaande bevraging al gelden als een nieuwe databron, en kunnen hieruit nieuwe cijfers worden berekend en gepubliceerd waarvoor de gebruikersbehoeften nog niet duidelijk in kaart werden gebracht. Ook in deze situatie spreken we van een experimentele statistiek.
+
+Bij experimentele statistieken is het belangrijk om steeds op voorhand een duidelijk evaluatiemoment in te plannen, bijvoorbeeld vijf jaar na de eerste publicatie. Tijdens dit evaluatieonderzoek worden onder andere volgende vragen gesteld:
 \begin{itemize}[nosep]
-	\item Algemene concepten: Dit zijn terugkerende concepten die vaak voorkomen in verschillende statistieken, zoals jaartal of geografisch gebied, maar ook zoals geslacht of NACE-code. De beschrijving van deze concepten is doorgaans beperkt.
-	\item Het restconcept ‘statistiekreeks’: Dit concept omvat de rest van de operationele definities en dekt daarmee alle verdere details van een operationele definitie die niet onder de algemene concepten vallen.
+    \item Wordt de statistiek effectief gebruikt, en zo ja, waarvoor?
+    \item Komt het gebruik en de interpretatie overeen met de operationele definitie?
+    \item Zijn er suggesties van gebruikers om de statistiek beter af te stemmen op hun noden?
+\end{itemize}
+Op basis van de resultaten van dit onderzoek kan de statistiek:
+\begin{itemize}[nosep]
+    \item worden geüpgraded tot een officiële statistiek;
+    \item worden aangepast om beter aan te sluiten bij gebruikersbehoeften;
+    \item worden stopgezet indien de kwaliteit onvoldoende blijkt.
 \end{itemize}
 
-Aan elk concept wordt bovendien een codelijst gekoppeld, eveneens conform de  SDMX‐standaard. Een codelijst bepaalt welke waarden een concept kan aannemen in een statistiekreeks. Voor het concept ‘geslacht’ bevat de codelijst bijvoorbeeld de waarden ``man'', ``vrouw'', en ``andere'', maar ook bijvoorbeeld de waarde ``totaal'', om totaalcijfers over beide geslachten aan te duiden.
-% leeftijd proberen harmoniseren, hier ook zeker de gebruikersbehoeften in kaart brengen
 
-% DANNY: Ter info: Voor een concept kunnen er verschillende codelijsten circuleren. Sommige codelijsten bevattenbv geen code voor de totalen of voor ‘ongekend’. Of, de representatie gebeurt niet door een 1-karakter-code, maar door een geheel getal of een voltekst. Verder kan het ook gebeuren dat een specifieke codelijst gebruikt wordt voor de representatie van meerdere concepten.
-% JORRE: Klopt, maar ik heb in SDMX nog niet gevonden hoe dat dan best georganiseerd wordt. Ik zou vertrekken vanuit een “Master”-codelijst voor elk concept, waaruit je voor elke specifieke tabel enkel de relevante codes selecteert in een nieuwe tabel-sepcifieke-codelijst voor dit concept. Maar dus nog niets over dit gelezen in SDMX...
+	% Suggestie voor verdere uitwerking:
+	% Hier kan eventueel een aparte sectie volgen over de werking rond onderzoek en innovatie binnen de VSA, met taken zoals organisatie van redactieraden, seminaries, data science-projecten en academische samenwerking.	
+	
+	
+	%Alle onderzoeks- en innovatieprojecten van de VSA worden geïntegreerd in een gecentraliseerde werking. Het gaat hierbij om zowel inhoudelijk verdiepend onderzoek, beleidsdomeinoverschrijdend onderzoek, onderzoek rond statistiekontwikkeling, onderzoek in het kader van academische samenwerking of data science-projecten. De activiteiten van deze groep zijn wel steeds gericht op de (verkenning van de) ontwikkeling van nieuwe openbare statistieken of de verbetering van bestaande statistieken. Daarnaast is er binnen deze werking ook plaats voor onderzoek naar efficiëntere manieren om de opdrachten en interne processen van de VSA uit te voeren (bv. experimenten met nieuwe analyse- of visualisatiesoftware). 
+	%De werking rond onderzoek en innovatie neemt volgende taken voor haar rekening:
+	%•	Organisatie van de redactieraad. Bij voorkeur mondt elk onderzoeks- of innovatieproject minstens uit in een rapport.
+	%•	Organisatie van (interne) seminaries waarbij onderzoek wordt voorgesteld aan de collega’s en andere geïnteresseerden.
+	%•	Organisatie van de data science-projecten
+	%•	Organisatie van de academische samenwerking zoals de ondersteuning van thesisstudenten.
+	
 
-Om consistentie te bewaren kunnen eveneens mastercodelijsten worden aangemaakt waaruit de codelijsten van gerelateerde concepten kunnen worden afgeleid. Zo kunnen we bijvoorbeeld de verschillende concepten ``geslacht volgens rijksregister'', ``gerapporteerd geslacht'' (in bevraging) en ``geaggregeerd geslacht'' (voor geaggregeerde tabellen) definiëren waarvan de codelijsten sterk overlappen maar niet helemaal dezelfde zijn.
 
-Voor het restconcept ``statistiekreeks'' kunnen de waarden zeer uitgebreid zijn. Bij statistiekreeksen die gebaseerd zijn op bevragingen omvat dit restconcept bijvoorbeeld in principe de volledige operationele beschrijving van de bevraging. Wanneer het ontwerp van de bevraging wordt aangepast, leidt dit tot een nieuwe statistiekreeks en een nieuwe waarde voor het restconcept. Net als bij de concepten voorzien we ook korte identificatiecodes voor elke waarde. Merk ook op dat de codelijst voor het concept ``statistiekreeks'' automatisch een overzicht biedt van alle statistiekreeksen die we produceren.
 
-% het restconcept is eigenlijk het concept ``tabel''. 
+
+
+
+
+
 
 
 
@@ -232,77 +234,6 @@ Statistiekreeksen kunnen doorheen de tijd veranderen om verschillende redenen:
 Omdat we verwacht worden elk gepubliceerd cijfer beschikbaar te houden, creëren we in elk van bovenstaande situaties een nieuwe versie van de statistiekreeks. Deze versie duiden we aan door een versienummer terwijl de cijfers en documentatie van de oude versie bewaard blijven. In het geval van een berekeningsfout voegen we een disclaimer toe aan de documentatie van de oude versie met uitleg over deze fout. Bij wijzigende definities, documenteren we eveneens waarom deze wijziging nodig was. Bij een nieuwe versie van een statistiekreeks publiceren we cijferreeksen ook retrospectief indien dat mogelijk is en gewenst wordt geacht.
 
 
-
-
-
-
-
-
-
-%\section{Statistical Disclosure Control - Beveiliging}
-
-% Zie Statistical-Disclosure-Control-in-business-statistics.pdf
-%Onderscheid tussen
-%- Secure Use file: blijft in eigen infrastructuur
-%- Scientific USe File: Kan worden doorgestuurd maar bevat gevoelige informatie
-%- Public Use File: publiek toegankelijk
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\section{Documentatie --- Metadata}
-
-
-%binnen transatietraject nadenken over manier van documenteren en metadata.  Gestructureerde manier van verzamelen, opvolgen.  
-%metadatafiche vormt de basis voor informatie en documentatie.  Dit is het centrale document, zodat we geen verschillende plaatsen hebben
-%we kunnen pas beginnen als er implementatie is van metadataproject
-
-% in metadatatemplate moet ook eens nagekeken worden vanuit deze nota, zodat de afspraken in deze nota gelijklopen met terminologie in de metadata
-
-
-% Duidelijk maken wat verschil is tussen metadatapagina op de website en de in te vullen template voor de metadata die volledig zal zijn.
-% kunnen metadatapagina's weg? Tom maakt een voorbeeld, indien het kort is kan dat zeker op de cijferpagina
-
-
-
-
-
-%Naast de data zelf vormen metadata ook een essentieel onderdeel om de kwaliteit van onze producten te beschrijven en te beoordelen. Het is echter belangrijk te weten dat er verschillende soorten metadata bestaan die verschillende doeleneinden hebben. Doorgaans wordt er een grof onderscheid gemaakt tussen twee soorten metadata:
-%•	Verklarende metadata (reference metadata) omhelzen alle informatie die de processen beschrijven om statistieken te produceren (gebruikte concepten, methodologie, …). Deze metadata zijn doorgaans opgesteld in tekstvorm, zijn beschrijvend van aard, geven informatie over de inhoud en kwaliteit van de data en helpen om de data juist te interpreteren en gebruiken. Verklarende metadata kunnen zowel intern gebruikt worden om processen te documenteren als extern gepubliceerd worden om de kwaliteit van de gehanteerde statistische methoden aan te geven aan gebruikers. Veelgebruikte kaders voor verklarende metadata zijn de GSBPM en de SIMS.
-%•	Structurele metadata beschrijven daarentegen de structuur van datasets. Ze bevatten meestal een data structuur definitie die alle variabelen in een dataset oplijst, en codelijsten die alle mogelijke waarden op de variabelen in een dataset omschrijven. Aan de hand van deze data structuur definities en codelijsten kan de inhoud van datasets gecontroleerd worden maar wordt ook consistentie afgedwongen tussen datasets. Zo kan één enkele codelijst gebruikt worden voor verschillende datasets waardoor een bepaalde variabele steeds op dezelfde manier wordt opgeslagen. Veelgebruikte kaders voor structurele metadata zijn SDMX en DDI.
-
-
-
-
-	
-%	\begin{info}
-%		Gebruikersbehoeften, conceptuele en operationele definitie komen weliswaar aan bod in informatiestandaarden zoals de SIMS en de GSBPM maar op een zeer onduidelijke en onoverzichtelijke manier. In de SIMS worden de gebruikersbehoeften pas opgelijst in categorie 12 terwijl dit de start vormt van een statistiekproductieproces. De operationele definitie zit in de SIMS dan weer op een zeer onsamenhangende manier verspreid over verschillende categorieën terwijl de conceptuele definitie volledig ontbreekt. 
-%		
-%		De GSBPM doet het op dit vlak beter. Het beschrijft een proces dat vertrekt vanuit gebruikersbehoeften en eindigt met een kwaliteitsevaluatie. Het expliciteert echter onvoldoende dat de evaluatie gestoeld moet zijn op de gebruikersbehoeften en alle operationele keuzes die onderweg werden gemaakt.  
-%	\end{info}
-	
-	% Opmerking Jo: Maar we gaan nu toch verder met de SIMS als standaard voor de metadata. Of stel je dat hier in vraag?
-	% De SIMS kan blijven gebruikt worden. Maar ik blijf bij mijn opmerking dat we die vooral als afchecklijst moeten gebruiken en niet blindelings de structuur moeten overnemen. De structuur is chaotisch en onoverzichtelijk. Bij GSBPM zie je dat er al meer werd nagedacht over de structuur van de informatie en wordt er expliciet toegegeven dat dat maar een ideaaltype is waarvan kan worden afgeweken. De SIMS lijkt voor mij de uitkomst van een wilde brainstorm waarbij de belangrijke stap vergeten werd om alles nadien duidelijker te structureren.
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
 
 

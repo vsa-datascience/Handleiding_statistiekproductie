@@ -1,0 +1,137 @@
+% !TEX program = xelatex
+
+\documentclass[00_handleiding_statistiekproductie.tex]{subfiles}
+
+
+
+\begin{document}
+	
+	
+\chapter{Het statistiekproductieproces}
+\label{ch:productieproces}	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Alles is data}
+
+%Er is binnen de VSA vaak begripsverwarring rond de termen data, statistieken, cijferreeksen, tabellen, microdata, geaggregeerde data, etc. Het onderscheid tussen al deze termen is echter niet echt relevant of zinvol voor onze werking. Al die zaken zijn namelijk gewoon data. De antwoorden van respondenten op de SV-bevraging die we binnenkrijgen via een veldwerkbureau zijn data. Een rekenblad met het aantal laadpalen in elke gemeente zijn data. Het aantal inwoners in Vlaanderen per jaar zijn data. De tabellen en figuren die we op onze website publiceren, tonen data. Als VSA trekken we data binnen, we verwerken deze data tot andere data, en we sturen de verwerkte data weer uit via verschillende kanalen.
+%De enige relevante onderscheidingen die we binnen de VSA op inhoudelijk vlak maken tussen verschillende soorten data of datasets is enerzijds de vertrouwelijkheid van de data en anderzijds de productiestatus.
+%•	Vertrouwelijkheid verwijst naar de mate waarin data gepubliceerd of gedeeld mogen worden. Sommige datapunten of datasets zijn strikt vertrouwelijk en mogen we nooit delen met mensen buiten de VSA of zelfs niet met niet-gemachtigde collega’s binnen de VSA, andere datapunten of datasets zijn misschien vertrouwelijk maar mogen we volgens bepaalde protocollen wel delen (via bv. een safe room of een scientific use file), nog andere datapunten of datasets vormen dan weer helemaal geen probleem en kunnen we zo delen als public use file of zelfs als open data. 
+%•	Wat productiestatus betreft maken we een onderscheid tussen 4 soorten datasets:
+%a.	Ruwe data: De brondata zoals we ze binnenhalen en waarop we zelf nog geen enkele bewerking hebben uitgevoerd. 
+%b.	Verwerkte data:
+%1.	Gekuiste data: Ruwe data die wordt opgeslagen op een afgesproken gestandaardiseerde manier. De gekuiste data bevatten ook al standaard bewerkingen zoals aggregaties en Statistical Disclosure Controle.
+%2.	Afgeleide data: Data die cijfers bevatten berekend op meerdere ruwe databronnen of het resultaat zijn van complexere berekeningen op gekuiste data.
+%3.	Ontsluitingdata: De selectie van cijfers uit gekuiste en afgeleide data die worden gebruikt voor de publicaties en die we openlijk kunnen publiceren.
+%Uiteraard gaan vertrouwelijkheid en productiestatus over het algemeen hand in hand. Ontsluitingsdata zijn bijvoorbeeld vrijwel per definitie steeds open data. Merk op dat we naast deze inhoudelijke opdeling data ook kunnen opdelen volgens technische kenmerken zoals bestandsgroottes. Deze technische kenmerken zijn echter enkel belangrijk voor de dataverwerkingsinfrastructuur, maar niet voor de manier waarop we onze dataprocessen organiseren.  
+%Een belangrijk gevolg van deze opdelingen is dat het onderscheid tussen microdata en geaggregeerde data eigenlijk niet relevant is. Los van het feit dat het onderscheid tussen beide termen moeilijk te definiëren is, kunnen zowel microdata als geaggregeerde data vertrouwelijk of helemaal niet vertrouwelijk zijn. Zo kan een geaggregeerd cijfer informatie onthullen over het leefloon van een bepaalde burger en mogen we dat niet zomaar publiceren. Een dataset op microniveau kan dan weer enkel informatie over leeftijd en geslacht bevatten die we perfect publiek kunnen publiceren zonder enig probleem.
+%In deze nota maken we gebruik van de termen data, cijfers of statistieken, maar in de grond verwijzen deze termen dus steeds naar hetzelfde idee of hetzelfde concept, namelijk data. In het verlengde daarvan beschouwen we de activiteiten die we nu binnen de VSA vaak als analyse omschrijven ook gewoon als een (doorgedreven) vorm van databewerking. De term analyse wordt in deze nota dan ook niet als een aparte stap of fase vermeld.
+%Een belangrijke kanttekening hierbij is ten slotte wel dat wij als VSA volgens de statistische wetgeving enkel data mogen verzamelen en verwerken met statistische of wetenschappelijke doeleinden, niet om beleid te voeren of te ondersteunen gericht op de opvolging, begeleiding of controle van specifieke individuen, bedrijven of organisaties. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsubsection{Conceptenlijst}
+
+Om consistentie te waarborgen tussen statistieken en statistiekreeksen, hanteren we best een algemene conceptenlijst conform de SDMX‐standaard. Deze conceptenlijst biedt een volledig overzicht van alle concepten die voorkomen in de door ons geproduceerde statistieken. Elk concept wordt voorzien van een korte identificatiecode, die kan worden gebruikt als snelle referentie in communicatie en als variabelenaam in datasets en datatabellen.
+
+Grosso modo onderscheiden we twee soorten concepten:
+\begin{itemize}[nosep]
+	\item Algemene concepten: Dit zijn terugkerende concepten die vaak voorkomen in verschillende statistieken, zoals jaartal of geografisch gebied, maar ook zoals geslacht of NACE-code. De beschrijving van deze concepten is doorgaans beperkt.
+	\item Het restconcept ‘statistiekreeks’: Dit concept omvat de rest van de operationele definities en dekt daarmee alle verdere details van een operationele definitie die niet onder de algemene concepten vallen.
+\end{itemize}
+
+Aan elk concept wordt bovendien een codelijst gekoppeld, eveneens conform de  SDMX‐standaard. Een codelijst bepaalt welke waarden een concept kan aannemen in een statistiekreeks. Voor het concept ‘geslacht’ bevat de codelijst bijvoorbeeld de waarden ``man'', ``vrouw'', en ``andere'', maar ook bijvoorbeeld de waarde ``totaal'', om totaalcijfers over beide geslachten aan te duiden.
+% leeftijd proberen harmoniseren, hier ook zeker de gebruikersbehoeften in kaart brengen
+
+% DANNY: Ter info: Voor een concept kunnen er verschillende codelijsten circuleren. Sommige codelijsten bevattenbv geen code voor de totalen of voor ‘ongekend’. Of, de representatie gebeurt niet door een 1-karakter-code, maar door een geheel getal of een voltekst. Verder kan het ook gebeuren dat een specifieke codelijst gebruikt wordt voor de representatie van meerdere concepten.
+% JORRE: Klopt, maar ik heb in SDMX nog niet gevonden hoe dat dan best georganiseerd wordt. Ik zou vertrekken vanuit een “Master”-codelijst voor elk concept, waaruit je voor elke specifieke tabel enkel de relevante codes selecteert in een nieuwe tabel-sepcifieke-codelijst voor dit concept. Maar dus nog niets over dit gelezen in SDMX...
+
+Om consistentie te bewaren kunnen eveneens mastercodelijsten worden aangemaakt waaruit de codelijsten van gerelateerde concepten kunnen worden afgeleid. Zo kunnen we bijvoorbeeld de verschillende concepten ``geslacht volgens rijksregister'', ``gerapporteerd geslacht'' (in bevraging) en ``geaggregeerd geslacht'' (voor geaggregeerde tabellen) definiëren waarvan de codelijsten sterk overlappen maar niet helemaal dezelfde zijn.
+
+Voor het restconcept ``statistiekreeks'' kunnen de waarden zeer uitgebreid zijn. Bij statistiekreeksen die gebaseerd zijn op bevragingen omvat dit restconcept bijvoorbeeld in principe de volledige operationele beschrijving van de bevraging. Wanneer het ontwerp van de bevraging wordt aangepast, leidt dit tot een nieuwe statistiekreeks en een nieuwe waarde voor het restconcept. Net als bij de concepten voorzien we ook korte identificatiecodes voor elke waarde. Merk ook op dat de codelijst voor het concept ``statistiekreeks'' automatisch een overzicht biedt van alle statistiekreeksen die we produceren.
+
+% het restconcept is eigenlijk het concept ``tabel''. 
+
+
+
+
+
+
+
+
+
+
+
+
+%\section{Statistical Disclosure Control - Beveiliging}
+
+% Zie Statistical-Disclosure-Control-in-business-statistics.pdf
+%Onderscheid tussen
+%- Secure Use file: blijft in eigen infrastructuur
+%- Scientific USe File: Kan worden doorgestuurd maar bevat gevoelige informatie
+%- Public Use File: publiek toegankelijk
+
+
+
+
+
+
+
+
+
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
