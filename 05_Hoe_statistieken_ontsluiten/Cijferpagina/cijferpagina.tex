@@ -1,0 +1,201 @@
+\documentclass{VSAnote}
+
+\providecommand\VSAreportpath{../../VSAreport}
+\input{\VSAreportpath/commands.tex}
+\addbibresource{\VSAreportpath/references.bib} 
+
+\usepackage{tikz}
+
+
+\begin{document}
+
+\title{Cijferpagina's schrijven}
+\author{Jorre Vannieuwenhuyze}
+\titlepage
+
+
+
+
+Er zijn drie situaties:
+\begin{enumerate}
+\item De conceptuele en operationele definitie van de cijfers zijn dezelfde (uitgezonderd de tijd van observatie)
+\item De conceptuele definitie van alle cijfers is dezelfde, maar er zijn verschillen in de operationele definitie (een breuk in methode)
+\item Zowel de conceptuele als de operationele definitie van de cijfers zijn verschillend (breuk in methode en nieuw gedefinieerde statistiek).
+\end{enumerate}
+In de drie situaties zullen we de cijfers op een andere manier weergeven.
+
+
+
+\section[Dezelfde operationele definitie]{Dezelfde\\operationele definitie}
+
+
+
+
+\tikzset{
+	y=5cm,
+	inner sep=0pt,
+	axis/.style={},
+	axislabel/.style={font=\scriptsize},
+	xaxislabel/.style={axislabel,anchor=north,yshift=-2pt,text=charcoalgray},
+	yaxislabel/.style={axislabel,anchor=east,xshift=-2pt,text=charcoalgray},
+	plotlabel/.style={font=\scriptsize,align=center,inner sep=2pt}
+	}
+
+\newcommand\yaxis{%
+	\begin{tikzpicture}
+	\useasboundingbox (0,0) rectangle (-20mm,1);
+%	\draw[axis] (0,0) -- (0,1) ;
+	\foreach \y/\l in {0/0,.25/25,.5/50,.75/75,1/100}{
+		\draw[mistgray] (0,\y) -- +(-5mm,0) node[yaxislabel]{\l\%};
+		}
+	\end{tikzpicture}%
+	}
+	
+\newcommand\xaxis{%
+	\begin{tikzpicture}[x=\linewidth,trim left=0,trim right=\linewidth]
+%	\draw[axis] (0,0) -- (1,0) ;
+	\foreach \x/\l in {0/2005,.25/2010,.5/2015,.75/2020,1/2025}{
+		\path (\x,0) -- +(0,-2pt) node[xaxislabel]{\l};
+		}
+	\end{tikzpicture}%
+	}
+
+\newcommand\body{%
+	\begin{tikzpicture}[x=\linewidth]
+	\useasboundingbox (0,0) rectangle (1,1);
+%	\fill[mistgray] (0,0) rectangle (1,1);
+	\foreach \y in {0,.25,.50,.75,1}{
+		\draw[mistgray] (0,\y) -- (1,\y);
+		}
+	\draw[softsteelblue,line width=1pt] (0.000,0.526) -- (0.050,0.575) -- (0.100,0.514) -- (0.150,0.477) -- (0.200,0.524) -- (0.250,0.468) -- (0.300,0.479) -- (0.350,0.550) -- (0.400,0.415) -- (0.450,0.382) -- (0.500,0.382) -- (0.550,0.424) -- (0.600,0.483) -- (0.650,0.484) -- (0.700,0.446) -- (0.750,0.471) -- (0.800,0.496) -- (0.850,0.527) -- (0.900,0.575) -- (0.950,0.579) -- (1.000,0.625) ;
+	\end{tikzpicture}%
+	}
+
+
+\begin{figure}[h]
+armoederisico\\
+\begin{tblr}{
+	width=\linewidth,
+	colspec={rX[c]},
+	rows={rowsep=0pt},
+	columns={colsep=0pt},
+%	column{1}={rightsep=2pt},
+	row{1}={abovesep=5pt},
+%	row{2}={abovesep=2pt},
+	stretch=0,
+	}
+\yaxis & \body \\ & \xaxis \\ 
+\end{tblr}
+\end{figure}
+
+
+
+
+
+
+
+
+\section[Verschillende operationele definities]{Verschillende\\operationele definities}
+
+Als cijfers dezelfde conceptuele definitie hebben betekent dit dat gebruikers gemiddeld genomen de cijfers op dezelfde manier betekenis geven. Het is voor een gebruiker dan gebruiksvriendelijker om deze cijfers in één en dezelfde grafiek te tonen. 
+
+Als deze cijfers echter verschillende operationele definities hebben kunnen ze niet zomaar met elkaar vergeleken worden. We kiezen er dan voor om de cijfers visueel van elkaar te onderscheiden met visuele elementen zoals andere kleuren of andere symbolen.
+
+
+\parencite{turner2021creating}
+
+
+\renewcommand\body{%
+	\begin{tikzpicture}[x=\linewidth]
+	\useasboundingbox (0,0) rectangle (1,1);
+%	\fill[mistgray] (0,0) rectangle (1,1);
+	\foreach \y in {0,.25,.50,.75,1}{
+		\draw[mistgray] (0,\y) -- (1,\y);
+		}
+	\draw[softsteelblue,line width=1pt] (0.000,0.526) -- (0.050,0.575) node[plotlabel,anchor=south]{enquêtedata} -- (0.100,0.514) -- (0.150,0.477) -- (0.200,0.524) -- (0.250,0.468) -- (0.300,0.479) -- (0.350,0.550) -- (0.400,0.415) -- (0.450,0.382) -- (0.500,0.382) -- (0.550,0.424) -- (0.600,0.483) -- (0.650,0.484) -- (0.700,0.446) ;
+	\draw[lightskyblue,line width=1pt] (0.550,0.245) -- (0.600,0.365) -- (0.650,0.409) -- (0.700,0.391) -- (0.750,0.333) -- (0.800,0.291) -- (0.850,0.538) -- (0.900,0.555) node[plotlabel,anchor=south]{registerdata} -- (0.950,0.391) -- (1.000,0.597) ;
+	\end{tikzpicture}%
+	}
+
+
+\begin{figure}[h]
+armoederisico\\
+\begin{tblr}{
+	width=\linewidth,
+	colspec={rX[c]},
+	rows={rowsep=0pt},
+	columns={colsep=0pt},
+	row{1}={abovesep=5pt},
+	stretch=0,
+	}
+\yaxis & \body \\ & \xaxis \\ 
+\end{tblr}
+\end{figure}
+
+
+
+
+
+
+
+
+\renewcommand\body{%
+	\begin{tikzpicture}[x=\linewidth]
+	\useasboundingbox (0,0) rectangle (1,1);
+%	\fill[mistgray] (0,0) rectangle (1,1);
+	\foreach \y in {0,.25,.50,.75,1}{
+		\draw[mistgray] (0,\y) -- (1,\y);
+		}
+	\draw[softsteelblue,line width=1pt] (0.000,0.526) -- (0.050,0.575) -- (0.100,0.514) -- (0.150,0.477) -- (0.200,0.524) -- (0.250,0.468) -- (0.300,0.479) -- (0.350,0.550) -- (0.400,0.415) -- (0.450,0.382) -- (0.500,0.382) -- (0.550,0.424) -- (0.600,0.483) -- (0.650,0.484) -- (0.700,0.446) ;
+	\draw[lightskyblue,line width=1pt] (0.750,0.333) -- (0.800,0.291) -- (0.850,0.538) -- (0.900,0.555)  -- (0.950,0.391) -- (1.000,0.597) ;
+	\draw[dashed,copperclay,line width=.5pt] (.725,0) -- (.725,1) 
+		(.725,.9) 
+		node(A)[plotlabel,anchor=east,inner sep=2pt,xshift=-2pt]{enquêtedata} 
+		node(B)[plotlabel,anchor=west,inner sep=2pt,xshift= 2pt]{registerdata} 
+		;
+	\draw[-latex,copperclay] (A.south east) to (A.south west);
+	\draw[-latex,copperclay] (B.south west) to (B.south east);
+	
+	\end{tikzpicture}%
+	}
+
+
+\begin{figure}[h]
+armoederisico\\
+\begin{tblr}{
+	width=\linewidth,
+	colspec={rX[c]},
+	rows={rowsep=0pt},
+	columns={colsep=0pt},
+	row{1}={abovesep=5pt},
+	stretch=0,
+	}
+\yaxis & \body \\ & \xaxis \\ 
+\end{tblr}
+\end{figure}
+
+
+
+\section{Verschillende conceptuele definitie}
+
+
+
+
+
+
+
+
+
+
+
+\printbibliography	
+	
+
+
+
+
+
+
+
+
+\end{document}
