@@ -1,0 +1,74 @@
+\documentclass{beamer}
+\usetheme{VSA}
+
+\usepackage{tabularray}
+\usepackage[framemethod=TikZ]{mdframed}
+
+
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{mdframed}
+
+
+\begin{document}
+
+
+\begin{mdframed}[
+	roundcorner=5pt,
+	linecolor=maincol1,
+	linewidth=1pt,
+	backgroundcolor=palgray1,
+	frametitle={Aantal inwoners naar geslacht en leeftijd in Vlaamse gemeenten in 2019.},
+	frametitlefont=\sffamily\color{white}\scriptsize,
+	frametitlebackgroundcolor=maincol1
+	]
+\tiny
+\begin{tblr}[t]{
+	width=.45\linewidth,
+	colspec={X[c]X[c]X[c]},
+	column{1-2} = {fg=textcol,bg=maincol3},
+	column{3} = {fg=textcol,bg=white},
+	row{1} = {fg=white,bg=maincol1},
+	row{2} = {fg=white,bg=maincol2},
+	hline{1,Z} = {maincol1},
+	vline{1,Z} = {maincol1},
+	hspan=minimal
+	}
+\SetCell[c=3]{l} Volgens geslacht \\
+Gemeente   & Geslacht & Aantal \\
+Aartselaar & man      &   7089 \\
+Aartselaar & vrouw    &   7204 \\
+Antwerpen  & man      & 262921 \\
+Antwerpen  & vrouw    & 263014 \\
+Boechout   & man      &   6506 \\
+\ldots     & \ldots   & \ldots \\
+\end{tblr}
+\hfill
+\raisebox{-2\baselineskip}{
+\begin{tblr}[t]{
+	width=.45\linewidth,
+	colspec={X[c]X[c]X[c]},
+	column{1-2} = {fg=textcol,bg=maincol3},
+	column{3} = {fg=textcol,bg=white},
+	row{1} = {fg=white,bg=maincol1},
+	row{2} = {fg=white,bg=maincol2},
+	hline{1,Z} = {maincol1},
+	vline{1,Z} = {maincol1},
+	hspan=minimal
+	}
+\SetCell[c=3]{l} Volgens leeftijdsgroep \\
+Gemeente   & Leeftijd   & Aantal \\
+Aartselaar & 0-18 jaar  &   3475 \\
+Aartselaar & 19-35 jaar &   2938 \\
+Aartselaar & 36-64 jaar &   5948 \\
+Aartselaar & 65+ jaar   &   3928 \\
+Antwerpen  & 0-18 jaar  & 133495 \\
+Antwerpen  & 19-35 jaar &  95092 \\
+\ldots     & \ldots     & \ldots \\
+\end{tblr}
+}
+\end{mdframed}
+
+
+
+
+\end{document}

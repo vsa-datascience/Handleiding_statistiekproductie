@@ -1,0 +1,143 @@
+% !TEX program = xelatex
+
+\documentclass{beamer}
+\usetheme{VSA}
+
+\usepackage{tikz}
+\usetikzlibrary{shadows.blur}
+\tikzset{shadow/.style={blur shadow={shadow blur steps=100,shadow xshift=5pt,shadow yshift=-5pt}}}
+
+
+\begin{document}
+
+\title{Gebruikersbehoeften documenteren}
+\author{Jorre Vannieuwenhuyze}
+\date{}
+\titleframe
+
+
+
+\begin{frame}
+\frametitle{Gebruikersbehoeften zijn de start\\van elk statistiekproductieproces}
+\hfill
+\begin{tikzpicture}[
+	x=4cm,
+	y=-2.5\baselineskip,
+	arrow/.style={maincol2,-latex,rounded corners,line width=1pt},
+	arrowdot/.style={arrow,line width=.2pt},
+	]
+\node at (0,0) (A) {Gebruikersbehoeften};
+\node at (0,1) (B) {Conceptuele definitie};
+\node at (0,2) (C) {Operationele definitie};
+\node at (0,3) (D) {Ontsluiting};
+\node at (1,4) (E) {Kwaliteit};
+\draw[arrow] (A) -- (B);
+\draw[arrow] (B) -- (C);
+\draw[arrow] (C) -- (D);
+\draw[arrowdot] (A) -| (E);
+\draw[arrowdot] (B) -| (E);
+\draw[arrowdot] (C) -| (E);
+\draw[arrowdot] (D) -| (E);
+\end{tikzpicture}
+\end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{SIMS verwacht documentatie\\over gebruikersbehoeften}
+\hfill
+\begin{tikzpicture}
+\node[draw=textcol,fill=white,shadow,inner sep=5mm]{\includegraphics[width=90mm]{figures/SIMS_userneeds.png}};
+\end{tikzpicture}
+\end{frame}
+
+
+
+
+
+\begin{frame}
+\frametitle{Gebruikersbehoeften\\komen uit verschillende hoeken}
+\begin{itemize}
+    \item[] Internationale verplichting
+    \item[] Institutionele vraag 
+    \item[] Beleidsondersteunende vraag 
+    \item[] Maatschappelijke vraag
+    \item[] Academische vraag
+\end{itemize}
+\end{frame}
+
+
+
+
+
+\begin{frame}
+\frametitle{Gebruikersbehoeften verwijzen naar\\internationale verplichtingen}
+\hfill
+\begin{tikzpicture}
+\node[shadow,inner sep=0pt]{\includegraphics[width=90mm]{figures/Richtlijn2008-98-EG.png}};
+\end{tikzpicture}
+\end{frame}
+
+\begin{frame}
+\frametitle{Gebruikersbehoeften verwijzen naar\\institutionele vragen}
+\hfill
+\begin{tikzpicture}
+\node[shadow,inner sep=0pt]{\includegraphics[width=90mm]{figures/VCRO.png}};
+\end{tikzpicture}
+\end{frame}
+
+\begin{frame}
+\frametitle{Gebruikersbehoeften verwijzen naar\\beleidsondersteunende vragen}
+\hfill
+\begin{tikzpicture}
+\node[shadow,inner sep=0pt]{\includegraphics[width=90mm]{figures/BRV.png}};
+\end{tikzpicture}
+\end{frame}
+
+\begin{frame}
+\frametitle{Gebruikersbehoeften verwijzen naar\\maatschappelijke vragen}
+\hfill
+\begin{tikzpicture}
+\node[shadow,inner sep=0pt]{\includegraphics[width=90mm]{figures/krant.png}};
+\end{tikzpicture}
+\end{frame}
+
+\begin{frame}
+\frametitle{Gebruikersbehoeften verwijzen naar\\maatschappelijke vragen}
+\hfill
+\begin{tikzpicture}
+\node[shadow,inner sep=0pt]{\includegraphics[width=90mm]{figures/parlementairevraag.png}};
+\end{tikzpicture}
+\end{frame}
+
+\begin{frame}
+\frametitle{Gebruikersbehoeften verwijzen naar\\academische vragen}
+\hfill
+\begin{tikzpicture}
+\node[shadow,inner sep=0pt]{\includegraphics[height=65mm]{figures/sciencearticle.pdf}};
+\end{tikzpicture}
+\end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{Gebruikersbehoeften leiden tot\\conceptuele definitie cijfertabellen}
+VOS ``Bevolking --- omvang en groei''
+\begin{itemize}
+\item Aantal inwoners per gemeente per jaar
+\item Bevolkingsgroei per gemeente per jaar
+\end{itemize}
+\end{frame}
+
+
+
+
+
+\titleframe
+
+
+
+
+\end{document}

@@ -82,6 +82,10 @@ codelists[['agecat']] <- tribble(
    '65+'   , 4     ,'65 jaar of meer' , TRUE       ,
    )
 
+
+noopinion <- 'geen mening'
+nvt <- 'niet van toepassing'
+
 codelists[['many']] <- tribble(
    ~value                   ,~valuen,~label_nl               ,~version_all,~version_substantial,
    'zeer weinig'            , 1     ,'zeer weinig'           , TRUE       , TRUE               ,
@@ -89,9 +93,15 @@ codelists[['many']] <- tribble(
    'niet veel, niet weinig' , 3     ,'niet veel, niet weinig', TRUE       , TRUE               ,
    'veel'                   , 4     ,'veel'                  , TRUE       , TRUE               ,
    'zeer veel'              , 5     ,'zeer veel'             , TRUE       , TRUE               ,
-   'geen mening'            ,98     ,'geen mening'           , TRUE       , FALSE              ,
-   'nvt'                    ,99     ,'niet van toepassing'   , TRUE       , FALSE              ,
+   'geen mening'            ,98     ,noopinion               , TRUE       , FALSE              ,
+   'nvt'                    ,99     ,nvt                     , TRUE       , FALSE              ,
    )
+
+
+
+
+
+
 
 
 # Data Structure Definition -----------------------------------------------
@@ -152,10 +162,8 @@ codelists |>
 
 
 dbListTables(con)
-dbReadTable(con,"cl_many_substantial") |> as_tibble()
-
-
-
+tbl(con, "cl_many_substantial")
+tbl(con, "cl_many_substantial") |> show_query()
 
 
 
