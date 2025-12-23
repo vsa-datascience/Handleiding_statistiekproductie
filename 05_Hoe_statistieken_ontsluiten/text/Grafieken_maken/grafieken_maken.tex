@@ -1,0 +1,314 @@
+\documentclass{VSAnote}
+
+\providecommand\VSAreportpath{../../../00_handleiding_statistiekproductie}
+\input{\VSAreportpath/commands.tex}
+\addbibresource{\VSAreportpath/references.bib} 
+
+\usepackage{tikz}
+
+
+
+
+
+
+\begin{document}
+
+\title{Grafieken ontwerpen}
+\author{Jorre Vannieuwenhuyze}
+\titlepage
+
+
+
+
+
+
+
+
+\section{Algemene richtlijnen grafieken}
+
+
+Goede grafieken maken betekent zo helder en efficiënt mogelijk de boodschap overbrengen. Gelukkig bestaat er heel wat literatuur waarin basisprincipes voor grafiekontwerp worden overlopen. In deze handleiding vatten we enkele principes samen op basis van het werk van \textcite{tufte1983Visual}, \textcite{evergreen2019Effective}, \textcite{doumont2009Trees}, \textcite{vandenEeckhout2022Powerful}, \textcite{cleveland1993Elements} en \textcite{few2012Show}.
+
+
+
+\paragraph{Regel 1. Vertrek van een duidelijke boodschap in de titel.}
+
+Een grafiek is nooit een neutrale reproductie van cijfers, ze geeft automatisch betekenis aan deze cijfers. Daarom moeten grafieken steeds worden ontworpen vertrekkend vanuit een duidelijke boodschap, en die boodschap zet je in de titel van de grafiek als een volzin \parencite{evergreen2019Effective, doumont2009Trees, vandenEeckhout2022Powerful}. 
+
+
+
+%
+%Concreet:
+%\begin{itemize}
+%    \item schrijf bovenaan een titel die de kernboodschap weergeeft;
+%    \item gebruik annotaties bij belangrijke punten;
+%    \item kies de grafiekvorm die het best aansluit bij de boodschap (Doumont).
+%\end{itemize}
+%
+%Voorbeeld:
+%Titel: ``Het marktaandeel van Fietsersbond Mechelen stijgt sinds 2020''.  
+%Annotatie: pijl bij het jaar 2020 met tekst ``start nieuwe campagne''.
+%
+
+
+
+
+%\section{Vuistregels voor goede grafieken}
+%
+%\paragraph{1. Maximaliseer de data-ink ratio (Tufte)}
+%Gebruik zoveel mogelijk van de visuele ``inkt'' voor de data zelf. Vermijd overbodige lijnen, kaders, texturen en visuele decoratie.
+%
+%Concreet:
+%\begin{itemize}
+%    \item verwijder zware rasters; gebruik lichte hulplijnen of geen;
+%    \item verwijder 3D-effecten;
+%    \item gebruik dunne assen en minimale markeringen;
+%    \item label data direct waar mogelijk (Evergreen).
+%\end{itemize}
+%
+%Voorbeeld:
+%Slecht: 3D-balkdiagram met schaduw, dikke assen, opvallende kleuren.  
+%Goed: vlak 2D-balkdiagram, lichte assen, directe labels bij de balken.
+%
+
+%\paragraph{3. Kies de juiste grafiekvorm (Doumont, Cleveland)}
+%Cleveland toont empirisch dat vergelijking van positie op een gemeenschappelijke schaal het meest accuraat is. Doumont benadrukt eenvoud en logica.
+%
+%Vuistregels:
+%\begin{itemize}
+%    \item gebruik lijngrafieken voor evoluties (tijdreeksen);
+%    \item gebruik staafdiagrammen voor discrete categorieën;
+%    \item vermijd cirkeldiagrammen tenzij er slechts 2--3 categorieën zijn (Evergreen);
+%    \item gebruik scatterplots voor correlaties.
+%\end{itemize}
+%
+%Voorbeeld:
+%Een dataset met jaarlijkse ledenaantallen: gebruik een lijngrafiek, geen staafdiagram.
+%
+%\paragraph{4. Label duidelijk en direct (Evergreen, Van Eeckhout)}
+%Evergreen pleit voor direct labelen: plaats labels bij de lijnen, niet in een aparte legende. Van Eeckhout benadrukt helderheid voor beleidsrapportering.
+%
+%Vuistregels:
+%\begin{itemize}
+%    \item vermijd legendes als directe labels mogelijk zijn;
+%    \item zet eenheden in de aslabels;
+%    \item gebruik procenttekens in ticklabels als het volledige bereik in \% is.
+%\end{itemize}
+%
+%Voorbeeld:
+%In plaats van een legende met ``Vlaanderen'' en ``Brussel'':
+%label de lijnen in de grafiek zelf:
+%\emph{``Vlaanderen''} rechts naast de blauwe lijn,
+%\emph{``Brussel''} rechts naast de oranje lijn.
+%
+%\paragraph{5. Houd kleuren functioneel (Tufte, Evergreen)}
+%Kleur is een hulpmiddel, geen versiering.
+%
+%Vuistregels:
+%\begin{itemize}
+%    \item gebruik maximaal 4--6 kleuren;
+%    \item gebruik kleur om categorieën te onderscheiden, niet als decoratie;
+%    \item gebruik kleurblindvriendelijke paletten;
+%    \item gebruik één accentkleur om de boodschap te ondersteunen (Evergreen).
+%\end{itemize}
+%
+%Voorbeeld:
+%Een tijdrij van 5 regio's:
+%vier grijstinten + één accentkleur om de regio van interesse te benadrukken.
+%
+%\paragraph{6. Zorg voor voldoende witruimte en eenvoud (Doumont)}
+%Doumont beklemtoont typografische eenvoud en ruimtelijkheid.
+%
+%Vuistregels:
+%\begin{itemize}
+%    \item gebruik minstens 80\% witte achtergrond;
+%    \item geen zware kaders of volle vlakken;
+%    \item voldoende ruimte tussen elementen.
+%\end{itemize}
+
+
+
+%\section{Concreet uitgewerkt voorbeeld}
+%
+%\subsection*{Voorbeeldgrafiek: ledenaantal Fietsersbond Mechelen}
+%
+%\textbf{Boodschap:} Het ledenaantal stijgt structureel sinds 2020.
+%
+%\textbf{Toegepaste regels:}
+%\begin{itemize}
+%    \item eenvoudige 2D-lijngrafiek (Doumont);
+%    \item directe labeling van de lijn (Evergreen);
+%    \item lichte assen en geen raster (Tufte);
+%    \item titel bevat de boodschap;
+%    \item y-as bevat de eenheid: ``Aantal leden''.
+%\end{itemize}
+%
+%\begin{verbatim}
+%Titel: "Leden Fietsersbond Mechelen stijgen sinds 2020"
+%Y-as: "Aantal leden"
+%X-as: jaren (2018–2024)
+%Direct label: "Mechelen" rechts naast de lijn
+%Annotatie: pijl bij 2020 ("start nieuwe campagne")
+%\end{verbatim}
+
+
+%\begin{thebibliography}{9}
+%
+%\bibitem{tufte1983}
+%Tufte, E. (1983).
+%\textit{The Visual Display of Quantitative Information}.
+%Graphics Press.
+%
+%\bibitem{evergreen2019}
+%Evergreen, S. (2019).
+%\textit{Effective Data Visualization}.
+%SAGE Publications.
+%
+%\bibitem{doumont2009}
+%Doumont, J.-L. (2009).
+%\textit{Trees, Maps and Theorems}.
+%Principiae.
+%
+%\bibitem{vaneeckhout2023}
+%Van Eeckhout, K. (2023).
+%\textit{Datavisualisatie in de Praktijk}.
+%(Interne en publieke richtlijnen rond heldere beleidsvisualisaties).
+%
+%\bibitem{cleveland1993}
+%Cleveland, W. (1993).
+%\textit{The Elements of Graphing Data}.
+%Hobart Press.
+%
+%\bibitem{few2012}
+%Few, S. (2012).
+%\textit{Show Me the Numbers}.
+%Analytics Press.
+%
+%\end{thebibliography}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Grafieken met methodebreuken}
+
+
+Als we statistieken over de tijd weergeven in tijdsreeksen kunnen zich verschillende situaties voordoen:
+\begin{enumerate}
+\item De conceptuele en operationele definitie van de cijfers zijn dezelfde (uitgezonderd het tijdstip van observatie)
+\item De conceptuele definitie van alle cijfers is dezelfde, maar er zijn verschillen in de operationele definitie (een breuk in methode)
+\item Zowel de conceptuele als de operationele definitie van de cijfers zijn verschillend (breuk in methode en een anders gedefinieerde statistiek).
+\end{enumerate}
+In de drie situaties zullen we de cijfers op een andere manier weergeven.
+
+
+\paragraph{Dezelfde operationele definitie}
+
+Wanneer de conceptuele en operationele definitie van de cijfers in een tijdsreeks dezelfde zijn, hebben we een reguliere tijdsreeks. De reeks kan dan worden voorgesteld door één vloeiende lijn. Toch is het steeds oppassen geblazen in dit soort situaties. Cijfers kunnen steeds op verschillende manieren worden geïnterpreteerd door gebruikers. Zeker als gebruikers verschillende conceptuele definities hanteren, bestaat het risico op verkeerde interpretaties omdat hun interpretaties wel methodebreuken impliceren. Het is onze verantwoordelijkheid om zo'n situaties zo veel mogelijk te vermijden. 
+
+Een manier om verkeerde interpretaties tegen te gaan is door speciale gebeurtenissen aan te duiden via directe labels in de grafiek. Zo toont Figuur \ref{fig:zelfde_operationele_definitie} bijvoorbeeld de evolutie in het aantal voltijdse equivalenten tewerkgesteld onder de universiteiten binnen de Vlaamse gemeenschap. Deze evolutie gaat steeds in stijgende lijn maar veel van de stijgingen worden veroorzaakt door de integratie van personeel vanuit andere instellingen, zoals de overheveling van de academische bachelors van de hogescholen naar de univesiteiten in 2013 of de integratie van specifieke lerarenopleidingen (SLO's) in 2019. Als deze cijfers enkel droog worden geïnterpreteerd als het aantal VTE’s tewerkgesteld aan universiteiten als rechtspersonen, volstaat in principe een vloeiende lijn. De hamvraag is echter of dit de doorsnee interpretatie is die gebruikers geven aan de cijfers. 
+
+Gebruikers kunnen de cijfers in Figuur \ref{fig:zelfde_operationele_definitie} ook interpreteren als een graadmeter voor tewerkstelling in de academische sector. Beleidsmatig lijkt dit ook een interessanter vraag dan een pure oplijsting van de VTE's aan de universiteiten. Met deze interpretatie is de grafiek echter zeer misleidend omdat de operationele definitie van een academische VTE verschillende malen werd aangepast doorheen de tijd. Daarom is het steeds aangeraden om belangrijke gebeurtenissen die opvallende trends in de grafiek helpen verklaren, op zijn minst aan te duiden in de grafiek via directe labels zoals te zien in Figuur \ref{fig:zelfde_operationele_definitie}.
+
+Onze belangrijkste opdracht in deze situatie is echter de gebruikersnoden te onderzoeken. Als uit zo'n onderzoek blijkt dat een significant deel van de gebruikers de cijfers op de tweede manier interpreteert, moeten wij onze definities aanpassen (bv. Wat is een academische VTE en hoe registreren we dat?). In die situatie stellen we de cijfers ook beter voor met duidelijke methodebreuken, zoals besproken in de volgende paragrafen.
+
+\begin{figure}
+\caption{Het personeelsbestand van de universiteiten binnen de Vlaamse gemeenschap stijgt door de jaren, maar dit wordt vaak verklaard door personeelsovernames.}
+\label{fig:zelfde_operationele_definitie}
+\begin{mdframed}
+\includegraphics[width=\linewidth]{graphs/zelfde_operationele_definitie.pdf}
+\end{mdframed}
+\end{figure}
+
+
+\paragraph{Verschillende operationele definities}
+
+Als cijfers dezelfde conceptuele definitie hebben betekent dit dat gebruikers gemiddeld genomen de cijfers op dezelfde manier betekenis geven. Het is voor een gebruiker dan gebruiksvriendelijker om deze cijfers in één en dezelfde grafiek te tonen. Als deze cijfers echter verschillende operationele definities hebben kunnen ze niet zomaar met elkaar vergeleken worden. We kiezen er dan voor om de cijfers visueel van elkaar te onderscheiden door slim gebruik te maken van verschillende grafiekelementen zoals kleuren, symbolen en labels \parencite[zie ][]{turner2021creating}.
+
+Wanneer er een harde methodebreuk bestaat op een bepaald tijdspunt, kan deze breuk worden aangeduid door de grafiek visueel op te delen in verschillende tijdsperiodes zoals in Figuur \ref{fig:verschillende_operationele_definities1}. Directe labels in de grafiek verschaffen hierbij meer uitleg over de gebruikte methoden voor en na de breuk. Door de labels in de grafiek zelf te plaatsen in plaats van legendes, kan de lezer meteen het methodeverschil voor en na de breuk aflezen. 
+
+\begin{figure}
+\caption{De gemiddelde oppervlakte van nieuwbouwwoonhuizen in het Vlaamse gewest stabiliseerde de laatste jaren.}
+\label{fig:verschillende_operationele_definities1}
+\begin{mdframed}
+\includegraphics[width=\linewidth,page=1]{graphs/verschillende_operationele_definities.pdf}
+\end{mdframed}
+\end{figure}
+
+Een interessantere situatie speelt zich af wanneer er een tijdsoverlap is tussen de nieuwe methode en de oude methode. In dat geval kan de lezer immers de cijfers met de oude en nieuwe methode rechtstreeks vergelijken. We tonen zo'n tijdsoverlap tussen data verzameld of verwerkt via verschillende methoden door trendlijnen te tekenen met verschillende kleuren en de methoden duidelijk te labellen in de grafiek zelf zoals in Figuur \ref{fig:verschillende_operationele_definities2}.
+
+\begin{figure}
+\caption{De gemiddelde oppervlakte van nieuwbouwwoonhuizen in het Vlaamse gewest stabiliseerde de laatste jaren.}
+\label{fig:verschillende_operationele_definities2}
+\begin{mdframed}
+\includegraphics[width=\linewidth,page=2]{graphs/verschillende_operationele_definities.pdf}
+\end{mdframed}
+\end{figure}
+
+Merk op dat deze strategie ook gebnruikt kan worden om tijdsreeksen uit twee verschillende bronnen weer te geven in een grafiek. 
+
+
+
+\paragraph{Verschillende conceptuele definitie}
+
+Wanneer de cijfers uit twee verschillende tijdsreeksen ook verschillende conceptuele definities hebben, zijn er verschillende opties. Wanneer de tijdsreeksen thematisch bij elkaar horen en dezelfde meetschaal hebben, kan je ze combineren in één grafiek. Je gebruikt dan wel duidelijk onderscheidbare kleurschalen om het onderscheid te maken, zoals de Okabe–Ito kleurschaal die geoptimaliseerd werd voor kleurenblindheid, zoals geïllustreerd in Figuur \ref{fig:verschillende_operationele_definities3}. 
+
+Wanneer beide tijdsreeksen niet dezelfde meetschaal hanteren gebruik je een grafiekmatrix of aparte grafieken voor beide reeksen.
+
+\begin{figure}
+\caption{De gemiddelde oppervlakte van nieuwbouwwoningen in het Vlaamse gewest stabiliseerde de laatste jaren, zowel voor woonhuizen als voor appartementen.}
+\label{fig:verschillende_operationele_definities3}
+\begin{mdframed}
+\includegraphics[width=\linewidth,page=3]{graphs/verschillende_operationele_definities.pdf}
+\end{mdframed}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+\section{Grafieken met revisies}
+
+
+
+
+\begin{figure}
+\caption{Om geplande revisies weer te geven maken we slim gebruik van onderbroken lijnen en kleuren. Voor de duidelijkheid labelen we revisies ook rechtstreeks in de grafiek.}
+\label{fig:revisies}
+\begin{mdframed}
+\includegraphics[width=\linewidth]{graphs/revisies.pdf}
+\end{mdframed}
+\end{figure}
+
+
+
+
+\printbibliography	
+	
+
+
+
+
+
+
+
+
+\end{document}

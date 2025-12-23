@@ -1,0 +1,105 @@
+\documentclass{VSAnote}
+
+\usepackage{tikz}
+\input{tikzset.tex}
+
+\usepackage[active,tightpage]{preview}
+\newenvironment{previewoutput}{}{}
+\PreviewEnvironment{previewoutput}
+\setlength{\PreviewBorder}{0pt} 
+
+
+\begin{document}
+
+
+\tikzset{y=1.428571mm}
+
+\newcommand\yaxis{%
+	\begin{tikzpicture}[baseline=0,trim right=0,remember picture]
+	\foreach \y/\l in {0/0,5/5\,000,10/10\,000,15/15\,000,20/20\,000,25/25\,000,30/30\,000,35/35\,000}{
+		\draw[mistgray] (0,\y) -- +(-5mm,0) node(A)[yaxislabel]{\l\strut};
+		}
+	\end{tikzpicture}%
+	}
+
+
+\newcommand\yaxistitle{
+	\begin{tikzpicture}[overlay]
+	\node[axistitle,anchor=north west,align=left,xshift=.5ex] at (A.north east) 
+		{\strut VTE aan Vlaamse universiteiten};	
+	\end{tikzpicture}
+	}
+				
+		
+	
+\newcommand\yaxisb{%
+	\begin{tikzpicture}[baseline=0]
+	\foreach \y/\l in {0/0,5/5\,000,10/10\,000,15/15\,000,20/20\,000,25/25\,000,30/30\,000,35/35\,000}{
+		\draw[mistgray] (0,\y) -- +(15mm,0);
+		}
+	\node[softsteelblue,anchor=west,align=left,xshift=2pt] at (0,30.41853) {30\,418,53};	
+	\end{tikzpicture}%
+	}	
+	
+	
+\newcommand\xaxis{%
+	\begin{tikzpicture}[x=0.09090909\linewidth,trim left=0,trim right=\linewidth]
+	\foreach \x/\la/\lb in {1/13/14,3/15/16,5/17/18,7/19/20,9/21/22,11/23/24}{
+		\path (\x,0) -- +(0,-2pt) node[xaxislabel,align=center]{'\la-'\lb};
+		}
+	\end{tikzpicture}%
+	}
+
+
+\newcommand\body{%
+	\begin{tikzpicture}[x=0.09090909\linewidth]
+	\useasboundingbox (0,0) rectangle (11,35);
+	\foreach \y/\l in {0/0,5/5\,000,10/10\,000,15/15\,000,20/20\,000,25/25\,000,30/30\,000,35/35\,000}{
+		\draw[mistgray] (0,\y) -- (11,\y);
+		}
+	\fill[sunsetbronze!20] (1,24.68098) circle (5mm);	
+	\fill[sunsetbronze!20] (7,27.34676) circle (5mm);	
+	\draw[plotline,softsteelblue] (0,22.06055) -- (1,24.68098) -- (2,25.00333) -- (3,25.12019) -- (4,25.44175) -- (5,25.90789) -- (6,26.64838) -- (7,27.34676) -- (8,28.67861) -- (9,29.40098) -- (10,30.11421) -- (11,30.41853);
+	\draw[sunsetbronze,plotlabel] (1,24.68098) circle (1mm) ;
+	\draw[sunsetbronze,plotlabel,shorten <=1mm] (1,24.68098) |- +(5mm,-10mm) node[anchor=west]{Academische bachelors\\werden overgeheveld\\van hogescholen\\naar universiteiten};	
+	\draw[sunsetbronze,plotlabel] (7,27.34676) circle (1mm) ;
+	\draw[sunsetbronze,plotlabel,shorten <=1mm] (7,27.34676) |- +(5mm,-10mm) node[anchor=west]{Specifieke lerarenopleidingen (SLO's)\\werden geïntegreerd\\binnen universiteiten};		
+	\end{tikzpicture}%
+	}
+
+
+\begin{figure}[h]
+\begin{previewoutput}
+\setlength\baselineskip{0pt}
+Het aantal voltijdse equivalenten (VTE) verbonden aan de universiteiten binnen de Vlaamse Gemeenschap neemt door de jaren heen toe. Deze stijging wordt vaak toegeschreven aan personeelsovernames.\par\medskip
+\begin{tblr}{
+	width=\linewidth,
+	colspec={rX[c]r},
+	rows={rowsep=0pt},
+	columns={colsep=0pt},
+	}
+\yaxis & \body & \yaxisb \\ 
+& \xaxis & \\ 
+\end{tblr}
+\yaxistitle
+\end{previewoutput}
+\end{figure}
+
+
+
+
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+

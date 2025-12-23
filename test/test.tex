@@ -9,17 +9,61 @@
 \sffamily
 
 
+%\begin{tikzpicture}[
+%	x=\linewidth,
+%
+%	]
+%
+%
+%
+%
+%\end{tikzpicture}
+
+\newcommand\maketable[5]{
+\begin{tblr}{
+	colspec={ccc},
+	rows={bg=white},
+	column{1} = {fg=white,bg=lightskyblue},
+	row{1} = {fg=white,bg=softsteelblue},
+	row{2} = {fg=white,bg=lightskyblue},
+	hlines = {deepslateblue},
+	vlines = {deepslateblue},
+	}
+\SetCell[c=3]{l} #1 \\	
+  & \# & \% \\
+\faMars & #2 & #3 \\
+\faVenus & #4 & #5 \\
+\end{tblr}
+}
+
+
 \begin{tikzpicture}[
-	x=.8\linewidth,
-	concept/.style={font=\LARGE\bfseries},
-	label/.style={anchor=north,text=deepslateblue,font=\large},
+	x=15mm,
+	y=4mm,
+	table/.style={align=left,anchor=west,inner sep=1pt,fill=white},
+	arr/.style={latex-latex,line width=2pt,deepslateblue},
 	]
-\node[concept,anchor=west] (A) at (0,0) {Cijfer};
-\node[label] at (A.south) {Data};
-\node[concept,anchor=east] (B) at (1,0) {Attributen};
-\node[label] at (B.south) {Metadata};
-\draw[latex-latex,very thick,bend left=20] (A) to (B);
+\node[table] at (5,5) {\maketable{Borsbeek}{5270}{48.6}{5584}{51.4}};
+\node[table] at (4,4) {\maketable{Boom}{9024}{49.5}{9220}{50.5}};
+\node[table] at (3,3) {\maketable{Boechout}{6506}{49.0}{6760}{51.0}};
+\node[table] at (2,2) {\maketable{Antwerpen}{262921}{50.1}{263014}{49.9}};
+\node[table] at (1,1) {\maketable{Aartselaar}{7089}{49.6}{7204}{50.4}};
+
+\draw[arr] (1.5,-2.5) to node[pos=.5,anchor=north]{parameter} (3.2,-2.5);
+\draw[arr] (7.3,2) to node[pos=.5,anchor=west]{geslacht} (7.3,5);
+
 \end{tikzpicture}
 
 
+
+
+
+
+
+
+
 \end{document}
+
+
+
+
