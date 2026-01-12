@@ -1,0 +1,322 @@
+% !TEX program = xelatex
+
+
+\documentclass{VSAnote}
+
+\usepackage{tikz}
+\input{../tikzset.tex}
+
+\usepackage[active,tightpage]{preview}
+\newenvironment{previewoutput}{}{}
+\PreviewEnvironment{previewoutput}
+\setlength{\PreviewBorder}{0pt} 
+
+\usepackage{anyfontsize}
+
+
+\begin{document}
+
+
+
+
+%
+%%%%% SLOPEGRAPH, SELECTED LABELS
+%
+%
+%\tikzset{
+%	y=1mm,
+%	smallaxislabel/.style={font=\tiny,text depth=0pt,text height=1ex},
+%	}
+%
+%
+%\newcommand\yaxis{%
+%	\begin{tikzpicture}[,baseline={(0,100)}]
+%	\node[axislabel,anchor=east,stonegray] at (0,100) {100};
+%	%%%
+%	\node[axislabel,anchor=east,softsteelblue,yshift= 0pt] at (0,105.1) {Turnhout 105,1};
+%	\node[axislabel,anchor=east,softsteelblue,yshift= 0pt] at (0,112.0) {Gent 112,0};
+%	\node[axislabel,anchor=east,softsteelblue,yshift= 0pt] at (0,118.1) {Halle-Vilvoorde 118,1};
+%	\node[axislabel,anchor=east,softsteelblue,yshift= 0pt] at (0,85.6) {Leuven 85,6};
+%	\node[axislabel,anchor=east,softsteelblue,yshift= 0pt] at (0,79.4) {Ieper 79,4};
+%	\node[axislabel,anchor=east,softsteelblue,yshift= 0pt] at (0,92.8) {Oudenaarde 92,8};
+%	\end{tikzpicture}%
+%	}
+%	
+%	
+%\newcommand\yaxisb{%
+%	\begin{tikzpicture}[,baseline={(0,100)}]
+%		\node[axislabel,anchor=west,softsteelblue,yshift= 0pt] at (0,116.5) {116,5};
+%		\node[axislabel,anchor=west,softsteelblue,yshift= 0pt] at (0,121.1) {121,1};
+%		\node[axislabel,anchor=west,softsteelblue,yshift= 0pt] at (0,126.8) {126,8};
+%		\node[axislabel,anchor=west,softsteelblue,yshift= 0pt] at (0,92.6) {92,6};
+%		\node[axislabel,anchor=west,softsteelblue,yshift= 0pt] at (0,88.4) {88,4};
+%		\node[axislabel,anchor=west,softsteelblue,yshift= 0pt] at (0,71.9) {71,9};
+%	\end{tikzpicture}%
+%	}	
+%	
+%	
+%\newcommand\xaxis{%
+%	\begin{tikzpicture}[x=\linewidth,trim left=0,trim right=\linewidth]
+%	\node at (0,0) [xaxislabel,align=center,anchor=south]{bbp per inwoner\\(Vlaanderen=100)\\2003};
+%	\node at (1,0) [xaxislabel,align=center,anchor=south]{2023};
+%	\end{tikzpicture}%
+%	}
+%
+%\newcommand\body{%
+%	\begin{tikzpicture}[x=\linewidth,baseline={(0,100)}]
+%	\useasboundingbox (0,56.8) rectangle (1,126.8);
+%	\draw[stonegray] (0,56.8) -- (0,126.8) (1,56.8) -- (1,126.8);
+%	\draw[stonegray] (0,100) -- (1,100);
+%	%%% Gelijk
+%	\filldraw[line width=2pt,ashgray] (0,126.1) circle(1pt) -- (1,115.0) circle(1pt); % Antwerpen
+%	\filldraw[line width=2pt,ashgray] (0,106.0) circle(1pt) -- (1,107.0) circle(1pt); % Mechelen
+%	\filldraw[line width=2pt,ashgray] (0,104.3) circle(1pt) -- (1,93.5) circle(1pt); % Hasselt
+%	\filldraw[line width=2pt,ashgray] (0,73.9) circle(1pt) -- (1,69.0) circle(1pt); % Maaseik
+%	\filldraw[line width=2pt,ashgray] (0,58.5) circle(1pt) -- (1,56.8) circle(1pt); % Tongeren
+%	\filldraw[line width=2pt,ashgray] (0,64.9) circle(1pt) -- (1,64.0) circle(1pt); % Aalst
+%	\filldraw[line width=2pt,ashgray] (0,70.0) circle(1pt) -- (1,67.6) circle(1pt); % Dendermonde
+%	\filldraw[line width=2pt,ashgray] (0,68.9) circle(1pt) -- (1,65.9) circle(1pt); % Eeklo
+%	\filldraw[line width=2pt,ashgray] (0,93.3) circle(1pt) -- (1,90.1) circle(1pt); % Sint-Niklaas
+%	\filldraw[line width=2pt,ashgray] (0,96.8) circle(1pt) -- (1,97.7) circle(1pt); % Brugge
+%	\filldraw[line width=2pt,ashgray] (0,68.3) circle(1pt) -- (1,68.6) circle(1pt); % Diksmuide
+%	\filldraw[line width=2pt,ashgray] (0,103.0) circle(1pt) -- (1,103.4) circle(1pt); % Kortrijk
+%	\filldraw[line width=2pt,ashgray] (0,75.7) circle(1pt) -- (1,81.0) circle(1pt); % Oostende
+%	\filldraw[line width=2pt,ashgray] (0,101.0) circle(1pt) -- (1,99.1) circle(1pt); % Roeselare
+%	\filldraw[line width=2pt,ashgray] (0,112.8) circle(1pt) -- (1,104.7) circle(1pt); % Tielt
+%	\filldraw[line width=2pt,ashgray] (0,95.8) circle(1pt) -- (1,85.8) circle(1pt); % Veurne
+%	%%% Stijgen
+%	\filldraw[line width=2pt,softsteelblue] (0,79.4) circle(1pt) -- (1,88.4) circle(1pt); % Ieper	
+%	\filldraw[line width=2pt,softsteelblue] (0,118.1) circle(1pt) -- (1,126.8) circle(1pt); % Halle-Vilvoorde
+%	\filldraw[line width=2pt,softsteelblue] (0,85.6) circle(1pt) -- (1,92.6) circle(1pt); % Leuven
+%	\filldraw[line width=2pt,softsteelblue] (0,112.0) circle(1pt) -- (1,121.1) circle(1pt); % Gent
+%	\filldraw[line width=2pt,softsteelblue] (0,105.1) circle(1pt) -- (1,116.5) circle(1pt); % Turnhout
+%	%%% Dalen
+%	\filldraw[line width=2pt,softsteelblue] (0,92.8) circle(1pt) -- (1,71.9) circle(1pt); % Oudenaarde
+%	\end{tikzpicture}%
+%	}
+%
+%
+%\begin{figure}[h]
+%\begin{previewoutput}
+%\graphtitle{\textbf{Figuur 2:} In arrondissementen Turnhout, Gent, Ieper, Halle-Vilvoorde en Leuven ging het relatief bruto binnenlands product (bbp ten opzichte van het Vlaamse Gewest) omhoog terwijl het in arrondissement Oudenaarde sterk achteruitging.}
+%\begin{tblr}{
+%	width=\linewidth,
+%	colspec={rX[c]r},
+%%	rows={rowsep=0pt},
+%	columns={colsep=.5ex},
+%%	stretch=0,
+%	}
+%& \xaxis &  \\ 	
+%\yaxis & \body & \yaxisb \\ 
+%\end{tblr}
+%\end{previewoutput}
+%\end{figure}
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%%%%% SLOPEGRAPH, ALL LABELS
+%
+%
+%\tikzset{
+%	y=1.5mm,
+%	smallaxislabel/.style={font=\tiny,text depth=0pt,text height=1ex},
+%	}
+%
+%
+%\renewcommand\yaxis{%
+%	\begin{tikzpicture}[,baseline={(0,100)}]
+%	\node[axislabel,anchor=east,stonegray] at (0,100) {100};
+%	%%%
+%	\node[smallaxislabel,anchor=east,tealgreen,yshift= 1pt] at (0,106.0) {Mechelen (106,0$\rightarrow$107,0)};
+%	\node[smallaxislabel,anchor=east,tealgreen,yshift=-1pt] at (0,105.1) {Turnhout (105,1$\rightarrow$116,5)};
+%	\node[smallaxislabel,anchor=east,tealgreen,yshift= 0pt] at (0,112.0) {Gent (112,0$\rightarrow$121,1)};
+%	\node[smallaxislabel,anchor=east,tealgreen,yshift= 0pt] at (0,118.1) {Halle-Vilvoorde (118,1$\rightarrow$126,8)};
+%	\node[smallaxislabel,anchor=east,tealgreen,yshift= 0pt] at (0,85.6) {Leuven (85,6$\rightarrow$92,6)};
+%	\node[smallaxislabel,anchor=east,tealgreen,yshift= 0pt] at (0,96.8) {Brugge (96,8$\rightarrow$97,7)};
+%	\node[smallaxislabel,anchor=east,tealgreen,yshift= 0pt] at (0,68.3) {Diksmuide (68,3$\rightarrow$68,6)};
+%	\node[smallaxislabel,anchor=east,tealgreen,yshift= 0pt] at (0,79.4) {Ieper (79,4$\rightarrow$88,4)};
+%	\node[smallaxislabel,anchor=east,tealgreen,yshift= 0pt] at (0,103.0) {Kortrijk (103,0$\rightarrow$103,4)};
+%	\node[smallaxislabel,anchor=east,tealgreen,yshift= 0pt] at (0,75.7) {Oostende (75,7$\rightarrow$81,0)};	
+%	\end{tikzpicture}%
+%	}
+%	
+%	
+%\renewcommand\yaxisb{%
+%	\begin{tikzpicture}[,baseline={(0,100)}]
+%	\node[smallaxislabel,anchor=west,warmorange,yshift= 0pt] at (0,115.0) {Antwerpen (126,1$\rightarrow$115,0)};
+%	\node[smallaxislabel,anchor=west,warmorange,yshift= 0pt] at (0,93.5) {Hasselt (104,3$\rightarrow$93,5)};
+%	\node[smallaxislabel,anchor=west,warmorange,yshift= 0pt] at (0,69.0) {Maaseik (73,9$\rightarrow$69,0)};
+%	\node[smallaxislabel,anchor=west,warmorange,yshift= 0pt] at (0,56.8) {Tongeren (58,5$\rightarrow$56,8)};
+%	\node[smallaxislabel,anchor=west,warmorange,yshift= 0pt] at (0,64.0) {Aalst (64,9$\rightarrow$64,0)};
+%	\node[smallaxislabel,anchor=west,warmorange,yshift= 0pt] at (0,67.6) {Dendermonde (70,0$\rightarrow$67,6)};
+%	\node[smallaxislabel,anchor=west,warmorange,yshift= 0pt] at (0,65.9) {Eeklo (68,9$\rightarrow$65,9)};
+%	\node[smallaxislabel,anchor=west,warmorange,yshift= 0pt] at (0,71.9) {Oudenaarde (92,8$\rightarrow$71,9)};
+%	\node[smallaxislabel,anchor=west,warmorange,yshift= 0pt] at (0,90.1) {Sint-Niklaas (93,3$\rightarrow$90,1)};
+%	\node[smallaxislabel,anchor=west,warmorange,yshift= 0pt] at (0,99.1) {Roeselare (101,0$\rightarrow$99,1)};
+%	\node[smallaxislabel,anchor=west,warmorange,yshift= 0pt] at (0,104.7) {Tielt (112,8$\rightarrow$104,7)};
+%	\node[smallaxislabel,anchor=west,warmorange,yshift= 0pt] at (0,85.8) {Veurne (95,8$\rightarrow$85,8)};
+%	\end{tikzpicture}%
+%	}	
+%	
+%	
+%\renewcommand\xaxis{%
+%	\begin{tikzpicture}[x=\linewidth,trim left=0,trim right=\linewidth]
+%	\foreach \x/\l in {0/2003,1/2023}{
+%		\node at (\x,0) [xaxislabel,align=center]{bbp per inwoner\\(Vlaanderen=100)\\\l};
+%		}
+%	\end{tikzpicture}%
+%	}
+%
+%\renewcommand\body{%
+%	\begin{tikzpicture}[x=\linewidth,baseline={(0,100)}]
+%	\useasboundingbox (0,56.8) rectangle (1,126.8);
+%	\draw[stonegray] (0,56.8) -- (0,126.8) (1,56.8) -- (1,126.8);
+%	\draw[stonegray] (0,100) -- (1,100);
+%	%%%
+%	\filldraw[line width=2pt,warmorange] (0,126.1) circle(1pt) -- (1,115.0) circle(1pt); % Antwerpen
+%	\filldraw[line width=2pt,tealgreen] (0,106.0) circle(1pt) -- (1,107.0) circle(1pt); % Mechelen
+%	\filldraw[line width=2pt,tealgreen] (0,105.1) circle(1pt) -- (1,116.5) circle(1pt); % Turnhout
+%	\filldraw[line width=2pt,warmorange] (0,104.3) circle(1pt) -- (1,93.5) circle(1pt); % Hasselt
+%	\filldraw[line width=2pt,warmorange] (0,73.9) circle(1pt) -- (1,69.0) circle(1pt); % Maaseik
+%	\filldraw[line width=2pt,warmorange] (0,58.5) circle(1pt) -- (1,56.8) circle(1pt); % Tongeren
+%	\filldraw[line width=2pt,warmorange] (0,64.9) circle(1pt) -- (1,64.0) circle(1pt); % Aalst
+%	\filldraw[line width=2pt,warmorange] (0,70.0) circle(1pt) -- (1,67.6) circle(1pt); % Dendermonde
+%	\filldraw[line width=2pt,warmorange] (0,68.9) circle(1pt) -- (1,65.9) circle(1pt); % Eeklo
+%	\filldraw[line width=2pt,tealgreen] (0,112.0) circle(1pt) -- (1,121.1) circle(1pt); % Gent
+%	\filldraw[line width=2pt,warmorange] (0,92.8) circle(1pt) -- (1,71.9) circle(1pt); % Oudenaarde
+%	\filldraw[line width=2pt,warmorange] (0,93.3) circle(1pt) -- (1,90.1) circle(1pt); % Sint-Niklaas
+%	\filldraw[line width=2pt,tealgreen] (0,118.1) circle(1pt) -- (1,126.8) circle(1pt); % Halle-Vilvoorde
+%	\filldraw[line width=2pt,tealgreen] (0,85.6) circle(1pt) -- (1,92.6) circle(1pt); % Leuven
+%	\filldraw[line width=2pt,tealgreen] (0,96.8) circle(1pt) -- (1,97.7) circle(1pt); % Brugge
+%	\filldraw[line width=2pt,tealgreen] (0,68.3) circle(1pt) -- (1,68.6) circle(1pt); % Diksmuide
+%	\filldraw[line width=2pt,tealgreen] (0,79.4) circle(1pt) -- (1,88.4) circle(1pt); % Ieper
+%	\filldraw[line width=2pt,tealgreen] (0,103.0) circle(1pt) -- (1,103.4) circle(1pt); % Kortrijk
+%	\filldraw[line width=2pt,tealgreen] (0,75.7) circle(1pt) -- (1,81.0) circle(1pt); % Oostende
+%	\filldraw[line width=2pt,warmorange] (0,101.0) circle(1pt) -- (1,99.1) circle(1pt); % Roeselare
+%	\filldraw[line width=2pt,warmorange] (0,112.8) circle(1pt) -- (1,104.7) circle(1pt); % Tielt
+%	\filldraw[line width=2pt,warmorange] (0,95.8) circle(1pt) -- (1,85.8) circle(1pt); % Veurne
+%	\end{tikzpicture}%
+%	}
+%
+%
+%\begin{figure}[h]
+%\begin{previewoutput}
+%\graphtitle{\textbf{Figuur 2:} In arrondissementen Turnhout, Gent, Ieper, Halle-Vilvoorde en Leuven ging het relatief bruto binnenlands product (bbp ten opzichte van het Vlaamse Gewest) omhoog terwijl het in arrondissement Oudenaarde sterk achteruitging.}
+%\begin{tblr}{
+%	width=\linewidth,
+%	colspec={rX[c]r},
+%%	rows={rowsep=0pt},
+%	columns={colsep=.5ex},
+%%	stretch=0,
+%	}
+%& \xaxis &  \\ 	
+%\yaxis & \body & \yaxisb \\ 
+%\end{tblr}
+%\end{previewoutput}
+%\end{figure}
+%
+%
+
+
+
+
+
+
+
+
+
+
+
+%%%% DUMPBELL PLOT
+
+\usetikzlibrary{decorations.markings}
+
+\newcommand\drawdumbbell[2]{%
+	\begin{tikzpicture}[
+		x=\linewidth,
+		mid arrow/.style={
+		    decoration={markings, mark= at position 0.5 with {\arrow{>}} },
+		    postaction={decorate}
+		  	}
+		  ]
+	\useasboundingbox (0,0) rectangle (1,1ex) ;
+	\draw[mistgray] (0,.5ex) -- (1,.5ex) ;
+	\draw[mistgray,line width=1pt,ashgray] (0.6171429,-.7ex) -- (0.6171429,2ex) ;
+%	\draw[lightblue,line width=1pt] (#1,.5ex) to node[pos=.5,text=white]{\arrow{>}} (#2,.5ex);
+	\draw[lightblue,line width=1pt,mid arrow] (#1,.5ex) to (#2,.5ex);
+	\fill[lightblue] (#1,.5ex) circle(5pt);
+	\node[text=white,font=\tiny] at (#1,.5ex) {'03};
+	\fill[purplepink] (#2,.5ex) circle(5pt);
+	\node[text=white,font=\tiny] at (#2,.5ex) {'23};
+	\end{tikzpicture}%
+	}
+
+\newcommand\dumbbellxaxis{%
+	\begin{tikzpicture}[x=\linewidth,trim left=0,trim right=\linewidth]
+	\node[stonegray] at (0.6171429,0) {100};
+	\end{tikzpicture}%
+	}
+
+\newcommand\yearbox[2]{\tikz{\node[fill=#2,text=white,rounded corners=1pt,inner sep=2pt]{#1};}}
+
+
+\begin{figure}[h]
+\begin{previewoutput}
+\graphtitle{\textbf{Figuur 2:} In arrondissementen Turnhout, Gent, Ieper, Halle-Vilvoorde en Leuven ging het relatief bruto binnenlands product (bbp ten opzichte van het Vlaamse Gewest) omhoog terwijl het in arrondissement Oudenaarde sterk achteruitging.}
+\begin{tblr}{
+	width=\linewidth,
+	colspec={lccX[c]},
+	column{1} = {leftsep=0pt},
+	column{2} = {fg=lightblue},
+	column{3} = {fg=purplepink},
+	column{4} = {colsep=5pt},
+	rows={rowsep=0pt},
+%	columns={colsep=.5ex},
+%	stretch=0,
+	}
+&\SetCell[c=2]{halign=c,fg=charcoalgray}\makebox[0pt][c]{\begin{tabular}{c}bbp per inwoner\\(Vlaanderen=100)\end{tabular}}& & \\	
+ & \yearbox{2003}{lightblue} & \yearbox{2023}{purplepink} & \dumbbellxaxis \\
+Halle-Vilvoorde & 118,1 & 126,8 & \drawdumbbell{0.8757}{1.0000} \\
+Gent & 112,0 & 121,1 & \drawdumbbell{0.7886}{0.9186} \\
+Turnhout & 105,1 & 116,5 & \drawdumbbell{0.6900}{0.8529} \\
+Antwerpen & 126,1 & 115,0 & \drawdumbbell{0.9900}{0.8314} \\
+Mechelen & 106,0 & 107,0 & \drawdumbbell{0.7029}{0.7171} \\
+Tielt & 112,8 & 104,7 & \drawdumbbell{0.8000}{0.6843} \\
+Kortrijk & 103,0 & 103,4 & \drawdumbbell{0.6600}{0.6657} \\
+Roeselare & 101,0 & 99,1 & \drawdumbbell{0.6314}{0.6043} \\
+Brugge & 96,8 & 97,7 & \drawdumbbell{0.5714}{0.5843} \\
+Hasselt & 104,3 & 93,5 & \drawdumbbell{0.6786}{0.5243} \\
+Leuven & 85,6 & 92,6 & \drawdumbbell{0.4114}{0.5114} \\
+Sint-Niklaas & 93,3 & 90,1 & \drawdumbbell{0.5214}{0.4757} \\
+Ieper & 79,4 & 88,4 & \drawdumbbell{0.3229}{0.4514} \\
+Veurne & 95,8 & 85,8 & \drawdumbbell{0.5571}{0.4143} \\
+Oostende & 75,7 & 81,0 & \drawdumbbell{0.2700}{0.3457} \\
+Oudenaarde & 92,8 & 71,9 & \drawdumbbell{0.5143}{0.2157} \\
+Maaseik & 73,9 & 69,0 & \drawdumbbell{0.2443}{0.1743} \\
+Diksmuide & 68,3 & 68,6 & \drawdumbbell{0.1643}{0.1686} \\
+Dendermonde & 70,0 & 67,6 & \drawdumbbell{0.1886}{0.1543} \\
+Eeklo & 68,9 & 65,9 & \drawdumbbell{0.1729}{0.1300} \\
+Aalst & 64,9 & 64,0 & \drawdumbbell{0.1157}{0.1029} \\
+Tongeren & 58,5 & 56,8 & \drawdumbbell{0.0243}{0.0000} \\
+\end{tblr}
+\end{previewoutput}
+\end{figure}
+
+
+
+
+\end{document}
+
+		
+

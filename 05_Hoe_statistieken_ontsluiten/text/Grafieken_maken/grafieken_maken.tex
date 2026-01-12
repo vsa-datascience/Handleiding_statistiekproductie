@@ -14,7 +14,7 @@
 \begin{document}
 
 \title{Grafieken ontwerpen}
-\author{Jorre Vannieuwenhuyze}
+\author{Jorre Vannieuwenhuyze \& Tom De Winter}
 \titlepage
 
 
@@ -24,17 +24,17 @@
 
 
 
-\section{Algemene richtlijnen grafieken}
-
-
-Goede grafieken maken betekent zo helder en efficiënt mogelijk de boodschap overbrengen. Gelukkig bestaat er heel wat literatuur waarin basisprincipes voor grafiekontwerp worden overlopen. In deze handleiding vatten we enkele principes samen op basis van het werk van \textcite{tufte1983Visual}, \textcite{evergreen2019Effective}, \textcite{doumont2009Trees}, \textcite{vandenEeckhout2022Powerful}, \textcite{cleveland1993Elements} en \textcite{few2012Show}.
-
-
-
-\paragraph{Regel 1. Vertrek van een duidelijke boodschap in de titel.}
-
-Een grafiek is nooit een neutrale reproductie van cijfers, ze geeft automatisch betekenis aan deze cijfers. Daarom moeten grafieken steeds worden ontworpen vertrekkend vanuit een duidelijke boodschap, en die boodschap zet je in de titel van de grafiek als een volzin \parencite{evergreen2019Effective, doumont2009Trees, vandenEeckhout2022Powerful}. 
-
+%\section{Algemene richtlijnen grafieken}
+%
+%
+%Goede grafieken maken betekent zo helder en efficiënt mogelijk de boodschap overbrengen. Gelukkig bestaat er heel wat literatuur waarin basisprincipes voor grafiekontwerp worden overlopen. In deze handleiding vatten we enkele principes samen op basis van het werk van \textcite{tufte1983Visual}, \textcite{evergreen2019Effective}, \textcite{doumont2009Trees}, \textcite{vandenEeckhout2022Powerful}, \textcite{cleveland1993Elements} en \textcite{few2012Show}.
+%
+%
+%
+%\paragraph{Regel 1. Vertrek van een duidelijke boodschap in de titel.}
+%
+%Een grafiek is nooit een neutrale reproductie van cijfers, ze geeft automatisch betekenis aan deze cijfers. Daarom moeten grafieken steeds worden ontworpen vertrekkend vanuit een duidelijke boodschap, en die boodschap zet je in de titel van de grafiek als een volzin \parencite{evergreen2019Effective, doumont2009Trees, vandenEeckhout2022Powerful}. 
+%
 
 
 %
@@ -199,85 +199,84 @@ Een grafiek is nooit een neutrale reproductie van cijfers, ze geeft automatisch 
 
 
 
-
-
-
-
 \section{Grafieken met methodebreuken}
 
-
-Als we statistieken over de tijd weergeven in tijdsreeksen kunnen zich verschillende situaties voordoen:
+Wanneer we statistieken over de tijd voorstellen in tijdsreeksen, kunnen zich verschillende situaties voordoen:
 \begin{enumerate}
-\item De conceptuele en operationele definitie van de cijfers zijn dezelfde (uitgezonderd het tijdstip van observatie)
-\item De conceptuele definitie van alle cijfers is dezelfde, maar er zijn verschillen in de operationele definitie (een breuk in methode)
-\item Zowel de conceptuele als de operationele definitie van de cijfers zijn verschillend (breuk in methode en een anders gedefinieerde statistiek).
+\item De conceptuele en operationele definitie van de cijfers blijven doorheen de tijd ongewijzigd.
+\item De conceptuele definitie blijft dezelfde, maar de operationele definitie wijzigt doorheen de tijd (een methodebreuk).
+\item Zowel de conceptuele als de operationele definitie wijzigen doorheen de tijd (een methodebreuk én een anders gedefinieerde statistiek).
 \end{enumerate}
-In de drie situaties zullen we de cijfers op een andere manier weergeven.
+Afhankelijk van de situatie is een andere manier van visualiseren nodig om gebruikers te helpen de cijfers correct te interpreteren.
 
 
 \paragraph{Dezelfde operationele definitie}
 
-Wanneer de conceptuele en operationele definitie van de cijfers in een tijdsreeks dezelfde zijn, hebben we een reguliere tijdsreeks. De reeks kan dan worden voorgesteld door één vloeiende lijn. Toch is het steeds oppassen geblazen in dit soort situaties. Cijfers kunnen steeds op verschillende manieren worden geïnterpreteerd door gebruikers. Zeker als gebruikers verschillende conceptuele definities hanteren, bestaat het risico op verkeerde interpretaties omdat hun interpretaties wel methodebreuken impliceren. Het is onze verantwoordelijkheid om zo'n situaties zo veel mogelijk te vermijden. 
+Wanneer zowel de conceptuele als de operationele definitie in een tijdsreeks gelijk blijven, spreken we van een reguliere tijdsreeks. Zo’n reeks kan meestal eenvoudig worden weergegeven met één vloeiende lijn. Toch is ook in deze situatie enige voorzichtigheid nodig. Gebruikers kunnen cijfers namelijk op verschillende manieren lezen, zeker wanneer zij onbewust andere conceptuele afbakeningen hanteren dan de statistiekproducent. Daardoor kunnen ze methodebreuken veronderstellen die er volgens de officiële definitie niet zijn. Het is aan de statistiekproducent om dit risico zo veel mogelijk te beperken.
 
-Een manier om verkeerde interpretaties tegen te gaan is door speciale gebeurtenissen aan te duiden via directe labels in de grafiek. Zo toont Figuur \ref{fig:zelfde_operationele_definitie} bijvoorbeeld de evolutie in het aantal voltijdse equivalenten tewerkgesteld onder de universiteiten binnen de Vlaamse gemeenschap. Deze evolutie gaat steeds in stijgende lijn maar veel van de stijgingen worden veroorzaakt door de integratie van personeel vanuit andere instellingen, zoals de overheveling van de academische bachelors van de hogescholen naar de univesiteiten in 2013 of de integratie van specifieke lerarenopleidingen (SLO's) in 2019. Als deze cijfers enkel droog worden geïnterpreteerd als het aantal VTE’s tewerkgesteld aan universiteiten als rechtspersonen, volstaat in principe een vloeiende lijn. De hamvraag is echter of dit de doorsnee interpretatie is die gebruikers geven aan de cijfers. 
+Figuur \ref{fig:VTE_vlaamse_universiteiten} toont dit aan de hand van de evolutie van het aantal voltijdse equivalenten (VTE) tewerkgesteld aan universiteiten binnen de Vlaamse Gemeenschap. De reeks vertoont een duidelijke stijging, maar een belangrijk deel daarvan is het gevolg van institutionele wijzigingen. Denk bijvoorbeeld aan de overheveling van de academische bachelors van de hogescholen naar de universiteiten in 2013 of aan de integratie van de specifieke lerarenopleidingen (SLO’s) in 2019. Wanneer deze cijfers strikt worden geïnterpreteerd als het aantal VTE’s tewerkgesteld aan universiteiten als rechtspersonen, volstaat een continue lijn. De vraag is echter of gebruikers deze interpretatie ook daadwerkelijk volgen.
 
-Gebruikers kunnen de cijfers in Figuur \ref{fig:zelfde_operationele_definitie} ook interpreteren als een graadmeter voor tewerkstelling in de academische sector. Beleidsmatig lijkt dit ook een interessanter vraag dan een pure oplijsting van de VTE's aan de universiteiten. Met deze interpretatie is de grafiek echter zeer misleidend omdat de operationele definitie van een academische VTE verschillende malen werd aangepast doorheen de tijd. Daarom is het steeds aangeraden om belangrijke gebeurtenissen die opvallende trends in de grafiek helpen verklaren, op zijn minst aan te duiden in de grafiek via directe labels zoals te zien in Figuur \ref{fig:zelfde_operationele_definitie}.
+Gebruikers kunnen de cijfers bijvoorbeeld ook lezen als een indicator voor de totale tewerkstelling in de academische sector. Vanuit beleidsmatig oogpunt is dat vaak een interessantere invalshoek dan een louter institutionele afbakening. Vanuit die interpretatie wordt de grafiek echter misleidend, omdat de operationele definitie van een academische VTE doorheen de tijd meerdere keren is aangepast. Om zulke misinterpretaties te vermijden, is het daarom belangrijk om gebeurtenissen die opvallende trends verklaren expliciet aan te duiden in de grafiek.
 
-Onze belangrijkste opdracht in deze situatie is echter de gebruikersnoden te onderzoeken. Als uit zo'n onderzoek blijkt dat een significant deel van de gebruikers de cijfers op de tweede manier interpreteert, moeten wij onze definities aanpassen (bv. Wat is een academische VTE en hoe registreren we dat?). In die situatie stellen we de cijfers ook beter voor met duidelijke methodebreuken, zoals besproken in de volgende paragrafen.
+Dat kan op verschillende manieren. Een eerste optie is het gebruik van directe labels in de grafiek om relevante gebeurtenissen te markeren \parencite{doumont2009Trees, vandenEeckhout2022Powerful}. Een tweede optie is een duidelijke en richtinggevende grafiektitel. Het is immers aanbevolen om de kernboodschap van de grafiek al in de titel mee te geven \parencite{evergreen2019Effective, doumont2009Trees, vandenEeckhout2022Powerful}. Ook daar kunnen belangrijke contextuele elementen worden vermeld die de lezing van de grafiek sturen.
+
+Goede grafieken vertrekken dus van een goed inzicht in hoe gebruikers cijfers interpreteren. Als blijkt dat een aanzienlijk deel van de gebruikers deze cijfers leest als een maat voor academische tewerkstelling in brede zin, is het aangewezen om de onderliggende definities te herbekijken (bijvoorbeeld: wat verstaan we precies onder een academische VTE en hoe wordt die geregistreerd?). In dat geval is het bovendien beter om de cijfers te visualiseren met expliciete methodebreuken, zoals besproken in de volgende paragrafen.
 
 \begin{figure}
-\caption{Het personeelsbestand van de universiteiten binnen de Vlaamse gemeenschap stijgt door de jaren, maar dit wordt vaak verklaard door personeelsovernames.}
-\label{fig:zelfde_operationele_definitie}
+\caption{Wanneer de conceptuele en operationele definitie gelijk blijven, kan een tijdsreeks met één lijn worden weergegeven, zolang belangrijke gebeurtenissen expliciet worden aangeduid om misinterpretatie te vermijden.}
+\label{fig:VTE_vlaamse_universiteiten}
 \begin{mdframed}
-\includegraphics[width=\linewidth]{graphs/zelfde_operationele_definitie.pdf}
+\includegraphics[width=\linewidth]{graphs/VTE_vlaamse_universiteiten/VTE_vlaamse_universiteiten.pdf}
 \end{mdframed}
 \end{figure}
 
 
 \paragraph{Verschillende operationele definities}
 
-Als cijfers dezelfde conceptuele definitie hebben betekent dit dat gebruikers gemiddeld genomen de cijfers op dezelfde manier betekenis geven. Het is voor een gebruiker dan gebruiksvriendelijker om deze cijfers in één en dezelfde grafiek te tonen. Als deze cijfers echter verschillende operationele definities hebben kunnen ze niet zomaar met elkaar vergeleken worden. We kiezen er dan voor om de cijfers visueel van elkaar te onderscheiden door slim gebruik te maken van verschillende grafiekelementen zoals kleuren, symbolen en labels \parencite[zie ][]{turner2021creating}.
+Wanneer cijfers dezelfde conceptuele definitie hebben, zullen gebruikers ze meestal op een vergelijkbare manier interpreteren. Vanuit gebruiksvriendelijkheid is het dan logisch om deze cijfers samen in één grafiek te tonen. Als de operationele definities verschillen, kunnen de cijfers echter niet zomaar met elkaar worden vergeleken. In dat geval moeten de verschillende methoden ook visueel duidelijk van elkaar worden onderscheiden, bijvoorbeeld met kleur, lijntypes en directe labels \parencite[zie][]{turner2021creating}.
 
-Wanneer er een harde methodebreuk bestaat op een bepaald tijdspunt, kan deze breuk worden aangeduid door de grafiek visueel op te delen in verschillende tijdsperiodes zoals in Figuur \ref{fig:verschillende_operationele_definities1}. Directe labels in de grafiek verschaffen hierbij meer uitleg over de gebruikte methoden voor en na de breuk. Door de labels in de grafiek zelf te plaatsen in plaats van legendes, kan de lezer meteen het methodeverschil voor en na de breuk aflezen. 
+Wanneer er sprake is van een duidelijke methodebreuk op één specifiek tijdstip, kan die breuk zichtbaar worden gemaakt door de grafiek op te splitsen in afzonderlijke tijdsperiodes, zoals in Figuur \ref{fig:verschillende_operationele_definities1}. Directe labels geven daarbij extra uitleg over de gebruikte methode voor en na de breuk \parencite{doumont2009Trees, vandenEeckhout2022Powerful}. Het gebruik van afzonderlijke legendes wordt hierbij zo veel mogelijk vermeden, omdat die de leesbaarheid van grafieken vaak verminderen \parencite{few2012Show, tufte1983Visual}.
 
 \begin{figure}
-\caption{De gemiddelde oppervlakte van nieuwbouwwoonhuizen in het Vlaamse gewest stabiliseerde de laatste jaren.}
+\caption{Wanneer er op een duidelijk tijdstip een methodebreuk optreedt, wordt deze best rechtstreeks gemarkeerd en gelabeld in de grafiek.}
 \label{fig:verschillende_operationele_definities1}
 \begin{mdframed}
-\includegraphics[width=\linewidth,page=1]{graphs/verschillende_operationele_definities.pdf}
+\includegraphics[width=\linewidth,page=1]{graphs/nieuwbouwvergunningen/nieuwbouwvergunningen.pdf}
 \end{mdframed}
 \end{figure}
 
-Een interessantere situatie speelt zich af wanneer er een tijdsoverlap is tussen de nieuwe methode en de oude methode. In dat geval kan de lezer immers de cijfers met de oude en nieuwe methode rechtstreeks vergelijken. We tonen zo'n tijdsoverlap tussen data verzameld of verwerkt via verschillende methoden door trendlijnen te tekenen met verschillende kleuren en de methoden duidelijk te labellen in de grafiek zelf zoals in Figuur \ref{fig:verschillende_operationele_definities2}.
+Een bijzonder nuttige situatie ontstaat wanneer de oude en de nieuwe methode elkaar tijdelijk overlappen. In dat geval kan de lezer de cijfers die met beide methoden werden berekend rechtstreeks met elkaar vergelijken. Deze overlap kan duidelijk worden weergegeven door meerdere lijnen te gebruiken en de methoden rechtstreeks in de grafiek te labelen, zoals in Figuur \ref{fig:verschillende_operationele_definities2}. Ook hier vermijden we afzonderlijke legendes zo veel mogelijk \parencite{few2012Show, tufte1983Visual}.
 
 \begin{figure}
-\caption{De gemiddelde oppervlakte van nieuwbouwwoonhuizen in het Vlaamse gewest stabiliseerde de laatste jaren.}
+\caption{Wanneer oude en nieuwe methoden elkaar tijdelijk overlappen, kan een methodebreuk inzichtelijk worden gemaakt met afzonderlijke, duidelijk gelabelde lijnen.}
 \label{fig:verschillende_operationele_definities2}
 \begin{mdframed}
-\includegraphics[width=\linewidth,page=2]{graphs/verschillende_operationele_definities.pdf}
+\includegraphics[width=\linewidth,page=2]{graphs/nieuwbouwvergunningen/nieuwbouwvergunningen.pdf}
 \end{mdframed}
 \end{figure}
 
-Merk op dat deze strategie ook gebnruikt kan worden om tijdsreeksen uit twee verschillende bronnen weer te geven in een grafiek. 
-
-
-
-\paragraph{Verschillende conceptuele definitie}
-
-Wanneer de cijfers uit twee verschillende tijdsreeksen ook verschillende conceptuele definities hebben, zijn er verschillende opties. Wanneer de tijdsreeksen thematisch bij elkaar horen en dezelfde meetschaal hebben, kan je ze combineren in één grafiek. Je gebruikt dan wel duidelijk onderscheidbare kleurschalen om het onderscheid te maken, zoals de Okabe–Ito kleurschaal die geoptimaliseerd werd voor kleurenblindheid, zoals geïllustreerd in Figuur \ref{fig:verschillende_operationele_definities3}. 
-
-Wanneer beide tijdsreeksen niet dezelfde meetschaal hanteren gebruik je een grafiekmatrix of aparte grafieken voor beide reeksen.
+Deze aanpak kan bovendien ook worden gebruikt om volledige tijdsreeksen te vergelijken die dezelfde conceptuele betekenis delen maar verschillende operationele definities hebben. Dat verschil in operationele definities kan verschillende oorzaken hebben. Zo kunnen de cijfers uit verschillende bronnen zijn afgeleid, of kunnen ze zijn berekend via verschillende berekeningswijzen. Figuur \ref{fig:vroegtijdige_schoolverlaters} toont bijvoorbeeld het aantal vroegtijdige schoolverlaters, berekend op basis van twee verschillende bronnen. Enerzijds worden administratieve gegevens gebruikt, anderzijds kunnen dezelfde aantallen worden afgeleid uit de Enquête naar de Arbeidskrachten. Toch beschrijven alle cijfers hetzelfde concept. De combinatie van beide cijferreeksen maakt daardoor de grafiek inhoudelijk rijker en interessanter voor gebruikers. 
 
 \begin{figure}
-\caption{De gemiddelde oppervlakte van nieuwbouwwoningen in het Vlaamse gewest stabiliseerde de laatste jaren, zowel voor woonhuizen als voor appartementen.}
-\label{fig:verschillende_operationele_definities3}
+\caption{Cijfers met dezelfde conceptuele betekenis maar verschillende berekeningswijzen kunnen samen worden weergegeven met meerdere lijnen in één grafiek.}
+\label{fig:vroegtijdige_schoolverlaters}
 \begin{mdframed}
-\includegraphics[width=\linewidth,page=3]{graphs/verschillende_operationele_definities.pdf}
+\includegraphics[width=\linewidth]{graphs/vroegtijdige_schoolverlaters/vroegtijdige_schoolverlaters.pdf}
 \end{mdframed}
 \end{figure}
 
 
+\paragraph{Verschillende conceptuele definities}
 
+Wanneer tijdsreeksen verschillende conceptuele definities hebben, zijn er meerdere manieren om ze te visualiseren. Als de reeksen thematisch verwant zijn en dezelfde meetschaal gebruiken, kunnen ze samen in één grafiek worden opgenomen. In dat geval is het belangrijk om duidelijk onderscheidbare kleuren te gebruiken, zoals de Okabe--Ito-kleurschaal die geschikt is voor kleurenblindheid, zoals te zien in Figuur \ref{fig:nieuwbouwvergunningen}. Daarnaast zijn duidelijke, directe labels nodig om de betekenis van de verschillende reeksen goed te communiceren. Afzonderlijke legendes worden ook hier best vermeden \parencite{few2012Show, tufte1983Visual}. Wanneer de tijdsreeksen verschillende meetschalen hanteren, is het beter om te werken met een grafiekmatrix of met afzonderlijke grafieken.
+
+\begin{figure}
+\caption{Tijdsreeksen met verschillende conceptuele definities kunnen in één grafiek worden gecombineerd zolang ze dezelfde meetschaal hebben en duidelijk gelabeld zijn.}
+\label{fig:nieuwbouwvergunningen}
+\begin{mdframed}
+\includegraphics[width=\linewidth,page=3]{graphs/nieuwbouwvergunningen/nieuwbouwvergunningen.pdf}
+\end{mdframed}
+\end{figure}
 
 
 
@@ -287,16 +286,245 @@ Wanneer beide tijdsreeksen niet dezelfde meetschaal hanteren gebruik je een graf
 
 \section{Grafieken met revisies}
 
-
-
+In sommige gevallen publiceren we voorlopige cijfers waarvan we op voorhand weten dat ze later zullen worden herzien, bijvoorbeeld omdat de onderliggende data bij publicatie nog niet volledig zijn. Om gebruikers correct te informeren, is het belangrijk om dit voorlopige karakter ook visueel duidelijk te maken in de grafiek. Dat kan door te werken met lichtere kleuren, dunnere lijndiktes, onderbroken lijnen en directe labels in de grafiek. Figuur \ref{fig:bbp_per_inwoner} laat zien hoe geplande revisies op een transparante manier kunnen worden weergegeven.
 
 \begin{figure}
-\caption{Om geplande revisies weer te geven maken we slim gebruik van onderbroken lijnen en kleuren. Voor de duidelijkheid labelen we revisies ook rechtstreeks in de grafiek.}
-\label{fig:revisies}
+\caption{Geplande revisies worden het best zichtbaar gemaakt met lichtere kleuren, onderbroken lijnen en expliciete labels in de grafiek.}
+\label{fig:bbp_per_inwoner}
 \begin{mdframed}
-\includegraphics[width=\linewidth]{graphs/revisies.pdf}
+\includegraphics[width=\linewidth]{graphs/bbp_per_inwoner/bbp_per_inwoner.pdf}
 \end{mdframed}
 \end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%
+%
+%\section{Grafieken met methodebreuken}
+%
+%Wanneer statistieken over de tijd worden weergegeven in tijdsreeksen, kunnen zich verschillende situaties voordoen:
+%\begin{enumerate}
+%\item De conceptuele en operationele definitie van de cijfers blijven doorheen de tijd ongewijzigd.
+%\item De conceptuele definitie blijft gelijk, maar de operationele definitie wijzigt doorheen de tijd (methodebreuk).
+%\item Zowel de conceptuele als de operationele definitie wijzigen doorheen de tijd (methodebreuk en een anders gedefinieerde statistiek).
+%\end{enumerate}
+%Elke situatie vereist een andere manier van visualiseren om correcte interpretatie door gebruikers te ondersteunen.
+%
+%
+%\paragraph{Dezelfde operationele definitie}
+%
+%Wanneer zowel de conceptuele als de operationele definitie in een tijdsreeks gelijk blijven, spreken we van een reguliere tijdsreeks. Deze kan in principe worden voorgesteld door één vloeiende lijn. Ook in deze ogenschijnlijk eenvoudige situatie is echter voorzichtigheid geboden. Gebruikers kunnen cijfers immers op verschillende manieren interpreteren, zeker wanneer zij impliciet andere conceptuele afbakeningen hanteren dan de producent van de statistiek. Dergelijke interpretaties kunnen onbedoeld methodebreuken veronderstellen terwijl die afwezig zijn in de interpretatie van de producent. Het is de verantwoordelijkheid van de statistiekproducent om dit risico zo veel mogelijk te beperken.
+%
+%Figuur \ref{fig:zelfde_operationele_definitie} illustreert dit aan de hand van de evolutie van het aantal voltijdse equivalenten (VTE) tewerkgesteld aan universiteiten binnen de Vlaamse Gemeenschap. De reeks vertoont een duidelijke stijgende trend, maar een belangrijk deel van deze stijging is het gevolg van institutionele wijzigingen, zoals de overheveling van de academische bachelors van de hogescholen naar de universiteiten in 2013 en de integratie van specifieke lerarenopleidingen (SLO’s) in 2019. Wanneer deze cijfers strikt worden geïnterpreteerd als het aantal VTE’s tewerkgesteld aan universiteiten als rechtspersonen, volstaat een continue lijn. De vraag is echter of deze beperkte interpretatie ook door gebruikers wordt gehanteerd.
+%
+%Gebruikers kunnen deze cijfers bijvoorbeeld ook lezen als een indicator voor de totale tewerkstelling in de academische sector. Vanuit beleidsmatig perspectief is dit vaak een relevantere interpretatie dan een louter institutionele afbakening. In dat geval wordt de grafiek echter misleidend, omdat de operationele definitie van een academische VTE doorheen de tijd meerdere keren is aangepast. Om dergelijke misinterpretaties te voorkomen, is het aangewezen om belangrijke gebeurtenissen die opvallende trends verklaren expliciet te markeren in de grafiek.
+%
+%Een eerste manier om verkeerde interpretaties tegen te gaan is het gebruik van directe labels in de grafiek om relevante gebeurtenissen aan te duiden \parencite{doumont2009Trees, vandenEeckhout2022Powerful}. Een tweede manier is het formuleren van een duidelijke en richtinggevende grafiektitel. Het is immers aanbevolen om de kernboodschap van de grafiek expliciet in de titel op te nemen \parencite{evergreen2019Effective, doumont2009Trees, vandenEeckhout2022Powerful}. Ook daarin kunnen contextuele gebeurtenissen worden vermeld die de lezing van de grafiek sturen.
+%
+%Het maken van duidelijke grafieken veronderstelt daarom een grondige analyse van gebruikersnoden en interpretatiekaders. Indien blijkt dat een substantieel deel van de gebruikers de cijfers interpreteert als een maat voor academische tewerkstelling in brede zin, is het aangewezen om de onderliggende definities te herbekijken (bijvoorbeeld: wat verstaan we onder een academische VTE en hoe wordt die geregistreerd?). In dat geval is het bovendien beter om de cijfers te visualiseren met expliciete methodebreuken, zoals besproken in de volgende paragrafen.
+%
+%\begin{figure}
+%\caption{Wanneer de conceptuele en operationele definitie gelijk blijven, kan een tijdsreeks met één lijn worden weergegeven, mits belangrijke gebeurtenissen expliciet worden aangeduid om misinterpretatie te vermijden.}
+%\label{fig:zelfde_operationele_definitie}
+%\begin{mdframed}
+%\includegraphics[width=\linewidth]{graphs/zelfde_operationele_definitie.pdf}
+%\end{mdframed}
+%\end{figure}
+%
+%
+%\paragraph{Verschillende operationele definities}
+%
+%Wanneer cijfers dezelfde conceptuele definitie hebben, zullen gebruikers deze doorgaans op een vergelijkbare manier interpreteren. Vanuit gebruiksvriendelijkheid is het dan wenselijk om deze cijfers in één grafiek samen te brengen. Indien de operationele definities verschillen, kunnen de cijfers echter niet zonder meer met elkaar worden vergeleken. In dat geval moeten de verschillende methoden visueel van elkaar worden onderscheiden, bijvoorbeeld door gebruik te maken van kleur, lijntypes en directe labels \parencite[zie][]{turner2021creating}.
+%
+%Wanneer er sprake is van een duidelijke methodebreuk op een specifiek tijdstip, kan deze breuk visueel worden aangeduid door de grafiek op te splitsen in afzonderlijke tijdsperiodes, zoals weergegeven in Figuur \ref{fig:verschillende_operationele_definities1}. Directe labels verschaffen hierbij toelichting over de gebruikte methoden voor en na de breuk \parencite{doumont2009Trees, vandenEeckhout2022Powerful}. Het gebruik van afzonderlijke legendes wordt zo veel mogelijk vermeden, aangezien deze de leesbaarheid en gebruiksvriendelijkheid van grafieken verminderen \parencite{few2012Show, tufte1983Visual}.
+%
+%\begin{figure}
+%\caption{Wanneer er op een duidelijk tijdstip een methodebreuk optreedt, wordt deze best rechtstreeks gemarkeerd en gelabeld in de grafiek.}
+%\label{fig:verschillende_operationele_definities1}
+%\begin{mdframed}
+%\includegraphics[width=\linewidth,page=1]{graphs/nieuwbouwvergunningen/nieuwbouwvergunningen.pdf}
+%\end{mdframed}
+%\end{figure}
+%
+%Een bijzonder informatieve situatie doet zich voor wanneer er een tijdsoverlap bestaat tussen de oude en de nieuwe methode. In dat geval kan de lezer de cijfers die met beide methoden werden berekend rechtstreeks vergelijken. Deze overlap wordt inzichtelijk gemaakt door meerdere lijnen te gebruiken en de gebruikte methoden rechtstreeks in de grafiek te labelen, zoals in Figuur \ref{fig:verschillende_operationele_definities2}. Ook hier vermijden we het gebruik van afzonderlijke legendes \parencite{few2012Show, tufte1983Visual}.
+%
+%\begin{figure}
+%\caption{Wanneer oude en nieuwe methoden elkaar tijdelijk overlappen, kan een methodebreuk inzichtelijk worden gemaakt met afzonderlijke, duidelijk gelabelde lijnen.}
+%\label{fig:verschillende_operationele_definities2}
+%\begin{mdframed}
+%\includegraphics[width=\linewidth,page=2]{graphs/nieuwbouwvergunningen/nieuwbouwvergunningen.pdf}
+%\end{mdframed}
+%\end{figure}
+%
+%Deze visualisatiestrategie kan ook worden toegepast om volledige tijdsreeksen te vergelijken die een verschillende operationele definitie hebben, maar wel dezelfde conceptuele betekenis delen. Figuur \ref{fig:verschillende_tijdsreeksen} toont bijvoorbeeld het aantal vroegtijdige schoolverlaters. Deze cijfers worden verzameld op basis van twee bronnen. Langs de ene kant wordt administratieve data gebruikt om deze aantallen te berekenen, maar langs de andere kant kunnen deze aantallen ook worden afgeleid uit de Enquête naar de Arbeidskrachten. Beide reeksen zijn verschillend berekend, maar representeren hetzelfde concept. Op analoge wijze kunnen cijfers uit verschillende bronnen of met uiteenlopende berekeningswijzen samen worden weergegeven, zelfs wanneer een officiëel gedefinieerde VOS wordt vergeleken met niet-officiële statistieken. Dit verrijkt de interpretatiemogelijkheden voor gebruikers.
+%
+%\begin{figure}
+%\caption{Cijfers met dezelfde conceptuele betekenis maar verschillende berekeningswijzen kunnen samen worden weergegeven met meerdere lijnen in één grafiek.}
+%\label{fig:verschillende_tijdsreeksen}
+%\begin{mdframed}
+%\includegraphics[width=\linewidth]{graphs/verschillende_tijdsreeksen.pdf}
+%\end{mdframed}
+%\end{figure}
+%
+%
+%\paragraph{Verschillende conceptuele definities}
+%
+%Wanneer tijdsreeksen verschillende conceptuele definities hebben, zijn verschillende visualisatiestrategieën mogelijk. Indien de reeksen thematisch verwant zijn en dezelfde meetschaal hanteren, kunnen ze worden gecombineerd in één grafiek. In dat geval is het essentieel om duidelijk onderscheidbare kleurschalen te gebruiken, zoals de Okabe--Ito-kleurschaal die geoptimaliseerd is voor kleurenblindheid, zoals geïllustreerd in Figuur \ref{fig:nieuwbouwvergunningen}. Daarnaast zijn duidelijke, directe labels noodzakelijk om de betekenis van de verschillende reeksen te communiceren. Afzonderlijke legendes worden ook hier best vermeden \parencite{few2012Show, tufte1983Visual}. Wanneer de tijdsreeksen verschillende meetschalen hanteren, verdient een grafiekmatrix of afzonderlijke grafieken de voorkeur.
+%
+%\begin{figure}
+%\caption{Tijdsreeksen met verschillende conceptuele definities kunnen in één grafiek worden gecombineerd zolang ze dezelfde meetschaal hebben en duidelijk gelabeld zijn.}
+%\label{fig:nieuwbouwvergunningen}
+%\begin{mdframed}
+%\includegraphics[width=\linewidth,page=3]{graphs/nieuwbouwvergunningen/nieuwbouwvergunningen.pdf}
+%\end{mdframed}
+%\end{figure}
+%
+%
+%\section{Grafieken met revisies}
+%
+%Soms publiceren we voorlopige cijfers waarvan op voorhand vaststaat dat ze later zullen worden herzien, bijvoorbeeld omdat de onderliggende data bij publicatie nog onvolledig zijn. Om gebruikers correct te informeren, is het belangrijk om dit voorlopige karakter ook visueel duidelijk te maken in de grafiek. Dit kan door gebruik te maken van lichtere kleuren, dunnere lijndiktes, onderbroken lijnen en directe labels in de grafiek. Figuur \ref{fig:revisies} illustreert hoe geplande revisies op een transparante manier kunnen worden gecommuniceerd.
+%
+%\begin{figure}
+%\caption{Geplande revisies worden het best zichtbaar gemaakt met lichtere kleuren, onderbroken lijnen en expliciete labels in de grafiek.}
+%\label{fig:revisies}
+%\begin{mdframed}
+%\includegraphics[width=\linewidth]{graphs/revisies.pdf}
+%\end{mdframed}
+%\end{figure}
+%
+
+
+
+
+
+
+
+
+
+%\section{Grafieken met methodebreuken}
+%
+%
+%Als we statistieken over de tijd weergeven in tijdsreeksen kunnen zich verschillende situaties voordoen:
+%\begin{enumerate}
+%\item De conceptuele en operationele definitie van de cijfers blijven dezelfde doorheen de tijd
+%\item De conceptuele definitie van alle cijfers is dezelfde, maar er zijn verschillen in de operationele definitie doorheen de tijd (een breuk in methode)
+%\item Zowel de conceptuele als de operationele definitie van de cijfers zijn verschillend doorheen de tijd (breuk in methode en een anders gedefinieerde statistiek).
+%\end{enumerate}
+%In de drie situaties zullen we de cijfers op een andere manier weergeven.
+%
+%
+%\paragraph{Dezelfde operationele definitie}
+%
+%Wanneer de conceptuele en operationele definitie van de cijfers in een tijdsreeks dezelfde zijn, hebben we een reguliere tijdsreeks. De reeks kan dan worden voorgesteld door één vloeiende lijn. Toch is het steeds oppassen geblazen in dit soort situaties. Cijfers kunnen steeds op verschillende manieren worden geïnterpreteerd door gebruikers. Zeker als gebruikers verschillende conceptuele definities hanteren, bestaat het risico op verkeerde interpretaties. De interpretatie van gebruikers kan immers niet-geanticipeerde methodebreuken impliceren. Het is onze verantwoordelijkheid om zo'n situaties zo veel mogelijk te vermijden. 
+%
+%Zo toont Figuur \ref{fig:zelfde_operationele_definitie} bijvoorbeeld de evolutie in het aantal voltijdse equivalenten tewerkgesteld onder de universiteiten binnen de Vlaamse gemeenschap. Deze evolutie gaat steeds in stijgende lijn maar veel van de stijgingen worden veroorzaakt door de integratie van personeel vanuit andere instellingen, zoals de overheveling van de academische bachelors van de hogescholen naar de universiteiten in 2013 of de integratie van specifieke lerarenopleidingen (SLO's) in 2019. Als deze cijfers enkel droog worden geïnterpreteerd als het aantal VTE’s tewerkgesteld aan universiteiten als rechtspersonen, volstaat in principe een vloeiende lijn. De hamvraag is echter of dit de doorsnee interpretatie is die gebruikers geven aan de cijfers. 
+%
+%Gebruikers kunnen de cijfers in Figuur \ref{fig:zelfde_operationele_definitie} ook interpreteren als een graadmeter voor tewerkstelling in de academische sector. Beleidsmatig lijkt dit ook een interessantere vraag dan een pure oplijsting van de VTE's aan de universiteiten. Met deze interpretatie is de grafiek echter zeer misleidend omdat de operationele definitie van een academische VTE verschillende malen werd aangepast doorheen de tijd. Daarom is het steeds aangeraden om belangrijke gebeurtenissen die opvallende trends in de grafiek helpen verklaren, duidelijk aan te geven in de grafiek. 
+%
+%Een eerste manier om verkeerde interpretaties tegen te gaan is door speciale gebeurtenissen aan te duiden via directe labels in de grafiek  \parencite{doumont2009Trees, vandenEeckhout2022Powerful} zoals te zien in Figuur \ref{fig:zelfde_operationele_definitie}. Een tweede manier om verkeerde interpretaties door een duidelijke grafiektitel te gebruiken. Het is immers aangeraden om steeds de boodschap van de grafiek in de titel te verwerken \parencite{evergreen2019Effective, doumont2009Trees, vandenEeckhout2022Powerful} en deze boodschap kan ook wijzen op speciale gebeurtenissen zoals te zien in Figuur \ref{fig:zelfde_operationele_definitie}.
+%
+%Om duidelijke grafieken te maken moeten dus eerst gebruikersnoden grondig onderzocht worden. Als uit zo'n onderzoek blijkt dat een significant deel van de gebruikers de cijfers op de tweede manier interpreteert, moeten wij onze definities aanpassen (bv. Wat is een academische VTE en hoe registreren we dat?). In die situatie stellen we de cijfers ook beter voor met duidelijke methodebreuken, zoals besproken in de volgende paragrafen.
+%
+%\begin{figure}
+%\caption{Cijfers waarbij de conceptuele en operationele definitie gelijk blijven kunnen worden voorgesteld door één lijn. Speciale gebeurtenissen worden hierbij best gemarkeerd om verkeerde interpretaties te vermijden die wel methodebreuken impliceren.}
+%\label{fig:zelfde_operationele_definitie}
+%\begin{mdframed}
+%\includegraphics[width=\linewidth]{graphs/zelfde_operationele_definitie.pdf}
+%\end{mdframed}
+%\end{figure}
+%
+%
+%\paragraph{Verschillende operationele definities}
+%
+%Als cijfers dezelfde conceptuele definitie hebben betekent dit dat gebruikers de cijfers doorgaans op dezelfde manier interpreteren. Het is voor een gebruiker dan gebruiksvriendelijker om deze cijfers in één en dezelfde grafiek te tonen. Als deze cijfers echter verschillende operationele definities hebben kunnen ze niet zomaar met elkaar vergeleken worden. We kiezen er dan voor om de cijfers visueel van elkaar te onderscheiden door slim gebruik te maken van verschillende grafiekelementen zoals kleuren, symbolen en labels \parencite[zie ][]{turner2021creating}.
+%
+%Wanneer er een harde methodebreuk bestaat op een bepaald tijdspunt, kan deze breuk worden aangeduid door de grafiek visueel op te delen in verschillende tijdsperiodes zoals in Figuur \ref{fig:verschillende_operationele_definities1}. Directe labels in de grafiek verschaffen hierbij meer uitleg over de gebruikte methoden voor en na de breuk \parencite{doumont2009Trees, vandenEeckhout2022Powerful}. Legendes worden zo veel mogelijk vermeden om de verschillende methoden aan te duiden aangezien legendes gebruiksvriendelijkheid sterk doen afnemen \parencite{few2012Show, tufte1983Visual}. 
+%
+%\begin{figure}
+%\caption{Een methodebreuk op een duidelijk tijdstip kan rechtstreeks worden gemarkeerd en gelabeld in de grafiek.}
+%\label{fig:verschillende_operationele_definities1}
+%\begin{mdframed}
+%\includegraphics[width=\linewidth,page=1]{graphs/nieuwbouwvergunningen/nieuwbouwvergunningen.pdf}
+%\end{mdframed}
+%\end{figure}
+%
+%Een interessantere situatie speelt zich af wanneer er een tijdsoverlap is tussen de nieuwe methode en de oude methode. In dat geval kan de lezer immers de cijfers met de oude en nieuwe methode rechtstreeks vergelijken. We tonen zo'n tijdsoverlap tussen data verzameld of verwerkt via verschillende methoden door trendlijnen te tekenen met verschillende kleuren en de methoden duidelijk te labellen in de grafiek zelf zoals in Figuur \ref{fig:verschillende_operationele_definities2}. Opnieuw vermijden we hier zo veel mogelijk het gebruik van legendes \parencite{few2012Show, tufte1983Visual}. 
+%
+%\begin{figure}
+%\caption{Een methodebreuk met tijdsoverlap kan worden voorgesteld door verschillende lijnen in de grafiek.}
+%\label{fig:verschillende_operationele_definities2}
+%\begin{mdframed}
+%\includegraphics[width=\linewidth,page=2]{graphs/nieuwbouwvergunningen/nieuwbouwvergunningen.pdf}
+%\end{mdframed}
+%\end{figure}
+%
+%Merk op dat deze strategie ook gebruikt kan worden om volledige tijdsreeksen te vergelijken die een verschillende operationele definitie hebben maar een gelijke conceptuele definitie. Grafiek \ref{{fig:bevolkingsgroei}} toont bijvoorbeeld de jaarlijkse bevolkingsgroei maar wordt aangevuld met een afgevlakte curve die berekend is als het 5-jaarlijkse gemiddelde van de bevolkingsgroei. Beide curves zijn dus op een andere manier berekend, maar stellen wel hetzelfde concept voor. Op dezelfde manier kunnen cijfers uit verschillende bronnen en met verschillende berekeningswijzen in dezelfde grafiek worden voorgesteld. Hierbij kan zelfs een officiëel gedefinieerde VOS worden vergeleken met niet officiële statistieken. Dit maakt de boodschap voor gebruikers alleen maar interessanter.   
+%
+%\begin{figure}
+%\caption{Cijfers uit verschillende bronnen of met verschillende berekeningswijzen maar met dezelfde conceptuele interpretatie, kunnen in één grafiek worden gecombineerd door meerdere lijnen.}
+%\label{fig:bevolkingsgroei}
+%\begin{mdframed}
+%\includegraphics[width=\linewidth]{graphs/bevolkingsgroei.pdf}
+%\end{mdframed}
+%\end{figure}
+%
+%
+%
+%
+%
+%
+%
+%
+%\paragraph{Verschillende conceptuele definitie}
+%
+%Wanneer de cijfers uit twee verschillende tijdsreeksen ook verschillende conceptuele definities hebben, zijn er verschillende opties. Wanneer de tijdsreeksen thematisch bij elkaar horen en dezelfde meetschaal hebben, kan je ze combineren in één grafiek. Je gebruikt dan wel duidelijk onderscheidbare kleurschalen om het onderscheid te maken, zoals de Okabe–Ito kleurschaal die geoptimaliseerd werd voor kleurenblindheid, zoals geïllustreerd in Figuur \ref{fig:nieuwbouwvergunningen}. Je gebruikt ook duidelijke labels om de betekenis van de verschillende tijdsreeksen te communiceren. Opnieuw gebruik je hiervoor best directe labels in de grafiek en vermijd je aparte legendes \parencite{few2012Show, tufte1983Visual}. Wanneer beide tijdsreeksen niet dezelfde meetschaal hanteren gebruik je een grafiekmatrix of aparte grafieken voor beide reeksen.
+%
+%\begin{figure}
+%\caption{Tijdsreeksen met verschillende conceptuele betekenissen kunnen worden gecombineerd in één grafiek als ze dezelfde meetschaal hebben, zolang ze duidelijk gelabeld worden. In andere gevallen moeten aparte grafieken worden gebruikt.}
+%\label{fig:nieuwbouwvergunningen}
+%\begin{mdframed}
+%\includegraphics[width=\linewidth,page=3]{graphs/nieuwbouwvergunningen/nieuwbouwvergunningen.pdf}
+%\end{mdframed}
+%\end{figure}
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%\section{Grafieken met revisies}
+%
+%Soms publiceren we voorlopige cijfers die sowieso nog herzien zullen worden. Dit gebeurt wanneer we op voorhand al weten dat de achterliggende data nog niet volledig zijn op het moment van publicatie. De cijfers worden dan op een later tijdstip gereviseerd. Zo'n voorlopige cijfers duiden we best aan in de grafiek zodat de lezer op de hoogte is van het voorlopige karakter van de cijfers. Dit doen we door gebruik te maken van lichtere kleuren, dunnere lijndiktes, onderbroken lijnen en door directe labels in de grafiek. Een voorbeeld hiervan kan je vinden in Grafiek \ref{fig:revisies}.
+%
+%
+%\begin{figure}
+%\caption{Om geplande revisies weer te geven kan je slim gebruik maken van onderbroken lijnen en kleuren. Voor de duidelijkheid label je revisies ook rechtstreeks in de grafiek.}
+%\label{fig:revisies}
+%\begin{mdframed}
+%\includegraphics[width=\linewidth]{graphs/revisies.pdf}
+%\end{mdframed}
+%\end{figure}
 
 
 

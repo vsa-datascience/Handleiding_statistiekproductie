@@ -15,36 +15,13 @@
 \begin{document}
 
 
-\title{Basisconcepten\\openbare statistiekproductie}
+\title{Wat is een statistiek?}
 \author{Jorre Vannieuwenhuyze}
 \date{}
 %\date{13 oktober 2025}
 %\institute{Stuurgroep transitietraject}
 
 \titleframe
-
-
-\begin{frame}
-\begin{quote}
-\makebox[0pt][r]{``}Statistiek Vlaanderen is het netwerk van Vlaamse overheidsinstanties die \textcolor{softsteelblue}{openbare statistieken} ontwikkelen, produceren en publiceren.''
-\end{quote}
-\end{frame}
-
-
-
-\begin{frame}
-\color{deepslateblue}\Large
-\vfill
-\textbf{Wat is een statistiek?}\\
-\bigskip
-Hoe statistieken documenteren?\\
-\bigskip
-Hoe statistieken beheren?\\
-\bigskip
-Hoe statistieken ontsluiten?\\
-\vfill
-\end{frame}
-
 
 
 
@@ -58,7 +35,7 @@ Hoe statistieken ontsluiten?\\
 
 
 \begin{frame}
-\frametitle{\onslide<2->{Een statistiek bestaat uit\\een data en metadata.}}
+\frametitle{\onslide<2->{Een statistiek bestaat uit\\data en metadata.}}
 \begin{tikzpicture}[overlay,remember picture]
 \onslide<2->{
 	\node at (current page.south)[yshift=.6\paperheight,font=\Large\bfseries]{metadata};
@@ -75,78 +52,20 @@ Hoe statistieken ontsluiten?\\
 
 
 \begin{frame}
-\frametitle{1$^\text{ste}$ metadata is de conceptuele definitie.}
+\frametitle{\onslide<2->{2$^\text{de}$ attribuut is de conceptuele definitie.}}
 \framesubtitle{Wat betekent de statistiek?}
 \begin{tikzpicture}[overlay,remember picture]
-\onslide<2->{
-	\node at (current page.south)[yshift=.6\paperheight]{het aantal inwoners in Antwerpen in 2019};
-	\node at (current page.south)[yshift=.42\paperheight,font=\Large\bfseries]{\faArrowDown};
-	}
+\node at (current page.south)[yshift=.4\paperheight]{het aantal inwoners in Antwerpen in 2019};
+\node at (current page.south)[yshift=.3\paperheight,font=\Large\bfseries]{\faArrowDown};
 \node at (current page.south)[yshift=.2\paperheight,font=\Large\bfseries,text=softsteelblue]{525\,935};
 \end{tikzpicture}
-
 \end{frame}
 
 
 
 
-
 \begin{frame}
-\frametitle{\onslide<2->{Een conceptuele definitie bestaat uit\\verschillende concepten}}
-\hfill
-\begin{tikzpicture}[
-	values/.style={anchor=west,text height=1.5ex,text depth=0pt,inner sep=1pt,xshift=.5ex},
-	line/.style={softsteelblue,line width=.5pt},
-	concept/.style={softsteelblue,font=\small,anchor=south,inner sep=1pt}
-	]
-\node[values] (A) {het aantal inwoners};
-\node[values] (B) at (A.east) {in Antwerpen};
-\node[values] (C) at (B.east) {in 2019};
-\draw[line] (A.north west) -- (A.north east) (A.north) -- +(0,20pt) node[concept]{parameter};
-\draw[line] (B.north west) -- (B.north east) (B.north) -- +(0,20pt) node[concept]{gemeente};
-\draw[line] (C.north west) -- (C.north east) (C.north) -- +(0,20pt) node[concept]{jaartal};
-\onslide<2->{
-	\node[values,xshift=-5mm,anchor=east] (Z) at (A.west) {waarden:};
-	\node[concept,anchor=south east,yshift=20pt] at (Z.north east) {concepten:};
-	}
-\end{tikzpicture}
-\end{frame}
-
-\begin{frame}
-\frametitle{\onslide<2->{De afbakening van concepten is arbitrair.}}
-\vfill
-\begin{small}\color{softsteelblue} 
-\textbf{Oefening:} Wat zijn de concepten in volgende conceptuele definitie?
-\end{small}
-\par
-\smallskip
-\par 
-\begin{scriptsize} 
-\makebox[0pt][r]{``}het aantal inwoners in Antwerpen per bevolkingsgroep (mannen, vrouwen, 0- tot 18-jarigen, 19- tot 64- jarigen, 65+'ers, mensen met Belgische nationaliteit, mensen met buitenlandse nationaliteit,\ldots'')
-\end{scriptsize}
-\par
-\vfill
-\par
-\onslide<2->{
-	\begin{small}\color{softsteelblue}
-	\textbf{Mogelijke antwoorden:}
-	\end{small}
-	\par
-	\smallskip
-	\par
-	\begin{itemize}\scriptsize
-	\item parameter, gemeente, geslacht, leeftijd, nationaliteit,\ldots\ of
-	\item parameter, gemeente, bevolkingsgroep
-	\item grootheid (aantal), eenheid (inwoners), gemeente, bevolkingsgroep
-	\item \ldots
-	\end{itemize}
-	}
-\end{frame}
-
-
-
-\begin{frame}
-\frametitle{2$^\text{de}$ metadata zijn de gebruikersbehoeften.}
+\frametitle{1$^\text{ste}$ attribuut zijn de gebruikersbehoeften.}
 \framesubtitle{Waarom produceren we de statistiek?}
 \vfill
 \onslide<2->{
@@ -169,8 +88,67 @@ Hoe statistieken ontsluiten?\\
 
 
 
+
 \begin{frame}
-\frametitle{3$^\text{de}$ metadata is de operationele definitie.}
+\frametitle{\onslide<3->{Een conceptuele definitie bestaat uit\\verschillende concepten}}
+\hfill
+\begin{tikzpicture}[
+	values/.style={anchor=west,text height=1.5ex,text depth=0pt,inner sep=1pt,xshift=.5ex},
+	line/.style={softsteelblue,line width=.5pt},
+	concept/.style={softsteelblue,font=\small,anchor=south,inner sep=1pt}
+	]
+\node[values] (A) {het aantal inwoners};
+\node[values] (B) at (A.east) {in Antwerpen};
+\node[values] (C) at (B.east) {in 2019};
+\onslide<2->{
+	\draw[line] (A.north west) -- (A.north east) (A.north) -- +(0,20pt) node[concept]{parameter};
+	\draw[line] (B.north west) -- (B.north east) (B.north) -- +(0,20pt) node[concept]{gemeente};
+	\draw[line] (C.north west) -- (C.north east) (C.north) -- +(0,20pt) node[concept]{jaartal};
+	}
+\onslide<3->{
+	\node[values,xshift=-5mm,anchor=east] (Z) at (A.west) {waarden:};
+	\node[concept,anchor=south east,yshift=20pt] at (Z.north east) {concepten:};
+	}
+\end{tikzpicture}
+\end{frame}
+
+\begin{frame}
+\frametitle{\onslide<6->{De afbakening van concepten is arbitrair.}}
+\vfill
+\begin{small}\color{softsteelblue} 
+\textbf{Oefening:} Wat zijn de concepten in volgende conceptuele definitie?
+\end{small}
+\par
+\smallskip
+\par 
+\begin{scriptsize} 
+\makebox[0pt][r]{``}het aantal inwoners in Antwerpen per bevolkingsgroep (mannen, vrouwen, 0- tot 18-jarigen, 19- tot 64- jarigen, 65+'ers, mensen met Belgische nationaliteit, mensen met buitenlandse nationaliteit,\ldots'')
+\end{scriptsize}
+\par
+\vfill
+\par
+\begin{small}\color{softsteelblue}
+\onslide<2->{\textbf{Mogelijke antwoorden:}}
+\end{small}
+\par
+\smallskip
+\par
+\begin{itemize}\scriptsize
+\item<2-> parameter, gemeente, geslacht, leeftijd, nationaliteit,\ldots\ of
+\item<3-> parameter, gemeente, bevolkingsgroep
+\item<4-> grootheid (aantal), eenheid (inwoners), gemeente, bevolkingsgroep
+\item<5-> \ldots
+\end{itemize}
+\end{frame}
+
+
+
+
+
+
+
+\begin{frame}
+\frametitle{3$^\text{de}$ attribuut is de operationele definitie.}
 \framesubtitle{Hoe wordt de statistiek precies berekend?}
 \pause
 \tiny
@@ -211,7 +189,7 @@ jaartal & in 2019 & \onslide<4->{$\rightarrow$} & \onslide<4->{op 1 januari 2019
 
 
 \begin{frame}
-\frametitle{4$^\text{de}$ metadata is de kwaliteitsevaluatie.}
+\frametitle{4$^\text{de}$ attribuut is de kwaliteitsevaluatie.}
 \framesubtitle{Hoe goed beantwoordt de statistiek gebruikersbehoeften?}
 \begin{tikzpicture}[remember picture, overlay,
 	box/.style={text width=6em,align=center,stonegray,font=\scriptsize},
@@ -437,7 +415,13 @@ Boechout & man & 6506 & 49.0 \\
 
 
 \begin{frame}
-\frametitle{Een cijfertabel heeft ook\\een conceptuele en operationele definitie.\strut}
+\frametitle{Een cijfertabel heeft ook een conceptuele definitie.}
+\framesubtitle{Het bevat nog steeds alle concepten.}
+\vfill
+\begin{center}
+``Aantal inwoners \textcolor{stonegray}{|} per gemeente \textcolor{stonegray}{|} in 2019''
+\end{center}
+\vfill
 \begin{center}
 \tiny
 \begin{tblr}{
@@ -457,22 +441,21 @@ Aantal inwoners in Aarschot in 2019 & 30\,115 \\
 Aantal inwoners in Zwijndrecht in 2019 & 19\,056 \\
 \end{tblr}
 \end{center}
-\vfill\mbox{}\\
-\begin{scriptsize}
-\begin{tblr}{
-	column{1}={leftsep=0pt},column{Z}={rightsep=0pt},
-	width=\linewidth,
-	colspec={lX[l]},
-	}
-Conceptuele definitie: &\makebox[0pt][r]{``}Aantal inwoners per gemeente in 2019'' \\[3mm]
-Operationele definitie: & \makebox[0pt][r]{``}De grootte van de wettelijke bevolking op 1 januari 2019 per Vlaamse gemeente volgens de NIS‐code‐indeling in 2019. De wettelijke bevolking omvat\ldots''
-\end{tblr}
-\end{scriptsize}
+\vfill
 \end{frame}
+
+
 
 
 \begin{frame}
-\frametitle{De operationele definitie bepaalt duidelijk\\hoeveel cijfers de tabel bevat.\strut}
+\frametitle{Een cijfertabel heeft ook een operationele definitie.}
+\framesubtitle{Het bepaalt exact het aantal cijfers.}
+\vfill
+\makebox[0pt][r]{``}De grootte van de wettelijke bevolking op 1 januari 2019 per Vlaamse gemeente volgens de NIS‐code‐indeling in 2019. De wettelijke bevolking omvat\ldots''
+\begin{flushright}
+$\Rightarrow$ 300 cijfers
+\end{flushright}
+\vfill
 \begin{center}
 \tiny
 \begin{tblr}{
@@ -492,23 +475,8 @@ Aantal inwoners in Aarschot in 2019 & 30\,115 \\
 Aantal inwoners in Zwijndrecht in 2019 & 19\,056 \\
 \end{tblr}
 \end{center}
-\vfill\mbox{}\\
-\begin{scriptsize}
-\begin{tblr}{
-	column{1}={leftsep=0pt},column{Z}={rightsep=0pt},
-	width=\linewidth,
-	colspec={lX[l]},
-	}
-Conceptuele definitie: &\makebox[0pt][r]{``}Aantal inwoners per gemeente'' \\[3mm]
-Operationele definitie: & \makebox[0pt][r]{``}De grootte van de wettelijke bevolking op 1 januari 2019 per \alert{Vlaamse gemeente volgens de NIS‐code‐indeling in 2019}. De wettelijke bevolking \ldots'' \\
-\end{tblr}
-\end{scriptsize}
-\begin{flushright}
-$\Rightarrow$ 300 cijfers
-\end{flushright}
+\vfill
 \end{frame}
-
-
 
 
 
@@ -548,56 +516,38 @@ $\Rightarrow$ 300 cijfers
 
 
 \begin{frame}
-\frametitle{Een tabelreeks heeft ook\\een conceptuele en operationele definitie.}
+\frametitle{Een tabelreeks heeft ook een conceptuele definitie.}
+\framesubtitle{Deze fungeert vooral als label.}
+\vfill
+\begin{center}
+``Bevolking naar leeftijd en geslacht''
+\end{center}
+\vfill
 \begin{center}
 \includegraphics[width=.5\linewidth]{figures/tabelreeks/tabelreeks}
 \end{center}
-\vfill\mbox{}\\
+\vfill
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Een tabelreeks heeft ook een operationele definitie.}
+\framesubtitle{Het bepaalt alle cijfertabellen.}
+\vfill
 \begin{scriptsize}
-\begin{tblr}{
-	width=\linewidth,
-	colspec={lX[l]},
-	}
-Conceptuele definitie: &\makebox[0pt][r]{``}Aantal inwoners naar geslacht en leeftijd in 2019'' \\[5mm]
-Operationele definitie: & 
-\begin{minipage}[t]{\linewidth}
-\makebox[0pt][r]{``}De grootte van de wettelijke bevolking op 1 januari 2019 per gemeente volgens de NIS‐code‐indeling in 2019 volgens 
+\makebox[0pt][r]{``}De grootte van de wettelijke bevolking op 1 januari 2019 per gemeente volgens de NIS-code-indeling in 2019 volgens 
 \begin{itemize}
 \item Geslacht zoals geregistreerd in het Rijksregister (man, vrouw)
 \item Leeftijd zoals geregistreerd in het Rijksregister, in vier groepen (0-18 jaar, 19-35 jaar, 36-64 jaar, 65+ jaar)
 \end{itemize}
 De wettelijke bevolking omvat\ldots''
-\end{minipage}
-\end{tblr}
 \end{scriptsize}
-\end{frame}
-
-
-\begin{frame}
-\frametitle{De operationele definitie bepaalt duidelijk\\welke tabellen de reeks bevat}
+\vfill
 \begin{center}
 \includegraphics[width=.5\linewidth]{figures/tabelreeks/tabelreeks}
 \end{center}
-\vfill\mbox{}\\
-\begin{scriptsize}
-\begin{tblr}{
-	width=\linewidth,
-	colspec={lX[l]},
-	}
-Conceptuele definitie: &\makebox[0pt][r]{``}Aantal inwoners naar geslacht en leeftijd in 2019'' \\[3mm]
-Operationele definitie: & 
-\begin{minipage}[t]{\linewidth}
-\makebox[0pt][r]{``}De grootte van de wettelijke bevolking op 1 januari 2019 per gemeente volgens de NIS‐code‐indeling in 2019 \textcolor{softsteelblue}{volgens} 
-\begin{itemize}
-\item \textcolor{softsteelblue}{Geslacht zoals geregistreerd in het Rijksregister (man, vrouw)}
-\item \textcolor{softsteelblue}{Leeftijd zoals geregistreerd in het Rijksregister, in vier groepen (0-18 jaar, 19-35 jaar, 36-64 jaar, 65+ jaar)}
-\end{itemize}
-De wettelijke bevolking omvat\ldots''
-\end{minipage}
-\end{tblr}
-\end{scriptsize}
+\vfill
 \end{frame}
-
 
 
 \begin{frame}
@@ -619,6 +569,56 @@ De wettelijke bevolking omvat\ldots''
 
 
 
+
+
+
+
+
+
+
+
+
+\section*{Samenvattend}
+
+
+\begin{frame}
+\frametitle{In de praktijk starten we statistiekproductie\\vanop het niveau van tabelreeksen.}
+\begin{center}
+\begin{tikzpicture}[
+	x=0.25\linewidth,
+	y=-17mm,
+	infobox/.style={text width=0.23\linewidth,anchor=north},
+	stepbox/.style={infobox,align=left,text=softsteelblue,font=\bfseries},
+	example/.style={infobox,align=left,font=\scriptsize},
+	arrow/.style={-latex,black!70},
+	]
+% Voorbeelden – gebruikersbehoefte
+\onslide<1->{
+	\node[stepbox] at (0,0) {Gebruikers-\\behoefte};
+	\node[example] (N01) at (1.2,0) {Informatie over bevolkingsontwikkeling};
+	}
+% Voorbeelden – conceptuele definities
+\onslide<2->{
+	\node[stepbox] at (0,1) {Conceptuele\\definities};
+	\node[example] (N11) at (1,1) {Bevolkingsomvang per gemeente per jaar};
+	\node[example] (N12) at (2,1) {Bevolkingsgroei per gemeente per jaar};
+	\foreach \x/\y in {N01/N11, N01/N12}{
+		\draw[arrow] (\x) -- (\y);
+		}
+	}
+% Voorbeelden – operationele definities
+\onslide<3->{
+	\node[stepbox] at (0,2) {Operationele\\definities};
+	\node[example] (N21) at (1,2) {Bevolkingsomvang gemeten als het aantal wettelijke inwoners op 1 januari van elk jaar per LAU~2-gemeente (versie~2026)};
+	\node[example] (N22) at (2,2) {Jaarlijkse bevolkingsgroei gemeten als het verschil tussen de bevolkingsomvang van een bepaald jaar en het voorgaande jaar per LAU~2-gemeente (versie~2026)};
+	\node[example] (N23) at (3,2) {Afgevlakte bevolkingsgroei gemeten als een 5-jaars voortschrijdend gemiddelde van de jaarlijkse bevolkingsgroei per LAU~2-gemeente (versie~2026)};
+	\foreach \x/\y in {N11/N21, N12/N22, N12/N23}{
+		\draw[arrow] (\x) -- (\y);
+		}
+	}
+\end{tikzpicture}
+\end{center}
+\end{frame}
 
 
 

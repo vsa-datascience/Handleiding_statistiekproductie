@@ -1,0 +1,114 @@
+% !TEX program = xelatex
+
+\documentclass{VSAnote}
+
+\usepackage{tikz}
+\input{../tikzset.tex}
+
+\usepackage[active,tightpage]{preview}
+\newenvironment{previewoutput}{}{}
+\PreviewEnvironment{previewoutput}
+\setlength{\PreviewBorder}{0pt} 
+
+
+\begin{document}
+
+
+
+
+
+\tikzset{y=3mm}
+
+
+\newcommand\yaxis{%
+	\begin{tikzpicture}[baseline=0,trim right=0,remember picture]
+	\foreach \y/\l in {0/0,5/5,10/10,15/15,20/20}{
+		\draw[mistgray] (0,\y) -- +(-5mm,0) node(S)[yaxislabel]{\l\strut};
+		}
+	\node[axistitle,anchor=south west,yshift=\baselineskip,xshift=-10mm,align=left] at (S.south west) 
+		{\% vroegtijdige schoolverlaters\\in Vlaanderen};			
+	\end{tikzpicture}%
+	}
+		
+	
+\newcommand\yaxisb{%
+	\begin{tikzpicture}[baseline=0]
+	\foreach \y/\l in {0/0,5/5,10/10,15/15,20/20}{
+		\draw[mistgray] (0,\y) -- +(10mm,0);
+		}
+	\end{tikzpicture}%
+	}	
+	
+	
+\newcommand\xaxis{%
+	\begin{tikzpicture}[x=\linewidth,trim left=0,trim right=\linewidth]
+	\foreach \x/\l in {0.04/2000,0.24/2005,0.44/2010,0.64/2015,0.84/2020}{
+		\node at (\x,0) [xaxislabel,align=center]{\l};
+		}
+	\end{tikzpicture}%
+	}
+
+\newcommand\body{%
+	\begin{tikzpicture}[x=\linewidth]
+	\useasboundingbox (0,0) rectangle (1,1.5);
+	\foreach \y/\l in {0/0,5/5,10/10,15/15,20/20}{
+		\draw[mistgray] (0,\y) -- (11,\y);
+		}
+	\draw[plotline,purplepink,line width=1pt] (0,13.6) -- (0.04,11.6) coordinate(B) -- (0.08,11.5) -- (0.12,11.7) -- (0.16,12.5) -- (0.2,11) -- (0.24,10.7) -- (0.28,10) -- (0.32,9.3) -- (0.36,8.6) -- (0.4,8.6) -- (0.44,9.6) -- (0.48,9.6) -- (0.52,8.7) -- (0.56,7.5) -- (0.6,7) -- (0.64,7.2) -- (0.68,6.8) -- (0.72,7.2) -- (0.76,7.3) -- (0.8,6.2)-- (0.84,6.7) -- (0.88,5.3) -- (0.92,4.9) -- (0.96,5.4) -- (1,5.8) node[plotlabel,anchor=west]{5,8\%};
+	\draw[purplepink,very thin] (B) |- +(+3mm,-7mm) node[plotlabel,anchor=west]{op basis van\\EAK-enquête};	
+	\draw[plotline,oceanblue] (0.48,11.7) -- (0.52,10.9) coordinate(B) -- (0.56,10.5) -- (0.6,10) -- (0.64,9.7) -- (0.68,10.3) -- (0.72,11) -- (0.76,11.8) -- (0.8,12.1) -- (0.84,9.4) -- (0.88,12) -- (0.92,14.1) -- (0.96,13.2) node[plotlabel,anchor=west]{13,2\%};	
+	\draw[oceanblue,very thin] (B) |- +(+3mm,+7mm) node[plotlabel,anchor=west]{op basis van\\administratieve data};		
+	\end{tikzpicture}%
+	}
+
+
+\begin{figure}[h]
+\begin{previewoutput}
+\graphtitle{Het percentage vroegtijdige schoolverlaters in Vlaanderen lijkt te fluctueren volgens administratieve data, terwijl ze daalt volgens de Enquête naar de Arbeidskrachten (EAK).}
+\begin{tblr}{
+	width=\linewidth,
+	colspec={rX[c]r},
+	rows={rowsep=0pt},
+	columns={colsep=0pt},
+	stretch=0,
+	}
+\yaxis & \body & \yaxisb \\ 
+& \xaxis &  \\ 
+\end{tblr}
+\end{previewoutput}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

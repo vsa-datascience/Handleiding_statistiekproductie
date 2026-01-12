@@ -1,7 +1,9 @@
+% !TEX program = xelatex
+
 \documentclass{VSAnote}
 
 \usepackage{tikz}
-\input{tikzset.tex}
+\input{../tikzset.tex}
 
 
 \usepackage[active,tightpage]{preview}
@@ -19,10 +21,10 @@
 \newcommand\yaxis{%
 	\begin{tikzpicture}[baseline=0,trim right=0]
 	\foreach \y/\l in {0,50,100,150,200,250,300,350}{
-		\draw[mistgray] (0,\y) -- +(-5mm,0) node[yaxislabel]{\l};
+		\draw[mistgray] (0,\y) -- +(-5mm,0) node(S)[yaxislabel]{\l};
 		}
-	\node[axistitle,yshift=.5\baselineskip,anchor=south west,align=left] at (-20mm,350) 
-		{Gemiddelde oppervlakte (m$^2$) van\\vergunde nieuwbouwwoonhuizen\\in het Vlaams Gewest};	
+	\node[axistitle,anchor=south west,yshift=\baselineskip,xshift=-10mm,align=left] at (S.south west) 
+		{Gemiddelde oppervlakte (m$^2$) van vergunde\\nieuwbouwwoonhuizen in het Vlaams Gewest};	
 	\end{tikzpicture}%
 	}
 
@@ -40,7 +42,7 @@
 \newcommand\xaxis{%
 	\begin{tikzpicture}[x=\linewidth,trim left=0,trim right=\linewidth]
 	\foreach \x/\l in {0.0000/2005,0.2632/2010,0.5263/2015,0.7895/2020,1.0000/2024}{
-		\path (\x,0) -- +(0,-2pt) node[xaxislabel]{\l};
+		\node at (\x,0) [xaxislabel]{\l};
 		}
 	\end{tikzpicture}%
 	}
@@ -57,29 +59,30 @@
 		}
 	\draw[plotline,lightskyblue] (0.0000,249.3000) -- (0.0526,260.5000) -- (0.1053,261.1000) -- (0.1579,258.6000) -- (0.2105,267.7000) -- (0.2632,259.9000) -- (0.3158,266.1000) -- (0.3684,268.6000) -- (0.4211,277.7000) -- (0.4737,254.0000) -- (0.5263,258.2000) -- (0.5789,231.6000);
 	\draw[plotline,softsteelblue] (0.6316,220.3000) -- (0.6842,213.8000) -- (0.7368,200.7000) -- (0.7895,197.8000) -- (0.8421,197.5000) -- (0.8947,197.9000) -- (0.9474,196.9000) -- (1.0000,202.3000);	
-	\draw[dashed,copperclay,line width=.5pt] (.6,0) -- (.6,350) 
-		(.6,0) 
-		node(A)[plotlabel,anchor=south east,inner sep=3pt,xshift=-2pt,align=right]{Op basis van statistisch\\formulier bouwverginning} 
-		node(B)[plotlabel,anchor=south west,inner sep=3pt,xshift= 2pt]{Op basis van databank\\omgevingsvergunningen} 
+	\draw[dotted,copperclay,line width=.5pt] (.6,0) -- (.6,350) 
+		(.6,350) 
+		node(A)[plotlabel,anchor=north east,inner sep=3pt,xshift=-2pt,align=right]{Op basis van statistisch\\formulier bouwvergunningen} 
+		node(B)[plotlabel,anchor=north west,inner sep=3pt,xshift= 2pt]{Op basis van databank\\omgevingsvergunningen} 
 		;
-	\draw[-latex,copperclay] (A.north east) to (A.north west);
-	\draw[-latex,copperclay] (B.north west) to (B.north east);
+	\draw[->,copperclay] (A.north east) to (A.north west);
+	\draw[->,copperclay] (B.north west) to (B.north east);
 	\end{tikzpicture}%
 	}
 
-\begin{figure}[h]
-\begin{previewoutput}
-De gemiddelde oppervlakte van nieuwbouwwoonhuizen in het Vlaamse gewest stabiliseerde de laatste jaren.\par\medskip
+\begin{figure}[h]%
+\begin{previewoutput}%
+\graphtitle{De gemiddelde oppervlakte van nieuwbouwwoonhuizen in het Vlaamse gewest stabiliseerde de laatste jaren.}%
 \begin{tblr}{
 	width=\linewidth,
 	colspec={rX[c]r},
 	rows={rowsep=0pt},
 	columns={colsep=0pt},
+	stretch=0,
 	}
 \yaxis & \body & \yaxisb \\ 
 & \xaxis & \\ 
-\end{tblr}
-\end{previewoutput}
+\end{tblr}%
+\end{previewoutput}%
 \end{figure}
 
 
@@ -93,7 +96,7 @@ De gemiddelde oppervlakte van nieuwbouwwoonhuizen in het Vlaamse gewest stabilis
 		\draw[mistgray] (0,\y) -- (1,\y);
 		}
 	\draw[plotline,lightskyblue] (0.0000,249.3000) -- (0.0526,260.5000) coordinate[pos=.5](A) -- (0.1053,261.1000) -- (0.1579,258.6000) -- (0.2105,267.7000) -- (0.2632,259.9000) -- (0.3158,266.1000) -- (0.3684,268.6000) -- (0.4211,277.7000) -- (0.4737,254.0000) -- (0.5263,258.2000) -- (0.5789,231.6000);
-	\draw[lightskyblue] (A) to +(0,-10mm) node[plotlabel,anchor=south west]{Op basis van statistisch\\formulier bouwverginning};
+	\draw[lightskyblue] (A) to +(0,-10mm) node[plotlabel,anchor=south west]{Op basis van statistisch\\formulier bouwvergunningen};
 	\draw[plotline,softsteelblue] (0.3684,195.5421) -- (0.4211,198.6133) coordinate[pos=.5](B) -- (0.4737,210.9196) -- (0.5263,203.5155) -- (0.5789,193.9556) -- (0.6316,220.3000) -- (0.6842,213.8000) -- (0.7368,200.7000) -- (0.7895,197.8000) -- (0.8421,197.5000) -- (0.8947,197.9000) -- (0.9474,196.9000) -- (1.0000,202.3000) ;
 	\draw[softsteelblue] (B) to +(0,-10mm) node[plotlabel,anchor=south west]{Op basis van databank\\omgevingsvergunningen};
 	\end{tikzpicture}%
@@ -102,17 +105,18 @@ De gemiddelde oppervlakte van nieuwbouwwoonhuizen in het Vlaamse gewest stabilis
 
 \begin{figure}[h]
 \begin{previewoutput}
-De gemiddelde oppervlakte van nieuwbouwwoonhuizen in het Vlaamse gewest stabiliseerde de laatste jaren.\par\medskip
+\graphtitle{De gemiddelde oppervlakte van nieuwbouwwoonhuizen in het Vlaamse gewest stabiliseerde de laatste jaren.}
 \begin{tblr}{
 	width=\linewidth,
 	colspec={rX[c]r},
 	rows={rowsep=0pt},
 	columns={colsep=0pt},
+	stretch=0,
 	}
 \yaxis & \body & \yaxisb \\ 
 & \xaxis & \\ 
-\end{tblr}
-\end{previewoutput}
+\end{tblr}%
+\end{previewoutput}%
 \end{figure}
 
 
@@ -127,10 +131,10 @@ De gemiddelde oppervlakte van nieuwbouwwoonhuizen in het Vlaamse gewest stabilis
 \renewcommand\yaxis{%
 	\begin{tikzpicture}[baseline=0,trim right=0]
 	\foreach \y/\l in {0,50,100,150,200,250,300,350}{
-		\draw[mistgray] (0,\y) -- +(-5mm,0) node[yaxislabel]{\l};
+		\draw[mistgray] (0,\y) -- +(-5mm,0) node(S)[yaxislabel]{\l};
 		}
-	\node[axistitle,yshift=.5\baselineskip,anchor=south west,align=left] at (-20mm,350) 
-		{Gemiddelde oppervlakte (m$^2$) van\\vergunde nieuwbouwwoningen\\in het Vlaams Gewest};	
+	\node[axistitle,anchor=south west,yshift=\baselineskip,xshift=-10mm,align=left] at (S.south west) 
+		{Gemiddelde oppervlakte (m$^2$) van vergunde\\nieuwbouwwoningen in het Vlaams Gewest};		
 	\end{tikzpicture}%
 	}
 
@@ -155,30 +159,31 @@ De gemiddelde oppervlakte van nieuwbouwwoonhuizen in het Vlaamse gewest stabilis
 	\draw[plotline,warmorange] (0.6316,220.3000) -- (0.6842,213.8000) -- (0.7368,200.7000) -- (0.7895,197.8000) -- (0.8421,197.5000) -- (0.8947,197.9000) -- (0.9474,196.9000) -- (1.0000,202.3000);
 	\draw[plotline,lightblue!50] (0.0000,138.0) -- (0.0526,139.3) -- (0.1053,138.9) -- (0.1579,142.6) -- (0.2105,144.2) -- (0.2632,135.2) -- (0.3158,138.6) -- (0.3684,138.4) -- (0.4211,135.7) -- (0.4737,133.5) -- (0.5263,139.5) -- (0.5789,129.8);
 	\draw[plotline,lightblue] (0.6316,122.1) -- (0.6842,107.5) -- (0.7368,104.2) -- (0.7895,103.8) -- (0.8421,104.3) -- (0.8947,104.6) -- (0.9474,103.9) -- (1.0000,105.1);	
-	\draw[dashed,copperclay,line width=.5pt] (.6,0) -- (.6,350) 
-		(.6,0) 
-		node(A)[plotlabel,anchor=south east,inner sep=3pt,xshift=-2pt,align=right]{Op basis van statistisch\\formulier bouwverginning} 
-		node(B)[plotlabel,anchor=south west,inner sep=3pt,xshift= 2pt]{Op basis van databank\\omgevingsvergunningen} 
+	\draw[dotted,copperclay,line width=.5pt] (.6,0) -- (.6,350) 
+		(.6,350) 
+		node(A)[plotlabel,anchor=north east,inner sep=3pt,xshift=-2pt,align=right]{Op basis van statistisch\\formulier bouwvergunningen} 
+		node(B)[plotlabel,anchor=north west,inner sep=3pt,xshift= 2pt]{Op basis van databank\\omgevingsvergunningen} 
 		;
-	\draw[-latex,copperclay] (A.north east) to (A.north west);
-	\draw[-latex,copperclay] (B.north west) to (B.north east);
+	\draw[->,copperclay] (A.north east) to (A.north west);
+	\draw[->,copperclay] (B.north west) to (B.north east);
 	\end{tikzpicture}%
 	}
 
 
 \begin{figure}[h]
 \begin{previewoutput}
-De gemiddelde oppervlakte van nieuwbouwwoningen in het Vlaamse gewest stabiliseerde de laatste jaren, zowel voor woonhuizen als voor appartementen.\par\medskip
+\graphtitle{De gemiddelde oppervlakte van nieuwbouwwoningen in het Vlaamse gewest stabiliseerde de laatste jaren, zowel voor woonhuizen als voor appartementen.}
 \begin{tblr}{
 	width=\linewidth,
 	colspec={rX[c]r},
 	rows={rowsep=0pt},
 	columns={colsep=0pt},
+	stretch=0,
 	}
 \yaxis & \body & \yaxisb \\ 
 & \xaxis & \\ 
-\end{tblr}
-\end{previewoutput}
+\end{tblr}%
+\end{previewoutput}%
 \end{figure}
 
 

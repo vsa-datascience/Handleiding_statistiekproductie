@@ -1,33 +1,184 @@
-\section{Hoe statistieken ontsluiten?}
+% !TEX program = xelatex
+
+\documentclass{beamer}
+\usetheme[SV]{VSA}
+
+\usepackage{tikz}
+\usepackage{fontawesome5}
+\usepackage{anyfontsize}
+\usepackage{tabularray}
+
+\begin{document}
+
+
+\title{Basisconcepten\\openbare statistiekproductie}
+\author{Jorre Vannieuwenhuyze}
+\date{}
+%\date{13 oktober 2025}
+%\institute{Stuurgroep transitietraject}
+
+\titleframe
+
+
 
 
 \begin{frame}
-\frametitle{Statistieken worden op verschillende manieren ontsloten.}
-\vfill
-\point{Officiële ontsluiting}
-\explanation{Elke cijfertabel is downloadbaar/raadpleegbaar}
-\vfill
-\point{Gestyleerde ontsluiting}
-\explanation{niet officiëel, niet exhaustief, wel gebruiksvriendelijker}\medskip
-\explanation{cijferapplicaties}
-\explanation{cijferpagina's}
-\explanation{nieuwsberichten}
-\explanation{brochures}
-\explanation{\ldots }
-\vfill
+\frametitle{We ontsluiten Statistieken\\op verschillende manieren.}
+\begin{tikzpicture}[
+	x=\linewidth,
+	y=12mm,
+	trim left=0,trim right=\linewidth,
+	icon/.style={font=\fontsize{20}{20}\selectfont,deepslateblue,inner sep=0pt},
+	label/.style={anchor=south,text=softsteelblue,font=\footnotesize,inner sep=1pt,align=center,inner sep=2pt},
+	arrow/.style={-latex,lightskyblue,thick,shorten >=3pt,shorten <=3pt},
+	]
+\node (A) at (0,0) [icon,anchor=west]{\faTable};
+\node at (A.north) [label]{brondata}; 
+\pause
+\node (B) at (.5,0) [icon]{\faDatabase};
+\node at (B.north) [label]{VOS\\databank}; 
+\draw[arrow] (A) to (B);
+\pause
+\node (F) at (.5,-1) [label,anchor=center]{dataplatform};
+\draw[arrow] (B) to (F);
+\pause
+\node (C) at (1,0) [icon,anchor=east]{\faGlobe};
+\node at (C.north) [label]{Cijferpagina}; 
+\node (D) at (1,-1.2) [icon,anchor=east]{\includegraphics[width=2ex]{icons/powerbi.png}};
+\node at (D.north) [label]{PowerBI}; 
+\node (E) at (1,-2.4) [icon,anchor=east]{\ldots};
+\draw[arrow] (B) to (C);
+\draw[arrow] (B) to (D);
+\draw[arrow] (B) to (E);
+\pause
+\node (G) at (.25,-3.5) [icon,anchor=west,fill=white]{\faFilePdf[regular]};
+\draw[arrow] (A) |- (G);
+\draw[ashgray,-latex,line width=5pt,shorten <=3pt] (G) to +(10mm,20mm);
+\draw[ashgray,-latex,line width=5pt,shorten <=3pt] (G) to +(20mm,20mm);
+\draw[ashgray,-latex,line width=5pt,shorten <=3pt] (G) to +(20mm,10mm);
+\node at (G.north) [label]{rapporten}; 
+\end{tikzpicture}
 \end{frame}
 
 
 
 
 
+\section*{Methodebreuken in tijdsreeksen}
+
+
+\begin{frame}
+\frametitle{Om methodebreuken te tonen,\\onderscheiden we vier situaties.}
+\begin{tblr}{
+	width=\linewidth,
+	colspec={rX[c]X[c]},
+	row{1} = {font=\tiny},
+	column{1} = {font=\tiny,leftsep=0pt},
+	rows = {valign=m},
+	hline{2-3} = {lightskyblue},
+	vline{2-3} = {lightskyblue},
+	}
+ & zelfde operationele definitie & verschillende operationele definities\\
+\begin{tabular}[c]{@{}r@{}}zelfde\\conceptuele\\definitie\end{tabular} & 
+\raisebox{\dimexpr-.5\height+.5\depth}{\phantom{\includegraphics[width=\linewidth]{graphs/VTE_vlaamse_universiteiten.pdf}}} & 
+\raisebox{\dimexpr-.5\height+.5\depth}{\phantom{\includegraphics[width=\linewidth]{graphs/vroegtijdige_schoolverlaters.pdf}}} \\
+\begin{tabular}[t]{@{}r@{}}verschillende\\conceptuele\\definities\end{tabular} & 
+& 
+\raisebox{\dimexpr-.5\height+.5\depth}{\phantom{\includegraphics[width=\linewidth,page=3]{graphs/nieuwbouwvergunningen.pdf}}} \\
+\end{tblr}	
+\end{frame}
+
+
+\begin{frame}
+\includegraphics[width=\linewidth]{graphs/VTE_vlaamse_universiteiten.pdf}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Om methodebreuken te tonen,\\onderscheiden we vier situaties.}
+\begin{tblr}{
+	width=\linewidth,
+	colspec={rX[c]X[c]},
+	row{1} = {font=\tiny},
+	column{1} = {font=\tiny,leftsep=0pt},
+	rows = {valign=m},
+	hline{2-3} = {lightskyblue},
+	vline{2-3} = {lightskyblue},
+	}
+ & zelfde operationele definitie & verschillende operationele definities\\
+\begin{tabular}[c]{@{}r@{}}zelfde\\conceptuele\\definitie\end{tabular} & 
+\raisebox{\dimexpr-.5\height+.5\depth}{{\includegraphics[width=\linewidth]{graphs/VTE_vlaamse_universiteiten.pdf}}} & 
+\raisebox{\dimexpr-.5\height+.5\depth}{\phantom{\includegraphics[width=\linewidth]{graphs/vroegtijdige_schoolverlaters.pdf}}} \\
+\begin{tabular}[t]{@{}r@{}}verschillende\\conceptuele\\definities\end{tabular} & 
+\onslide<2->{\raisebox{\dimexpr-.5\height+.5\depth}{\color{copperclay}\huge\faTimes}} & 
+\raisebox{\dimexpr-.5\height+.5\depth}{\phantom{\includegraphics[width=\linewidth,page=3]{graphs/nieuwbouwvergunningen.pdf}}} \\
+\end{tblr}	
+\end{frame}
+
+
+\begin{frame}
+\includegraphics[width=\linewidth,page=1]{graphs/nieuwbouwvergunningen.pdf}
+\end{frame}
+
+\begin{frame}
+\includegraphics[width=\linewidth,page=2]{graphs/nieuwbouwvergunningen.pdf}
+\end{frame}
+
+\begin{frame}
+\includegraphics[width=\linewidth]{graphs/vroegtijdige_schoolverlaters.pdf}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Om methodebreuken te tonen,\\onderscheiden we vier situaties.}
+\begin{tblr}{
+	width=\linewidth,
+	colspec={rX[c]X[c]},
+	row{1} = {font=\tiny},
+	column{1} = {font=\tiny,leftsep=0pt},
+	rows = {valign=m},
+	hline{2-3} = {lightskyblue},
+	vline{2-3} = {lightskyblue},
+	}
+ & zelfde operationele definitie & verschillende operationele definities\\
+\begin{tabular}[c]{@{}r@{}}zelfde\\conceptuele\\definitie\end{tabular} & 
+\raisebox{\dimexpr-.5\height+.5\depth}{{\includegraphics[width=\linewidth]{graphs/VTE_vlaamse_universiteiten.pdf}}} & 
+\raisebox{\dimexpr-.5\height+.5\depth}{{\includegraphics[width=\linewidth]{graphs/vroegtijdige_schoolverlaters.pdf}}} \\
+\begin{tabular}[t]{@{}r@{}}verschillende\\conceptuele\\definities\end{tabular} & 
+\raisebox{\dimexpr-.5\height+.5\depth}{\color{copperclay}\huge\faTimes} & 
+\raisebox{\dimexpr-.5\height+.5\depth}{\phantom{\includegraphics[width=\linewidth,page=3]{graphs/nieuwbouwvergunningen.pdf}}} \\
+\end{tblr}	
+\end{frame}
+
+\begin{frame}
+\includegraphics[width=\linewidth,page=3]{graphs/nieuwbouwvergunningen.pdf}
+\end{frame}
+
+\begin{frame}
+\frametitle{Om methodebreuken te tonen,\\onderscheiden we vier situaties.}
+\begin{tblr}{
+	width=\linewidth,
+	colspec={rX[c]X[c]},
+	row{1} = {font=\tiny},
+	column{1} = {font=\tiny,leftsep=0pt},
+	rows = {valign=m},
+	hline{2-3} = {lightskyblue},
+	vline{2-3} = {lightskyblue},
+	}
+ & zelfde operationele definitie & verschillende operationele definities\\
+\begin{tabular}[c]{@{}r@{}}zelfde\\conceptuele\\definitie\end{tabular} & 
+\raisebox{\dimexpr-.5\height+.5\depth}{{\includegraphics[width=\linewidth]{graphs/VTE_vlaamse_universiteiten.pdf}}} & 
+\raisebox{\dimexpr-.5\height+.5\depth}{{\includegraphics[width=\linewidth]{graphs/vroegtijdige_schoolverlaters.pdf}}} \\
+\begin{tabular}[t]{@{}r@{}}verschillende\\conceptuele\\definities\end{tabular} & 
+\raisebox{\dimexpr-.5\height+.5\depth}{\color{copperclay}\huge\faTimes} & 
+\raisebox{\dimexpr-.5\height+.5\depth}{{\includegraphics[width=\linewidth,page=3]{graphs/nieuwbouwvergunningen.pdf}}} \\
+\end{tblr}	
+\end{frame}
 
 
 
 
 
-
-
-
+\end{document}
 
 
