@@ -1,0 +1,42 @@
+% !TEX program = xelatex
+% !BIB program = biber
+
+\documentclass{VSAbook}
+
+\usepackage{tikz}
+
+\usepackage[active,tightpage]{preview}
+\newenvironment{previewoutput}{}{}
+\PreviewEnvironment{previewoutput}
+\setlength{\PreviewBorder}{0pt} 
+
+
+\begin{document}
+
+
+\begin{table}
+\begin{previewoutput}
+\begin{tblr}{
+	colspec={lX[l]X[l]X[l]},
+	column{1} = {bg=softsteelblue,fg=white,colsep=2pt},
+	row{1} = {bg=deepslateblue,fg=white},
+	hline{Z} = {deepslateblue},
+	vline{1,Z} = {deepslateblue}
+	}
+& Concept 1 & Concept 2 & Concept 3 \\ 
+\begin{tabular}[c]{@{}l@{}}conceptuele\\definitie\end{tabular} &  aantal inwoners & in Antwerpen & in 2019 \\
+& \qquad$\downarrow$ & \qquad$\downarrow$ & \qquad$\downarrow$ \\  
+\begin{tabular}[t]{@{}l@{}}operationele\\definitie\end{tabular}  &  aantal inwoners volgens de wettelijke bevolking & 
+in Antwerpen volgens NIS-code 11002 in 2019 &
+op 1 januari 2019, 0.00 uur\\
+\end{tblr}
+\end{previewoutput}
+\end{table}
+
+
+
+
+
+
+
+\end{document}

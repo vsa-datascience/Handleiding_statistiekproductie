@@ -1,0 +1,43 @@
+% !TEX program = xelatex
+% !BIB program = biber
+
+\documentclass{VSAbook}
+
+\usepackage{tikz}
+
+\usepackage[active,tightpage]{preview}
+\newenvironment{previewoutput}{}{}
+\PreviewEnvironment{previewoutput}
+\setlength{\PreviewBorder}{0pt} 
+
+
+\begin{document}
+
+
+\marginpar{
+\begin{previewoutput}
+\begin{tikzpicture}[
+	x=\linewidth,
+	y=2cm,
+	inner sep=0pt,
+	box/.style={align=center,font=\sffamily\footnotesize,text=softsteelblue},
+	arr/.style={latex-latex,ashgray,line width=1pt,shorten <=2pt,shorten >=2pt}
+	]
+\node[box,anchor=center] (N2) at (0.5,1) {gebruikers-\\behoeften};	
+\node[box,anchor=west] (N1) at (0,0) {conceptuele\\definitie};
+\node[box,anchor=east] (N3) at (1,0) {operationele\\definitie};
+\draw[arr] (N1) to (N2);
+\draw[arr] (N2) to (N3);
+\draw[arr] (N1) to (N3);
+\node[text=deepslateblue,font=\sffamily\bfseries] at (.5,.4) {kwaliteit};
+\end{tikzpicture}
+\end{previewoutput}
+}
+
+
+
+
+
+
+
+\end{document}

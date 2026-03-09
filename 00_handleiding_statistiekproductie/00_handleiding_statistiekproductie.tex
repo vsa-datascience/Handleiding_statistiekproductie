@@ -1,26 +1,61 @@
 % !TEX program = xelatex
 % !BIB program = biber
 
-\documentclass[Wordversion]{VSAreport}
+\documentclass[SV]{VSAbook}
+%\sloppy 
 
 \usepackage{subfiles}
-
+\providecommand\mainfiledir{.}
+\newcommand\includesubfile[1]{{
+    \providecommand\subfiledir{#1}
+    \subfile{#1.tex}
+    }}
+    
+    
+    
 \newenvironment{note}{
 	\begin{adjustwidth}{10mm}{10mm}
 	\color{pal2col1}\scriptsize
 	}{
 	\end{adjustwidth}
 	}
+\usepackage{mdframed}
+\usepackage{tikz}
+\usepackage{changepage}
+\newenvironment{info}{%
+	\vspace{\baselineskip}
+	\begin{adjustwidth}{20mm}{10mm}%
+	\begin{flushleft}
+	\itshape\footnotesize%
+	\makebox[0pt][r]{\raisebox{-9mm}[1.5ex][0pt]{\includegraphics[width=10mm]{\mainfiledir/icons/denken}}\hspace{5mm}}\ignorespaces%
+	}{%
+	\end{flushleft}
+	\end{adjustwidth}%
+	\vspace{\baselineskip}
+	}
+
+
+\newcommand\SIMS[2]{``#2'' (#1)}
+
+
+
+
+
+
+
+\addbibresource{\mainfiledir/references.bib} 
+
+
+\title{Handboek\\Statistiekproductie}
+%\subtitle{Een ondertitel\\tweede lijn}
+\author{Jorre Vannieuwenhuyze}
+\titlepagepicture{\paperwidth}{\mainfiledir/files/titlepagebg.png}
 
 
 
 \begin{document}
 	
-\title[Handboek Statistiekproductie]{Handboek\\Statistiekproductie}
-%\subtitle{Vlaamse Statistische Autoriteit}
-%\author{Jorre Vannieuwenhuyze}
-%\date{}
-\titlepagebackground{00_handleiding_statistiekproductie/backgroundtitlepage.png}
+
 
 \titlepage
 
@@ -29,10 +64,22 @@
 %\listoftablesandfigures
 
 
+\includesubfile{../01_Inleiding/text/01_Inleiding}
+
+\part{Achtergrond}
+
+\includesubfile{../02_Wat_is_een_statistiek/text/Wat_is_een_statistiek}
 
 
-\subfile{01_Inleiding}
-\subfile{02_Wat_is_een_statistiek}
+\part{Hoe statistieken documenteren?}
+
+
+\part{Hoe statistieken beheren?}
+
+
+\part{Hoe statistieken ontsluiten?}
+
+
 %\subfile{03_Metadata}
 %\subfile{04_Productieproces}
 %\subfile{05_Ontsluiting}
@@ -61,7 +108,6 @@
 %	\item Handleiding over hoe kernstatistieken worden aangeleverd aan de VSA (als een gefilterde statistiekreeks).
 %	\item \ldots ?
 %\end{itemize}
-%
 
 
 

@@ -1,4 +1,19 @@
-\footnotesize
+% !TEX program = xelatex
+% !BIB program = biber
+
+\documentclass{VSAbook}
+
+\usepackage[active,tightpage]{preview}
+\newenvironment{previewoutput}{}{}
+\PreviewEnvironment{previewoutput}
+\setlength{\PreviewBorder}{0pt} 
+
+
+\begin{document}
+
+
+\begin{table}
+\begin{previewoutput}
 \begin{tblr}{
 	width=\linewidth,
 	colspec={X[c]X[c]X[c]X[c]},
@@ -23,3 +38,13 @@ Borsbeek & man & 5270 & 48.6 \\
 Borsbeek & vrouw & 5584 & 51.4 \\
 \ldots & \ldots & \ldots & \ldots \\
 \end{tblr}
+\end{previewoutput}
+\end{table}
+
+
+
+
+
+
+
+\end{document}

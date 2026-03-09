@@ -1,14 +1,9 @@
 % !TEX program = xelatex
 % !BIB program = biber
 
-\documentclass{VSAnote}
-
-\providecommand\VSAreportpath{../../00_handleiding_statistiekproductie}
-\input{\VSAreportpath/commands.tex}
-\addbibresource{\VSAreportpath/references.bib} 
-
-
-
+\providecommand\mainfiledir{../../00_handleiding_statistiekproductie}
+\providecommand\subfiledir{\jobname}
+\documentclass[\mainfiledir/00_handleiding_statistiekproductie.tex]{subfiles}
 
 \begin{document}
 	
@@ -16,12 +11,8 @@
 	
 	
 	
-\title{Wat is een statistiek?}
-\author{Jorre Vannieuwenhuyze}
-\titlepage
-
-\tableofcontents
-\clearpage
+	
+\chapter{Wat is een statistiek?}
 
 
 	% gal-ograjensek-2017-official-statistics-and-statistics-education-bridging-the-gap.pdf
@@ -109,34 +100,13 @@ Een duidelijk onderscheid tussen deze drie niveaus om de term ``statistiek'' in 
 
 	
 	
-\section{Statistiek als een cijfer}
+\section[Statistiek als een cijfer]{Statistiek als een cijfer}
 \label{sec:statistiekalscijfer}	
 	
 	
 Als je mensen vraagt wat ze verstaan onder een statistiek, zullen velen dit op de eerste plaats definiëren als een cijfer. Die definitie is echter niet volledig. Neem bijvoorbeeld het cijfer ``525\,935'', een statistiek die we publiceren vanuit Statistiek Vlaanderen. Op zichzelf zegt dit cijfer uiteraard zeer weinig. Waarvan zijn er 525\,935? Wat stelt dit getal voor? Waarom publiceren we dat getal? Hoe werd het getal gemeten? Hoe kwalitatief is deze meting? Wie is verantwoordelijk voor dit cijfer? 
 
-Statistiek gaat dus niet alleen over het berekenen van cijfers, ook wel \emph{data} genoemd. Statistiek gaat ook over het beheer van allerhande informatie die bij de cijfers hoort. Deze informatie noemen we de \emph{metadata} (in SDMX-terminologie ook wel \emph{attributen} van de cijfers genoemd \ref{referenitie toevoegen SDMX} ). Een \emph{statistiek} bestaat dus altijd uit twee onlosmakelijke elementen: data én metadata (zie Figuur \ref{fig:statistiek}). Beiden zijn even belangrijk en vormen één geheel \parencite{Wild2018What}. In deze paragraaf gaan we dieper in op verschillende belangrijke vormen van metadata. 
-
-\begin{figure}
-\caption{Op het laagste niveau bestaat een statistiek steeds uit een cijfer en attributen van dat cijfer, ook wel data en metadata genoemd.}
-\label{fig:statistiek}
-\begin{center}
-\begin{tikzpicture}[
-	x=\linewidth,
-	y=15mm,
-	concept/.style={font=\Large\bfseries,text=softsteelblue,text height=2ex,text depth=0pt},
-	label/.style={anchor=north,font=\large},
-	]
-\draw[softsteelblue,rounded corners=5pt,line width=1pt] (0,.7) rectangle (1,-1); 	
-\node[concept] (A) at (.25,0) {Data};
-\node[label] at (A.south) {Cijfer};
-\node[concept] (B) at (.75,0) {Metadata};
-\node[label] at (B.south) {Attributen};
-\draw[latex-latex,very thick,bend left=20,lightskyblue] (A.east) to (B.west);
-\end{tikzpicture}
-\end{center}
-\end{figure}	
-
+Statistiek gaat dus niet alleen over het berekenen van cijfers, ook wel \emph{data} genoemd\marginpar{\includegraphics[width=\linewidth]{\subfiledir/datavsmetadata.pdf}}. Statistiek gaat ook over het beheer van allerhande informatie die bij de cijfers hoort. Deze informatie noemen we de \emph{metadata} (in SDMX-terminologie ook wel \emph{attributen} van de cijfers genoemd \ref{referenitie toevoegen SDMX} ). Een \emph{statistiek} bestaat dus altijd uit twee onlosmakelijke elementen: data én metadata. Beiden zijn even belangrijk en vormen één geheel \parencite{Wild2018What}. In deze paragraaf gaan we dieper in op verschillende belangrijke vormen van metadata. 
 
 \begin{info}
 	Merk op dat statistieken niet altijd cijfers zijn, het kunnen ook kwalitatieve observaties zijn of zelfs complexere ``informatie-objecten''. Zo publiceert het Agentschap Binnenlands Bestuur bijvoorbeeld per gemeente een statistiek over de top 10 andere gemeenten waarnaar kinderen heen pendelen voor school. Voor de stad Antwerpen kan de observatie op deze statistiek bijvoorbeeld de volgende tekstuele vector zijn: 
@@ -195,7 +165,7 @@ In hoofdstuk \ref{ch:documentatie} wordt meer uitleg gegegven hoe je deze behoef
 De conceptuele definitie is meestal vaag over wat een cijfer precies weergeeft. In de zin ``het aantal inwoners in Antwerpen neemt toe'' is bijvoorbeeld ``het aantal inwoners'' enkel een abstract idee. Deze woorden vertellen immers niet wie je nu precies meetelt en wie niet. De conceptuele definitie van een cijfer vertelt dus weinig over hoe het cijfer precies werd berekend en exact geïnterpreteerd kan worden. Naast de conceptuele definitie heeft elke statistiek daarom ook een \emph{operationele definitie}. Die operationele definitie beschrijft tot in detail hoe het cijfer exact is gemeten en geeft zo de precieze betekenis ervan weer. De operationele definitie is daarom veel uitgebreider dan de conceptuele definitie. De vertaling van de conceptuele definitie naar de operationele definitie noemen we \emph{operationaliseren}.
 
 De operationalisering van een conceptuele definitie betekent in de praktijk dat elk concept vertaald wordt van een abstract idee naar een concrete richtlijn om de conceptwaarden te meten. Concepten variëren echter in hoe concreet of abstract ze zijn \parencite{neuman2014Social}. Een \emph{concreet concept} verwijst naar een fenomeen dat direct observeerbaar of eenvoudig meetbaar is zonder complexe interpretatie of afleiding. Een voorbeeld van een concreet concept is het totale stroomverbruik in een gemeente. Dit is een concreet concept want je kan het rechtstreeks vaststellen door het verbruik af te lezen op alle electriciteitsmeters binnen de grenzen van deze gemeente. Er is ook weinig discussie over hoe je stroomverbruik meet, namelijk gewoon in kilowattuur (kWh). 
-		
+
 Een \emph{abstract concept} verwijst daarentegen naar een idee of fenomeen dat niet rechtstreeks waarneembaar is. Het heeft een zekere mate van theoretische of interpretatieve lading en moet daarom eerst geoperationaliseerd worden naar concretere concepten en conceptwaarden. Een voorbeeld van een abstract concept is sociaal isolement. Sociaal isolement verwijst immers naar een toestand waarin iemand weinig of geen sociale contacten heeft of zich sociaal buitengesloten voelt. Dit kan je niet rechtstreeks meten maar moet je operationaliseren. Dat kan bijvoorbeeld via een lange vragenlijst over, onder andere, het aantal sociale contacten, subjectieve gevoelens van eenzaamheid en deelname aan sociale activiteiten.
 	
 In de praktijk zijn concepten niet of concreet of abstract, maar kan je ze op een continue schaal plaatsen op het vlak van abstractheid en concreetheid \parencite{neuman2014Social}. Het éne concept is al abstracter en moeilijker meetbaar en operationaliseerbaar terwijl een ander concept redelijk concreet is en vrij direct geoperationaliseerd en geobserveerd kan worden.  
@@ -220,20 +190,7 @@ Dit voorbeeld toont ook dat de concepten in een conceptuele definitie doorgaans 
 \begin{table}
 \caption[Van conceptuele naar operationele definitie]{Operationaliseren betekent dat alle abstracte concepten in de conceptuele definitie worden vertaald naar concrete en observeerbare concepten in de operationele definitie}
 \label{tab:operationaliseren}
-\begin{tblr}{
-	colspec={lX[l]X[l]X[l]},
-	column{1} = {bg=softsteelblue,fg=white,colsep=2pt},
-	row{1} = {bg=deepslateblue,fg=white},
-	hline{Z} = {deepslateblue},
-	vline{1,Z} = {deepslateblue}
-	}
-& Concept 1 & Concept 2 & Concept 3 \\ 
-\begin{tabular}[c]{@{}l@{}}conceptuele\\definitie\end{tabular} &  aantal inwoners & in Antwerpen & in 2019 \\
-& \qquad$\downarrow$ & \qquad$\downarrow$ & \qquad$\downarrow$ \\  
-\begin{tabular}[t]{@{}l@{}}operationele\\definitie\end{tabular}  &  aantal inwoners volgens de wettelijke bevolking & 
-in Antwerpen volgens NIS-code 11002 in 2019 &
-op 1 januari 2019, 0.00 uur\\
-\end{tblr}
+\includegraphics[width=\linewidth]{\subfiledir/operationaliseren.pdf}
 \end{table}
 
 Verder illustreert dit voorbeeld dat zelfs relatief eenvoudige statistieken al een tamelijk lange operationele definitie vereisen. De lengte van een operationele definitie kan dan ook sterk variëren. Voor een eenvoudig cijfer afgeleid uit officiële registers, zoals het aantal inwoners in Vlaamse gemeenten, kunnen enkele paragrafen volstaan. Bij complexere statistieken, zoals bijvoorbeeld de gemiddelde opinie van inwoners gemeten via een bevraging, is daarentegen een uitgebreide rapportering nodig met alle details over, onder andere, het enquêtedesign, de steekproeftrekking, het ontwerp van de vragenlijst, de opvolging van respondenten, statistische correcties voor meet- en selectiefouten en de statistische analysemethoden.
@@ -261,27 +218,8 @@ Je zou je nu kunnen afvragen waarom we eigenlijk conceptuele definities opstelle
 	
 \subsection{Kwaliteit}
 	
-We zagen reeds dat een statistiek ontstaat vanuit gebruikersbehoeften en dat deze behoeften worden vertaald naar een conceptuele definitie en vervolgens een operationele definitie (zie Figuur \ref{fig:beschrijvingstatistiek}). In een ideale situatie zijn de conceptuele en operationele definitie afgestemd op de gebruikersbehoeften. Wanneer dat niet het geval is, heeft de statistiek een \emph{kwaliteitsprobleem}. 
+We zagen reeds dat een statistiek ontstaat vanuit gebruikersbehoeften en dat deze behoeften worden vertaald naar een conceptuele definitie en vervolgens een operationele definitie. In een ideale situatie zijn de conceptuele en operationele definitie afgestemd op de gebruikersbehoeften. Wanneer dat niet het geval is, heeft de statistiek een \emph{kwaliteitsprobleem}.\marginpar{\includegraphics[width=\linewidth]{\subfiledir/kwaliteit.pdf}}
 	
-\begin{figure}
-\caption[De drie beschrijvende elementen van een statistiek.]{De kwaliteit van een statistiek wordt gedefinieerd door de verhouding tussen drie elementen.}
-\label{fig:beschrijvingstatistiek}
-\begin{tikzpicture}[
-	x=\linewidth,
-	y=1cm,
-	box/.style={text width=8em,align=center},
-	arr/.style={-latex,lightskyblue,line width=1pt}
-	]
-\draw[softsteelblue,rounded corners=5pt,line width=1pt]	(0,-1) rectangle (1,1);
-\node[box,anchor=west] (N1) at (0,0) {gebruikers-\\behoeften};
-\node[box,anchor=center] (N2) at (0.5,0) {conceptuele\\definitie};
-\node[box,anchor=east] (N3) at (1,0) {operationele\\definitie};
-\draw[arr] (N1) to (N2);
-\draw[arr] (N2) to (N3);
-%\draw[arr] (N1) to (N3);
-\end{tikzpicture}
-\end{figure}
-
 Kwaliteitsproblemen bij statistieken kunnen voorkomen in verschillende vormen. Een overzicht hiervan wordt gegeven in de ``Praktijkcode voor Europese statistieken'' \parencite[zie][]{Eurostat2017European}. Deze praktijkcode schept een kwaliteitskader voor het Europees statistisch systeem (ESS) en legt 16 beginselen vast voor de ontwikkeling, productie en verspreiding van Europese statistieken. Vijf van deze beginselen beschrijven kwaliteitscriteria voor statistische output en worden hieronder verder besproken. 
 	
 
@@ -424,7 +362,7 @@ In de volgende hoofdstukken bespreken we hoe we dat concreet in de praktijk aanp
 	
 	
 	
-\section{Statistiek als een cijfertabel}
+\section[Statistiek als een cijfertabel]{Statistiek als\\een cijfertabel}
 
 
 In de vorige paragraaf werd uitgelegd hoe een statistiek kan verwijzen naar één enkel cijfer met bijhorende metadata waaronder de conceptuele en operationele definitie ontstaan vanuit specifieke gebruikersbehoeften. In de praktijk produceren we echter vaak verschillende cijfers met sterk overlappende gebruikersbehoeften en definities. Zo publiceren we uiteraard niet alleen het aantal inwoners voor de gemeente Antwerpen, maar ook voor alle andere Vlaamse gemeenten, de drie gewesten en heel België. Het is dan niet efficiënt om metadata cijfer per cijfer te beheren en te ontsluiten. Om efficiëntie te verhogen groeperen we daarom cijfers bij elkaar. Dat doen we via cijfertabellen. Als we praten over statistieken, kan dit dus ook verwijzen naar zo'n cijfertabel in plaats van individuele cijfers.   
@@ -434,7 +372,7 @@ Een \emph{cijfertabel} is een verzameling van cijfers die grotendeels dezelfde c
 \begin{table}
 \caption[Voorbeeld van een cijfertabel]{We publiceren statistieken doorgaans niet als individuele cijfers maar als cijfertabellen.}
 \label{tab:voorbeeldcijfertabel}
-\input{tables/voorbeeldcijfertabel.tex}
+\includegraphics[width=\linewidth]{\subfiledir/voorbeeldcijfertabel.pdf}
 \end{table}
 
 
@@ -461,12 +399,8 @@ De presentatie van een statistiekreeks gebeurt doorgaans niet zoals in tabel \re
 \begin{table}
 \caption[Toegankelijke voorstelling van een cijfertabel]{Bij cijfertabellen worden beschrijvers opgenomen in de conceptuele definitie in de titel. De rijen en kolommen bevatten enkel de dimensies.}
 \label{tab:voorbeeldcijfertabel2}
-\input{tables/voorbeeldcijfertabel2.tex}
+\includegraphics[width=\linewidth]{\subfiledir/voorbeeldcijfertabel2.pdf}
 \end{table}	
-
-
-
-
 
 	
 
@@ -493,7 +427,7 @@ Een derde soort metadata bevindt zich op een tussenniveau, namelijk metadata die
 
 
 	
-\section{Statistiek als een tabelreeks}
+\section[Statistiek als een tabelreeks]{Statistiek als\\een tabelreeks}
 	
 Cijfertabellen bevatten cijfers met sterk overlappende definities maar om statistieken te definiëren kunnen we nog een stap verder gaan. Het kan voorkomen dat we cijfers publiceren die nog steeds sterk overlappende conceptuele en operationele definities hebben maar die desondanks niet exact dezelfde concepten delen. Daardoor zijn ze niet gemakkelijk te organiseren in één enkele gestructureerde dimensionale cijfertabel. In die situatie kunnen we ervoor kiezen om statistieken te organiseren in een \emph{reeks van cijfertabellen}. Als we praten over statistieken, kan dit dus ook verwijzen naar zo'n tabelreeks in plaats van één enkele cijfertabel of één individueel cijfer.   
 
@@ -504,7 +438,7 @@ Door de overlap tussen de conceptuele definities van cijfers in een tabelreeks k
 \begin{table}
 \caption[Voorbeeld van een tabelreeks]{Tabelreeksen zijn verzamelingen van cijfertabellen met sterke overlap tussen de conceptuele en operationele definities.}
 \label{tab:voorbeeldtabelreeks}
-\input{tables/voorbeeldtabelreeks.tex}
+\includegraphics[width=\linewidth]{\subfiledir/voorbeeldtabelreeks.pdf}
 \end{table}	
 
 Net zoals de conceptuele definities, kunnen we uiteraard ook de operationele definities generaliseren naar de hele tabelreeks. De operationele definitie van de tabelreeks in Tabel \ref{tab:voorbeeldtabelreeks} luidt bijvoorbeeld: ``De grootte van de wettelijke bevolking op 1 januari 2019 per gemeente volgens de NIS‐code‐indeling in 2019 volgens (1) geslacht zoals geregistreerd in het Rijksregister (man/vrouw), en (2) leeftijd zoals geregistreerd in het Rijksregister en opgedeeld in vier categorieën (0-18 jaar, 19-35 jaar, 36-64 jaar en 65+ jaar). De wettelijke bevolking omvat\ldots''. Merk op dat de operationele definitie een heel duidelijke opsomming geeft van de cijfertabellen in de tabelreeks, namelijk een tabel volgens geslacht en een tabel volgens leeftijd. Daarnaast is deze definitie nog steeds duidelijk expliciet over hoe de verschillende concepten worden gemeten en opgedeeld. Zo berschrijft ze heel duidelijk dat geslacht wordt opgeldeeld in de twee waarden ``man'' en ``vrouw'' en leeftijd in de vier waarden ``0-18 jaar'', ``19-35 jaar'', ``36-64 jaar'' en ``65+ jaar''. Uit de operationele definitie van de tabelreeks moet je dan ook de operationele definitie van elke individuele cijfertabel in de reeks kunnen afleiden.
@@ -547,7 +481,7 @@ In de volgende hoofdstukken zullen we de begrippen uit dit hoofdstuk gebruiken o
 \begin{figure}
 \caption[Schema cijferreeks]{Een tabelreeks is een reeks van gestructureerde cijfertabellen, die op hun beurt bestaan uit een reeks van individuele cijfers.}
 \label{fig:cijferreeks}
-\input{tables/cijferreeks}
+\includegraphics[width=\linewidth]{\subfiledir/cijferreeks.pdf}
 \end{figure}	
 	
 	
@@ -576,7 +510,7 @@ In de volgende hoofdstukken zullen we de begrippen uit dit hoofdstuk gebruiken o
 	
 	
 	
-\printbibliography	
+
 	
 	
 	

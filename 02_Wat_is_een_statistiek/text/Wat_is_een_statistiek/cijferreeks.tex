@@ -1,3 +1,23 @@
+% !TEX program = xelatex
+% !BIB program = biber
+
+\documentclass{VSAbook}
+
+\usepackage{tikz}
+
+
+
+\usepackage[active,tightpage]{preview}
+\newenvironment{previewoutput}{}{}
+\PreviewEnvironment{previewoutput}
+\setlength{\PreviewBorder}{0pt} 
+
+
+\begin{document}
+
+
+\begin{table}
+\begin{previewoutput}
 \begin{tikzpicture}[
 	x=\linewidth,y=1cm,
 	reeks/.style={softsteelblue,fill=mistgray,rounded corners=5mm,line width=1pt},
@@ -20,3 +40,13 @@
 \node[tabel] (A) at (.85,1) {cijfer\\cijfer\\cijfer\\cijfer\\\ldots};
 \node[tabelnaam] at (A.north west) {tabel};
 \end{tikzpicture}
+\end{previewoutput}
+\end{table}
+
+
+
+
+
+
+
+\end{document}

@@ -1,0 +1,36 @@
+% !TEX program = xelatex
+% !BIB program = biber
+
+\documentclass{VSAbook}
+
+\usepackage{tikz}
+
+\usepackage[active,tightpage]{preview}
+\newenvironment{previewoutput}{}{}
+\PreviewEnvironment{previewoutput}
+\setlength{\PreviewBorder}{0pt} 
+
+
+\begin{document}
+
+
+
+\marginpar{
+	\begin{previewoutput}
+	\begin{tikzpicture}[
+		x=\linewidth,
+		y=15mm,
+		inner sep=0pt,
+		concept/.style={font=\small\bfseries\sffamily,text=softsteelblue,text height=2ex,text depth=0pt},
+		label/.style={anchor=north,font=\scriptsize\sffamily,yshift=-2pt},
+		]
+	\node[concept,anchor=west] (A) at (0,0) {Data};
+	\node[label] at (A.south) {Cijfer};
+	\node[concept,anchor=east] (B) at (.75,0) {Metadata};
+	\node[label] at (B.south) {Attributen};
+	\draw[latex-latex,very thick,bend left=20,lightskyblue,shorten <=2pt,shorten >=2pt] (A.east) to (B.west);
+	\end{tikzpicture}
+	\end{previewoutput}
+	}
+
+\end{document}

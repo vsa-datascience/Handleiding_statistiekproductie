@@ -1,7 +1,24 @@
-\footnotesize
+% !TEX program = xelatex
+% !BIB program = biber
+
+\documentclass{VSAbook}
+
+\usepackage{tikz}
+
+\usepackage[active,tightpage]{preview}
+\newenvironment{previewoutput}{}{}
+\PreviewEnvironment{previewoutput}
+\setlength{\PreviewBorder}{0pt} 
+
+
+\begin{document}
+
+
+\begin{table}
+\begin{previewoutput}
 \begin{tblr}{
 	width=\linewidth,
-	colspec={X[l]X[c]},
+	colspec={X[l,2]X[c]},
 	column{1} = {fg=charcoalgray,bg=lightskyblue},
 	row{1} = {fg=white,bg=softsteelblue},
 	hline{1,Z} = {deepslateblue},
@@ -21,3 +38,13 @@ Aantal inwoners in Anzegem in 2019 & 14\,716 \\
 \ldots & \ldots \\
 Aantal inwoners in Zwijndrecht in 2019 & 19\,056 \\
 \end{tblr}
+\end{previewoutput}
+\end{table}
+
+
+
+
+
+
+
+\end{document}

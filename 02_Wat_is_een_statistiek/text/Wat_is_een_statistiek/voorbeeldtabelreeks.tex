@@ -1,3 +1,23 @@
+% !TEX program = xelatex
+% !BIB program = biber
+
+\documentclass{VSAbook}
+
+\usepackage{mdframed}
+
+
+
+\usepackage[active,tightpage]{preview}
+\newenvironment{previewoutput}{}{}
+\PreviewEnvironment{previewoutput}
+\setlength{\PreviewBorder}{0pt} 
+
+
+\begin{document}
+
+
+\begin{table}
+\begin{previewoutput}
 \begin{mdframed}[
 	roundcorner=5pt,
 	linecolor=deepslateblue,
@@ -62,4 +82,14 @@ Boechout   & 19-35 jaar &   2505 \\
 \end{tblr}
 }
 \end{mdframed}
+\end{previewoutput}
+\end{table}
+
+
+
+
+
+
+
+\end{document}
 
