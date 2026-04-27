@@ -24,16 +24,6 @@
 \titleframe
 
 
-
-
-
-\tableofcontentsframe
-
-
-
-\section{Statistiek als een cijfer}
-
-
 \begin{frame}
 \frametitle{\onslide<2->{Een statistiek bestaat uit\\data en metadata.}}
 \begin{tikzpicture}[overlay,remember picture]
@@ -46,6 +36,16 @@
 \node at (current page.south)[yshift=.2\paperheight,font=\Large\bfseries,text=softsteelblue]{525\,935};
 \end{tikzpicture}
 \end{frame}
+
+
+
+\tableofcontentsframe
+
+
+
+\section{Statistiek als een cijfer}
+
+
 
 
 
@@ -106,7 +106,7 @@
 	\draw[line] (C.north west) -- (C.north east) (C.north) -- +(0,20pt) node[concept]{jaartal};
 	}
 \onslide<3->{
-	\node[values,xshift=-5mm,anchor=east] (Z) at (A.west) {waarden:};
+	\node[values,xshift=-5mm,anchor=east] (Z) at (A.west) {conceptwaarden:};
 	\node[concept,anchor=south east,yshift=20pt] at (Z.north east) {concepten:};
 	}
 \end{tikzpicture}
@@ -245,23 +245,36 @@ jaartal & in 2019 & \onslide<4->{$\rightarrow$} & \onslide<4->{op 1 januari 2019
 	questions/.style={yshift=.5\paperheight,font=\footnotesize,align=center},
 	]
 \onslide<2>{
-	\node[criterion] at (current page.south) {Publiceerbaarheid};
-	\node[questions] at (current page.south) {Kan de statistiek publiek gepubliceerd worden of enkel intern?};
+	\node[criterion] at (current page.south) {Toegankelijkheid en duidelijkheid};
+	\node[questions] at (current page.south) {In duidelijke en begrijpelijke vorm gepresenteerd?\\Op een passende en gebruikersvriendelijke manier gepubliceerd?};
 	}
 \onslide<3>{
+	\node[criterion] at (current page.south) {Publiceerbaarheid};
+	\node[questions] at (current page.south) {Kan de statistiek publiek worden gepubliceerd of enkel intern?};
+	}
+\onslide<4>{
 	\node[criterion] at (current page.south) {Eigenaarschap};
 	\node[questions] at (current page.south) {Wie draagt eindverantwoordelijkheid en is aanspreekbaar?};
 	}
-\onslide<4>{
+\onslide<5>{
 	\node[criterion] at (current page.south) {Contactinformatie};
 	\node[questions] at (current page.south) {Wie kan je contacteren omtrent de statistiek?};
 	}
-\onslide<5>{
+\onslide<6>{
 	\node[criterion] at (current page.south) {\ldots};
 	\node[questions] at (current page.south) {\ldots};
 	}
 \end{tikzpicture}
 \end{frame}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -364,6 +377,115 @@ Concept 2: Gemeente \textcolor{softsteelblue}{$\rightarrow$ dimensie}\\
 
 
 \begin{frame}
+\frametitle{We splitsen dimensies over kolommen en rijen,\\andere concepten staan in de tabeltitel.}
+\begin{center}
+\tiny
+\begin{tblr}{
+	width=.8\linewidth,
+	colspec={X[c]X[c]X[c]},
+	column{1-2} = {fg=charcoalgray,bg=lightskyblue},
+	row{1} = {fg=white,bg=deepslateblue},
+	row{2} = {fg=white,bg=softsteelblue},
+	hline{1,Z} = {deepslateblue},
+	vline{1,Z} = {deepslateblue},
+	hspan=minimal
+	}
+\SetCell[c=3]{l} Aantal inwoners per Vlaamse gemeenten per jaar.\\	
+Gemeente & Jaartal & Cijfer \\
+Aalst & 2019 & 86\,445 \\
+Aalst & 2020 & 87\,382 \\
+Aalter & 2019 & 28\,906 \\
+Aalter & 2020 & 27\,394 \\
+\ldots & \ldots & \ldots \\
+Zwijndrecht & 2019 & 19\,056 \\
+Zwijndrecht & 2020 & 21\,343 \\
+\end{tblr}
+\end{center}
+\vfill\mbox{}\\
+Concept 1: Parameter \\
+Concept 2: Gemeente \textcolor{softsteelblue}{$\rightarrow$ dimensie}\\
+\textbf{Concept 3: Jaartal \textcolor{softsteelblue}{$\rightarrow$ dimensie}}\\
+\end{frame}
+
+
+\begin{frame}
+\frametitle{De tabeltitel is de conceptuele definitie.}
+\framesubtitle{Het bevat nog steeds alle concepten.}
+\vfill
+\begin{center}
+``Aantal inwoners \textcolor{stonegray}{|} per gemeente \textcolor{stonegray}{|} per jaar''
+\end{center}
+\vfill
+\begin{center}
+\tiny
+\begin{tblr}{
+	width=.8\linewidth,
+	colspec={X[c]X[c]X[c]},
+	column{1-2} = {fg=charcoalgray,bg=lightskyblue},
+	row{1} = {fg=white,bg=deepslateblue},
+	row{2} = {fg=white,bg=softsteelblue},
+	hline{1,Z} = {deepslateblue},
+	vline{1,Z} = {deepslateblue},
+	hspan=minimal
+	}
+\SetCell[c=3]{l} Aantal inwoners per Vlaamse gemeenten per jaar.\\	
+Gemeente & Jaartal & Cijfer \\
+Aalst & 2019 & 86\,445 \\
+Aalst & 2020 & 87\,382 \\
+Aalter & 2019 & 28\,906 \\
+Aalter & 2020 & 27\,394 \\
+\ldots & \ldots & \ldots \\
+Zwijndrecht & 2019 & 19\,056 \\
+Zwijndrecht & 2020 & 21\,343 \\
+\end{tblr}
+\end{center}
+\vfill
+\end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{Een cijfertabel heeft ook een operationele definitie.}
+\framesubtitle{Het bepaalt exact het aantal cijfers.}
+\vfill
+\makebox[0pt][r]{``}De grootte van de wettelijke bevolking op 1 januari van jaren 2019 en 2020 per Vlaamse gemeente volgens de NIS‐code‐indeling van 2019. De wettelijke bevolking omvat\ldots''
+\begin{flushright}
+$\Rightarrow$ 300 gemeenten $\times$ 2 jaartallen = 600 cijfers
+\end{flushright}
+\vfill
+\begin{center}
+\tiny
+\begin{tblr}{
+	width=.8\linewidth,
+	colspec={X[c]X[c]X[c]},
+	column{1-2} = {fg=charcoalgray,bg=lightskyblue},
+	row{1} = {fg=white,bg=deepslateblue},
+	row{2} = {fg=white,bg=softsteelblue},
+	hline{1,Z} = {deepslateblue},
+	vline{1,Z} = {deepslateblue},
+	hspan=minimal
+	}
+\SetCell[c=3]{l} Aantal inwoners per Vlaamse gemeenten per jaar.\\	
+Gemeente & Jaartal & Cijfer \\
+Aalst & 2019 & 86\,445 \\
+Aalst & 2020 & 87\,382 \\
+Aalter & 2019 & 28\,906 \\
+Aalter & 2020 & 27\,394 \\
+\ldots & \ldots & \ldots \\
+Zwijndrecht & 2019 & 19\,056 \\
+Zwijndrecht & 2020 & 21\,343 \\
+\end{tblr}
+\end{center}
+\vfill
+\end{frame}
+
+
+
+
+
+
+\begin{frame}
 \begin{small}\color{softsteelblue} 
 \textbf{Oefening:} Wat zijn de concepten en dimensies in deze cijfertabel? \\
 \end{small}
@@ -409,74 +531,37 @@ Boechout & man & 6506 & 49.0 \\
 \end{frame}
 
 
-
-
-
-
-
 \begin{frame}
-\frametitle{Een cijfertabel heeft ook een conceptuele definitie.}
-\framesubtitle{Het bevat nog steeds alle concepten.}
-\vfill
-\begin{center}
-``Aantal inwoners \textcolor{stonegray}{|} per gemeente \textcolor{stonegray}{|} in 2019''
-\end{center}
-\vfill
-\begin{center}
-\tiny
+\frametitle{Door een tabel te pivoteren naar lang formaat\\staan alle dimensies in de kolommen.}
+\begin{tiny}
 \begin{tblr}{
-	width=.8\linewidth,
-	colspec={X[l]X[c]},
-	column{1} = {fg=charcoalgray,bg=lightskyblue},
-	row{1} = {fg=white,bg=softsteelblue},
+	width=\linewidth,
+	colspec={X[c]X[c]X[c]X[c]},
+	column{1-3} = {fg=charcoalgray,bg=lightskyblue},
+	row{1} = {fg=white,bg=deepslateblue},
+	row{2} = {fg=white,bg=softsteelblue},
 	hline{1,Z} = {deepslateblue},
 	vline{1,Z} = {deepslateblue},
 	hspan=minimal
 	}
-Conceptuele definitie & Cijfer \\
-Aantal inwoners in Aalst in 2019 & 86\,445 \\
-Aantal inwoners in Aalter in 2019 & 28\,906 \\
-Aantal inwoners in Aarschot in 2019 & 30\,115 \\
-\ldots & \ldots \\
-Aantal inwoners in Zwijndrecht in 2019 & 19\,056 \\
+\SetCell[c=4]{l} Aantal en percentage inwoners per geslacht in Vlaamse gemeenten in 2019.\\
+Gemeente & Geslacht & Parameter & Cijfer \\
+Aartselaar & man & Aantal & 7089 \\
+Aartselaar & man & Percentage & 49.6 \\
+Aartselaar & vrouw & Aantal & 7204 \\
+Aartselaar & vrouw & Percentage & 50.4 \\
+Antwerpen & man & Aantal & 262921 \\
+Antwerpen & man & Percentage & 50.0 \\
+Antwerpen & vrouw & Aantal & 263014 \\
+Antwerpen & vrouw & Percentage & 50.0 \\
+Boechout & man & Aantal & 6506 \\
+\ldots & \ldots & \ldots & \ldots \\
 \end{tblr}
-\end{center}
-\vfill
+\end{tiny}
 \end{frame}
 
 
 
-
-\begin{frame}
-\frametitle{Een cijfertabel heeft ook een operationele definitie.}
-\framesubtitle{Het bepaalt exact het aantal cijfers.}
-\vfill
-\makebox[0pt][r]{``}De grootte van de wettelijke bevolking op 1 januari 2019 per Vlaamse gemeente volgens de NIS‐code‐indeling in 2019. De wettelijke bevolking omvat\ldots''
-\begin{flushright}
-$\Rightarrow$ 300 cijfers
-\end{flushright}
-\vfill
-\begin{center}
-\tiny
-\begin{tblr}{
-	width=.8\linewidth,
-	colspec={X[l]X[c]},
-	column{1} = {fg=charcoalgray,bg=lightskyblue},
-	row{1} = {fg=white,bg=softsteelblue},
-	hline{1,Z} = {deepslateblue},
-	vline{1,Z} = {deepslateblue},
-	hspan=minimal
-	}
-Conceptuele definitie & Cijfer \\
-Aantal inwoners in Aalst in 2019 & 86\,445 \\
-Aantal inwoners in Aalter in 2019 & 28\,906 \\
-Aantal inwoners in Aarschot in 2019 & 30\,115 \\
-\ldots & \ldots \\
-Aantal inwoners in Zwijndrecht in 2019 & 19\,056 \\
-\end{tblr}
-\end{center}
-\vfill
-\end{frame}
 
 
 
@@ -578,7 +663,7 @@ De wettelijke bevolking omvat\ldots''
 
 
 
-\section*{Samenvattend}
+\section*{Opmerkingen}
 
 
 \begin{frame}
@@ -595,7 +680,7 @@ De wettelijke bevolking omvat\ldots''
 % Voorbeelden – gebruikersbehoefte
 \onslide<1->{
 	\node[stepbox] at (0,0) {Gebruikers-\\behoefte};
-	\node[example] (N01) at (1.2,0) {Informatie over bevolkingsontwikkeling};
+	\node[example] (N01) at (1.2,0) {Informatie over\\bevolkingsontwikkeling};
 	}
 % Voorbeelden – conceptuele definities
 \onslide<2->{
@@ -618,6 +703,39 @@ De wettelijke bevolking omvat\ldots''
 	}
 \end{tikzpicture}
 \end{center}
+\end{frame}
+
+
+
+
+\begin{frame}
+\hfill\includegraphics[width=\linewidth]{figures/faillissementen-van-ondernemingen-rgb.pdf}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Er is een verschil tussen\\administratieve data en statistieken.}
+\begin{scriptsize}
+\begin{tblr}{
+	width=\linewidth,
+	colspec={X[c]X[c]},
+	row{1}={bg=deepslateblue,fg=white},
+	row{2}={bg=softsteelblue,fg=white},
+	hlines = {mistgray},
+	hline{1,2,Z} = {deepslateblue},
+	vlines = {deepslateblue},
+	cells = {valign = m},
+	}
+Administratieve ontsluiting & Statistische publicatie \\
+Hoeveel faillissementen werden geregistreerd? & Hoe gezond zijn onze bedrijven? \\
+Vertrekt van de databron & Vertrekt van de gebruikersvraag \\
+Verzameld omwille van operationeel proces & Verzameld omwille van beleid \\
+%Wat registreert administratie X? & Welk maatschappelijk fenomeen meten we? \\
+%Definities impliciet en brongebonden & Definities expliciet en conceptueel afgebakend \\
+%Sterk afhankelijk van administratieve processen en beleidswijzigingen & Methodologisch stabieler over de tijd \\
+Beperkte vergelijkbaarheid & Internationale en regionale vergelijkbaarheid mogelijk \\
+\end{tblr}
+\end{scriptsize}
 \end{frame}
 
 
