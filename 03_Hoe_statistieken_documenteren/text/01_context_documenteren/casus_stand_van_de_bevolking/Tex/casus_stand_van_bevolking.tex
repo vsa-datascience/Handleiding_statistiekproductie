@@ -1,0 +1,348 @@
+\documentclass{SVnote}
+
+
+
+\usepackage{xcolor}
+\newcommand\vraag[1]{{\par\footnotesize\itshape\color{blue!50!black}\textbf{Vraag:} #1}}
+
+
+
+
+
+
+
+
+\begin{document}
+
+
+\title[Casus Stand Bevolking]{Casus\\Stand Bevolking}
+
+\titlepage
+
+
+
+\section{Aanmaak VOS'en}
+
+\subsection{STAP 1: Gebruikersbhoeften}
+
+De volgende statistiekreeksen worden gedefinieerd in de VSP-lijst en jaarlijks geproduceerd. We geven telkens de titel en de korte beschrijving.
+\begin{itemize}
+\item VOS101: Bevolking: omvang en groei (evolutie totale bevolking)
+\item VOS102: Bevolking naar leeftijd en geslacht (evolutie bevoling naar leeftijd en geslacht)
+\item VOS103: Bevolking naar burgerlijke staat (evolutie bevolking naar burgerlijke staat naar achtergrondkenmerken)
+\item VOS104: Bevolking naar nationaliteit (evolutie bevolking per nationaliteitsgroep (Belg, EU, niet-EU), aantal per nationaliteitsgroep )
+\item VOS105: Bevolking naar herkomst (evolutie bevolking per herkomstgroep (Belg, EU, niet-EU))
+\item VOS113: Huishoudtypes	(aantal private huishoudens naar type naar achtergrondkenmerken)
+\item VOS114:  Bevolking naar positie in het huishouden (aantal naar positie in huishouden, naar achtergrondkenmerken)
+\end{itemize}
+
+De Gemeente- en StadsMonitor bevat de volgende indicatoren (enkel ``Naam'' wordt weergegeven) die jaarlijks worden aangeleverd: 
+\begin{itemize}
+\item GSM\_DE\_00 Inwonersaantal
+\item GSM\_DE\_01 Inwoners, naar geslacht
+\item GSM\_DE\_02 Inwoners, naar leeftijd
+\item GSM\_DE\_03 Jonge kinderen
+\item GSM\_DE\_04 Kinderen
+\item GSM\_DE\_05 65-plussers
+\item GSM\_DE\_06 80-plussers
+\item GSM\_DE\_07 Groene druk
+\item GSM\_DE\_08 Grijze druk
+\item GSM\_DE\_09 Demografische afhankelijkheidsratio
+\item GSM\_DE\_10 Demografische doorstromingsratio
+\item GSM\_DE\_12 Interne vergrijzing
+\item GSM\_DE\_13 Bevolkingsdichtheid
+\item GSM\_DE\_36 Personen van buitenlandse herkomst
+\item GSM\_IN\_06 Personen van buitenlandse herkomst excl. Nederlandse herkomst
+\item GSM\_IN\_07 Personen van buitenlandse herkomst, naar geslacht
+\item GSM\_IN\_08 Personen van buitenlandse herkomst, naar leeftijd
+\item GSM\_DE\_40 Personen van buitenlandse herkomst, naar herkomst
+\item GSM\_IN\_09 Personen van buitenlandse herkomst, naar nationaliteitshistoriek
+\item GSM\_DE\_42 Vreemdelingen
+\item GSM\_IN\_10 Vreemdelingen met MOE-nationaliteit
+\item GSM\_IN\_11 Vreemdelingen, naar geslacht
+\item GSM\_IN\_12 Vreemdelingen, naar leeftijd
+\item GSM\_IN\_13 Vreemdelingen, naar nationaliteit
+\item GSM\_IN\_14 Vreemdelingen, naar nationaliteitsgroep
+\item GSM\_IN\_15 Vreemde nationaliteiten
+\item GSM\_DE\_64 Huishoudens, naar grootte
+\item GSM\_DE\_69 Aangroei bevolking 10 jaar
+\item GSM\_DE\_76 Scholingsgraad
+\item GSM\_DE\_77 Huishoudens, naar type
+\end{itemize}
+
+Verder moet ook voor de berekening van gewichten in de SV-bevragingen volgende statistiekreeksen jaarlijks worden aangeleverd:
+\begin{itemize}
+\item Aantal inwoners, naar geslacht
+\item Aantal inwoners, naar leeftijdcategorie
+\item Aantal inwoners, naar nationaliteitsgroep
+\item Aantal inwoners, naar provincie
+\item Aantal inwoners, naar urbanisatiegroep
+\end{itemize}
+
+
+
+
+
+
+\vraag{Zijn er nog andere recurrente producten op basis van de demobel data?}
+
+
+
+
+
+
+
+
+
+
+\subsection{STAP 2: Conceptuele definitie}
+
+In de volgende stap schrijven we de conceptuele definitie van de statistiekreeksen uit. De conceptuele definitie refereert naar alle dimensies van de reeks, zonder in detail te gaan over hoe de statistieken precies worden gemeten.
+
+
+
+
+\begin{itemize}
+\item VOS101: Deze VOS splitsen we op in twee reeksen want het bevat twee verschillende parameters.
+	\begin{itemize}
+	\item VOS101A: \\Bevolkingsomvang \\in de Vlaamse gemeenten en Vlaanderen
+	\item VOS101B: \\Bevolkingsgroei \\in de Vlaamse gemeenten en Vlaanderen
+	\end{itemize}
+
+
+\item VOS102: Bevolking naar leeftijd en geslacht (evolutie bevoling naar leeftijd en geslacht)
+\item VOS103: Bevolking naar burgerlijke staat (evolutie bevolking naar burgerlijke staat naar achtergrondkenmerken)
+\item VOS104: Bevolking naar nationaliteit (evolutie bevolking per nationaliteitsgroep (Belg, EU, niet-EU), aantal per nationaliteitsgroep )
+\item VOS105: Bevolking naar herkomst (evolutie bevolking per herkomstgroep (Belg, EU, niet-EU))
+\item VOS113: Huishoudtypes	(aantal private huishoudens naar type naar achtergrondkenmerken)
+\item VOS114:  Bevolking naar positie in het huishouden (aantal naar positie in huishouden, naar achtergrondkenmerken)
+
+
+\item GSM\_DE\_00	Inwonersaantal		Aantal inwoners zoals geregistreerd in de registers van de burgerlijke stand van de gemeente (bevolking de jure), op 1 januari van een observatiejaar.
+\item GSM\_DE\_01	Inwoners, naar geslacht		Aantal inwoners naar geslacht zoals geregistreerd in de registers van de burgerlijke stand van de gemeente (bevolking de jure), op 1 januari van een observatiejaar.
+\item GSM\_DE\_02	Inwoners, naar leeftijd		Aantal inwoners naar leeftijd zoals geregistreerd in de registers van de burgerlijke stand van de gemeente (bevolking de jure), op 1 januari van een observatiejaar.
+\item GSM\_DE\_03	Jonge kinderen		Aandeel jonge kinderen van 0 tot en met 3 jaar.
+\item GSM\_DE\_04	Kinderen		Aandeel kinderen van 0 tot en met 17 jaar.
+\item GSM\_DE\_05	65-plussers		Aandeel personen van 65 jaar en ouder.
+\item GSM\_DE\_06	80-plussers		Aandeel personen van 80 jaar en ouder.
+\item GSM\_DE\_07	Groene druk		Verhouding tussen de jeugdige bevolking (0-19 jaar) en de bevolking op beroepsactieve leeftijd (20-64 jaar).
+\item GSM\_DE\_08	Grijze druk		Verhouding tussen de leeftijdsgroep van ouderen (vergrijsde bevolking, 65 jaar en ouder) en de bevolking op beroepsactieve leeftijd (20-64 jaar).
+\item GSM\_DE\_09	Demografische afhankelijkheidsratio		Verhouding tussen de bevolking buiten beroepsactieve leeftijd (0-19 jaar en 65 jaar en ouder, "niet-actieven") en de bevolking op beroepsactieve leeftijd (20-64 jaar). Dit is de optelsom van groene druk en grijze druk.
+\item GSM\_DE\_10	Demografische doorstromingsratio		"Verhouding tussen de potentiële in- en uitstroom op de arbeidsmarkt, afgaand op de verhouding tussen de jonge (15-24 jaar) en oude (55-64 jaar) leeftijdscategorieën op de arbeidsmarkt.
+Als de coëfficiënt groter is dan 100, dan wil dit zeggen dat de leeftijdsklassen die de arbeidsmarkt zullen verlaten meer dan volledig vervangen worden door jonge instromers. Omgekeerd duidt een coëfficiënt lager dan 100 erop dat de bevolkingsstructuur de vervanging van uittreders niet volledig zal kunnen opvangen door jonge intreders. Een coëfficiënt gelijk aan 100 duidt aan dat de potentiële intreders en uittreders elkaar in evenwicht houden."
+\item GSM\_DE\_12	Interne vergrijzing		Aandeel van de oudste ouderen (80 jaar en ouder) binnen het segment van de oudere bevolking (65 jaar en ouder).
+\item GSM\_DE\_13	Bevolkingsdichtheid		Aantal inwoners per km².
+\item GSM\_DE\_36	Personen van buitenlandse herkomst		"Aantal personen van buitenlandse herkomst ten opzichte van de totale bevolking, op 1 januari van het jaar.
+Om de herkomst van een persoon te bepalen worden vier criteria in rekening gebracht: de huidige nationaliteit van de persoon, de geboortenationaliteit van de persoon, de geboortenationaliteit van de vader en de geboortenationaliteit van de moeder. Is één van deze vier criteria een niet-Belgische nationaliteit, dan wordt de persoon beschouwd als zijnde een persoon van buitenlandse herkomst. Om de personen van buitenlandse herkomst op te delen in verschillende herkomstgroepen wordt eerst gekeken naar de geboortenationaliteit van de vader, daarna naar de geboortenationaliteit van de moeder, de huidige nationaliteit van de persoon en de geboortenationaliteit van de persoon."
+\item GSM\_IN\_06	Personen van buitenlandse herkomst excl. Nederlandse herkomst		"Aantal personen van buitenlandse herkomst zonder personen van Nederlandse herkomst ten opzichte van de totale bevolking, op 1 januari van het jaar.
+Om de herkomst van een persoon te bepalen worden vier criteria in rekening gebracht: de huidige nationaliteit van de persoon, de geboortenationaliteit van de persoon, de geboortenationaliteit van de vader en de geboortenationaliteit van de moeder. Is één van deze vier criteria een niet-Belgische nationaliteit, dan wordt de persoon beschouwd als zijnde een persoon van buitenlandse herkomst. Om de personen van buitenlandse herkomst op te delen in verschillende herkomstgroepen wordt eerst gekeken naar de geboortenationaliteit van de vader, daarna naar de geboortenationaliteit van de moeder, de huidige nationaliteit van de persoon en de geboortenationaliteit van de persoon."
+\item GSM\_IN\_07	Personen van buitenlandse herkomst, naar geslacht		"Aantal personen van buitenlandse herkomst ten opzichte van de totale bevolking, op 1 januari van het jaar, naar geslacht.
+Om de herkomst van een persoon te bepalen worden vier criteria in rekening gebracht: de huidige nationaliteit van de persoon, de geboortenationaliteit van de persoon, de geboortenationaliteit van de vader en de geboortenationaliteit van de moeder. Is één van deze vier criteria een niet-Belgische nationaliteit, dan wordt de persoon beschouwd als zijnde een persoon van buitenlandse herkomst. Om de personen van buitenlandse herkomst op te delen in verschillende herkomstgroepen wordt eerst gekeken naar de geboortenationaliteit van de vader, daarna naar de geboortenationaliteit van de moeder, de huidige nationaliteit van de persoon en de geboortenationaliteit van de persoon."
+\item GSM\_IN\_08	Personen van buitenlandse herkomst, naar leeftijd		"Aantal personen van buitenlandse herkomst, ten opzichte van de totale bevolking, op 1 januari van het jaar, naar leeftijdsgroep.
+Om de herkomst van een persoon te bepalen worden vier criteria in rekening gebracht: de huidige nationaliteit van de persoon, de geboortenationaliteit van de persoon, de geboortenationaliteit van de vader en de geboortenationaliteit van de moeder. Is één van deze vier criteria een niet-Belgische nationaliteit, dan wordt de persoon beschouwd als zijnde een persoon van buitenlandse herkomst. Om de personen van buitenlandse herkomst op te delen in verschillende herkomstgroepen wordt eerst gekeken naar de geboortenationaliteit van de vader, daarna naar de geboortenationaliteit van de moeder, de huidige nationaliteit van de persoon en de geboortenationaliteit van de persoon."
+\item GSM\_DE\_40	Personen van buitenlandse herkomst, naar herkomst		"Aantal personen van buitenlandse herkomst, naar herkomstgroep, ten opzichte van de totale bevolking, op 1 januari van het jaar.
+Om de herkomst van een persoon te bepalen worden vier criteria in rekening gebracht: de huidige nationaliteit van de persoon, de geboortenationaliteit van de persoon, de geboortenationaliteit van de vader en de geboortenationaliteit van de moeder. Is één van deze vier criteria een niet-Belgische nationaliteit, dan wordt de persoon beschouwd als zijnde een persoon van buitenlandse herkomst. Om de personen van buitenlandse herkomst op te delen in verschillende herkomstgroepen wordt eerst gekeken naar de geboortenationaliteit van de vader, daarna naar de geboortenationaliteit van de moeder, de huidige nationaliteit van de persoon en de geboortenationaliteit van de persoon."
+\item GSM\_IN\_09	Personen van buitenlandse herkomst, naar nationaliteitshistoriek		"Aantal personen van buitenlandse herkomst, naar nationaliteitshistoriek, ten opzichte van het totaal aantal personen van buitenlandse herkomst, op 1 januari van het jaar.
+Om de herkomst van een persoon te bepalen worden vier criteria in rekening gebracht: de huidige nationaliteit van de persoon, de geboortenationaliteit van de persoon, de geboortenationaliteit van de vader en de geboortenationaliteit van de moeder. Is één van deze vier criteria een niet-Belgische nationaliteit, dan wordt de persoon beschouwd als zijnde een persoon van buitenlandse herkomst. Om de personen van buitenlandse herkomst op te delen in verschillende herkomstgroepen wordt eerst gekeken naar de geboortenationaliteit van de vader, daarna naar de geboortenationaliteit van de moeder, de huidige nationaliteit van de persoon en de geboortenationaliteit van de persoon."
+\item GSM\_DE\_42	Vreemdelingen		"Aantal personen met een huidige niet-Belgische nationaliteit ten opzichte van de totale bevolking, op 1 januari van het jaar.
+Belgen zijn personen met een huidige Belgische nationaliteit, inclusief de personen met een dubbele nationaliteit waaronder de Belgische nationaliteit. Vreemdelingen zijn personen zonder huidige Belgische nationaliteit."
+\item GSM\_IN\_10	Vreemdelingen met MOE-nationaliteit		"Aantal personen met een huidige nationaliteit uit de MOE-landen ten opzichte van de totale bevolking, op 1 januari van het jaar.
+Belgen zijn personen met een huidige Belgische nationaliteit, inclusief de personen met een dubbele nationaliteit waaronder de Belgische nationaliteit. Vreemdelingen zijn personen zonder huidige Belgische nationaliteit.
+De MOE-landen (Midden- en Oost-Europa) zijn:
+- Estland, Letland, Litouwen, Polen, Tsjechië, Slovakije, Hongarije, Slovenië, Bulgarije en Roemenië;
+- Turkije, Macedonië, Kroatië, Servië en Montenegro;
+- Albanië, Belarus, Kosovo, Moldavië, Rusland, Bosnië en Oekraïne."
+\item GSM\_IN\_11	Vreemdelingen, naar geslacht		"Aantal personen met een huidige niet-Belgische nationaliteit ten opzichte van de totale bevolking, op 1 januari van het jaar, naar geslacht.
+Belgen zijn personen met een huidige Belgische nationaliteit, inclusief de personen met een dubbele nationaliteit waaronder de Belgische nationaliteit. Vreemdelingen zijn personen zonder huidige Belgische nationaliteit."
+\item GSM\_IN\_12	Vreemdelingen, naar leeftijd		"Aantal personen met een huidige niet-Belgische nationaliteit ten opzichte van de totale bevolking, op 1 januari van het jaar, naar leeftijdsgroep.
+Belgen zijn personen met een huidige Belgische nationaliteit, inclusief de personen met een dubbele nationaliteit waaronder de Belgische nationaliteit. Vreemdelingen zijn personen zonder huidige Belgische nationaliteit."
+\item GSM\_IN\_13	Vreemdelingen, naar nationaliteit		"Aantal personen met een huidige niet-Belgische nationaliteit, naar nationaliteit, ten opzichte van de totale bevolking, op 1 januari van het jaar.
+Belgen zijn personen met een huidige Belgische nationaliteit, inclusief de personen met een dubbele nationaliteit waaronder de Belgische nationaliteit. Vreemdelingen zijn personen zonder huidige Belgische nationaliteit.
+Deze indicator beperkt zich tot de top 5 van meest voorkomende nationaliteiten per jaar per gemeente (en voor het Vlaamse Gewest)."
+\item GSM\_IN\_14	Vreemdelingen, naar nationaliteitsgroep		"Aantal personen met een huidige niet-Belgische nationaliteit, naar nationaliteitsgroep, ten opzichte van de totale bevolking, op 1 januari van het jaar.
+Belgen zijn personen met een huidige Belgische nationaliteit, inclusief de personen met een dubbele nationaliteit waaronder de Belgische nationaliteit. Vreemdelingen zijn personen zonder huidige Belgische nationaliteit.
+Volgende nationaliteitsgroepen worden gebruikt:
+- West- en Noord-EU-15-landen: Nederland, Frankrijk, Duitsland, Luxemburg, Ierland, Oostenrijk, Denemarken, Zweden en Finland;
+- Zuid-EU-15-landen: Italië, Spanje, Portugal, Griekenland;
+- EU-12/EU-13-landen: Estland, Letland, Litouwen, Polen, Tsjechië, Slovakije, Hongarije, Slovenië, Bulgarije, Roemenië, Malta en Cyprus, vanaf 2013 ook Kroatië;
+- Europa buiten de EU: Zwitserland, Noorwegen, Verenigd Koninkrijk, Albanië, Belarus, Kosovo, Moldavië, Rusland, Bosnië, Oekraïne, Liechtenstein, Andorra, Monaco, San Marino, Macedonië, Kroatië tot 2013, IJsland, Servië en Montenegro;
+- Maghreblanden: Turkije, Marokko, Algerije, Tunesië, Libië en Mauritanië;
+- Andere landen: andere landen dan diegene vermeld in bovenstaande groepen."
+\item GSM\_IN\_15	Vreemde nationaliteiten		Aantal bekende vreemde nationaliteiten.
+\item GSM\_DE\_64	Huishoudens, naar grootte		"Aantal private huishoudens (personen ingeschreven op eenzelfde hoofdverblijfplaats) per gemeente, op 1 januari van het observatiejaar, naar grootte. Onder huishouden verstaat men alle personen die gewoonlijk eenzelfde woning betrekken en er samen leven. Een huishouden bestaat ofwel uit een persoon die gewoonlijk alleen leeft, ofwel uit twee of meer personen die al dan niet door verwantschap aan elkaar verbonden zijn.
+Onder collectief huishouden wordt verstaan: religieuze gemeenschappen, rusthuizen, weeshuizen, studenten- en werkliedenhuizen, ziekenhuizen en gevangenissen. In collectieve huishoudens is er geen referentiepersoon.
+De bepaling van een referentiepersoon binnen het huishouden is noodzakelijk om elk lid binnen het huishouden te situeren (verwantschapsband). In principe zou als referentiepersoon best dat lid van het huishouden genomen worden dat werkelijk de zaken van het huishouden behartigt of voor het grootste deel van de bestaansmiddelen ervan zorgt. In werkelijkheid is de referentiepersoon echter de persoon die het huishouden vertegenwoordigt bij de contacten met de overheid."
+\item GSM\_DE\_69	Aangroei bevolking 10 jaar		Aangroei van de bevolking ten opzichte van tien jaar eerder.
+\item GSM\_DE\_76	Scholingsgraad		"Het aandeel inwoners naar scholingsgraad. De scholingsgraad wordt ingedeeld in 3 grote groepen aan de hand van het hoogst behaalde diploma: laaggeschoolden (maximaal lager secundair onderwijs), middengeschoolden (secundair onderwijs afgewerkt of in het bezit van een einddiploma postsecundair niet-hoger onderwijs) en hooggeschoolden (diploma hoger onderwijs). Als er geen gegevens over de scholingsgraad gekend zijn, worden zij ondergebracht in de categorie ‘onbekend’.
+\item GSM\_DE\_77	Huishoudens, naar type (volgens LIPRO-typologie)		"Aantal private huishoudens per gemeente, op 1 januari van het observatiejaar, naar type. Er worden zeven types van private huishoudens onderscheiden:
+1. Alleenwonende (1-persoonshuishouden met een referentiepersoon van 15 jaar of ouder);
+2. Gehuwd paar zonder thuiswonend kind (+ eventueel inwonende andere personen);
+3. Gehuwd paar met thuiswonend(e) kind(eren) (+ eventueel inwonende andere personen);
+4. Ongehuwd paar zonder thuiswonend kind (+ eventueel inwonende andere personen);
+5. Ongehuwd paar met thuiswonend(e) kind(eren) (+ eventueel inwonende andere personen);
+6. Alleenstaande ouder (+ eventueel inwonende andere personen);
+7. Ander type huishouden. Deze categorie omvat alle huishoudens die niet zijn opgenomen in de voorgaande types zoals samenwonende broers/zussen, vrienden, ...
+Onder huishouden verstaat men alle personen die gewoonlijk eenzelfde woning betrekken en er samen leven. Een huishouden bestaat ofwel uit een persoon die gewoonlijk alleen leeft, ofwel uit twee of meer personen die al dan niet door verwantschap aan elkaar verbonden zijn. Onder collectief huishouden wordt verstaan: religieuze gemeenschappen, rusthuizen, weeshuizen, studenten- en werkliedenhuizen, ziekenhuizen en gevangenissen. In collectieve huishoudens is er geen referentiepersoon.
+De bepaling van een referentiepersoon binnen het huishouden is noodzakelijk om elk lid binnen het huishouden te situeren (verwantschapsband). In principe zou als referentiepersoon best dat lid van het huishouden genomen worden dat werkelijk de zaken van het huishouden behartigt of voor het grootste deel van de bestaansmiddelen ervan zorgt. In werkelijkheid is de referentiepersoon echter de persoon die het huishouden vertegenwoordigt bij de contacten met de overheid."
+\end{itemize}
+
+
+
+
+
+
+
+
+\section{STAP 3: Operationele definitie}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Cijferpagina's}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%
+%\section{Dossier}
+%
+%
+%Het dossier van de 
+%
+%
+%\vraag{Wat zijn de gebruikersbehoeften? Wie lijst deze op per statistiekreeks?}
+%\vraag{Wat is de operationailsatie? Wie bepaalt deze?}
+%\vraag{Wat is de kwaliteit van de opgeleverde cijfers? Wie voert deze studie uit?}
+%
+%
+%
+%
+%
+%
+%
+%
+%\section{Input data}
+%
+%Stap één is de verzameling van brondata. Voor de cijferpagina's van de VSA over de stand van de bevolking wordt jaarlijks één dataset opgevraagd over de stand van de bevolking bij Statbel en is er daarnaast nood aan een structurele dataset die NIS-codes mapt op geografische oppervlaktes om de bevolkingsdichtheid te berekenen. Er worden bijkomend nog twee datasets opgevraagd die worden gekoppeld aan de data over de stand van de bevolking, maar deze worden niet gebruikt voor cijfers op de cijferpagina's. Hieronder staat een gedetailleerder overzicht:
+%
+%\begin{itemize}
+%\item Datasets van Statbel.
+%	\begin{enumerate}
+%	\item Stand van de bevolking:
+%	\item XY-coördinaten
+%	\item NIS-code statistische sector
+%	\end{enumerate}
+%
+%\item Oppervlakten gemeenten: 
+%
+%
+%\end{itemize}
+%
+%
+%
+%\vraag{Wie coördineert data-collectie?}
+%
+%\vraag{Wie stelt procedures op zodat data-collectie veilig gebeurt? Wat zijn de juridische voorwaarden en acties? Wat is de rol van de DPO? Wat zijn de verschillende kanalen om data binnen te halen + handleiding per kanaal? Wie wordt verantwoordelijk voor binnenhalen?}
+%
+%\vraag{Zijn data met XY-coördinaten en NIS-codes dataleveringen die ook ieder jaar in dezelfde vorm terugkeren? Dan best dit als aparte datalevering bekijken en niet samen op een hoop gooien met Stand van de bevolking.}
+%
+%\vraag{Waar worden de brondata van Statbel geplaatst? Dit moet een beveiligde folder zijn met enkel leesrechten voor de demografen.}
+%
+%\vraag{Wie beheert de data met oppervlakten van de gemeenten? Moet hiervoor ook brondata worden opgeslagen?}
+%
+%
+%
+%
+%
+%
+%
+%\section{Controle en cleaning input data}
+%
+%\subsection{Data model}
+%
+%
+%Vereiste dimensies:
+%
+%\subsection{Gekuiste brondata}
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%\section{Statistiekreeksen}
+%
+%\begin{enumerate}
+%\item Aantal inwoners 
+%	\begin{itemize}
+%	\item voor elk kalenderjaar
+%	\item voor elke Vlaamse gemeente en de drie gewesten (NIS2019, binnenkort nieuwe versie NIS2025)
+%	\item voor elke bevolkingsgroep: totaal, leeftijd $\times$ geslacht, burgerlijke staat, nationaliteitsgroep, herkomstgroep
+%	\end{itemize}
+%\item Procentuele groei
+%\item Gemiddelde procentuele groei
+%
+%\end{enumerate}
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%\section{Cijferpagina's}
+%
+%
+%
+%
+%
+%
+%Bevolkingsdichtheid
+
+
+
+
+
+\end{document}

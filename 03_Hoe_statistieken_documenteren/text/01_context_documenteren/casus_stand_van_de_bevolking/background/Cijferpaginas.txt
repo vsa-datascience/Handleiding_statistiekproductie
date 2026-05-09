@@ -1,0 +1,53 @@
+Bevolking omvang en groei
+1)	Aantal inwoners per jaar in Vlaams Gewest
+2)	Procentuele groei per jaar per gemeente/gewest 
+3)	Gemiddelde jaarlijkse groei over de laatste 5 jaren: jaarlijkse procentuele groei van de laatste 5 jaren berekenen en daar het gemiddelde van nemen (per gewest en) per gemeente
+
+Bevolking naar leeftijd en geslacht
+1)	Aantallen 
+2)	Percentages over alle jaren (nieuwe figuur met vlakken voor meer jaargangen = stacked line chart) (aandeel 0 tot 17 jaar, aandeel 18 tot 66 jaar en aandeel 67+)
+3)	Percentages per gemeente (aandeel 67+)
+4)	Gewestelijke vergelijking, hoe? Via Pyramides? Ook hier aandelen.
+
+Bevolking naar burgerlijke staat
+1)	Nu percentages, maar we willen aantallen voor alle jaren, in lijndiagram of vlakdiagram (=stacked line chart)
+2)	Deze laten we weg
+3)	Rijpercentages ipv kolompercentages (aandelen), percentages binnen een leeftijdsgroep; andere grafische voorstelling?
+4)	Deze laten we graag weg
+5)	Percentages van verschillende burgerlijke staten per gemeente 
+6)	Percentages van verschillende burgerlijke staten per gewest
+
+Bevolking naar nationaliteit
+1)	Aantallen per jaar en per nationaliteitsgroep
+2)	Aantallen per nationaliteit, extra sortering om de grootste groepen
+3)	Aantallen per jaar en per nationaliteitsgroep voor meer jaren (keuze voor 2 jaren is arbitrair)
+4)	Percentages per gemeente
+5)	Percentages per gewest
+
+Bevolking naar herkomst
+1)	Aantallen per jaar en per herkomstgroep
+2)	Aantallen per jaar en per herkomstnationaliteitsgroep voor meerdere jaren (keuze voor 2 jaren is arbitrair)
+3)	Percentages per herkomstnationaliteitsgroep  
+4)	Percentages per gemeente
+5)	Percentages per gewest (t.o.v. totale bevolking)
+
+Huishoudtypes
+Eerst bestand op huishoudniveau maken
+1)	Aantallen, wel andere categorieën, nog altijd wel 7 categorieën samenbrengen in 5 categorieën, maar niet meer onderscheid tussen gehuwd en ongehuwd paar., wel tussen paar met kinderen en paar zonder kinderen; hiervoor nog gewoon aantal huishoudens
+2)	Percentages, wel weg in huidige vorm; wel paren onderscheiden in gehuwd en ongehuwd; als het interactief kan, kunnen huidige figuren 1 en 2 toch samen in 1 figuur
+3)	Mag weg (combineert persoonskenmerk met huishoudkenmerk)
+4)	Mag weg, complex
+5)	Mag weg
+6)	Huishoudens met inwonende kinderen, percentages per gemeente (eenpersoonshuishoudens vind je in VOS huishoudposities)
+7)	Percentages per gewest
+
+Bevolking naar positie in het huishouden
+1)	Evolutie van aantallen (vergelijkbaar met aangepast eerste figuur huishoudtypes)
+2)	Weg in huidige vorm; wel terug analoog als bij huishoudtypes met partner terug opsplitsen naar ongehuwd en gehuwd (percentages)
+3)	Kinderen opsplitsen naar bij 1 ouder of bij 2 ouders
+4)	Percentages per leeftijdsgroep (67+ ipv 65+)
+5)	Kaartje met aandeel alleenwonenden (percentage tov bevolking)
+6)	Percentages per gewest
+
+
+
